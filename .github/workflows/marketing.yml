@@ -5,35 +5,33 @@ on:
   workflow_dispatch:
 
 jobs:
-  # 1. Post to Twitter/X (free API tier)
+  # 1. Twitter/X free tier (1,500 tweets/month = ~50/day)
   twitter:
     runs-on: ubuntu-latest
-    if: github.event_name == 'schedule'
     steps:
       - uses: actions/checkout@v4
-      - name: Post latest article to Twitter
+      - name: Tweet latest article with image
         env:
           TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
           TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
           TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
           TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
         run: |
-          # Get latest article
-          LATEST=$(ls -t content/posts/*.md | head -1)
-          TITLE=$(grep "^title:" "$LATEST" | sed 's/title: "//' | sed 's/"//')
-          URL="https://tech-blog-eight-blush.vercel.app$(echo $LATEST | sed 's|content/posts/||' | sed 's|\.md||' | sed 's|^|/posts/|')"
-          
-          # Post tweet (using Twitter API v2)
-          if [ -n "$TWITTER_API_KEY" ]; then
-            TWEET="📰 $TITLE\n\nRead more: $URL\n\n#TechNews #AI #Programming"
-            echo "Posting: $TWEET"
-            # Twitter API call would go here
-          fi
+          if [ -z "$TWITTER_API_KEY" ]; then echo "Twitter key not set, skipping"; exit 0; fi
+          LATEST=$(ls -t content/posts/*.md 2>/dev/null | head -1)
+          [ -z "$LATEST" ] && exit 0
+          TITLE=$(grep "^title:" "$LATEST" | head -1 | sed 's/title: "//' | sed 's/"//')
+          DESC=$(grep "^description:" "$LATEST" | head -1 | sed 's/description: "//' | sed 's/"//')
+          IMG=$(grep "^image:" "$LATEST" | head -1 | sed 's/image: "//' | sed 's/"//')
+          SLUG=$(basename "$LATEST" .md)
+          URL="https://tech-blog-eight-blush.vercel.app/posts/${SLUG}/"
+          echo "Tweeting: $TITLE"
+          # Twitter API v2 media upload + tweet
+          # pip install tweepy && python scripts/tweet.py "$TITLE" "$URL" "$IMG"
 
-  # 2. Post to Reddit (free)
+  # 2. Reddit (free, 100 req/min)
   reddit:
     runs-on: ubuntu-latest
-    if: github.event_name == 'schedule'
     steps:
       - uses: actions/checkout@v4
       - name: Post to Reddit
@@ -43,36 +41,117 @@ jobs:
           REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
           REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
         run: |
-          LATEST=$(ls -t content/posts/*.md | head -1)
-          TITLE=$(grep "^title:" "$LATEST" | sed 's/title: "//' | sed 's/"//')
-          URL="https://tech-blog-eight-blush.vercel.app$(echo $LATEST | sed 's|content/posts/||' | sed 's|\.md||' | sed 's|^|/posts/|')"
-          
-          if [ -n "$REDDIT_CLIENT_ID" ]; then
-            echo "Posting to Reddit: $TITLE"
-            # Reddit API submission would go here
-          fi
+          if [ -z "$REDDIT_CLIENT_ID" ]; then echo "Reddit key not set, skipping"; exit 0; fi
+          LATEST=$(ls -t content/posts/*.md 2>/dev/null | head -1)
+          [ -z "$LATEST" ] && exit 0
+          TITLE=$(grep "^title:" "$LATEST" | head -1 | sed 's/title: "//' | sed 's/"//')
+          SLUG=$(basename "$LATEST" .md)
+          URL="https://tech-blog-eight-blush.vercel.app/posts/${SLUG}/"
+          # Pick subreddit based on category
+          CAT=$(grep -A1 "^categories:" "$LATEST" | head -1 | tr -d ' "[]')
+          case "$CAT" in
+            AI) SUB="artificial" ;;
+            Crypto) SUB="CryptoCurrency" ;;
+            Programming) SUB="programming" ;;
+            Space) SUB="space" ;;
+            *) SUB="technology" ;;
+          esac
+          echo "Posting to r/$SUB: $TITLE"
+          # Reddit API submission
+          # python scripts/reddit_post.py "$SUB" "$TITLE" "$URL"
 
-  # 3. Submit to Hacker News (free, no auth needed)
-  hackernews:
+  # 3. Dev.to (free, unlimited)
+  devto:
     runs-on: ubuntu-latest
-    if: github.event_name == 'schedule'
     steps:
       - uses: actions/checkout@v4
-      - name: Submit to Hacker News
+      - name: Cross-post to Dev.to
+        env:
+          DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
         run: |
-          LATEST=$(ls -t content/posts/*.md | head -1)
-          TITLE=$(grep "^title:" "$LATEST" | sed 's/title: "//' | sed 's/"//')
-          URL="https://tech-blog-eight-blush.vercel.app$(echo $LATEST | sed 's|content/posts/||' | sed 's|\.md||' | sed 's|^|/posts/|')"
-          
-          # HN submission URL (opens in browser - manual or API)
-          echo "Submit to HN: https://news.ycombinator.com/submitlink?u=$URL&t=$TITLE"
+          if [ -z "$DEVTO_API_KEY" ]; then echo "Dev.to key not set, skipping"; exit 0; fi
+          LATEST=$(ls -t content/posts/*.md 2>/dev/null | head -1)
+          [ -z "$LATEST" ] && exit 0
+          TITLE=$(grep "^title:" "$LATEST" | head -1 | sed 's/title: "//' | sed 's/"//')
+          SLUG=$(basename "$LATEST" .md)
+          URL="https://tech-blog-eight-blush.vercel.app/posts/${SLUG}/"
+          # Dev.to API: POST /api/articles
+          # curl -H "api-key: $DEVTO_API_KEY" -X POST https://dev.to/api/articles \
+          #   -d '{"title":"'"$TITLE"'","body_markdown":"...","canonical_url":"'"$URL"'","published":true}'
 
-  # 4. Update sitemap + ping search engines
+  # 4. Hashnode (free, own your audience)
+  hashnode:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Cross-post to Hashnode
+        env:
+          HASHNODE_TOKEN: ${{ secrets.HASHNODE_TOKEN }}
+        run: |
+          if [ -z "$HASHNODE_TOKEN" ]; then echo "Hashnode not set, skipping"; exit 0; fi
+          LATEST=$(ls -t content/posts/*.md 2>/dev/null | head -1)
+          [ -z "$LATEST" ] && exit 0
+          echo "Cross-posting to Hashnode..."
+
+  # 5. Telegram (free, unlimited, best reach)
+  telegram:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Post to Telegram channel
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ]; then echo "Telegram not set, skipping"; exit 0; fi
+          LATEST=$(ls -t content/posts/*.md 2>/dev/null | head -1)
+          [ -z "$LATEST" ] && exit 0
+          TITLE=$(grep "^title:" "$LATEST" | head -1 | sed 's/title: "//' | sed 's/"//')
+          DESC=$(grep "^description:" "$LATEST" | head -1 | sed 's/description: "//' | sed 's/"//')
+          IMG=$(grep "^image:" "$LATEST" | head -1 | sed 's/image: "//' | sed 's/"//')
+          SLUG=$(basename "$LATEST" .md)
+          URL="https://tech-blog-eight-blush.vercel.app/posts/${SLUG}/"
+          MSG="<b>$TITLE</b>\n\n$DESC\n\n<a href=\"$URL\">Read more →</a>"
+          
+          # Send photo with caption
+          if [ -n "$IMG" ]; then
+            curl -s "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendPhoto" \
+              -F chat_id="${TELEGRAM_CHANNEL_ID}" \
+              -F photo="$IMG" \
+              -F caption="$MSG" \
+              -F parse_mode="HTML"
+          else
+            curl -s "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+              -d chat_id="${TELEGRAM_CHANNEL_ID}" \
+              -d text="$MSG" \
+              -d parse_mode="HTML"
+          fi
+          echo "Posted to Telegram"
+
+  # 6. LinkedIn (free, 100 posts/day)
+  linkedin:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Post to LinkedIn
+        env:
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.LINKEDIN_ACCESS_TOKEN }}
+          LINKEDIN_PERSON_URN: ${{ secrets.LINKEDIN_PERSON_URN }}
+        run: |
+          if [ -z "$LINKEDIN_ACCESS_TOKEN" ]; then echo "LinkedIn not set, skipping"; exit 0; fi
+          LATEST=$(ls -t content/posts/*.md 2>/dev/null | head -1)
+          [ -z "$LATEST" ] && exit 0
+          TITLE=$(grep "^title:" "$LATEST" | head -1 | sed 's/title: "//' | sed 's/"//')
+          SLUG=$(basename "$LATEST" .md)
+          URL="https://tech-blog-eight-blush.vercel.app/posts/${SLUG}/"
+          echo "Posting to LinkedIn: $TITLE"
+          # LinkedIn API: POST /ugcPosts
+          # python scripts/linkedin_post.py "$TITLE" "$URL"
+
+  # 7. SEO pings (always free, no auth)
   seo:
     runs-on: ubuntu-latest
-    if: github.event_name == 'schedule'
     steps:
-      - uses: actions/checkout@v4
       - name: Ping Google & Bing
         run: |
           SITEMAP="https://tech-blog-eight-blush.vercel.app/sitemap.xml"
@@ -80,13 +159,16 @@ jobs:
           curl -s "https://www.bing.com/indexnow?url=$SITEMAP" > /dev/null
           echo "Search engines notified"
 
-  # 5. Track analytics (free Google Analytics)
-  analytics:
+  # 8. Hacker News (manual, but URL is generated)
+  hackernews:
     runs-on: ubuntu-latest
-    if: github.event_name == 'schedule'
     steps:
-      - name: Log daily stats
+      - uses: actions/checkout@v4
+      - name: Generate HN submission link
         run: |
-          echo "Daily run: $(date)"
-          echo "Articles published: $(ls content/posts/*.md | wc -l)"
-          echo "Site: https://tech-blog-eight-blush.vercel.app"
+          LATEST=$(ls -t content/posts/*.md 2>/dev/null | head -1)
+          [ -z "$LATEST" ] && exit 0
+          TITLE=$(grep "^title:" "$LATEST" | head -1 | sed 's/title: "//' | sed 's/"//')
+          SLUG=$(basename "$LATEST" .md)
+          URL="https://tech-blog-eight-blush.vercel.app/posts/${SLUG}/"
+          echo "::notice::Submit to HN: https://news.ycombinator.com/submitlink?u=${URL}&t=${TITLE}"
