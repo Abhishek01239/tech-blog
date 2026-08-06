@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """
 Generate daily tech news articles using Groq API.
-Outputs Hugo-compatible markdown with featured images.
+Images: Pexels API (if key available) → picsum fallback (always free).
 """
 import os
 import json
 import random
+import urllib.request
+import urllib.parse
 from datetime import datetime
 from pathlib import Path
 
@@ -17,26 +19,41 @@ except ImportError:
 
 OUTPUT_DIR = Path(__file__).parent.parent / "content" / "posts"
 
-# Free image sources (Pexels/Unsplash keywords)
-IMAGE_KEYWORDS = {
-    "ai": ["artificial-intelligence", "machine-learning", "neural-network", "robot", "deep-learning"],
-    "startups": ["startup", "technology-office", "coding", "developer", "laptop"],
-    "phones": ["smartphone", "mobile-app", "iphone", "android", "mobile-phone"],
-    "crypto": ["cryptocurrency", "bitcoin", "blockchain", "ethereum", "digital-currency"],
-    "space": ["space", "rocket", "nasa", "satellite", "mars"],
-    "gaming": ["gaming", "esports", "video-game", "controller", "gaming-setup"],
-    "cloud": ["cloud-computing", "server", "data-center", "cloud", "infrastructure"],
-    "cybersecurity": ["cybersecurity", "hacker", "firewall", "encryption", "security"],
-    "programming": ["programming", "code", "developer", "software", "coding"],
-    "general": ["technology", "innovation", "tech", "computer", "digital"],
+# Keyword → search terms mapping for Pexels
+CATEGORY_SEARCH = {
+    "ai": "artificial intelligence robot",
+    "startups": "startup office technology",
+    "phones": "smartphone mobile app",
+    "crypto": "cryptocurrency bitcoin",
+    "space": "space rocket nasa",
+    "gaming": "gaming esports",
+    "cloud": "server data center",
+    "cybersecurity": "cybersecurity hacking",
+    "programming": "programming code",
+    "general": "technology innovation",
 }
 
 def get_image_url(category):
-    """Get a free Pexels image URL for the category."""
-    keywords = IMAGE_KEYWORDS.get(category, IMAGE_KEYWORDS["general"])
-    keyword = random.choice(keywords)
-    # Use picsum for reliable free images (seeded by article content)
-    return f"https://picsum.photos/seed/{keyword}-{random.randint(1,999)}/800/400"
+    """Get image URL: Pexels API first, picsum fallback."""
+    search = CATEGORY_SEARCH.get(category, CATEGORY_SEARCH["general"])
+    
+    # Try Pexels API (free: 33 req/month, needs key)
+    pexels_key = os.environ.get("PEXELS_API_KEY")
+    if pexels_key:
+        try:
+            query = urllib.parse.quote(search)
+            url = f"https://api.pexels.com/v1/search?query={query}&per_page=1"
+            req = urllib.request.Request(url, headers={"Authorization": pexels_key})
+            with urllib.request.urlopen(req, timeout=5) as resp:
+                data = json.loads(resp.read())
+                if data.get("photos"):
+                    return data["photos"][0]["src"]["large"]  # 800px wide
+        except Exception:
+            pass  # Fall through to picsum
+    
+    # Picsum fallback (free, no key, seeded for consistency)
+    seed = f"{category}-{random.randint(1,9999)}"
+    return f"https://picsum.photos/seed/{seed}/800/400"
 
 def get_groq_client():
     api_key = os.environ.get("GROQ_API_KEY")
@@ -52,7 +69,7 @@ def generate_news_article(client, topic=None):
 TOPIC: {topic or 'latest tech news'}
 
 REQUIREMENTS:
-1. Title: Catchy, news-style headline (under 70 characters), include the company/product name if relevant
+1. Title: Catchy, news-style headline (under 70 characters), include company/product name if relevant
 2. Meta description: 150-160 characters, news-style, compelling click
 3. Lead: First paragraph summarizes the news in 2-3 sentences
 4. Body: 400-600 words covering: what happened, why it matters, industry impact
@@ -115,7 +132,6 @@ def main():
     client = get_groq_client()
     num_articles = int(os.environ.get("NUM_ARTICLES", "5"))
     
-    # Hot topics to cycle through
     topics = [
         "latest AI model release or breakthrough",
         "major tech company product launch or announcement",
@@ -129,7 +145,8 @@ def main():
         "regulatory news about big tech companies",
     ]
     
-    print(f"Generating {num_articles} tech news articles...")
+    pexels = "yes" if os.environ.get("PEXELS_API_KEY") else "no"
+    print(f"Generating {num_articles} tech news articles (Pexels: {pexels})...")
     generated = []
     
     for i in range(num_articles):
@@ -147,7 +164,6 @@ def main():
         except Exception as e:
             print(f"  ERROR: {e}")
     
-    # Summary
     summary_path = OUTPUT_DIR.parent.parent / "generation-summary.json"
     summary_path.write_text(json.dumps(generated, indent=2), encoding="utf-8")
     
