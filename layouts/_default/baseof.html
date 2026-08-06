@@ -7,12 +7,25 @@
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ", " }}{{ else }}tech tutorials, programming, python, javascript, AI, ML{{ end }}">
     <meta name="author" content="{{ .Site.Params.author }}">
+    <meta name="robots" content="index, follow">
     <meta property="og:title" content="{{ .Title }}">
     <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
     <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:site_name" content="{{ .Site.Title }}">
     <link rel="canonical" href="{{ .Permalink }}">
     <link rel="stylesheet" href="/css/style.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "{{ .Site.Title }}",
+        "url": "{{ .Site.BaseURL }}",
+        "description": "{{ .Site.Params.description }}"
+    }
+    </script>
+    {{ if .IsPage }}
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -24,6 +37,7 @@
         "dateModified": "{{ .Lastmod.Format "2006-01-02" }}"
     }
     </script>
+    {{ end }}
 </head>
 <body>
     <header class="site-header">
@@ -43,6 +57,8 @@
             <h3>Navigation</h3>
             <ul>
                 <li><a href="/">Home</a></li>
+                <li><a href="/about/">About</a></li>
+                <li><a href="/contact/">Contact</a></li>
             </ul>
             <h3>Topics</h3>
             <ul>
@@ -50,6 +66,12 @@
                 <li><a href="/tags/ai-ml/">AI/ML</a></li>
                 <li><a href="/tags/web-dev/">Web Dev</a></li>
                 <li><a href="/tags/devops/">DevOps</a></li>
+            </ul>
+            <h3>Legal</h3>
+            <ul>
+                <li><a href="/privacy/">Privacy Policy</a></li>
+                <li><a href="/terms/">Terms of Service</a></li>
+                <li><a href="/disclaimer/">Disclaimer</a></li>
             </ul>
             <h3>Recent</h3>
             <ul>
@@ -63,7 +85,14 @@
         </main>
     </div>
     <footer class="site-footer">
-        <p>Content is available under the MIT License.</p>
+        <div class="footer-links">
+            <a href="/about/">About</a> |
+            <a href="/contact/">Contact</a> |
+            <a href="/privacy/">Privacy Policy</a> |
+            <a href="/terms/">Terms of Service</a> |
+            <a href="/disclaimer/">Disclaimer</a>
+        </div>
+        <p>&copy; {{ now.Year }} {{ .Site.Title }} — Content is available under the MIT License.</p>
     </footer>
 </body>
 </html>
