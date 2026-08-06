@@ -113,28 +113,21 @@ jobs:
           URL="https://tech-blog-eight-blush.vercel.app/posts/${SLUG}/"
           MSG=$(printf '<b>%s</b>\n\n%s\n\n<a href="%s">Read more →</a>' "$TITLE" "$DESC" "$URL")
           
-          # Download image first, then upload the file (more reliable)
+          # Send photo URL directly to Telegram (Telegram fetches it server-side,
+          # avoiding GitHub IP + picsum rate-limiting on the runner)
           if [ -n "$IMG" ]; then
-            curl -sL "$IMG" -o /tmp/post_img.jpg
-            if [ -s /tmp/post_img.jpg ]; then
-              curl -sS "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendPhoto" \
-                -F chat_id="${TELEGRAM_CHANNEL_ID}" \
-                -F photo=@/tmp/post_img.jpg \
-                -F caption="$MSG" \
-                -F parse_mode="HTML"
-            else
-              curl -sS "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-                -d chat_id="${TELEGRAM_CHANNEL_ID}" \
-                -d text="$MSG" \
-                -d parse_mode="HTML"
-            fi
-          else
-            curl -sS "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-              -d chat_id="${TELEGRAM_CHANNEL_ID}" \
-              -d text="$MSG" \
-              -d parse_mode="HTML"
+            curl -sS --max-time 60 "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendPhoto" \
+              -F chat_id="${TELEGRAM_CHANNEL_ID}" \
+              -F photo="$IMG" \
+              -F caption="$MSG" \
+              -F parse_mode="HTML" || echo "photo send failed, falling back to text"
           fi
-          echo "Posted to Telegram"
+          # Always send text as backup (so the article reaches the channel)
+          curl -sS --max-time 60 "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d chat_id="${TELEGRAM_CHANNEL_ID}" \
+            -d text="$MSG" \
+            -d parse_mode="HTML" || echo "text send failed"
+          echo "Telegram post attempted"
 
   # 6. LinkedIn (free, 100 posts/day)
   linkedin:
