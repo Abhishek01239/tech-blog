@@ -47,10 +47,10 @@ def main():
     sub = sys.argv[1]
     title = sys.argv[2]
     url = sys.argv[3]
-    username = os.environ["REDDIT_USERNAME"]
-    password = os.environ["REDDIT_PASSWORD"]
-    client_id = os.environ["REDDIT_CLIENT_ID"]
-    secret = os.environ["REDDIT_SECRET"]
+    username = os.environ["REDDIT_USERNAME"].strip()
+    password = os.environ["REDDIT_PASSWORD"].strip()
+    client_id = os.environ["REDDIT_CLIENT_ID"].strip()
+    secret = os.environ["REDDIT_SECRET"].strip()
 
     slug = url.rstrip("/").rsplit("/", 1)[-1]
     posted_file = os.path.join(os.path.dirname(__file__), ".reddit_posted")
