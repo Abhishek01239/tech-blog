@@ -1,0 +1,46 @@
+baseURL = "https://yourusername.github.io/tech-blog/"
+languageCode = "en-us"
+title = "Tech Tutorials Hub"
+theme = ""
+
+[params]
+  description = "Free tech tutorials - Python, AI/ML, Web Dev, DevOps"
+  author = "Your Name"
+  github_repo = "https://github.com/yourusername/tech-blog"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[sitemap]
+  changefreq = "weekly"
+  priority = 0.5
+
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 1
+
+[[menu.main]]
+  name = "Python"
+  url = "/tags/python/"
+  weight = 2
+
+[[menu.main]]
+  name = "AI/ML"
+  url = "/tags/ai-ml/"
+  weight = 3
+
+[[menu.main]]
+  name = "Web Dev"
+  url = "/tags/web-dev/"
+  weight = 4
+
+[[menu.main]]
+  name = "DevOps"
+  url = "/tags/devops/"
+  weight = 5
