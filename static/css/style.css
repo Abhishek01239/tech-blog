@@ -58,6 +58,13 @@ body {
     text-decoration: none;
     letter-spacing: -0.5px;
     white-space: nowrap;
+    transition: var(--transition);
+    transform-style: preserve-3d;
+}
+
+.logo:hover {
+    transform: perspective(400px) rotateY(-3deg) translateZ(4px);
+    text-shadow: 0 2px 8px rgba(59,130,246,0.3);
 }
 
 .logo span {
@@ -132,6 +139,14 @@ body {
     border: 1px solid var(--border);
     padding: 1rem;
     margin-bottom: 0.75rem;
+    transition: var(--transition);
+    transform-style: preserve-3d;
+}
+
+.sidebar-card:hover {
+    transform: perspective(600px) rotateY(-2deg) translateZ(6px);
+    box-shadow: 4px 4px 20px rgba(0,0,0,0.3);
+    border-color: var(--border-light);
 }
 
 .sidebar-card h3 {
@@ -174,11 +189,13 @@ body {
     border: 1px solid var(--border);
     overflow: hidden;
     transition: var(--transition);
+    transform-style: preserve-3d;
 }
 
 .card:hover {
     border-color: var(--border-light);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+    transform: perspective(1000px) rotateX(1deg);
 }
 
 /* === POST CARDS === */
@@ -190,7 +207,11 @@ body {
 
 .post-card:last-child { border-bottom: none; }
 
-.post-card:hover { background: var(--bg-card-hover); }
+.post-card:hover {
+    background: var(--bg-card-hover);
+    transform: perspective(600px) translateZ(4px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
 
 .post-card h2 {
     margin: 0 0 0.5rem;
@@ -231,12 +252,15 @@ body {
     text-decoration: none;
     font-weight: 500;
     transition: var(--transition);
+    transform-style: preserve-3d;
 }
 
 .tag:hover {
     background: var(--accent);
     color: white;
     border-color: var(--accent);
+    transform: perspective(400px) rotateX(-5deg) translateY(-2px) translateZ(4px);
+    box-shadow: 0 4px 12px rgba(59,130,246,0.3);
 }
 
 .post-card p {
@@ -262,6 +286,12 @@ body {
 /* === ARTICLE PAGE === */
 .article-card {
     padding: 2rem;
+    transform-style: preserve-3d;
+    transition: var(--transition);
+}
+
+.article-card:hover {
+    transform: perspective(1200px) rotateX(0.5deg) translateZ(2px);
 }
 
 .post-header { margin-bottom: 1.5rem; }
@@ -420,6 +450,7 @@ body {
     border-bottom: 1px solid var(--border);
     position: relative;
     overflow: hidden;
+    transform-style: preserve-3d;
 }
 
 .hero::before {
@@ -432,6 +463,12 @@ body {
     background: radial-gradient(circle at 30% 50%, rgba(59,130,246,0.08) 0%, transparent 50%),
                 radial-gradient(circle at 70% 50%, rgba(139,92,246,0.06) 0%, transparent 50%);
     pointer-events: none;
+    animation: heroGlow 8s ease-in-out infinite alternate;
+}
+
+@keyframes heroGlow {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(2%, -2%) scale(1.05); }
 }
 
 .hero h1 {
@@ -484,8 +521,8 @@ body {
 .category-card:hover {
     border-color: var(--accent);
     background: var(--bg-card-hover);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(59,130,246,0.1);
+    transform: perspective(800px) translateY(-4px) rotateX(2deg) rotateY(-1deg);
+    box-shadow: 0 8px 30px rgba(59,130,246,0.15), 0 2px 8px rgba(0,0,0,0.3);
 }
 
 .category-card h3 {
