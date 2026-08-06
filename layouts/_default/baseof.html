@@ -8,12 +8,16 @@
     <meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ", " }}{{ else }}tech tutorials, programming, python, javascript, AI, ML{{ end }}">
     <meta name="author" content="{{ .Site.Params.author }}">
     <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0a0a">
     <meta property="og:title" content="{{ .Title }}">
     <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
     <meta property="og:url" content="{{ .Permalink }}">
     <meta property="og:site_name" content="{{ .Site.Title }}">
     <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script>
     <script type="application/ld+json">
@@ -42,7 +46,7 @@
 <body>
     <header class="site-header">
         <div class="container">
-            <a href="/" class="logo">{{ .Site.Title }}</a>
+            <a href="/" class="logo"><span>Tech</span>Tutorials</a>
             <div class="search-box">
                 <form action="https://www.google.com/search" method="GET">
                     <input type="hidden" name="sitesite" value="{{ .Site.BaseURL }}">
@@ -54,31 +58,39 @@
     </header>
     <div class="site-body">
         <nav class="sidebar">
-            <h3>Navigation</h3>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about/">About</a></li>
-                <li><a href="/contact/">Contact</a></li>
-            </ul>
-            <h3>Topics</h3>
-            <ul>
-                <li><a href="/tags/python/">Python</a></li>
-                <li><a href="/tags/ai-ml/">AI/ML</a></li>
-                <li><a href="/tags/web-dev/">Web Dev</a></li>
-                <li><a href="/tags/devops/">DevOps</a></li>
-            </ul>
-            <h3>Legal</h3>
-            <ul>
-                <li><a href="/privacy/">Privacy Policy</a></li>
-                <li><a href="/terms/">Terms of Service</a></li>
-                <li><a href="/disclaimer/">Disclaimer</a></li>
-            </ul>
-            <h3>Recent</h3>
-            <ul>
-                {{ range first 5 .Site.RegularPages }}
-                <li><a href="{{ .Permalink }}">{{ .Title | truncate 30 }}</a></li>
-                {{ end }}
-            </ul>
+            <div class="sidebar-card">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about/">About</a></li>
+                    <li><a href="/contact/">Contact</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-card">
+                <h3>Topics</h3>
+                <ul>
+                    <li><a href="/tags/python/">Python</a></li>
+                    <li><a href="/tags/ai-ml/">AI/ML</a></li>
+                    <li><a href="/tags/web-dev/">Web Dev</a></li>
+                    <li><a href="/tags/devops/">DevOps</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-card">
+                <h3>Legal</h3>
+                <ul>
+                    <li><a href="/privacy/">Privacy Policy</a></li>
+                    <li><a href="/terms/">Terms of Service</a></li>
+                    <li><a href="/disclaimer/">Disclaimer</a></li>
+                </ul>
+            </div>
+            <div class="sidebar-card">
+                <h3>Recent</h3>
+                <ul>
+                    {{ range first 5 .Site.RegularPages }}
+                    <li><a href="{{ .Permalink }}">{{ .Title | truncate 25 }}</a></li>
+                    {{ end }}
+                </ul>
+            </div>
         </nav>
         <main class="content">
             {{ block "main" . }}{{ end }}
@@ -86,13 +98,13 @@
     </div>
     <footer class="site-footer">
         <div class="footer-links">
-            <a href="/about/">About</a> |
-            <a href="/contact/">Contact</a> |
-            <a href="/privacy/">Privacy Policy</a> |
-            <a href="/terms/">Terms of Service</a> |
+            <a href="/about/">About</a>
+            <a href="/contact/">Contact</a>
+            <a href="/privacy/">Privacy</a>
+            <a href="/terms/">Terms</a>
             <a href="/disclaimer/">Disclaimer</a>
         </div>
-        <p>&copy; {{ now.Year }} {{ .Site.Title }} — Content is available under the MIT License.</p>
+        <p>© {{ now.Year }} TechTutorials — Built with Hugo & Groq AI</p>
     </footer>
 </body>
 </html>
