@@ -1,0 +1,92 @@
+name: Marketing Automation
+on:
+  schedule:
+    - cron: '0 9,15,21 * * *'  # 3x daily, 1hr after article generation
+  workflow_dispatch:
+
+jobs:
+  # 1. Post to Twitter/X (free API tier)
+  twitter:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Post latest article to Twitter
+        env:
+          TWITTER_API_KEY: ${{ secrets.TWITTER_API_KEY }}
+          TWITTER_API_SECRET: ${{ secrets.TWITTER_API_SECRET }}
+          TWITTER_ACCESS_TOKEN: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+          TWITTER_ACCESS_SECRET: ${{ secrets.TWITTER_ACCESS_SECRET }}
+        run: |
+          # Get latest article
+          LATEST=$(ls -t content/posts/*.md | head -1)
+          TITLE=$(grep "^title:" "$LATEST" | sed 's/title: "//' | sed 's/"//')
+          URL="https://tech-blog-eight-blush.vercel.app$(echo $LATEST | sed 's|content/posts/||' | sed 's|\.md||' | sed 's|^|/posts/|')"
+          
+          # Post tweet (using Twitter API v2)
+          if [ -n "$TWITTER_API_KEY" ]; then
+            TWEET="📰 $TITLE\n\nRead more: $URL\n\n#TechNews #AI #Programming"
+            echo "Posting: $TWEET"
+            # Twitter API call would go here
+          fi
+
+  # 2. Post to Reddit (free)
+  reddit:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Post to Reddit
+        env:
+          REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
+          REDDIT_SECRET: ${{ secrets.REDDIT_SECRET }}
+          REDDIT_USERNAME: ${{ secrets.REDDIT_USERNAME }}
+          REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
+        run: |
+          LATEST=$(ls -t content/posts/*.md | head -1)
+          TITLE=$(grep "^title:" "$LATEST" | sed 's/title: "//' | sed 's/"//')
+          URL="https://tech-blog-eight-blush.vercel.app$(echo $LATEST | sed 's|content/posts/||' | sed 's|\.md||' | sed 's|^|/posts/|')"
+          
+          if [ -n "$REDDIT_CLIENT_ID" ]; then
+            echo "Posting to Reddit: $TITLE"
+            # Reddit API submission would go here
+          fi
+
+  # 3. Submit to Hacker News (free, no auth needed)
+  hackernews:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Submit to Hacker News
+        run: |
+          LATEST=$(ls -t content/posts/*.md | head -1)
+          TITLE=$(grep "^title:" "$LATEST" | sed 's/title: "//' | sed 's/"//')
+          URL="https://tech-blog-eight-blush.vercel.app$(echo $LATEST | sed 's|content/posts/||' | sed 's|\.md||' | sed 's|^|/posts/|')"
+          
+          # HN submission URL (opens in browser - manual or API)
+          echo "Submit to HN: https://news.ycombinator.com/submitlink?u=$URL&t=$TITLE"
+
+  # 4. Update sitemap + ping search engines
+  seo:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Ping Google & Bing
+        run: |
+          SITEMAP="https://tech-blog-eight-blush.vercel.app/sitemap.xml"
+          curl -s "https://www.google.com/ping?sitemap=$SITEMAP" > /dev/null
+          curl -s "https://www.bing.com/indexnow?url=$SITEMAP" > /dev/null
+          echo "Search engines notified"
+
+  # 5. Track analytics (free Google Analytics)
+  analytics:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule'
+    steps:
+      - name: Log daily stats
+        run: |
+          echo "Daily run: $(date)"
+          echo "Articles published: $(ls content/posts/*.md | wc -l)"
+          echo "Site: https://tech-blog-eight-blush.vercel.app"
