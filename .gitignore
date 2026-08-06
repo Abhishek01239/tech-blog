@@ -15,3 +15,6 @@ Thumbs.db
 
 # Generated articles (keep in git)
 # content/posts/ is tracked
+
+.vercel
+.env*

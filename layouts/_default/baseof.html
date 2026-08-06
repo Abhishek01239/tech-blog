@@ -27,22 +27,43 @@
 </head>
 <body>
     <header class="site-header">
-        <nav class="container">
+        <div class="container">
             <a href="/" class="logo">{{ .Site.Title }}</a>
-            <ul class="nav-links">
-                {{ range .Site.Menus.main }}
-                <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+            <div class="search-box">
+                <form action="https://www.google.com/search" method="GET">
+                    <input type="hidden" name="sitesite" value="{{ .Site.BaseURL }}">
+                    <input type="text" name="q" placeholder="Search tutorials...">
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </header>
+    <div class="site-body">
+        <nav class="sidebar">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a href="/">Home</a></li>
+            </ul>
+            <h3>Topics</h3>
+            <ul>
+                <li><a href="/tags/python/">Python</a></li>
+                <li><a href="/tags/ai-ml/">AI/ML</a></li>
+                <li><a href="/tags/web-dev/">Web Dev</a></li>
+                <li><a href="/tags/devops/">DevOps</a></li>
+            </ul>
+            <h3>Recent</h3>
+            <ul>
+                {{ range first 5 .Site.RegularPages }}
+                <li><a href="{{ .Permalink }}">{{ .Title | truncate 30 }}</a></li>
                 {{ end }}
             </ul>
         </nav>
-    </header>
-    <main class="container">
-        {{ block "main" . }}{{ end }}
-    </main>
+        <main class="content">
+            {{ block "main" . }}{{ end }}
+        </main>
+    </div>
     <footer class="site-footer">
-        <div class="container">
-            <p>&copy; {{ now.Year }} {{ .Site.Title }} - Built with Hugo & GitHub Actions</p>
-        </div>
+        <p>Content is available under the MIT License.</p>
     </footer>
 </body>
 </html>

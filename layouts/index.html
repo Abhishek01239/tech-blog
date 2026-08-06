@@ -1,37 +1,28 @@
 {{ define "main" }}
 <div class="home">
-    <section class="hero">
-        <h1>{{ .Site.Title }}</h1>
-        <p>{{ .Site.Params.description }}</p>
-    </section>
-    <section class="latest-posts">
-        <h2>Latest Tutorials</h2>
-        {{ range first 10 (where .Site.RegularPages "Section" "posts") }}
-        <article class="post-card">
-            <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
-            <div class="post-meta">
-                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-                {{ with .Params.tags }}
-                <div class="tags">
-                    {{ range . }}<a href="/tags/{{ . | urlize }}/" class="tag">{{ . }}</a>{{ end }}
-                </div>
-                {{ end }}
-            </div>
-            <p>{{ .Summary | plainify | truncate 200 }}</p>
-            <a href="{{ .Permalink }}" class="read-more">Read more &rarr;</a>
-        </article>
+    <div class="hero">
+        <h1>Tech Tutorials Hub</h1>
+        <p>A free, open collection of tech tutorials — Python, AI/ML, Web Dev, DevOps.</p>
+    </div>
+    <h2>Contents</h2>
+    <div class="category-grid">
+        {{ range .Site.Taxonomies.tags }}
+        <a href="{{ .Page.Permalink }}" class="category-card">
+            <h3>{{ .Page.Title }}</h3>
+            <p>{{ .Count }} article{{ if gt .Count 1 }}s{{ end }}</p>
+        </a>
         {{ end }}
-    </section>
-    <section class="categories">
-        <h2>Browse by Topic</h2>
-        <div class="category-grid">
-            {{ range .Site.Taxonomies.tags }}
-            <a href="{{ .Page.Permalink }}" class="category-card">
-                <h3>{{ .Page.Title }}</h3>
-                <p>{{ .Count }} articles</p>
-            </a>
-            {{ end }}
+    </div>
+    <h2>Recent Changes</h2>
+    {{ range first 10 (where .Site.RegularPages "Section" "posts") }}
+    <article class="post-card">
+        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+        <div class="post-meta">
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
         </div>
-    </section>
+        <p>{{ .Summary | plainify | truncate 300 }}</p>
+        <a href="{{ .Permalink }}" class="read-more">Read more</a>
+    </article>
+    {{ end }}
 </div>
 {{ end }}

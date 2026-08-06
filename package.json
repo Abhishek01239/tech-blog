@@ -1,0 +1,14 @@
+{
+  "name": "tech-blog",
+  "private": true,
+  "devDependencies": {
+    "hugo-bin": "^0.130.1"
+  },
+  "scripts": {
+    "build": "hugo --minify",
+    "dev": "hugo server"
+  },
+  "allowScripts": {
+    "hugo-bin@0.130.1": true
+  }
+}
