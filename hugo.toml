@@ -1,7 +1,6 @@
 baseURL = "/"
 languageCode = "en-us"
 title = "Tech Tutorials Hub"
-theme = ""
 
 [params]
   description = "Free tech tutorials - Python, AI/ML, Web Dev, DevOps"
