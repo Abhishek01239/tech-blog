@@ -57,8 +57,7 @@ jobs:
             *) SUB="technology" ;;
           esac
           echo "Posting to r/$SUB: $TITLE"
-          # Reddit API submission
-          # python scripts/reddit_post.py "$SUB" "$TITLE" "$URL"
+          python scripts/reddit_post.py "$SUB" "$TITLE" "$URL"
 
   # 3. Dev.to (free, unlimited)
   devto:
