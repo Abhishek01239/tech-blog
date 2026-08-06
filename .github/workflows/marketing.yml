@@ -120,18 +120,21 @@ jobs:
           # Send photo URL directly to Telegram (Telegram fetches it server-side,
           # avoiding GitHub IP + picsum rate-limiting on the runner)
           if [ -n "$IMG" ]; then
-            curl -sS --max-time 60 "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendPhoto" \
+            RESP=$(curl -sS --max-time 60 "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendPhoto" \
               -F chat_id="${TELEGRAM_CHANNEL_ID}" \
               -F photo="$IMG" \
               -F caption="$MSG" \
-              -F parse_mode="HTML" || echo "photo send failed, falling back to text"
+              -F parse_mode="HTML") || true
+            echo "sendPhoto response: $RESP"
+          else
+            echo "No image found in frontmatter"
           fi
           # Always send text as backup (so the article reaches the channel)
-          curl -sS --max-time 60 "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+          RESP2=$(curl -sS --max-time 60 "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
             -d chat_id="${TELEGRAM_CHANNEL_ID}" \
             -d text="$MSG" \
-            -d parse_mode="HTML" || echo "text send failed"
-          echo "Telegram post attempted"
+            -d parse_mode="HTML") || true
+          echo "sendMessage response: $RESP2"
 
   # 6. LinkedIn (free, 100 posts/day)
   linkedin:
