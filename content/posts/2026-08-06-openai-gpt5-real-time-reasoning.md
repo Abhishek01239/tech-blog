@@ -6,7 +6,7 @@ description: "OpenAI announces GPT-5 with breakthrough real-time reasoning, achi
 tags: ["ai", "openai", "llm"]
 categories: ["AI"]
 author: "TechPulse"
-image: "https://picsum.photos/seed/openai-gpt5/800/400"
+image: "/images/openai-gpt5.jpg"
 ---
 
 OpenAI has officially launched GPT-5, its most advanced language model to date, featuring what the company calls "real-time reasoning" — the ability to think through complex problems step-by-step before generating responses.

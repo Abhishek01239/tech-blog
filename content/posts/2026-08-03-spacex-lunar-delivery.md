@@ -6,7 +6,7 @@ description: "SpaceX Starship successfully delivers commercial cargo to the luna
 tags: ["space", "spacex", "lunar"]
 categories: ["Space"]
 author: "TechPulse"
-image: "https://picsum.photos/seed/spacex-starship/800/400"
+image: "/images/spacex-starship.jpg"
 ---
 
 SpaceX has achieved a historic milestone: the first commercial cargo delivery to the lunar surface using its Starship rocket system.

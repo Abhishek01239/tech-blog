@@ -6,7 +6,7 @@ description: "Apple acquires AI startup for $2.1 billion to overhaul Siri with c
 tags: ["ai", "apple", "startups", "acquisition"]
 categories: ["AI"]
 author: "TechPulse"
-image: "https://picsum.photos/seed/apple-ai/800/400"
+image: "/images/apple-ai.jpg"
 ---
 
 Apple has completed its acquisition of NeuralArc, a San Francisco-based AI startup specializing in conversational agents, for $2.1 billion — its largest AI acquisition to date.

@@ -6,7 +6,7 @@ description: "Ethereum's Pectra upgrade goes live, reducing average gas fees by 
 tags: ["crypto", "ethereum", "blockchain"]
 categories: ["Crypto"]
 author: "TechPulse"
-image: "https://picsum.photos/seed/ethereum-pectra/800/400"
+image: "/images/ethereum-pectra.jpg"
 ---
 
 Ethereum's highly anticipated Pectra upgrade has successfully gone live, delivering the most significant performance improvement in the network's history.

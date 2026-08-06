@@ -33,12 +33,15 @@ CATEGORY_SEARCH = {
     "general": "technology innovation",
 }
 
-def get_image_url(category):
-    """Get image URL: Pexels API first, picsum fallback."""
+def get_image_url(category, slug=None):
+    """Return local image path; download from Pexels/picsum into static/images."""
     search = CATEGORY_SEARCH.get(category, CATEGORY_SEARCH["general"])
+    img_name = f"{slug or category}.jpg"
+    img_path = Path(__file__).parent.parent / "static" / "images" / img_name
     
     # Try Pexels API (free: 33 req/month, needs key)
     pexels_key = os.environ.get("PEXELS_API_KEY")
+    downloaded = False
     if pexels_key:
         try:
             query = urllib.parse.quote(search)
@@ -47,13 +50,21 @@ def get_image_url(category):
             with urllib.request.urlopen(req, timeout=5) as resp:
                 data = json.loads(resp.read())
                 if data.get("photos"):
-                    return data["photos"][0]["src"]["large"]  # 800px wide
+                    src = data["photos"][0]["src"]["large"]
+                    urllib.request.urlretrieve(src, img_path)
+                    downloaded = True
         except Exception:
             pass  # Fall through to picsum
     
     # Picsum fallback (free, no key, seeded for consistency)
-    seed = f"{category}-{random.randint(1,9999)}"
-    return f"https://picsum.photos/seed/{seed}/800/400"
+    if not downloaded:
+        try:
+            seed = f"{category}-{random.randint(1,9999)}"
+            urllib.request.urlretrieve(f"https://picsum.photos/seed/{seed}/800/400", img_path)
+        except Exception:
+            return f"/images/{category}.jpg"  # best effort
+    
+    return f"/images/{img_name}"
 
 def get_groq_client():
     api_key = os.environ.get("GROQ_API_KEY")
@@ -109,7 +120,7 @@ def save_article(article):
     filepath = OUTPUT_DIR / filename
     
     category = article.get("category", "general")
-    image_url = get_image_url(category)
+    image_url = get_image_url(category, slug)
     tags_yaml = json.dumps(article.get("tags", [category]))
     
     frontmatter = f"""---

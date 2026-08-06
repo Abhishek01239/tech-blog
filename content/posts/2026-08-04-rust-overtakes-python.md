@@ -6,7 +6,7 @@ description: "Rust programming language overtakes Python in enterprise adoption 
 tags: ["programming", "rust", "python"]
 categories: ["Programming"]
 author: "TechPulse"
-image: "https://picsum.photos/seed/rust-code/800/400"
+image: "/images/rust-code.jpg"
 ---
 
 Rust has officially overtaken Python in enterprise adoption for the first time, according to the 2026 Stack Overflow Developer Survey released this week.

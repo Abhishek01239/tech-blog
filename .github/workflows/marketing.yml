@@ -112,6 +112,10 @@ jobs:
           SLUG=$(basename "$LATEST" .md)
           URL="https://tech-blog-eight-blush.vercel.app/posts/${SLUG}/"
           MSG=$(printf '<b>%s</b>\n\n%s\n\n<a href="%s">Read more →</a>' "$TITLE" "$DESC" "$URL")
+          # Convert local image path to full URL for Telegram
+          case "$IMG" in
+            /*) IMG="https://tech-blog-eight-blush.vercel.app${IMG}" ;;
+          esac
           
           # Send photo URL directly to Telegram (Telegram fetches it server-side,
           # avoiding GitHub IP + picsum rate-limiting on the runner)
