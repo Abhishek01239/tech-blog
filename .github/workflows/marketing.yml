@@ -71,12 +71,10 @@ jobs:
           if [ -z "$DEVTO_API_KEY" ]; then echo "Dev.to key not set, skipping"; exit 0; fi
           LATEST=$(ls -t content/posts/*.md 2>/dev/null | head -1)
           [ -z "$LATEST" ] && exit 0
-          TITLE=$(grep "^title:" "$LATEST" | head -1 | sed 's/title: "//' | sed 's/"//')
+          TITLE=$(grep "^title:" "$LATEST" | head -1 | sed 's/title: "//' | sed 's/"/\n/' | head -1)
           SLUG=$(basename "$LATEST" .md)
           URL="https://tech-blog-eight-blush.vercel.app/posts/${SLUG}/"
-          # Dev.to API: POST /api/articles
-          # curl -H "api-key: $DEVTO_API_KEY" -X POST https://dev.to/api/articles \
-          #   -d '{"title":"'"$TITLE"'","body_markdown":"...","canonical_url":"'"$URL"'","published":true}'
+          python scripts/devto_post.py "$LATEST"
 
   # 4. Hashnode (free, own your audience)
   hashnode:
