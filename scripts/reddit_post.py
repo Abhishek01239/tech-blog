@@ -7,6 +7,7 @@ import time
 import base64
 import urllib.request
 import urllib.parse
+import urllib.error
 
 USER_AGENT = "linux:TechPulseBot:v1.0 (by /u/{uname})"
 
@@ -23,8 +24,15 @@ def get_oauth(client_id, secret, username, password):
         data=data,
         headers={"Authorization": auth, "User-Agent": USER_AGENT.format(uname=username)},
     )
-    with urllib.request.urlopen(req, timeout=30) as resp:
-        body = json.loads(resp.read())
+    try:
+        with urllib.request.urlopen(req, timeout=30) as resp:
+            body = json.loads(resp.read())
+    except urllib.error.HTTPError as e:
+        print("OAuth HTTP", e.code, ":", e.read().decode()[:300])
+        sys.exit(1)
+    if "access_token" not in body:
+        print("OAuth response:", json.dumps(body))
+        sys.exit(1)
     return body["access_token"]
 
 def submit_link(token, username, subreddit, title, url):
