@@ -105,23 +105,31 @@ jobs:
         run: |
           if [ -z "$TELEGRAM_BOT_TOKEN" ]; then echo "Telegram not set, skipping"; exit 0; fi
           LATEST=$(ls -t content/posts/*.md 2>/dev/null | head -1)
-          [ -z "$LATEST" ] && exit 0
-          TITLE=$(grep "^title:" "$LATEST" | head -1 | sed 's/title: "//' | sed 's/"//')
-          DESC=$(grep "^description:" "$LATEST" | head -1 | sed 's/description: "//' | sed 's/"//')
-          IMG=$(grep "^image:" "$LATEST" | head -1 | sed 's/image: "//' | sed 's/"//')
+          [ -z "$LATEST" ] && { echo "No posts found"; exit 0; }
+          TITLE=$(grep "^title:" "$LATEST" | head -1 | sed 's/title: "//' | sed 's/"$//')
+          DESC=$(grep "^description:" "$LATEST" | head -1 | sed 's/description: "//' | sed 's/"$//')
+          IMG=$(grep "^image:" "$LATEST" | head -1 | sed 's/image: "//' | sed 's/"$//')
           SLUG=$(basename "$LATEST" .md)
           URL="https://tech-blog-eight-blush.vercel.app/posts/${SLUG}/"
-          MSG="<b>$TITLE</b>\n\n$DESC\n\n<a href=\"$URL\">Read more →</a>"
+          MSG=$(printf '<b>%s</b>\n\n%s\n\n<a href="%s">Read more →</a>' "$TITLE" "$DESC" "$URL")
           
-          # Send photo with caption
+          # Download image first, then upload the file (more reliable)
           if [ -n "$IMG" ]; then
-            curl -s "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendPhoto" \
-              -F chat_id="${TELEGRAM_CHANNEL_ID}" \
-              -F photo="$IMG" \
-              -F caption="$MSG" \
-              -F parse_mode="HTML"
+            curl -sL "$IMG" -o /tmp/post_img.jpg
+            if [ -s /tmp/post_img.jpg ]; then
+              curl -sS "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendPhoto" \
+                -F chat_id="${TELEGRAM_CHANNEL_ID}" \
+                -F photo=@/tmp/post_img.jpg \
+                -F caption="$MSG" \
+                -F parse_mode="HTML"
+            else
+              curl -sS "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+                -d chat_id="${TELEGRAM_CHANNEL_ID}" \
+                -d text="$MSG" \
+                -d parse_mode="HTML"
+            fi
           else
-            curl -s "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            curl -sS "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
               -d chat_id="${TELEGRAM_CHANNEL_ID}" \
               -d text="$MSG" \
               -d parse_mode="HTML"
