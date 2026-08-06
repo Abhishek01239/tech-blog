@@ -1,10 +1,10 @@
 baseURL = "/"
 languageCode = "en-us"
-title = "Tech Tutorials Hub"
+title = "TechPulse"
 
 [params]
-  description = "Free tech tutorials - Python, AI/ML, Web Dev, DevOps"
-  author = "Your Name"
+  description = "Daily tech news — AI, startups, products, and what's shaping the future."
+  author = "TechPulse"
   github_repo = "https://github.com/yourusername/tech-blog"
 
 [markup]
@@ -25,21 +25,21 @@ title = "Tech Tutorials Hub"
   weight = 1
 
 [[menu.main]]
-  name = "Python"
-  url = "/tags/python/"
+  name = "AI"
+  url = "/tags/ai/"
   weight = 2
 
 [[menu.main]]
-  name = "AI/ML"
-  url = "/tags/ai-ml/"
+  name = "Startups"
+  url = "/tags/startups/"
   weight = 3
 
 [[menu.main]]
-  name = "Web Dev"
-  url = "/tags/web-dev/"
+  name = "Crypto"
+  url = "/tags/crypto/"
   weight = 4
 
 [[menu.main]]
-  name = "DevOps"
-  url = "/tags/devops/"
+  name = "Programming"
+  url = "/tags/programming/"
   weight = 5

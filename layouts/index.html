@@ -1,37 +1,34 @@
 {{ define "main" }}
 <div class="home">
     <div class="hero">
-        <h1>Learn <span>Programming</span><br>through code</h1>
-        <p>Free tutorials covering Python, AI/ML, Web Dev, and DevOps — with real code examples and hands-on projects.</p>
-    </div>
-
-    <div class="card">
-        <div class="section-title">Browse by topic</div>
-        <div class="category-grid">
-            {{ range .Site.Taxonomies.tags }}
-            <a href="{{ .Page.Permalink }}" class="category-card">
-                <h3>{{ .Page.Title }}</h3>
-                <p>{{ .Count }} article{{ if gt .Count 1 }}s{{ end }}</p>
-            </a>
-            {{ end }}
-        </div>
+        <h1><span>TechPulse</span></h1>
+        <p>Daily tech news — AI, startups, products, and what's shaping the future.</p>
     </div>
 
     <div class="card" style="margin-top: 1rem;">
-        <div class="section-title">Recent tutorials</div>
+        <div class="section-title">Latest stories</div>
         {{ range first 10 (where .Site.RegularPages "Section" "posts") }}
-        <article class="post-card">
-            <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-            <div class="post-meta">
-                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-                {{ with .Params.tags }}
-                <div class="tags">
-                    {{ range first 3 . }}<a href="/tags/{{ . | urlize }}/" class="tag">{{ . }}</a>{{ end }}
-                </div>
-                {{ end }}
+        <article class="news-card">
+            {{ with .Params.image }}
+            <div class="news-thumb">
+                <a href="{{ $.Permalink }}">
+                    <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+                </a>
             </div>
-            <p>{{ .Summary | plainify | truncate 200 }}</p>
-            <a href="{{ .Permalink }}" class="read-more">Read tutorial →</a>
+            {{ end }}
+            <div class="news-body">
+                <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                <div class="post-meta">
+                    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+                    {{ with .Params.tags }}
+                    <div class="tags">
+                        {{ range first 2 . }}<a href="/tags/{{ . | urlize }}/" class="tag">{{ . }}</a>{{ end }}
+                    </div>
+                    {{ end }}
+                </div>
+                <p>{{ .Summary | plainify | truncate 160 }}</p>
+                <a href="{{ .Permalink }}" class="read-more">Read more →</a>
+            </div>
         </article>
         {{ end }}
     </div>

@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-Generate SEO-optimized tech tutorials using Groq API.
-Outputs Hugo-compatible markdown with proper frontmatter.
+Generate daily tech news articles using Groq API.
+Outputs Hugo-compatible markdown with featured images.
 """
 import os
 import json
 import random
-from datetime import datetime, timedelta
+from datetime import datetime
 from pathlib import Path
 
 try:
@@ -15,83 +15,28 @@ except ImportError:
     print("pip install groq")
     exit(1)
 
-# --- Config ---
 OUTPUT_DIR = Path(__file__).parent.parent / "content" / "posts"
-TOPICS = {
-    "python": [
-        "Python list comprehensions",
-        "asyncio for beginners",
-        "FastAPI REST API tutorial",
-        "pandas data analysis",
-        "Python decorators explained",
-        "type hints in Python",
-        "Python context managers",
-        "unit testing with pytest",
-        "virtual environments guide",
-        "Python generators and iterators",
-        "SQLAlchemy ORM tutorial",
-        "Pydantic data validation",
-        "Python logging best practices",
-        "argparse CLI tools",
-        "Python packaging with pyproject.toml",
-    ],
-    "ai-ml": [
-        "intro to machine learning",
-        "neural networks from scratch",
-        "Hugging Face transformers tutorial",
-        "fine-tuning LLMs",
-        "RAG pipeline tutorial",
-        "LangChain basics",
-        "vector databases explained",
-        "prompt engineering guide",
-        "image classification with PyTorch",
-        "NLP sentiment analysis",
-        "building AI agents",
-        "Groq API tutorial",
-        "embedding models comparison",
-        "LLM evaluation metrics",
-    ],
-    "web-dev": [
-        "HTML CSS basics",
-        "JavaScript ES6 features",
-        "React hooks tutorial",
-        "Next.js app router",
-        "Tailwind CSS guide",
-        "REST API design",
-        "GraphQL vs REST",
-        "Web authentication JWT",
-        "CSS grid layout",
-        "TypeScript for beginners",
-        "Vite build tool",
-        " Progressive Web Apps",
-        "WebSocket tutorial",
-        "Docker for web developers",
-    ],
-    "devops": [
-        "Docker basics",
-        "Kubernetes introduction",
-        "GitHub Actions CI CD",
-        "Linux command line",
-        "nginx reverse proxy",
-        "AWS EC2 tutorial",
-        "Terraform basics",
-        "Prometheus monitoring",
-        "bash scripting guide",
-        "SSH tunneling",
-        "Git branching strategies",
-        "PostgreSQL tutorial",
-        "Redis caching guide",
-        "SSL TLS certificates",
-    ],
+
+# Free image sources (Pexels/Unsplash keywords)
+IMAGE_KEYWORDS = {
+    "ai": ["artificial-intelligence", "machine-learning", "neural-network", "robot", "deep-learning"],
+    "startups": ["startup", "technology-office", "coding", "developer", "laptop"],
+    "phones": ["smartphone", "mobile-app", "iphone", "android", "mobile-phone"],
+    "crypto": ["cryptocurrency", "bitcoin", "blockchain", "ethereum", "digital-currency"],
+    "space": ["space", "rocket", "nasa", "satellite", "mars"],
+    "gaming": ["gaming", "esports", "video-game", "controller", "gaming-setup"],
+    "cloud": ["cloud-computing", "server", "data-center", "cloud", "infrastructure"],
+    "cybersecurity": ["cybersecurity", "hacker", "firewall", "encryption", "security"],
+    "programming": ["programming", "code", "developer", "software", "coding"],
+    "general": ["technology", "innovation", "tech", "computer", "digital"],
 }
 
-# SEO keyword templates
-SEO_TEMPLATES = {
-    "python": "python tutorial, {topic}, learn python, python for beginners, {topic} guide",
-    "ai-ml": "machine learning tutorial, {topic}, AI tutorial, {topic} guide, artificial intelligence",
-    "web-dev": "web development tutorial, {topic}, {topic} guide, frontend development",
-    "devops": "devops tutorial, {topic}, {topic} guide, system administration",
-}
+def get_image_url(category):
+    """Get a free Pexels image URL for the category."""
+    keywords = IMAGE_KEYWORDS.get(category, IMAGE_KEYWORDS["general"])
+    keyword = random.choice(keywords)
+    # Use picsum for reliable free images (seeded by article content)
+    return f"https://picsum.photos/seed/{keyword}-{random.randint(1,999)}/800/400"
 
 def get_groq_client():
     api_key = os.environ.get("GROQ_API_KEY")
@@ -100,27 +45,28 @@ def get_groq_client():
         exit(1)
     return Groq(api_key=api_key)
 
-def generate_article(client, topic, category):
-    """Generate a full SEO-optimized article using Groq."""
-    seo_keywords = SEO_TEMPLATES[category].format(topic=topic)
-    
-    prompt = f"""Write a comprehensive, SEO-optimized tech tutorial about: {topic}
+def generate_news_article(client, topic=None):
+    """Generate a tech news article using Groq."""
+    prompt = f"""Write a tech news article about a recent development in technology.
+
+TOPIC: {topic or 'latest tech news'}
 
 REQUIREMENTS:
-1. Title: Clear, includes main keyword, under 60 characters
-2. Meta description: 150-160 characters, includes keywords, compelling
-3. Structure: Use H2 (##) and H3 (###) headings naturally
-4. Length: 1500-2500 words
-5. Include: Code examples (Python/bash/JS as appropriate), explanations, best practices
-6. Tone: Friendly, beginner-to-intermediate, practical
-7. SEO: Naturally include these keywords: {seo_keywords}
-8. Add a "Key Takeaways" section at the end
-9. Use markdown formatting: code blocks, lists, bold, blockquotes
+1. Title: Catchy, news-style headline (under 70 characters), include the company/product name if relevant
+2. Meta description: 150-160 characters, news-style, compelling click
+3. Lead: First paragraph summarizes the news in 2-3 sentences
+4. Body: 400-600 words covering: what happened, why it matters, industry impact
+5. Tone: Journalistic, factual, engaging — like TechCrunch or The Verge
+6. Use H2 (##) subheadings for major points
+7. Include specific details: company names, dates, numbers, quotes if applicable
+8. End with "What's Next" or "Impact" section
+9. SEO keywords: tech news, {topic or 'technology'}, startup, AI, innovation
 
 OUTPUT FORMAT (strict JSON):
 {{
-    "title": "article title (under 60 chars)",
+    "title": "headline (under 70 chars)",
     "description": "meta description (150-160 chars)",
+    "category": "ai|startups|phones|crypto|space|gaming|cloud|cybersecurity|programming|general",
     "tags": ["tag1", "tag2", "tag3"],
     "content": "full markdown article content"
 }}"""
@@ -129,23 +75,24 @@ OUTPUT FORMAT (strict JSON):
         model="llama-3.3-70b-versatile",
         messages=[{"role": "user", "content": prompt}],
         temperature=0.7,
-        max_tokens=4000,
+        max_tokens=2000,
         response_format={"type": "json_object"},
     )
     
     return json.loads(response.choices[0].message.content)
 
 def slugify(text):
-    """Convert text to URL-friendly slug."""
-    return text.lower().strip().replace(" ", "-").replace("/", "-")
+    return text.lower().strip().replace(" ", "-").replace("/", "-")[:60]
 
-def save_article(article, category):
-    """Save article as Hugo markdown with frontmatter."""
+def save_article(article):
+    """Save article as Hugo markdown with featured image."""
     today = datetime.now().strftime("%Y-%m-%d")
     slug = slugify(article["title"])
     filename = f"{today}-{slug}.md"
     filepath = OUTPUT_DIR / filename
     
+    category = article.get("category", "general")
+    image_url = get_image_url(category)
     tags_yaml = json.dumps(article.get("tags", [category]))
     
     frontmatter = f"""---
@@ -154,8 +101,9 @@ date: {today}
 draft: false
 description: "{article['description']}"
 tags: {tags_yaml}
-categories: ["{category.replace('-', '/').title()}"]
-author: "{os.environ.get('BLOG_AUTHOR', 'Tech Tutorials Hub')}"
+categories: ["{category.title()}"]
+author: "{os.environ.get('BLOG_AUTHOR', 'TechPulse')}"
+image: "{image_url}"
 ---"""
     
     content = f"{frontmatter}\n\n{article['content']}"
@@ -165,41 +113,49 @@ author: "{os.environ.get('BLOG_AUTHOR', 'Tech Tutorials Hub')}"
 
 def main():
     client = get_groq_client()
-    num_articles = int(os.environ.get("NUM_ARTICLES", "3"))
+    num_articles = int(os.environ.get("NUM_ARTICLES", "5"))
     
-    print(f"Generating {num_articles} articles...")
+    # Hot topics to cycle through
+    topics = [
+        "latest AI model release or breakthrough",
+        "major tech company product launch or announcement",
+        "startup funding round or acquisition",
+        "open source project milestone or release",
+        "cybersecurity incident or vulnerability discovery",
+        "cloud computing service update or new feature",
+        "mobile app or phone technology update",
+        "space technology or satellite launch",
+        "programming language or developer tool release",
+        "regulatory news about big tech companies",
+    ]
+    
+    print(f"Generating {num_articles} tech news articles...")
     generated = []
     
-    # Spread across categories
-    categories = list(TOPICS.keys())
-    
     for i in range(num_articles):
-        category = categories[i % len(categories)]
-        topic = random.choice(TOPICS[category])
-        
-        print(f"\n[{i+1}/{num_articles}] {category}: {topic}")
+        topic = random.choice(topics)
+        print(f"\n[{i+1}/{num_articles}] {topic[:60]}...")
         
         try:
-            article = generate_article(client, topic, category)
-            path = save_article(article, category)
+            article = generate_news_article(client, topic)
+            path = save_article(article)
             generated.append({
                 "title": article["title"],
-                "category": category,
+                "category": article.get("category", "general"),
                 "file": str(path),
             })
         except Exception as e:
             print(f"  ERROR: {e}")
     
-    # Write summary for GitHub Actions
+    # Summary
     summary_path = OUTPUT_DIR.parent.parent / "generation-summary.json"
     summary_path.write_text(json.dumps(generated, indent=2), encoding="utf-8")
     
     print(f"\nDone! Generated {len(generated)} articles.")
     
-    # Print for GitHub Step Summary
     if os.environ.get("GITHUB_STEP_SUMMARY"):
         with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as f:
-            f.write("## Generated Articles\n\n")
+            f.write("## Generated Tech News Articles\n\n")
             for g in generated:
                 f.write(f"- **{g['title']}** ({g['category']})\n")
 

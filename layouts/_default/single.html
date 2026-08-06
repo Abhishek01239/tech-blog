@@ -1,16 +1,34 @@
 {{ define "main" }}
 <article class="post">
-    <h1>{{ .Title }}</h1>
-    <div class="post-meta">
-        <time datetime="{{ .Date.Format "2006-01-02" }}">From {{ .Site.Title }}, {{ .Date.Format "January 2, 2006" }}</time>
-        {{ with .Params.tags }}
-        <div class="tags">
-            {{ range . }}<a href="/tags/{{ . | urlize }}/" class="tag">{{ . }}</a>{{ end }}
-        </div>
-        {{ end }}
+    {{ with .Params.image }}
+    <div class="article-hero">
+        <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
     </div>
-    <div class="post-content">
-        {{ .Content }}
+    {{ end }}
+    <div class="article-card">
+        <div class="post-header">
+            <h1>{{ .Title }}</h1>
+            <div class="post-meta">
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+                {{ with .Params.author }}<span>by {{ . }}</span>{{ end }}
+                {{ with .Params.tags }}
+                <div class="tags">
+                    {{ range . }}<a href="/tags/{{ . | urlize }}/" class="tag">{{ . }}</a>{{ end }}
+                </div>
+                {{ end }}
+            </div>
+        </div>
+        <div class="post-content">
+            {{ .Content }}
+        </div>
+        <div class="post-footer">
+            <div class="post-tags">
+                {{ with .Params.tags }}
+                <strong>Tags:</strong> {{ range . }}<a href="/tags/{{ . | urlize }}/" class="tag">{{ . }}</a> {{ end }}
+                {{ end }}
+            </div>
+            <a href="/">&larr; Back to TechPulse</a>
+        </div>
     </div>
 </article>
 {{ end }}
