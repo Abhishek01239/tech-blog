@@ -1,13 +1,13 @@
 name: Generate Articles
 on:
   schedule:
-    - cron: '0 8 * * *'  # Daily at 8am UTC
+    - cron: '0 8,14,20 * * *'  # 3x daily: 8am, 2pm, 8pm UTC
   workflow_dispatch:
     inputs:
       num_articles:
         description: 'Number of articles to generate'
         required: false
-        default: '3'
+        default: '5'
 
 jobs:
   generate:
