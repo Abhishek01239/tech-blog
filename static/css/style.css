@@ -396,6 +396,30 @@ body {
     text-decoration-color: var(--accent);
 }
 
+.post-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    display: block;
+    margin: 1rem 0;
+}
+
+/* Long URLs / code tokens never overflow the card on any screen. */
+.post-content {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+.post-content code {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+.post-content iframe,
+.post-content embed,
+.post-content video {
+    max-width: 100%;
+    display: block;
+}
+
 .post-content strong { font-weight: 600; color: var(--text); }
 
 .post-content table {
@@ -623,35 +647,139 @@ body {
 
 .footer-links a:hover { color: var(--accent); }
 
-/* === RESPONSIVE === */
-@media (max-width: 768px) {
+/* === RESPONSIVE (width + height across all devices) ===
+   Breakpoints: ≤1200 (laptop), ≤1024 (tablet), ≤820 (small tablet),
+   ≤640 (large phone/portrait), ≤420 (small phone), plus short-height
+   landscape handling. */
+
+/* Fluid base: type + spacing scale with viewport width; caps to avoid
+   turning silly on very wide screens. */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+/* Tablet / small laptop: tuck the sidebar, shrink fixed thumbs. */
+@media (max-width: 1024px) {
+    .sidebar { width: 180px; min-width: 180px; }
+    .news-thumb { width: 160px; min-width: 160px; }
+    .site-header .container { gap: 1rem; }
+}
+
+/* Small tablet / large phone in portrait: sidebar becomes a top scroll
+   row, news cards keep thumb+text but smaller, fluid type kicks in. */
+@media (max-width: 820px) {
     .site-body {
         flex-direction: column;
-        padding: 1rem;
-        gap: 1rem;
+        padding: 0.75rem;
+        gap: 0.75rem;
     }
     .sidebar {
         width: 100%;
-        min-width: 100%;
+        min-width: 0;
         position: static;
         max-height: none;
         display: flex;
         gap: 0.5rem;
         overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
         padding-bottom: 0.5rem;
+        scrollbar-width: thin;
     }
     .sidebar-card {
-        min-width: 140px;
+        min-width: 150px;
+        max-width: 200px;
         margin-bottom: 0;
         flex-shrink: 0;
     }
+    .sidebar-card h3 { font-size: 0.6rem; }
     .content { min-width: 0; }
-    .article-card { padding: 1.25rem; }
-    .post-header h1 { font-size: 1.5rem; }
-    .hero { padding: 1.5rem; }
-    .hero h1 { font-size: 1.5rem; }
-    .site-header .container { padding: 0 1rem; }
+
+    /* Fluid type: scale headings with viewport. */
+    .hero h1 { font-size: clamp(1.5rem, 5vw, 2rem); }
+    .post-header h1 { font-size: clamp(1.4rem, 4.5vw, 2rem); }
+    .article-card { padding: 1.1rem; }
+    .hero { padding: 1.25rem; }
+
+    .news-card { gap: 0.9rem; padding: 1rem; }
+    .news-thumb { width: 140px; min-width: 140px; }
+}
+
+/* Portrait phone / very small tablet: single column for news cards.
+   Thumbnail becomes full-width top image instead of side rail. */
+@media (max-width: 640px) {
+    .site-header .container { height: 56px; padding: 0 0.75rem; gap: 0.6rem; }
+    .logo { font-size: 1rem; }
     .search-box { max-width: 100%; }
+    .search-box input { font-size: 12px; }
+
+    .news-card { flex-direction: column; }
+    .news-thumb {
+        width: 100%;
+        min-width: 0;
+        aspect-ratio: 16/9;
+    }
+    .news-body h2 { font-size: 1rem; }
+    .news-body p { font-size: 0.85rem; }
+
+    .post-content {
+        font-size: 0.95rem;
+        line-height: 1.75;
+    }
+    .post-content pre {
+        font-size: 0.78rem;
+        padding: 1rem 0.9rem;
+        margin: 0 -0.25rem; /* let code breathe on screen edges */
+        border-radius: 8px;
+    }
+    .post-content table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        white-space: nowrap;
+    }
+    .post-meta { flex-wrap: wrap; }
+    .tags { flex-wrap: wrap; }
+
+    .ad-slot { padding: 0.75rem 1rem; min-height: 80px; }
+
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 0.75rem 1.25rem;
+        line-height: 1.8;
+    }
+}
+
+/* Small phone: maximise usable width, keep everything from overflowing. */
+@media (max-width: 420px) {
+    .site-body { padding: 0.5rem; }
+    .news-card { padding: 0.75rem; }
+    .news-thumb { border-radius: 10px; }
+    .post-card { padding: 1rem; }
+    .post-card h2 { font-size: 1rem; }
+    .article-card { padding: 1rem; }
+    .hero { padding: 1rem; }
+    .hero p { font-size: 0.9rem; }
+    .search-box input { font-size: 13px; padding: 0.5rem 0.8rem; }
+    .sidebar-card { min-width: 130px; }
+    .site-footer { padding: 1.25rem 0.75rem; }
+}
+
+/* Short viewports (landscape phones, small-height laptops): keep the
+   sidebar scrollable and hero from dominating the vertical space. */
+@media (max-height: 600px) {
+    .site-header .container { height: 52px; }
+    .hero { padding: 1rem; }
+    .site-body { min-height: 0; }
+    .sidebar { max-height: calc(100vh - 70px); }
+}
+
+/* Respect dynamic viewport units so sticky elements don't jump when the
+   mobile URL bar shows/hides. */
+@supports (height: 100dvh) {
+    .site-body { min-height: 80dvh; }
+    .sidebar { max-height: calc(100dvh - 92px); }
+    .ad-slot { min-height: calc(90px); }
+}
+@supports (height: 100svh) {
+    .site-body { min-height: 80svh; }
 }
 
 /* === SCROLLBAR === */
