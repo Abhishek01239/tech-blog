@@ -104,6 +104,23 @@ jobs:
           python scripts/devto_post.py "$LATEST" && \
             python scripts/mark_done.py post devto "$SLUG"
 
+      # ---- Hashnode (free, no bot wall) ----
+      - name: Cross-post to Hashnode
+        env:
+          HASHNODE_ACCESS_TOKEN: ${{ secrets.HASHNODE_ACCESS_TOKEN }}
+          HASHNODE_PUBLICATION: ${{ secrets.HASHNODE_PUBLICATION }}
+        run: |
+          if [ -z "$HASHNODE_ACCESS_TOKEN" ]; then echo "Hashnode token not set, skipping"; exit 0; fi
+          LATEST=$(ls -t content/posts/*.md 2>/dev/null | head -1)
+          [ -z "$LATEST" ] && exit 0
+          SLUG=$(basename "$LATEST" .md)
+          if ! python scripts/mark_done.py check hashnode "$SLUG"; then
+            echo "Already posted $SLUG to Hashnode, skipping"
+            exit 0
+          fi
+          python scripts/hashnode_post.py "$LATEST" && \
+            python scripts/mark_done.py post hashnode "$SLUG"
+
       # ---- Commit the dedup registry back to the repo so it persists ----
       - name: Commit posting registry
         run: |
