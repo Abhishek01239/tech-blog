@@ -1,0 +1,16 @@
+{{/* Full-width cinematic quote band */}}
+{{ $quote := "Technology is best when it brings people together." }}
+{{ $author := "— Matt Mullenweg" }}
+{{ $qimg := "/images/spacex-starship.jpg" }}
+<section class="section-tight">
+    <div class="container">
+        <div class="quote-band reveal">
+            <img class="qbg" src="{{ $qimg }}" alt="" aria-hidden="true" loading="lazy" width="1600" height="900">
+            <div class="quote-inner">
+                <span class="quote-mark" aria-hidden="true">“</span>
+                <blockquote>{{ $quote }}</blockquote>
+                <span class="quote-auth">{{ $author }}</span>
+            </div>
+        </div>
+    </div>
+</section>

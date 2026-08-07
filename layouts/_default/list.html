@@ -1,20 +1,20 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
-<div class="post-list">
-    {{ range .Pages }}
-    <article class="post-card">
-        <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-        <div class="post-meta">
-            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-            {{ with .Params.tags }}
-            <div class="tags">
-                {{ range . }}<a href="/tags/{{ . | urlize }}/" class="tag">{{ . }}</a>{{ end }}
-            </div>
-            {{ end }}
-        </div>
-        <p>{{ .Summary | plainify | truncate 300 }}</p>
-        <a href="{{ .Permalink }}" class="read-more">Read more</a>
-    </article>
+<div class="container">
+    <div class="page-head reveal">
+        <span class="eyebrow">{{ if eq .Kind "taxonomy" }}Browse{{ else }}Stories{{ end }}</span>
+        <h1>{{ .Title }}</h1>
+        <p>{{ with .Description }}{{ . }}{{ else }}Stories curated for {{ .Title }}{{ end }}</p>
+    </div>
+    <div class="featured-grid reveal-stagger">
+        {{ range .Pages }}
+        {{ partial "card.html" (dict "page" . "size" "lg") }}
+        {{ end }}
+    </div>
+    {{ if gt (len .Pages) 6 }}
+    <div class="pagination" style="display:flex; justify-content:center; gap:1rem; margin:3.5rem 0 2rem;">
+        {{ if .Paginator.HasPrev }}<a class="btn btn-outline" href="{{ .Paginator.Prev.URL }}">← Newer</a>{{ end }}
+        {{ if .Paginator.HasNext }}<a class="btn btn-outline" href="{{ .Paginator.Next.URL }}">Older →</a>{{ end }}
+    </div>
     {{ end }}
 </div>
 {{ end }}

@@ -1,0 +1,47 @@
+{{/* ===== Editorial story card =====
+   Usage: {{ partial "card.html" (dict "page" . "size" "lg|sm") }}
+   size: lg = featured (big image + big title), sm = compact (latest list)
+*/}}
+{{ $page := .page }}
+{{ $size := .size | default "lg" }}
+{{ $img := $page.Params.image | default "/images/fallback.svg" }}
+{{ $cat := index ($page.Params.categories | default slice) 0 | default "Tech" }}
+{{ $desc := $page.Description | default ($page.Summary | plainify | truncate 140) }}
+
+{{ if eq $size "lg" }}
+<a class="card featured-card reveal" href="{{ $page.Permalink }}">
+    <div class="fc-img">
+        <img class="card-img" src="{{ $img }}" alt="{{ $page.Title }}" loading="lazy"
+             width="800" height="500" data-img="{{ $img }}"
+             onerror="this.onerror=null;fallbackImg(this)">
+    </div>
+    <div class="fc-body">
+        <span class="fc-cat">{{ $cat }}</span>
+        <h3>{{ $page.Title }}</h3>
+        <p>{{ $desc }}</p>
+        <div class="fc-meta">
+            <time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format "Jan 2, 2006" }}</time>
+            <span class="dot"></span>
+            <span>{{ $page.ReadingTime }} min read</span>
+        </div>
+    </div>
+</a>
+{{ else }}
+<a class="latest-item reveal" href="{{ $page.Permalink }}">
+    <div class="latest-thumb">
+        <img src="{{ $img }}" alt="{{ $page.Title }}" loading="lazy"
+             width="296" height="185" data-img="{{ $img }}"
+             onerror="this.onerror=null;fallbackImg(this)">
+    </div>
+    <div class="latest-body">
+        <span class="fc-cat">{{ $cat }}</span>
+        <h3>{{ $page.Title }}</h3>
+        <p>{{ $desc }}</p>
+        <div class="fc-meta">
+            <time datetime="{{ $page.Date.Format "2006-01-02" }}">{{ $page.Date.Format "Jan 2, 2006" }}</time>
+            <span class="dot"></span>
+            <span>{{ $page.ReadingTime }} min read</span>
+        </div>
+    </div>
+</a>
+{{ end }}

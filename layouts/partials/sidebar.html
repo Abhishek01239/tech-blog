@@ -1,0 +1,31 @@
+{{/* ===== Sticky sidebar: newsletter + popular topics ===== */}}
+<aside class="sidebar" aria-label="Sidebar">
+    <div class="newsletter-card">
+        <span class="nc-eyebrow">The Briefing</span>
+        <h3>Signal, not noise.</h3>
+        <p>One essential tech story in your inbox every morning. Free, forever.</p>
+        <form class="nl-form" action="#" onsubmit="return false" aria-label="Newsletter signup">
+            <input type="email" name="email" placeholder="Your email address" aria-label="Email address" required>
+            <button type="submit" aria-label="Subscribe">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+        </form>
+    </div>
+    <div class="popular-card">
+        <h4>Popular Topics</h4>
+        <div class="popular-tags">
+            {{ $counts := dict }}
+            {{ range .Site.RegularPages }}
+                {{ range .Params.tags }}
+                    {{ $c := index $counts . | default 0 }}
+                    {{ $counts = merge $counts (dict . (add $c 1)) }}
+                {{ end }}
+            {{ end }}
+            {{ $sorted := slice }}
+            {{ range $tag, $count := $counts }}{{ $sorted = $sorted | append (dict "name" $tag "count" $count) }}{{ end }}
+            {{ range first 10 (sort $sorted "count" "desc") }}
+            <a href="/tags/{{ .name | urlize }}/">{{ .name }}</a>
+            {{ end }}
+        </div>
+    </div>
+</aside>

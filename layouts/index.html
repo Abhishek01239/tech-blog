@@ -1,43 +1,84 @@
 {{ define "main" }}
-<div class="home">
-    <div class="hero">
-        <h1><span>TechPulse</span></h1>
-        <p>Daily tech news — AI, startups, products, and what's shaping the future.</p>
-    </div>
+{{ $posts := where .Site.RegularPages "Section" "posts" }}
+{{ $featured := first 3 $posts }}
+{{ $latest := first 6 (after 3 $posts) }}
 
-    <div class="card" style="margin-top: 1rem;">
-        <div class="section-title">Latest stories</div>
-        {{ range first 10 (where .Site.RegularPages "Section" "posts") }}
-        <article class="news-card">
-            <div class="news-thumb">
-                <a href="{{ .Permalink }}">
-                    {{ $img := .Params.image }}
-                    {{ if not $img }}{{ $img = "/images/fallback.svg" }}{{ end }}
-                    <img
-                        src="{{ $img }}"
-                        alt="{{ .Title }}"
-                        loading="lazy"
-                        width="800" height="450"
-                        data-img="{{ $img }}"
-                        onerror="this.onerror=null;fallbackImg(this)"
-                    >
-                </a>
-            </div>
-            <div class="news-body">
-                <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-                <div class="post-meta">
-                    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
-                    {{ with .Params.tags }}
-                    <div class="tags">
-                        {{ range first 2 . }}<a href="/tags/{{ . | urlize }}/" class="tag">{{ . }}</a>{{ end }}
-                    </div>
-                    {{ end }}
+{{/* ============ HERO ============ */}}
+<section class="hero">
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-copy reveal">
+                <span class="hero-cat">The Daily Tech Edit</span>
+                <h1>Where the future <em>unfolds</em> daily.</h1>
+                <p class="hero-desc">{{ .Site.Params.description }}</p>
+                <div class="hero-cta">
+                    <a href="#stories" class="btn btn-outline">Explore stories</a>
+                    <a href="/tags/ai/" class="btn btn-outline">AI &amp; Machine Learning</a>
                 </div>
-                <p>{{ .Summary | plainify | truncate 160 }}</p>
-                <a href="{{ .Permalink }}" class="read-more">Read more →</a>
             </div>
-        </article>
-        {{ end }}
+            <div class="hero-art reveal">
+                <span class="hero-accent" aria-hidden="true"></span>
+                {{ with (index $featured 0) }}
+                {{ $img := .Params.image | default "/images/fallback.svg" }}
+                <div class="hero-img-wrap">
+                    <img src="{{ $img }}" alt="{{ .Title }}" loading="eager" width="800" height="900"
+                         data-img="{{ $img }}" onerror="this.onerror=null;fallbackImg(this)">
+                </div>
+                {{ end }}
+            </div>
+        </div>
     </div>
-</div>
+</section>
+
+{{/* ============ FEATURED STORIES ============ */}}
+<section class="section" id="stories">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">Editors' picks</span>
+            <h2>Featured Stories</h2>
+            <p>Hand-selected coverage of the breakthroughs worth your attention.</p>
+        </div>
+        <div class="featured-grid reveal-stagger">
+            {{ range $featured }}{{ partial "card.html" (dict "page" . "size" "lg") }}{{ end }}
+        </div>
+    </div>
+</section>
+
+{{/* ============ CATEGORIES ============ */}}
+<section class="section-tight">
+    <div class="container">
+        <div class="cat-menu reveal" role="navigation" aria-label="Browse by category">
+            <a href="/" class="active">All</a>
+            <a href="/tags/ai/">AI</a>
+            <a href="/tags/startups/">Startups</a>
+            <a href="/tags/programming/">Programming</a>
+            <a href="/tags/crypto/">Crypto</a>
+            <a href="/tags/space/">Space</a>
+            <a href="/tags/cloud/">Cloud</a>
+        </div>
+    </div>
+</section>
+
+{{/* ============ LATEST + SIDEBAR ============ */}}
+<section class="section" id="latest">
+    <div class="container">
+        <div class="latest-wrap">
+            <div>
+                <div class="section-head reveal">
+                    <span class="eyebrow">New this week</span>
+                    <h2>Latest Stories</h2>
+                    <p>Fresh analysis, published daily.</p>
+                </div>
+                <div class="latest-list reveal-stagger">
+                    {{ range $latest }}{{ partial "card.html" (dict "page" . "size" "sm") }}{{ end }}
+                </div>
+            </div>
+            {{ partial "sidebar.html" . }}
+        </div>
+    </div>
+</section>
+
+{{/* ============ QUOTE ============ */}}
+{{ partial "quote.html" . }}
+
 {{ end }}
