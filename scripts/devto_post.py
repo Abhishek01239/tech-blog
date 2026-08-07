@@ -28,9 +28,17 @@ def main():
             body = parts[2].strip()
 
     title = fm.get("title", "TechPulse daily news")
-    tags = fm.get("tags", "technology").replace("[", "").replace("]", "").replace('"', "")
-    tags_list = [t.strip() for t in tags.split(",")][:4]  # Dev.to max 4 tags
-    tags_str = json.dumps(tags_list) if tags_list else '["technology"]'
+    tags = fm.get("tags", "technology").replace("[\"", ",").replace("\"]", "").replace("\"", "").replace("[", "").replace("]", "")
+    raw_list = [t.strip() for t in tags.split(",") if t.strip()]
+    # Dev.to requires alphanumeric-only tags (no spaces, no punctuation), max 4.
+    sanitized = []
+    for t in raw_list:
+        clean = "".join(ch for ch in t.lower() if ch.isalnum())
+        if clean and len(clean) <= 32 and clean not in sanitized:
+            sanitized.append(clean)
+    if not sanitized:
+        sanitized = ["technology"]  # always-valid fallback tag
+    tags_list = sanitized[:4]
     canonical = fm.get("canonical_url", "")
 
     payload = {
