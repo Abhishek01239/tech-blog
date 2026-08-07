@@ -104,11 +104,13 @@ jobs:
           LATEST=$(ls -t content/posts/*.md 2>/dev/null | head -1)
           [ -z "$LATEST" ] && { echo "No posts found"; exit 0; }
           TITLE=$(grep "^title:" "$LATEST" | head -1 | sed 's/title: "//' | sed 's/"$//')
-          DESC=$(grep "^description:" "$LATEST" | head -1 | sed 's/description: "//' | sed 's/"$//')
           IMG=$(grep "^image:" "$LATEST" | head -1 | sed 's/image: "//' | sed 's/"$//')
           SLUG=$(basename "$LATEST" .md)
           URL="https://tech-blog-eight-blush.vercel.app/posts/${SLUG}/"
-          MSG=$(printf '<b>%s</b>\n\n%s\n\n<a href="%s">Read more →</a>' "$TITLE" "$DESC" "$URL")
+          # 5-6 line teaser + link (social-media style post)
+          TEASER=$(python scripts/teaser.py "$LATEST")
+          # Escape HTML special chars for Telegram parse_mode=HTML
+          MSG=$(echo "$TEASER" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g')
           # Convert local image path to full URL for Telegram
           case "$IMG" in
             /*) IMG="https://tech-blog-eight-blush.vercel.app${IMG}" ;;
