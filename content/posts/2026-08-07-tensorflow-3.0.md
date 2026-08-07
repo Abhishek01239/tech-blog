@@ -6,7 +6,7 @@ description: "Google's TensorFlow reaches 3.0 milestone, bringing significant im
 tags: ["tensorflow", "ai", "machine learning", "open source"]
 categories: ["Ai"]
 author: "Tech Tutorials Hub"
-image: "/images/tensorflow-3.0.svg"
+image: "/images/tensorflow-3.0.jpg"
 ---
 
 

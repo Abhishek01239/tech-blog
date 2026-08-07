@@ -33,38 +33,55 @@ CATEGORY_SEARCH = {
     "general": "technology innovation",
 }
 
+# Curated pool of real Unsplash photos (permanent images.unsplash.com CDN URLs,
+# free, no API key/rate-limit). All verified to return HTTP 200.
+# Images are DOWNLOADED into the repo so they're self-hosted on Vercel.
+UNSPLASH_POOL = {
+    "ai":             ["1518770660439-4636190af475", "1485827404703-89b55fcc595e", "1535378917042-10a22c95931a"],
+    "general":        ["1516321497487-e288fb19713f", "1462331940025-496dfbfc7564", "1498050108023-c5249f4df085"],
+    "startups":       ["1516321497487-e288fb19713f", "1498050108023-c5249f4df085", "1467232004584-a241de8bcf5d"],
+    "phones":         ["1516321497487-e288fb19713f", "1535378917042-10a22c95931a", "1498050108023-c5249f4df085"],
+    "crypto":         ["1518546305927-5a555bb7020d", "1563013544-824ae1b704d3"],
+    "space":          ["1451187580459-43490279c0fa", "1446776811953-b23d57bd21aa", "1457364887197-9150188c107b", "1502134249126-9f3755a50d78"],
+    "gaming":         ["1535378917042-10a22c95931a", "1516321497487-e288fb19713f", "1462331940025-496dfbfc7564"],
+    "cloud":          ["1518770660439-4636190af475", "1451187580459-43490279c0fa", "1498050108023-c5249f4df085"],
+    "cybersecurity":  ["1550751827-4bd374c3f58b", "1563013544-824ae1b704d3", "1526374965328-7f61d4dc18c5", "1563986768609-322da13575f3"],
+    "programming":    ["1461749280684-dccba630e2f6", "1498050108023-c5249f4df085", "1467232004584-a241de8bcf5d"],
+}
+
 def get_image_url(category, slug=None):
-    """Return local image path; download from Pexels/picsum into static/images."""
-    search = CATEGORY_SEARCH.get(category, CATEGORY_SEARCH["general"])
+    """Download a real Unsplash photo into static/images/<slug>.jpg.
+
+    - Picks deterministically from the category pool (slug hashed) so the same
+      article always maps to the same cached image -> no regenerating.
+    - Downloads the remote photo into the repo (self-hosted, never hotlinks).
+    - Returns the local path. If every source fails, return /images/<slug>.svg
+      which ensure_images.py generates as the guaranteed last-resort cover.
+    """
     img_name = f"{slug or category}.jpg"
     img_path = Path(__file__).parent.parent / "static" / "images" / img_name
-    
-    # Try Pexels API (free: 33 req/month, needs key)
-    pexels_key = os.environ.get("PEXELS_API_KEY")
-    downloaded = False
-    if pexels_key:
+    if img_path.exists():
+        return f"/images/{img_name}"  # cached
+
+    pool = UNSPLASH_POOL.get((category or "").lower(), UNSPLASH_POOL["general"])
+    h = sum(ord(c) for c in (slug or category)) % len(pool)
+    uid = pool[h]
+
+    sources = [
+        f"https://images.unsplash.com/photo-{uid}?auto=format&fit=crop&w=800&q=80",
+        f"https://picsum.photos/seed/{slug or category}/800/400",  # fallback
+    ]
+    for src in sources:
         try:
-            query = urllib.parse.quote(search)
-            url = f"https://api.pexels.com/v1/search?query={query}&per_page=1"
-            req = urllib.request.Request(url, headers={"Authorization": pexels_key})
-            with urllib.request.urlopen(req, timeout=5) as resp:
-                data = json.loads(resp.read())
-                if data.get("photos"):
-                    src = data["photos"][0]["src"]["large"]
-                    urllib.request.urlretrieve(src, img_path)
-                    downloaded = True
+            req = urllib.request.Request(src, headers={"User-Agent": "Mozilla/5.0"})
+            with urllib.request.urlopen(req, timeout=25) as resp:
+                data = resp.read()
+                if len(data) > 5000 and resp.status == 200:
+                    img_path.write_bytes(data)
+                    return f"/images/{img_name}"
         except Exception:
-            pass  # Fall through to picsum
-    
-    # Picsum fallback (free, no key, seeded for consistency)
-    if not downloaded:
-        try:
-            seed = f"{category}-{random.randint(1,9999)}"
-            urllib.request.urlretrieve(f"https://picsum.photos/seed/{seed}/800/400", img_path)
-        except Exception:
-            return f"/images/{category}.jpg"  # best effort
-    
-    return f"/images/{img_name}"
+            continue
+    return f"/images/{slug or category}.svg"  # last resort -> SVG cover
 
 def get_groq_client():
     api_key = os.environ.get("GROQ_API_KEY")
