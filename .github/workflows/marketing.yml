@@ -176,6 +176,9 @@ jobs:
           echo "Mastodon: posted $N article(s)"
 
       # ---- Commit the dedup registry back to the repo so it persists ----
+      # Registry pushes race against other concurrent runs (workflow_run +
+      # cron can overlap), so pull --rebase before push to survive a
+      # "fetch first" rejection.
       - name: Commit posting registry
         run: |
           git config user.name "TechPulse Bot"
@@ -185,7 +188,17 @@ jobs:
             echo "No registry changes to commit"
           else
             git commit -m "chore: update posting registry [skip ci]" || true
-            GIT_TERMINAL_PROMPT=0 git push || echo "push failed"
+            for i in 1 2 3 4 5; do
+              if GIT_TERMINAL_PROMPT=0 git push; then
+                echo "registry push OK"
+                break
+              else
+                echo "push rejected (race), pulling rebase and retrying ($i)..."
+                GIT_TERMINAL_PROMPT=0 git pull --rebase origin main && \
+                  { git push && echo "registry push OK after rebase"; break; }
+              fi
+              sleep 2
+            done
           fi
 
       # ---- SEO pings (always free, no auth) ----
