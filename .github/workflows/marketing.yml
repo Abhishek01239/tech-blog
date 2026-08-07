@@ -123,6 +123,8 @@ jobs:
           MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
           MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
         run: |
+          echo "DIAG: MASTODON_TOKEN set=[$([ -n "$MASTODON_TOKEN" ] && echo YES || echo NO)]"
+          echo "DIAG: MASTODON_INSTANCE set=[$([ -n "$MASTODON_INSTANCE" ] && echo YES || echo NO)]"
           if [ -z "$MASTODON_TOKEN" ]; then echo "Mastodon not set, skipping"; exit 0; fi
           LATEST=$(python scripts/mark_done.py next mastodon) || { echo "All articles already posted to Mastodon"; exit 0; }
           [ -z "$LATEST" ] && exit 0
