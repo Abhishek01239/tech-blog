@@ -31,14 +31,17 @@ jobs:
           BLOG_AUTHOR: ${{ vars.BLOG_AUTHOR || 'Tech Tutorials Hub' }}
         run: python scripts/generate.py
 
-      - name: Commit new articles
+      - name: Ensure every article has a thumbnail
+        run: python scripts/ensure_images.py
+
+      - name: Commit new articles and images
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add content/posts/
+          git add content/posts/ static/images/
           if git diff --cached --quiet; then
             echo "No new articles to commit"
           else
-            git commit -m "docs: auto-generate $(date +%Y-%m-%d) articles [skip ci]"
+            git commit -m "docs: auto-generate $(date +%Y-%m-%d) articles + images [skip ci]"
             git push
           fi

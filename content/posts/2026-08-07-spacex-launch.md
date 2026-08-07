@@ -6,7 +6,7 @@ description: "SpaceX launches 60 satellites, expanding Starlink constellation, r
 tags: ["space technology", "satellite launch", "SpaceX", "Starlink", "AI", "innovation"]
 categories: ["Space"]
 author: "Tech Tutorials Hub"
-image: "/images/spacex-launch.jpg"
+image: "/images/spacex-launch.svg"
 ---
 
 

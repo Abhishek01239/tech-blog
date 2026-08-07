@@ -9,13 +9,20 @@
         <div class="section-title">Latest stories</div>
         {{ range first 10 (where .Site.RegularPages "Section" "posts") }}
         <article class="news-card">
-            {{ with .Params.image }}
             <div class="news-thumb">
-                <a href="{{ $.Permalink }}">
-                    <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+                <a href="{{ .Permalink }}">
+                    {{ $img := .Params.image }}
+                    {{ if not $img }}{{ $img = "/images/fallback.svg" }}{{ end }}
+                    <img
+                        src="{{ $img }}"
+                        alt="{{ .Title }}"
+                        loading="lazy"
+                        width="800" height="450"
+                        data-img="{{ $img }}"
+                        onerror="this.onerror=null;fallbackImg(this)"
+                    >
                 </a>
             </div>
-            {{ end }}
             <div class="news-body">
                 <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
                 <div class="post-meta">

@@ -1,10 +1,17 @@
 {{ define "main" }}
 <article class="post">
-    {{ with .Params.image }}
+    {{ $img := .Params.image }}
+    {{ if not $img }}{{ $img = "/images/fallback.svg" }}{{ end }}
     <div class="article-hero">
-        <img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">
+        <img
+            src="{{ $img }}"
+            alt="{{ .Title }}"
+            loading="lazy"
+            width="1600" height="900"
+            data-img="{{ $img }}"
+            onerror="this.onerror=null;fallbackImg(this)"
+        >
     </div>
-    {{ end }}
     <div class="article-card">
         <div class="post-header">
             <h1>{{ .Title }}</h1>

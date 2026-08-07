@@ -106,7 +106,43 @@
             <a href="/terms/">Terms</a>
             <a href="/disclaimer/">Disclaimer</a>
         </div>
-        <p>© {{ now.Year }} TechTutorials — Built with Hugo & Groq AI</p>
+        <p>© {{ now.Year }} TechPulse — Built with Hugo & Groq AI</p>
     </footer>
+    <script>
+    // Fade-in on successful load + fallback for any broken image (never show a broken icon)
+    function loadedImg(img) {
+        img.classList.add("loaded");
+    }
+    function fallbackImg(img) {
+        if (img.dataset.failed) return;
+        img.dataset.failed = "1";
+        img.src = "/images/fallback.svg";
+        img.classList.add("img-fallback");
+    }
+    // Walk all lazy images: attach fade-in on load, fallback on error
+    function initImgs() {
+        var imgs = document.querySelectorAll("img[loading=lazy]");
+        imgs.forEach(function (img) {
+            if (img.complete && img.naturalWidth > 0) {
+                loadedImg(img);
+            } else if (img.complete) {
+                fallbackImg(img);
+            } else {
+                img.addEventListener("load", function () { loadedImg(img); });
+                img.addEventListener("error", function () { fallbackImg(img); });
+            }
+        });
+    }
+    // When a generated placeholder 404s (rare), swap to generic fallback
+    document.addEventListener("error", function (e) {
+        var t = e.target;
+        if (t && t.tagName === "IMG" && !t.dataset.fallbackHandled) {
+            t.dataset.fallbackHandled = "1";
+            fallbackImg(t);
+        }
+    }, true);
+    if (document.readyState !== "loading") { initImgs(); }
+    else { document.addEventListener("DOMContentLoaded", initImgs); }
+    </script>
 </body>
 </html>
