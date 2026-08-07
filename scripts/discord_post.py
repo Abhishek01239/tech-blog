@@ -30,7 +30,12 @@ def main():
     req = urllib.request.Request(
         webhook,
         data=json.dumps(payload).encode(),
-        headers={"Content-Type": "application/json"},
+        headers={
+            "Content-Type": "application/json",
+            # Discord is behind Cloudflare: it 403s requests without a real
+            # browser signature (error 1010). urllib's default UA is blocked.
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0 Safari/537.36",
+        },
     )
     try:
         with urllib.request.urlopen(req, timeout=30) as resp:
