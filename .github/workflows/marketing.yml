@@ -105,18 +105,6 @@ jobs:
           python scripts/discord_post.py "$TEASER" && \
             python scripts/mark_done.py post discord "$SLUG"
 
-      - name: Cross-post to Hashnode
-        env:
-          HASHNODE_ACCESS_TOKEN: ${{ secrets.HASHNODE_ACCESS_TOKEN }}
-          HASHNODE_PUBLICATION: ${{ secrets.HASHNODE_PUBLICATION }}
-        run: |
-          if [ -z "$HASHNODE_ACCESS_TOKEN" ]; then echo "Hashnode not set, skipping"; exit 0; fi
-          LATEST=$(python scripts/mark_done.py next hashnode) || { echo "All articles already posted to Hashnode"; exit 0; }
-          [ -z "$LATEST" ] && exit 0
-          SLUG=$(basename "$LATEST" .md)
-          python scripts/hashnode_post.py "$LATEST" && \
-            python scripts/mark_done.py post hashnode "$SLUG"
-
       - name: Post to Bluesky
         env:
           BSKY_HANDLE: ${{ secrets.BSKY_HANDLE }}
