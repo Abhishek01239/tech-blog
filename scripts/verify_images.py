@@ -12,6 +12,8 @@ Usage:
 Exit code 0 = all verified. Exit code 1 = at least one image is NOT
 Pollinations-generated (report printed). Safe to run anywhere (no network).
 """
+import hashlib
+import re
 import sys
 from pathlib import Path
 
@@ -79,6 +81,28 @@ def main():
         print("\n-- strict: posts without a local cover --")
         for x in missing:
             print("  ", x)
+
+        # Duplicate-image detection: reject two posts sharing byte-identical cover.
+        by_hash = {}
+        for p in posts:
+            body = p.read_text(encoding="utf-8")
+            m = re.search(r"(?m)^image:\s*\"?([^\n\"]+)\"?\s*$", body)
+            img = m.group(1).strip() if m else ""
+            if not img or img.startswith("http"):
+                continue
+            rel = img.removeprefix("/images/").split("?")[0]
+            jpg = IMG_DIR / rel
+            if not jpg.exists():
+                continue
+            h = hashlib.sha256(jpg.read_bytes()).hexdigest()
+            by_hash.setdefault(h, []).append(p.name)
+        dup = {h: v for h, v in by_hash.items() if len(v) > 1}
+        if dup:
+            print("\n--strict: DUPLICATE covers shared by multiple posts --")
+            for h, v in dup.items():
+                print("   ", ", ".join(v))
+            print("NON-UNIQUE IMAGES FOUND — every article must have a unique cover.")
+            return 1
 
     print(f"\nRESULT: {len(ok)}/{len(jpgs)} Pollinations-verified")
     if bad:

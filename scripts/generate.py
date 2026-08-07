@@ -75,13 +75,14 @@ def build_pollinations_prompt(title, category):
     return urllib.parse.quote(prompt[:120])
 
 
-def get_image_url(category, slug=None, title=None):
+def get_image_url(category, slug=None, title=None, existing_hashes=None, seed=0):
     """Download a Pollinations-generated cover into static/images/<slug>.jpg.
 
     Pollinations AI is the ONLY image source (keyless, 0-cost). Each download
-    is VERIFIED (EXIF Make=sana, 800x450) before being accepted — if it cannot
-    be verified after retries, returns None so the article ships without a
-    cover rather than using a non-Pollinations image.
+    is VERIFIED (EXIF Make=sana, 800x450) before being accepted. Image content
+    must ALSO be unique: if its sha256 already exists in static/images/ (via
+    existing_hashes), the download is rejected and retried with a different
+    seed. Returns None if no unique verified cover is obtained.
     """
     img_name = f"{slug or category}.jpg"
     img_path = Path(__file__).parent.parent / "static" / "images" / img_name
@@ -90,11 +91,13 @@ def get_image_url(category, slug=None, title=None):
 
     if not title:
         return None
-    pol_url = (
-        f"https://image.pollinations.ai/prompt/"
-        f"{build_pollinations_prompt(title, category)}?width=800&height=450&nologo=true"
-    )
+    existing_hashes = existing_hashes or set()
     for attempt in range(POLLINATIONS_ATTEMPTS):
+        seed_param = f"&seed={seed + attempt}" if (seed or attempt) else ""
+        pol_url = (
+            f"https://image.pollinations.ai/prompt/"
+            f"{build_pollinations_prompt(title, category)}?width=800&height=450&nologo=true{seed_param}"
+        )
         try:
             req = urllib.request.Request(pol_url, headers={"User-Agent": POLLINATIONS_UA})
             with urllib.request.urlopen(req, timeout=90) as resp:
@@ -102,8 +105,11 @@ def get_image_url(category, slug=None, title=None):
             if len(data) > 5000:
                 img_path.write_bytes(data)
                 if is_pollinations_image(img_path):
-                    return f"/images/{img_name}"
-                # Not verified -> delete the unverified file and retry.
+                    content_hash = pollinations_image_hash(img_path)
+                    if content_hash not in existing_hashes:
+                        return f"/images/{img_name}"  # verified + unique
+                    print(f"  INFO: duplicate image content for {img_name}, retrying with new seed...")
+                # Not verified or duplicate -> delete the file and retry.
                 try:
                     img_path.unlink()
                 except OSError:
@@ -112,7 +118,7 @@ def get_image_url(category, slug=None, title=None):
             pass
         if attempt < POLLINATIONS_ATTEMPTS - 1 and POLLINATIONS_BACKOFF:
             time.sleep(POLLINATIONS_BACKOFF[attempt])
-    print(f"  WARN: could not get a verified Pollinations cover for {img_name}")
+    print(f"  WARN: could not get a unique verified Pollinations cover for {img_name}")
     return None
 
 
@@ -167,18 +173,72 @@ OUTPUT FORMAT (strict JSON):
 def slugify(text):
     return text.lower().strip().replace(" ", "-").replace("/", "-")[:60]
 
-def save_article(article):
-    """Save article as Hugo markdown with featured image."""
+
+def normalize_title(title):
+    """Lowercase, keep alphanumerics/space, collapse whitespace.
+    Used to compare titles for dedup despite punctuation/case differences."""
+    import re
+    t = re.sub(r"[^a-z0-9 ]", " ", (title or "").lower())
+    return re.sub(r"\s+", " ", t).strip()
+
+
+def load_existing_titles():
+    """Return set of normalized titles already present in content/posts/."""
+    seen = set()
+    if OUTPUT_DIR.exists():
+        for path in OUTPUT_DIR.glob("*.md"):
+            raw = path.read_text(encoding="utf-8")
+            import re as _re
+            m = _re.search(r"(?m)^title:\s*\"([^\"]+)\"", raw)
+            if m:
+                seen.add(normalize_title(m.group(1)))
+    return seen
+
+
+def pollinations_image_hash(img_path: Path) -> str:
+    """Content (sha256) hash used to detect byte-identical duplicate covers."""
+    import hashlib
+    try:
+        return hashlib.sha256(img_path.read_bytes()).hexdigest()
+    except Exception:
+        return ""
+
+
+def existing_image_hashes():
+    """Set of content hashes of every jpg already in static/images/."""
+    hashes = set()
+    img_dir = Path(__file__).parent.parent / "static" / "images"
+    if img_dir.exists():
+        for jpg in img_dir.glob("*.jpg"):
+            hashes.add(pollinations_image_hash(jpg))
+    return hashes
+
+def save_article(article, existing_titles=None, existing_hashes=None, used_titles=None, seed=0):
+    """Save article as Hugo markdown with a UNIQUE featured image.
+
+    Returns the saved Path, or None if the title is a duplicate of an existing
+    post / already-generated-this-run article (skipped, not saved).
+    """
+    existing_titles = existing_titles or set()
+    used_titles = used_titles or set()
+    norm = normalize_title(article.get("title", ""))
+    if norm in existing_titles or norm in used_titles:
+        print(f"  DUP: skipping duplicate title: {article.get('title','')!r}")
+        return None
+
     today = datetime.now().strftime("%Y-%m-%d")
     slug = slugify(article["title"])
     filename = f"{today}-{slug}.md"
     filepath = OUTPUT_DIR / filename
-    
+    if filepath.exists():
+        print(f"  DUP: slug already exists, skipping: {filename}")
+        return None
+
     category = article.get("category", "general")
-    image_url = get_image_url(category, slug, article["title"])
+    image_url = get_image_url(category, slug, article["title"], existing_hashes, seed)
     image_line = f'image: "{image_url}"' if image_url else "image: \"\""
     tags_yaml = json.dumps(article.get("tags", [category]))
-    
+
     frontmatter = f"""---
 title: "{article['title']}"
 date: {today}
@@ -189,9 +249,13 @@ categories: ["{category.title()}"]
 author: "{os.environ.get('BLOG_AUTHOR', 'TechPulse')}"
 {image_line}
 ---"""
-    
+
     content = f"{frontmatter}\n\n{article['content']}"
     filepath.write_text(content, encoding="utf-8")
+    used_titles.add(norm)
+    if image_url and existing_hashes is not None:
+        img_path = Path(__file__).parent.parent / "static" / "images" / f"{slug}.jpg"
+        existing_hashes.add(pollinations_image_hash(img_path))  # prevent same-run dup
     print(f"  -> {filename}")
     return filepath
 
@@ -212,21 +276,37 @@ def main():
         "regulatory news about big tech companies",
     ]
     
-    print(f"Generating {num_articles} tech news articles (images: Pollinations AI)...")
+    print(f"Generating {num_articles} unique tech news articles (images: Pollinations AI)...")
     generated = []
-    
-    for i in range(num_articles):
+    existing_titles = load_existing_titles()
+    existing_hashes = existing_image_hashes()
+    used_titles = set()
+
+    i = 0
+    total_attempts = 0
+    max_attempts = max(num_articles * 5, 20)  # generous re-roll budget
+    while i < num_articles and total_attempts < max_attempts:
+        total_attempts += 1
         topic = random.choice(topics)
-        print(f"\n[{i+1}/{num_articles}] {topic[:60]}...")
-        
+        print(f"\n[{i+1}/{num_articles}] attempt {total_attempts}: {topic[:60]}...")
+
         try:
             article = generate_news_article(client, topic)
-            path = save_article(article)
+            path = save_article(
+                article,
+                existing_titles=existing_titles,
+                existing_hashes=existing_hashes,
+                used_titles=used_titles,
+                seed=i * 97 + 13,  # unique starting seed per slot
+            )
+            if path is None:
+                continue  # duplicate -> re-roll with a fresh topic
             generated.append({
                 "title": article["title"],
                 "category": article.get("category", "general"),
                 "file": str(path),
             })
+            i += 1
         except Exception as e:
             print(f"  ERROR: {e}")
     
