@@ -49,32 +49,59 @@ UNSPLASH_POOL = {
     "programming":    ["1461749280684-dccba630e2f6", "1498050108023-c5249f4df085", "1467232004584-a241de8bcf5d"],
 }
 
-def get_image_url(category, slug=None):
-    """Download a real Unsplash photo into static/images/<slug>.jpg.
+def build_pollinations_prompt(title, category):
+    """Turn an article title+category into a safe AI-image prompt."""
+    base = {
+        "ai": "futuristic AI neural network glowing circuits",
+        "startups": "modern tech startup office glass skyscrapers",
+        "phones": "sleek smartphone on dark gradient background",
+        "crypto": "digital blockchain coin glowing gold",
+        "space": "rocket launching into deep space stars",
+        "gaming": "futuristic gaming controller neon glow",
+        "cloud": "server data center blue lights abstract",
+        "cybersecurity": "cyber security holographic padlock circuits",
+        "programming": "holographic code typing futuristic terminal",
+    }.get((category or "").lower(), "futuristic technology innovation")
+    prompt = f"{title}. style: {base}, cinematic lighting, high detail"
+    return urllib.parse.quote(prompt[:120])
 
-    - Picks deterministically from the category pool (slug hashed) so the same
-      article always maps to the same cached image -> no regenerating.
-    - Downloads the remote photo into the repo (self-hosted, never hotlinks).
-    - Returns the local path. If every source fails, return /images/<slug>.svg
-      which ensure_images.py generates as the guaranteed last-resort cover.
+
+def get_image_url(category, slug=None, title=None):
+    """Download article cover image into static/images/<slug>.jpg.
+
+    Priority: Pollinations AI (unique, on-topic, 0-cost, no key) -> curated
+    Unsplash pool -> picsum -> SVG cover (ensure_images.py last resort).
+    Always downloads into the repo (self-hosted on Vercel, never hotlinks).
+    Returns the local path or the /images/<slug>.svg fallback.
     """
     img_name = f"{slug or category}.jpg"
     img_path = Path(__file__).parent.parent / "static" / "images" / img_name
     if img_path.exists():
         return f"/images/{img_name}"  # cached
 
+    sources = []
+    # 1) Pollinations AI - unique generated image, no API key, works from GH DC
+    if title:
+        ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36"
+        sources.append(
+            ("pollinations", f"https://image.pollinations.ai/prompt/{build_pollinations_prompt(title, category)}?width=800&height=450&nologo=true", ua)
+        )
+    # 2) curated Unsplash pool
     pool = UNSPLASH_POOL.get((category or "").lower(), UNSPLASH_POOL["general"])
     h = sum(ord(c) for c in (slug or category)) % len(pool)
     uid = pool[h]
+    sources.append(
+        ("unsplash", f"https://images.unsplash.com/photo-{uid}?auto=format&fit=crop&w=800&q=80", "Mozilla/5.0")
+    )
+    # 3) picsum fallback
+    sources.append(
+        ("picsum", f"https://picsum.photos/seed/{slug or category}/800/450", "Mozilla/5.0")
+    )
 
-    sources = [
-        f"https://images.unsplash.com/photo-{uid}?auto=format&fit=crop&w=800&q=80",
-        f"https://picsum.photos/seed/{slug or category}/800/400",  # fallback
-    ]
-    for src in sources:
+    for name, src, ua in sources:
         try:
-            req = urllib.request.Request(src, headers={"User-Agent": "Mozilla/5.0"})
-            with urllib.request.urlopen(req, timeout=25) as resp:
+            req = urllib.request.Request(src, headers={"User-Agent": ua})
+            with urllib.request.urlopen(req, timeout=40) as resp:
                 data = resp.read()
                 if len(data) > 5000 and resp.status == 200:
                     img_path.write_bytes(data)
@@ -137,7 +164,7 @@ def save_article(article):
     filepath = OUTPUT_DIR / filename
     
     category = article.get("category", "general")
-    image_url = get_image_url(category, slug)
+    image_url = get_image_url(category, slug, article["title"])
     tags_yaml = json.dumps(article.get("tags", [category]))
     
     frontmatter = f"""---
