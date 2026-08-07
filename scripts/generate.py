@@ -1,53 +1,62 @@
 #!/usr/bin/env python3
 """
 Generate daily tech news articles using Groq API.
-Images: Pexels API (if key available) → picsum fallback (always free).
+Images: Pollinations AI ONLY (keyless, 0-cost) — every cover is verified to
+be Pollinations-generated (EXIF Make=sana, 800x450) or the article ships
+without a cover. No Unsplash / Picsum / SVG fallbacks.
 """
 import os
 import json
 import random
+import time
 import urllib.request
 import urllib.parse
 from datetime import datetime
 from pathlib import Path
 
 try:
-    from groq import Groq
+    from PIL import Image
+    from PIL.ExifTags import TAGS
 except ImportError:
-    print("pip install groq")
-    exit(1)
+    Image = None
+    TAGS = {}
 
 OUTPUT_DIR = Path(__file__).parent.parent / "content" / "posts"
 
-# Keyword → search terms mapping for Pexels
-CATEGORY_SEARCH = {
-    "ai": "artificial intelligence robot",
-    "startups": "startup office technology",
-    "phones": "smartphone mobile app",
-    "crypto": "cryptocurrency bitcoin",
-    "space": "space rocket nasa",
-    "gaming": "gaming esports",
-    "cloud": "server data center",
-    "cybersecurity": "cybersecurity hacking",
-    "programming": "programming code",
-    "general": "technology innovation",
-}
+POLLINATIONS_UA = (
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+    "Chrome/120 Safari/537.36"
+)
+POLLINATIONS_ATTEMPTS = 4
+POLLINATIONS_BACKOFF = [5, 10, 20]  # seconds between attempts
 
-# Curated pool of real Unsplash photos (permanent images.unsplash.com CDN URLs,
-# free, no API key/rate-limit). All verified to return HTTP 200.
-# Images are DOWNLOADED into the repo so they're self-hosted on Vercel.
-UNSPLASH_POOL = {
-    "ai":             ["1518770660439-4636190af475", "1485827404703-89b55fcc595e", "1535378917042-10a22c95931a"],
-    "general":        ["1516321497487-e288fb19713f", "1462331940025-496dfbfc7564", "1498050108023-c5249f4df085"],
-    "startups":       ["1516321497487-e288fb19713f", "1498050108023-c5249f4df085", "1467232004584-a241de8bcf5d"],
-    "phones":         ["1516321497487-e288fb19713f", "1535378917042-10a22c95931a", "1498050108023-c5249f4df085"],
-    "crypto":         ["1518546305927-5a555bb7020d", "1563013544-824ae1b704d3"],
-    "space":          ["1451187580459-43490279c0fa", "1446776811953-b23d57bd21aa", "1457364887197-9150188c107b", "1502134249126-9f3755a50d78"],
-    "gaming":         ["1535378917042-10a22c95931a", "1516321497487-e288fb19713f", "1462331940025-496dfbfc7564"],
-    "cloud":          ["1518770660439-4636190af475", "1451187580459-43490279c0fa", "1498050108023-c5249f4df085"],
-    "cybersecurity":  ["1550751827-4bd374c3f58b", "1563013544-824ae1b704d3", "1526374965328-7f61d4dc18c5", "1563986768609-322da13575f3"],
-    "programming":    ["1461749280684-dccba630e2f6", "1498050108023-c5249f4df085", "1467232004584-a241de8bcf5d"],
-}
+
+def is_pollinations_image(img_path: Path) -> bool:
+    """Verify a downloaded cover is genuinely Pollinations-generated.
+
+    Signature: EXIF Make == "sana" (Pollinations model) AND exactly 800x450.
+    Returns False if Pillow is unavailable, parsing fails, or any check fails —
+    an unverified image is treated as a failed download (never accepted).
+    """
+    if Image is None:
+        return False
+    try:
+        with Image.open(img_path) as im:
+            if im.format != "JPEG":
+                return False
+            w, h = im.size
+            if w != 800 or h != 450:
+                return False
+            exif = im._getexif()
+            if not exif:
+                return False
+            for k, v in exif.items():
+                if TAGS.get(k) == "Make" and str(v).strip().lower() == "sana":
+                    return True
+            return False
+    except Exception:
+        return False
+
 
 def build_pollinations_prompt(title, category):
     """Turn an article title+category into a safe AI-image prompt."""
@@ -67,65 +76,55 @@ def build_pollinations_prompt(title, category):
 
 
 def get_image_url(category, slug=None, title=None):
-    """Download article cover image into static/images/<slug>.jpg.
+    """Download a Pollinations-generated cover into static/images/<slug>.jpg.
 
-    Priority: Pollinations AI (unique, on-topic, 0-cost, no key) -> curated
-    Unsplash pool -> picsum -> SVG cover (ensure_images.py last resort).
-    Always downloads into the repo (self-hosted on Vercel, never hotlinks).
-    Returns the local path or the /images/<slug>.svg fallback.
+    Pollinations AI is the ONLY image source (keyless, 0-cost). Each download
+    is VERIFIED (EXIF Make=sana, 800x450) before being accepted — if it cannot
+    be verified after retries, returns None so the article ships without a
+    cover rather than using a non-Pollinations image.
     """
     img_name = f"{slug or category}.jpg"
     img_path = Path(__file__).parent.parent / "static" / "images" / img_name
     if img_path.exists():
-        return f"/images/{img_name}"  # cached
+        return f"/images/{img_name}"  # already have a cover
 
-    sources = []
-    # 1) Pollinations AI - unique generated image, no API key, works from GH DC.
-    #    Flaky: retry 3x with backoff before falling through to Unsplash.
-    if title:
-        ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36"
-        pol_url = f"https://image.pollinations.ai/prompt/{build_pollinations_prompt(title, category)}?width=800&height=450&nologo=true"
-        import time
-        for attempt in range(3):
-            try:
-                req = urllib.request.Request(pol_url, headers={"User-Agent": ua})
-                with urllib.request.urlopen(req, timeout=60) as resp:
-                    data = resp.read()
-                    if len(data) > 5000 and resp.status == 200:
-                        img_path.write_bytes(data)
-                        return f"/images/{img_name}"
-            except Exception:
-                pass
-            if attempt < 2:
-                time.sleep(3 * (attempt + 1))  # 3s, 6s backoff
-    # 2) curated Unsplash pool
-    pool = UNSPLASH_POOL.get((category or "").lower(), UNSPLASH_POOL["general"])
-    h = sum(ord(c) for c in (slug or category)) % len(pool)
-    uid = pool[h]
-    sources.append(
-        ("unsplash", f"https://images.unsplash.com/photo-{uid}?auto=format&fit=crop&w=800&q=80", "Mozilla/5.0")
+    if not title:
+        return None
+    pol_url = (
+        f"https://image.pollinations.ai/prompt/"
+        f"{build_pollinations_prompt(title, category)}?width=800&height=450&nologo=true"
     )
-    # 3) picsum fallback
-    sources.append(
-        ("picsum", f"https://picsum.photos/seed/{slug or category}/800/450", "Mozilla/5.0")
-    )
-
-    for name, src, ua in sources:
+    for attempt in range(POLLINATIONS_ATTEMPTS):
         try:
-            req = urllib.request.Request(src, headers={"User-Agent": ua})
-            with urllib.request.urlopen(req, timeout=40) as resp:
+            req = urllib.request.Request(pol_url, headers={"User-Agent": POLLINATIONS_UA})
+            with urllib.request.urlopen(req, timeout=90) as resp:
                 data = resp.read()
-                if len(data) > 5000 and resp.status == 200:
-                    img_path.write_bytes(data)
+            if len(data) > 5000:
+                img_path.write_bytes(data)
+                if is_pollinations_image(img_path):
                     return f"/images/{img_name}"
+                # Not verified -> delete the unverified file and retry.
+                try:
+                    img_path.unlink()
+                except OSError:
+                    pass
         except Exception:
-            continue
-    return f"/images/{slug or category}.svg"  # last resort -> SVG cover
+            pass
+        if attempt < POLLINATIONS_ATTEMPTS - 1 and POLLINATIONS_BACKOFF:
+            time.sleep(POLLINATIONS_BACKOFF[attempt])
+    print(f"  WARN: could not get a verified Pollinations cover for {img_name}")
+    return None
+
 
 def get_groq_client():
     api_key = os.environ.get("GROQ_API_KEY")
     if not api_key:
         print("ERROR: GROQ_API_KEY not set")
+        exit(1)
+    try:
+        from groq import Groq
+    except ImportError:
+        print("pip install groq")
         exit(1)
     return Groq(api_key=api_key)
 
@@ -177,6 +176,7 @@ def save_article(article):
     
     category = article.get("category", "general")
     image_url = get_image_url(category, slug, article["title"])
+    image_line = f'image: "{image_url}"' if image_url else "image: \"\""
     tags_yaml = json.dumps(article.get("tags", [category]))
     
     frontmatter = f"""---
@@ -187,7 +187,7 @@ description: "{article['description']}"
 tags: {tags_yaml}
 categories: ["{category.title()}"]
 author: "{os.environ.get('BLOG_AUTHOR', 'TechPulse')}"
-image: "{image_url}"
+{image_line}
 ---"""
     
     content = f"{frontmatter}\n\n{article['content']}"
@@ -212,8 +212,7 @@ def main():
         "regulatory news about big tech companies",
     ]
     
-    pexels = "yes" if os.environ.get("PEXELS_API_KEY") else "no"
-    print(f"Generating {num_articles} tech news articles (Pexels: {pexels})...")
+    print(f"Generating {num_articles} tech news articles (images: Pollinations AI)...")
     generated = []
     
     for i in range(num_articles):

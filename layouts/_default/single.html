@@ -1,5 +1,5 @@
 {{ define "main" }}
-{{ $img := .Params.image | default "/images/fallback.svg" }}
+{{ $img := .Params.image | default "" }}
 {{ $cat := index (.Params.categories | default slice) 0 | default "Tech" }}
 <article class="container" style="padding-top: 9.5rem;">
     <div class="article-head reveal">

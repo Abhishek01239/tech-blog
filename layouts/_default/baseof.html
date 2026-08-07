@@ -60,8 +60,7 @@
     function fallbackImg(img) {
         if (img.dataset.failed) return;
         img.dataset.failed = "1";
-        img.src = "/images/fallback.svg";
-        img.classList.add("img-fallback");
+        img.style.display = "none";  // hide — never swap to a non-Pollinations image
     }
     function initImgs() {
         document.querySelectorAll("img[loading=lazy], img.card-img, img.qbg, .article-hero img").forEach(function (img) {

@@ -22,7 +22,7 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install groq
+        run: pip install groq Pillow
 
       - name: Generate articles
         env:
@@ -31,8 +31,11 @@ jobs:
           BLOG_AUTHOR: ${{ vars.BLOG_AUTHOR || 'Tech Tutorials Hub' }}
         run: python scripts/generate.py
 
-      - name: Ensure every article has a thumbnail
+      - name: Ensure every article has a Pollinations thumbnail
         run: python scripts/ensure_images.py
+
+      - name: VERIFY all covers are Pollinations-generated (fail on any other source)
+        run: python scripts/verify_images.py --strict
 
       - name: Commit new articles and images
         run: |

@@ -4,7 +4,7 @@
 */}}
 {{ $page := .page }}
 {{ $size := .size | default "lg" }}
-{{ $img := $page.Params.image | default "/images/fallback.svg" }}
+{{ $img := $page.Params.image | default "" }}
 {{ $cat := index ($page.Params.categories | default slice) 0 | default "Tech" }}
 {{ $desc := $page.Description | default ($page.Summary | plainify | truncate 140) }}
 

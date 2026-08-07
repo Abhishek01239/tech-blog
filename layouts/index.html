@@ -19,7 +19,7 @@
             <div class="hero-art reveal">
                 <span class="hero-accent" aria-hidden="true"></span>
                 {{ with (index $featured 0) }}
-                {{ $img := .Params.image | default "/images/fallback.svg" }}
+                {{ $img := .Params.image | default "" }}
                 <div class="hero-img-wrap">
                     <img src="{{ $img }}" alt="{{ .Title }}" loading="eager" width="800" height="900"
                          data-img="{{ $img }}" onerror="this.onerror=null;fallbackImg(this)">
