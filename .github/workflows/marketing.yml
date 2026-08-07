@@ -104,22 +104,22 @@ jobs:
           python scripts/devto_post.py "$LATEST" && \
             python scripts/mark_done.py post devto "$SLUG"
 
-      # ---- Hashnode (free, no bot wall) ----
-      - name: Cross-post to Hashnode
+      # ---- Discord (0-cost: webhook URL, no OAuth/approval) ----
+      - name: Post to Discord
         env:
-          HASHNODE_ACCESS_TOKEN: ${{ secrets.HASHNODE_ACCESS_TOKEN }}
-          HASHNODE_PUBLICATION: ${{ secrets.HASHNODE_PUBLICATION }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: |
-          if [ -z "$HASHNODE_ACCESS_TOKEN" ]; then echo "Hashnode token not set, skipping"; exit 0; fi
+          if [ -z "$DISCORD_WEBHOOK" ]; then echo "Discord webhook not set, skipping"; exit 0; fi
           LATEST=$(ls -t content/posts/*.md 2>/dev/null | head -1)
           [ -z "$LATEST" ] && exit 0
           SLUG=$(basename "$LATEST" .md)
-          if ! python scripts/mark_done.py check hashnode "$SLUG"; then
-            echo "Already posted $SLUG to Hashnode, skipping"
+          if ! python scripts/mark_done.py check discord "$SLUG"; then
+            echo "Already posted $SLUG to Discord, skipping"
             exit 0
           fi
-          python scripts/hashnode_post.py "$LATEST" && \
-            python scripts/mark_done.py post hashnode "$SLUG"
+          TEASER=$(python scripts/teaser.py "$LATEST")
+          python scripts/discord_post.py "$TEASER" && \
+            python scripts/mark_done.py post discord "$SLUG"
 
       # ---- Commit the dedup registry back to the repo so it persists ----
       - name: Commit posting registry
