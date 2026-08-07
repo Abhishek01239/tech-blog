@@ -26,13 +26,9 @@ jobs:
           TELEGRAM_CHANNEL_ID: ${{ secrets.TELEGRAM_CHANNEL_ID }}
         run: |
           if [ -z "$TELEGRAM_BOT_TOKEN" ]; then echo "Telegram not set, skipping"; exit 0; fi
-          LATEST=$(ls -t content/posts/*.md 2>/dev/null | head -1)
+          LATEST=$(python scripts/mark_done.py next telegram) || { echo "All articles already posted to Telegram"; exit 0; }
           [ -z "$LATEST" ] && exit 0
           SLUG=$(basename "$LATEST" .md)
-          if ! python scripts/mark_done.py check telegram "$SLUG"; then
-            echo "Already posted $SLUG to Telegram, skipping"
-            exit 0
-          fi
           IMG=$(grep "^image:" "$LATEST" | head -1 | sed 's/image: "//' | sed 's/"$//')
           TEASER=$(python scripts/teaser.py "$LATEST")
           MSG=$(echo "$TEASER" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g')
@@ -67,13 +63,9 @@ jobs:
           REDDIT_PASSWORD: ${{ secrets.REDDIT_PASSWORD }}
         run: |
           if [ -z "$REDDIT_CLIENT_ID" ]; then echo "Reddit key not set, skipping"; exit 0; fi
-          LATEST=$(ls -t content/posts/*.md 2>/dev/null | head -1)
+          LATEST=$(python scripts/mark_done.py next reddit) || { echo "All articles already posted to Reddit"; exit 0; }
           [ -z "$LATEST" ] && exit 0
           SLUG=$(basename "$LATEST" .md)
-          if ! python scripts/mark_done.py check reddit "$SLUG"; then
-            echo "Already posted $SLUG to Reddit, skipping"
-            exit 0
-          fi
           TITLE=$(grep "^title:" "$LATEST" | head -1 | sed 's/title: "//' | sed 's/"$//')
           URL="https://tech-blog-eight-blush.vercel.app/posts/${SLUG}/"
           CAT=$(sed -n 's/^categories: \[\(.*\)\]/\1/p' "$LATEST")
@@ -94,13 +86,9 @@ jobs:
           DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
         run: |
           if [ -z "$DEVTO_API_KEY" ]; then echo "Dev.to key not set, skipping"; exit 0; fi
-          LATEST=$(ls -t content/posts/*.md 2>/dev/null | head -1)
+          LATEST=$(python scripts/mark_done.py next devto) || { echo "All articles already posted to Dev.to"; exit 0; }
           [ -z "$LATEST" ] && exit 0
           SLUG=$(basename "$LATEST" .md)
-          if ! python scripts/mark_done.py check devto "$SLUG"; then
-            echo "Already posted $SLUG to Dev.to, skipping"
-            exit 0
-          fi
           python scripts/devto_post.py "$LATEST" && \
             python scripts/mark_done.py post devto "$SLUG"
 
@@ -110,13 +98,9 @@ jobs:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: |
           if [ -z "$DISCORD_WEBHOOK" ]; then echo "Discord webhook not set, skipping"; exit 0; fi
-          LATEST=$(ls -t content/posts/*.md 2>/dev/null | head -1)
+          LATEST=$(python scripts/mark_done.py next discord) || { echo "All articles already posted to Discord"; exit 0; }
           [ -z "$LATEST" ] && exit 0
           SLUG=$(basename "$LATEST" .md)
-          if ! python scripts/mark_done.py check discord "$SLUG"; then
-            echo "Already posted $SLUG to Discord, skipping"
-            exit 0
-          fi
           TEASER=$(python scripts/teaser.py "$LATEST")
           python scripts/discord_post.py "$TEASER" && \
             python scripts/mark_done.py post discord "$SLUG"

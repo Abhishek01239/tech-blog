@@ -10,6 +10,10 @@ Usage:
       -> records slug as posted to platform (returns 0 always)
   python scripts/mark_done.py list <platform>
       -> prints all posted slugs
+  python scripts/mark_done.py next <platform>
+      -> prints the newest content/posts/*.md whose slug is NOT yet posted to
+         platform (newest-first, first unposted one); exits 0. If all articles
+         are already posted, prints nothing and exits 1.
 """
 import json
 import os
@@ -36,6 +40,22 @@ def save(platform: str, slugs):
     f.write_text(json.dumps(slugs, indent=2) + "\n", encoding="utf-8")
 
 
+def slug_of(path: Path) -> str:
+    return path.stem
+
+
+def next_unposted(platform: str):
+    """Return newest content/posts/*.md not yet posted to platform, or ''."""
+    posts_dir = Path(__file__).resolve().parent.parent / "content" / "posts"
+    if not posts_dir.is_dir():
+        return ""
+    posted = set(load(platform))
+    for p in sorted(posts_dir.glob("*.md"), reverse=True):  # newest first
+        if p.stem not in posted:
+            return str(p)
+    return ""
+
+
 def main():
     action = sys.argv[1]
     platform = sys.argv[2]
@@ -58,6 +78,12 @@ def main():
         for s in load(platform):
             print(s)
         sys.exit(0)
+    elif action == "next":
+        unposted = next_unposted(platform)
+        if unposted:
+            print(unposted)
+            sys.exit(0)
+        sys.exit(1)  # everything posted already
     else:
         sys.exit(2)
 
