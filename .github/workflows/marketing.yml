@@ -105,6 +105,32 @@ jobs:
           python scripts/discord_post.py "$TEASER" && \
             python scripts/mark_done.py post discord "$SLUG"
 
+      - name: Post to Bluesky
+        env:
+          BSKY_HANDLE: ${{ secrets.BSKY_HANDLE }}
+          BSKY_PASSWORD: ${{ secrets.BSKY_PASSWORD }}
+        run: |
+          if [ -z "$BSKY_HANDLE" ]; then echo "Bluesky not set, skipping"; exit 0; fi
+          LATEST=$(python scripts/mark_done.py next bluesky) || { echo "All articles already posted to Bluesky"; exit 0; }
+          [ -z "$LATEST" ] && exit 0
+          SLUG=$(basename "$LATEST" .md)
+          TEASER=$(python scripts/teaser.py "$LATEST")
+          python scripts/bluesky_post.py "$TEASER" && \
+            python scripts/mark_done.py post bluesky "$SLUG"
+
+      - name: Post to Mastodon
+        env:
+          MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
+          MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
+        run: |
+          if [ -z "$MASTODON_TOKEN" ]; then echo "Mastodon not set, skipping"; exit 0; fi
+          LATEST=$(python scripts/mark_done.py next mastodon) || { echo "All articles already posted to Mastodon"; exit 0; }
+          [ -z "$LATEST" ] && exit 0
+          SLUG=$(basename "$LATEST" .md)
+          TEASER=$(python scripts/teaser.py "$LATEST")
+          python scripts/mastodon_post.py "$TEASER" && \
+            python scripts/mark_done.py post mastodon "$SLUG"
+
       # ---- Commit the dedup registry back to the repo so it persists ----
       - name: Commit posting registry
         run: |
