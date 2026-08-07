@@ -3,6 +3,10 @@ on:
   schedule:
     - cron: '0 9,15,21 * * *'  # 3x daily, 1hr after article generation
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Generate Articles"]
+    types: [completed]
+    branches: [main]
 
 permissions:
   contents: write   # needed to commit the dedup registry back to the repo

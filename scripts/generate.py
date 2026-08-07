@@ -80,12 +80,24 @@ def get_image_url(category, slug=None, title=None):
         return f"/images/{img_name}"  # cached
 
     sources = []
-    # 1) Pollinations AI - unique generated image, no API key, works from GH DC
+    # 1) Pollinations AI - unique generated image, no API key, works from GH DC.
+    #    Flaky: retry 3x with backoff before falling through to Unsplash.
     if title:
         ua = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/120 Safari/537.36"
-        sources.append(
-            ("pollinations", f"https://image.pollinations.ai/prompt/{build_pollinations_prompt(title, category)}?width=800&height=450&nologo=true", ua)
-        )
+        pol_url = f"https://image.pollinations.ai/prompt/{build_pollinations_prompt(title, category)}?width=800&height=450&nologo=true"
+        import time
+        for attempt in range(3):
+            try:
+                req = urllib.request.Request(pol_url, headers={"User-Agent": ua})
+                with urllib.request.urlopen(req, timeout=60) as resp:
+                    data = resp.read()
+                    if len(data) > 5000 and resp.status == 200:
+                        img_path.write_bytes(data)
+                        return f"/images/{img_name}"
+            except Exception:
+                pass
+            if attempt < 2:
+                time.sleep(3 * (attempt + 1))  # 3s, 6s backoff
     # 2) curated Unsplash pool
     pool = UNSPLASH_POOL.get((category or "").lower(), UNSPLASH_POOL["general"])
     h = sum(ord(c) for c in (slug or category)) % len(pool)
