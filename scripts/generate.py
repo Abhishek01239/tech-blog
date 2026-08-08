@@ -22,6 +22,9 @@ except ImportError:
     TAGS = {}
 
 OUTPUT_DIR = Path(__file__).parent.parent / "content" / "posts"
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)  # fresh clones lack the empty dir
+IMAGE_DIR = Path(__file__).parent.parent / "static" / "images"
+IMAGE_DIR.mkdir(parents=True, exist_ok=True)
 
 POLLINATIONS_UA = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
@@ -85,7 +88,7 @@ def get_image_url(category, slug=None, title=None, existing_hashes=None, seed=0)
     seed. Returns None if no unique verified cover is obtained.
     """
     img_name = f"{slug or category}.jpg"
-    img_path = Path(__file__).parent.parent / "static" / "images" / img_name
+    img_path = IMAGE_DIR / img_name
     if img_path.exists():
         return f"/images/{img_name}"  # already have a cover
 
@@ -254,7 +257,7 @@ author: "{os.environ.get('BLOG_AUTHOR', 'TechPulse')}"
     filepath.write_text(content, encoding="utf-8")
     used_titles.add(norm)
     if image_url and existing_hashes is not None:
-        img_path = Path(__file__).parent.parent / "static" / "images" / f"{slug}.jpg"
+        img_path = IMAGE_DIR / f"{slug}.jpg"
         existing_hashes.add(pollinations_image_hash(img_path))  # prevent same-run dup
     print(f"  -> {filename}")
     return filepath
