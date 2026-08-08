@@ -8,6 +8,7 @@ without a cover. No Unsplash / Picsum / SVG fallbacks.
 import os
 import json
 import random
+import re
 import time
 import urllib.request
 import urllib.parse
@@ -174,7 +175,8 @@ OUTPUT FORMAT (strict JSON):
     return json.loads(response.choices[0].message.content)
 
 def slugify(text):
-    return text.lower().strip().replace(" ", "-").replace("/", "-")[:60]
+    """Lowercase, keep alphanumerics + dash, strip Hugo-sanitized chars ($ etc.)."""
+    return re.sub(r"[^a-z0-9-]", "", text.lower().strip().replace(" ", "-").replace("/", "-"))[:60]
 
 
 def normalize_title(title):
