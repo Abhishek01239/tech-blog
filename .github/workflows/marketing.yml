@@ -143,12 +143,31 @@ jobs:
           while LATEST=$(python scripts/mark_done.py next bluesky) && [ -n "$LATEST" ]; do
             SLUG=$(basename "$LATEST" .md)
             TEASER=$(python scripts/teaser.py "$LATEST")
-            if python scripts/bluesky_post.py "$TEASER"; then
-              python scripts/mark_done.py post bluesky "$SLUG"
-              N=$((N+1))
+            # Resolve the cover image (local path -> absolute, or remote URL)
+            IMG=$(grep "^image:" "$LATEST" | head -1 | sed 's/image: "//' | sed 's/"$//')
+            if [ -n "$IMG" ]; then
+              case "$IMG" in
+                /*) IMG="$PWD/static${IMG}" ;;   # local file in repo
+                http*) ;;                        # already a URL
+                *) IMG="" ;;                     # unsupported
+              esac
+            fi
+            if [ -n "$IMG" ]; then
+              if python scripts/bluesky_post.py "$TEASER" "$IMG"; then
+                python scripts/mark_done.py post bluesky "$SLUG"
+                N=$((N+1))
+              else
+                echo "[$SLUG] bluesky failed, stopping loop"
+                break
+              fi
             else
-              echo "[$SLUG] bluesky failed, stopping loop"
-              break
+              if python scripts/bluesky_post.py "$TEASER"; then
+                python scripts/mark_done.py post bluesky "$SLUG"
+                N=$((N+1))
+              else
+                echo "[$SLUG] bluesky failed, stopping loop"
+                break
+              fi
             fi
           done
           echo "Bluesky: posted $N article(s)"
