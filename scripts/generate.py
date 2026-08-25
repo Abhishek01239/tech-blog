@@ -311,13 +311,8 @@ author: "{os.environ.get('BLOG_AUTHOR', 'TechPulse')}"
 def list_models(client):
     """Print all chat models Groq currently exposes (diagnostic / MODE=list)."""
     resp = client.models.list()
-    ids = [m.id for m in resp.data if "chat" in (m.owned_by or "") or "llama" in m.id or "gemma" in m.id or "mixtral" in m.id]
-    # de-dup, keep order
-    seen, out = set(), []
-    for i in ids:
-        if i not in seen:
-            seen.add(i); out.append(i)
-    print("AVAILABLE_MODELS:" + ",".join(out))
+    out = [m.id for m in resp.data]
+    print("ALL_MODELS:" + ",".join(out))
     return out
 
 
