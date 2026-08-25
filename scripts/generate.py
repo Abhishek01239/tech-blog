@@ -160,6 +160,7 @@ def pick_working_model(client):
     Raises RuntimeError if none of GROQ_MODELS are available (so the workflow
     fails loudly instead of silently generating zero articles).
     """
+    skip_codes = ("model_not_found", "model_decommissioned", "404", "400")
     for model in GROQ_MODELS:
         try:
             client.chat.completions.create(
@@ -169,10 +170,10 @@ def pick_working_model(client):
             )
             print(f"  Using Groq model: {model}")
             return model
-        except Exception as e:  # model_not_found / 404 / auth / rate
-            msg = str(e)
-            if "model_not_found" in msg or "404" in msg:
-                print(f"  SKIP model {model}: not available")
+        except Exception as e:  # model_not_found / decommissioned / 404 / 400
+            msg = str(e).lower()
+            if any(c in msg for c in skip_codes):
+                print(f"  SKIP model {model}: no longer available")
                 continue
             # Non-model error (bad key, rate limit) — don't silently swap models
             raise
@@ -307,8 +308,27 @@ author: "{os.environ.get('BLOG_AUTHOR', 'TechPulse')}"
     print(f"  -> {filename}")
     return filepath
 
+def list_models(client):
+    """Print all chat models Groq currently exposes (diagnostic / MODE=list)."""
+    resp = client.models.list()
+    ids = [m.id for m in resp.data if "chat" in (m.owned_by or "") or "llama" in m.id or "gemma" in m.id or "mixtral" in m.id]
+    # de-dup, keep order
+    seen, out = set(), []
+    for i in ids:
+        if i not in seen:
+            seen.add(i); out.append(i)
+    print("AVAILABLE_MODELS:" + ",".join(out))
+    return out
+
+
 def main():
     client = get_groq_client()
+
+    # Diagnostic mode: just list what models are live right now.
+    if os.environ.get("MODE") == "list":
+        list_models(client)
+        return
+
     model = pick_working_model(client)
     num_articles = int(os.environ.get("NUM_ARTICLES", "5"))
     
