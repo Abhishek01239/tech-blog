@@ -8,12 +8,14 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Post one test article to Bluesky
+      - name: Diagnose env + post one article to Bluesky
         env:
           BSKY_HANDLE: ${{ secrets.BSKY_HANDLE }}
           BSKY_PASSWORD: ${{ secrets.BSKY_PASSWORD }}
         run: |
-          set -e
+          echo "HANDLE_EMPTY=$([ -z "$BSKY_HANDLE" ] && echo YES || echo NO)"
+          echo "PASS_EMPTY=$([ -z "$BSKY_PASSWORD" ] && echo YES || echo NO)"
+          python -c "import os; h=os.environ.get('BSKY_HANDLE',''); p=os.environ.get('BSKY_PASSWORD',''); print('py handle_empty=', not h, 'pass_empty=', not p)"
           F=$(ls content/posts/2026-08-25-*.md | head -1)
           SLUG=$(basename "$F" .md)
           echo "Testing with: $SLUG"
@@ -24,8 +26,5 @@ jobs:
               /*) IMG="$PWD/static${IMG}" ;;
             esac
           fi
-          echo "TEASER >>>"
-          echo "$TEASER"
-          echo "<<< IMG: $IMG (exists: $([ -f "$IMG" ] && echo yes || echo no))"
-          python scripts/bluesky_post.py "$TEASER" "$IMG"
-          echo "EXIT=$?"
+          echo "IMG: $IMG (exists: $([ -f "$IMG" ] && echo yes || echo no))"
+          python scripts/bluesky_post.py "$TEASER" "$IMG" && echo "POST_OK" || echo "POST_FAIL"
