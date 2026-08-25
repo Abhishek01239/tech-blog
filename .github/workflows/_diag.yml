@@ -1,0 +1,16 @@
+name: Diagnose Groq Models
+on: workflow_dispatch
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - run: pip install groq
+      - name: List available chat models
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          MODE: list
+        run: python scripts/generate.py
