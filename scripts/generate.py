@@ -138,26 +138,25 @@ def get_groq_client():
         exit(1)
     return Groq(api_key=api_key)
 
-# Groq models to try, in order. The blog's original model (llama-3.3-70b-versatile)
-# was retired by Groq and now returns 404 model_not_found, which silently killed
-# every daily run. We fall back through currently-available models so a single
-# model retirement can't break the pipeline again. All support response_format=json_object.
+# Groq models that are actually live on this account (re-verified 2026-08-25 via
+# the Diagnose Groq Models workflow). The original llama-3.3-70b-versatile and
+# every llama-3.1/3.3 variant were decommissioned by Groq, which silently killed
+# the daily pipeline for 17 days. We probe each with response_format=json_object
+# (required by generate_news_article) so a model that can't do structured output
+# is skipped, not selected.
 GROQ_MODELS = [
-    "llama-3.3-70b-versatile",
-    "llama-3.1-8b-instant",
-    "llama-3.1-70b-versatile",
-    "llama-3.3-70b-specdec",
-    "gemma2-9b-it",
-    "llama3-70b-8192",
-    "llama3-8b-8192",
-    "mixtral-8x7b-32768",
+    "qwen/qwen3.6-27b",
+    "openai/gpt-oss-20b",
+    "openai/gpt-oss-120b",
+    "groq/compound-mini",
+    "groq/compound",
 ]
 
 
 def pick_working_model(client):
-    """Return the first Groq model that responds to a tiny probe call.
+    """Return the first Groq model that handles a JSON-mode probe call.
 
-    Raises RuntimeError if none of GROQ_MODELS are available (so the workflow
+    Raises RuntimeError if none of GROQ_MODELS are usable (so the workflow
     fails loudly instead of silently generating zero articles).
     """
     skip_codes = ("model_not_found", "model_decommissioned", "404", "400")
@@ -165,12 +164,13 @@ def pick_working_model(client):
         try:
             client.chat.completions.create(
                 model=model,
-                messages=[{"role": "user", "content": "reply with the single word: ok"}],
-                max_tokens=5,
+                messages=[{"role": "user", "content": 'reply with JSON: {"ok": true}'}],
+                max_tokens=20,
+                response_format={"type": "json_object"},
             )
             print(f"  Using Groq model: {model}")
             return model
-        except Exception as e:  # model_not_found / decommissioned / 404 / 400
+        except Exception as e:
             msg = str(e).lower()
             if any(c in msg for c in skip_codes):
                 print(f"  SKIP model {model}: no longer available")
