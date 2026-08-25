@@ -1,0 +1,31 @@
+name: Test Bluesky Post
+on: workflow_dispatch
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Post one test article to Bluesky
+        env:
+          BSKY_HANDLE: ${{ secrets.BSKY_HANDLE }}
+          BSKY_PASSWORD: ${{ secrets.BSKY_PASSWORD }}
+        run: |
+          set -e
+          F=$(ls content/posts/2026-08-25-*.md | head -1)
+          SLUG=$(basename "$F" .md)
+          echo "Testing with: $SLUG"
+          TEASER=$(python scripts/teaser.py "$F")
+          IMG=$(grep "^image:" "$F" | head -1 | sed 's/image: "//' | sed 's/"$//')
+          if [ -n "$IMG" ]; then
+            case "$IMG" in
+              /*) IMG="$PWD/static${IMG}" ;;
+            esac
+          fi
+          echo "TEASER >>>"
+          echo "$TEASER"
+          echo "<<< IMG: $IMG (exists: $([ -f "$IMG" ] && echo yes || echo no))"
+          python scripts/bluesky_post.py "$TEASER" "$IMG"
+          echo "EXIT=$?"
