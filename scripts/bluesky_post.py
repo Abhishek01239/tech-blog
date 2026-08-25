@@ -35,6 +35,8 @@ MAX = 300  # Bluesky hard cap per post
 
 
 def fetch(url, payload=None, data=None, headers=None, method="POST"):
+    if data is None and payload is not None:
+        data = json.dumps(payload).encode()
     req = urllib.request.Request(
         url,
         data=data,
