@@ -138,7 +138,50 @@ def get_groq_client():
         exit(1)
     return Groq(api_key=api_key)
 
-def generate_news_article(client, topic=None):
+# Groq models to try, in order. The blog's original model (llama-3.3-70b-versatile)
+# was retired by Groq and now returns 404 model_not_found, which silently killed
+# every daily run. We fall back through currently-available models so a single
+# model retirement can't break the pipeline again. All support response_format=json_object.
+GROQ_MODELS = [
+    "llama-3.3-70b-versatile",
+    "llama-3.1-8b-instant",
+    "llama-3.1-70b-versatile",
+    "llama-3.3-70b-specdec",
+    "gemma2-9b-it",
+    "llama3-70b-8192",
+    "llama3-8b-8192",
+    "mixtral-8x7b-32768",
+]
+
+
+def pick_working_model(client):
+    """Return the first Groq model that responds to a tiny probe call.
+
+    Raises RuntimeError if none of GROQ_MODELS are available (so the workflow
+    fails loudly instead of silently generating zero articles).
+    """
+    for model in GROQ_MODELS:
+        try:
+            client.chat.completions.create(
+                model=model,
+                messages=[{"role": "user", "content": "reply with the single word: ok"}],
+                max_tokens=5,
+            )
+            print(f"  Using Groq model: {model}")
+            return model
+        except Exception as e:  # model_not_found / 404 / auth / rate
+            msg = str(e)
+            if "model_not_found" in msg or "404" in msg:
+                print(f"  SKIP model {model}: not available")
+                continue
+            # Non-model error (bad key, rate limit) — don't silently swap models
+            raise
+    raise RuntimeError(
+        "No available Groq model found among: " + ", ".join(GROQ_MODELS)
+    )
+
+
+def generate_news_article(client, topic=None, model="llama-3.3-70b-versatile"):
     """Generate a tech news article using Groq."""
     prompt = f"""Write a tech news article about a recent development in technology.
 
@@ -165,7 +208,7 @@ OUTPUT FORMAT (strict JSON):
 }}"""
 
     response = client.chat.completions.create(
-        model="llama-3.3-70b-versatile",
+        model=model,
         messages=[{"role": "user", "content": prompt}],
         temperature=0.7,
         max_tokens=2000,
@@ -266,6 +309,7 @@ author: "{os.environ.get('BLOG_AUTHOR', 'TechPulse')}"
 
 def main():
     client = get_groq_client()
+    model = pick_working_model(client)
     num_articles = int(os.environ.get("NUM_ARTICLES", "5"))
     
     topics = [
@@ -296,7 +340,7 @@ def main():
         print(f"\n[{i+1}/{num_articles}] attempt {total_attempts}: {topic[:60]}...")
 
         try:
-            article = generate_news_article(client, topic)
+            article = generate_news_article(client, topic, model=model)
             path = save_article(
                 article,
                 existing_titles=existing_titles,
@@ -319,6 +363,12 @@ def main():
     summary_path.write_text(json.dumps(generated, indent=2), encoding="utf-8")
     
     print(f"\nDone! Generated {len(generated)} articles.")
+
+    # Fail loudly if we generated nothing — a silent success with zero articles
+    # is how the daily pipeline broke for 17 days (retired model returned 404).
+    if not generated:
+        print("ERROR: generated 0 articles — failing the job so it's visible.")
+        exit(1)
     
     if os.environ.get("GITHUB_STEP_SUMMARY"):
         with open(os.environ["GITHUB_STEP_SUMMARY"], "a") as f:
