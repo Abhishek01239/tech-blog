@@ -1,0 +1,10 @@
+{{/* ===== AdSense slots (env-gated; no hardcoded pub ID) ===== */}}
+{{ $client := getenv "NEXT_PUBLIC_ADSENSE_CLIENT" | default "" }}
+{{ if $client }}
+  {{/* Only render real ads when publisher ID is configured in env/post-approval */}}
+{{ else }}
+  <!-- Ad slots placeholder — activate after AdSense approval by setting NEXT_PUBLIC_ADSENSE_CLIENT -->
+  <aside class="ad-placeholder" aria-label="Advertisement placeholder" style="text-align:center;padding:1.5rem;background:#0a0a0a;border:1px dashed #333;border-radius:8px;margin:2rem 0;color:#888;font-size:.85rem;">
+    <strong>Ad Slot</strong> — will activate once NEXT_PUBLIC_ADSENSE_CLIENT is set (post-AdSense approval)
+  </aside>
+{{ end }}
