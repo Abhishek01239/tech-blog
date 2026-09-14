@@ -4,7 +4,7 @@
 (function() {
   'use strict';
   const KEY_PARAM = 'key';
-  const SECRET_KEY = 'jaiswarabhishek12122005'; // CHANGE THIS
+  const SECRET_KEY = 'jaiswarabhisek12122005'; // CHANGE THIS
   const DATA_FILE = '/analytics/analytics-data.json';
 
   // Only track if user is viewing the analytics page with correct key
