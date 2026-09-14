@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Analytics — TechPulse</title>
+  <script>
+    // SECRET-KEY GATE — only renders data when correct ?key is present
+    (function() {
+      const SECRET_KEY = 'jaiswarabhishek12122005';
+      const params = new URLSearchParams(window.location.search);
+      const key = params.get('key');
+      if (key !== SECRET_KEY) {
+        document.write('<meta name="robots" content="noindex,nofollow">');
+        document.body.innerHTML = '<div style="font-family:system-ui,sans-serif;text-align:center;padding:10vh 2rem;color:#555;"><h1>Access Denied</h1><p>This analytics dashboard is private. A valid secret key is required.</p></div>';
+        document.body.style.background = '#0a0a0a';
+        document.body.style.color = '#ccc';
+        throw new Error('Invalid analytics key');
+      }
+      document.write('<meta name="robots" content="noindex,nofollow">');
+    })();
+  </script>
+  <style>
+    :root{--bg:#0a0a0a;--card:#111;--border:#222;--cyan:#00F5FF;--text:#e0e0e0;--sub:#888;}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.45;min-height:100vh;padding:2rem 1rem}
+    .wrap{max-width:1100px;margin:0 auto}
+    header{margin-bottom:2.5rem;border-bottom:1px solid var(--border);padding-bottom:1rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+    header h1{font-size:1.6rem;font-weight:700;color:var(--cyan);letter-spacing:-0.02em}
+    header .badge{background:var(--card);border:1px solid var(--border);padding:.35rem .7rem;border-radius:999px;font-size:.75rem;color:var(--cyan);font-family:monospace}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem;margin-bottom:2.5rem}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:1rem;padding:1.25rem;transition:transform .15s ease,border-color .15s ease}
+    .card:hover{transform:translateY(-2px);border-color:#333}
+    .card h3{font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:var(--sub);margin-bottom:.5rem}
+    .card .value{font-size:2rem;font-weight:700;letter-spacing:-0.03em;color:var(--text)}
+    .card .sub{font-size:.85rem;color:var(--sub);margin-top:.25rem}
+    .section{margin-top:2.5rem}
+    .section h2{font-size:1rem;margin-bottom:1rem;color:var(--cyan);text-transform:uppercase;letter-spacing:.06em}
+    table{width:100%;border-collapse:collapse;font-size:.9rem}
+    th,td{padding:.6rem .5rem;text-align:left;border-bottom:1px solid var(--border)}
+    th{color:var(--sub);font-weight:600;font-size:.75rem;text-transform:uppercase;letter-spacing:.06em}
+    td{color:var(--text)}
+    .bar-bg{background:#1a1a1a;height:.6rem;border-radius:.3rem;overflow:hidden;margin-top:.35rem}
+    .bar-fill{height:100%;background:linear-gradient(90deg,var(--cyan),#8b5cf6);border-radius:.3rem}
+    footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--border);font-size:.75rem;color:var(--sub);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem}
+    @media(max-width:640px){body{padding:1rem .6rem}header h1{font-size:1.2rem}.card .value{font-size:1.6rem}}
+  </style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div>
+      <h1>TechPulse — Private Analytics</h1>
+      <p style="color:var(--sub);font-size:.85rem;margin-top:.15rem">Real-time site metrics · Only visible with secret key</p>
+    </div>
+    <div class="badge">LIVE</div>
+  </header>
+
+  <div class="grid" id="cards"></div>
+
+  <section class="section" aria-label="Daily visits">
+    <h2>Daily Visits</h2>
+    <table id="visits-table"><thead><tr><th>Date</th><th>Visits</th></tr></thead><tbody></tbody></table>
+  </section>
+
+  <section class="section" aria-label="Site updates">
+    <h2>Today's Updates</h2>
+    <div id="updates"></div>
+  </section>
+
+  <footer>
+    <span>Key verified — private view active</span>
+    <span>Built with secret-key access · Not indexed</span>
+  </footer>
+</div>
+
+<script src="/analytics/track.js"></script>
+<script>
+(function() {
+  'use strict';
+  // Load analytics data and render dashboard
+  function render(data) {
+    // Cards
+    const visits = data.visits || {};
+    const days = Object.keys(visits);
+    const totalVisits = days.reduce((s,d) => s + (visits[d]||0), 0);
+    const maxDay = days.reduce((a,b) => (visits[a]||0) > (visits[b]||0) ? a : b, days[0]||'');
+    const maxVal = maxDay ? visits[maxDay] : 0;
+    const avg = days.length ? Math.round(totalVisits / days.length) : 0;
+    const cards = document.getElementById('cards');
+    cards.innerHTML = `
+      <div class="card"><h3>Total Visits (tracked)</h3><div class="value">${totalVisits}</div><div class="sub">Over ${days.length} days</div></div>
+      <div class="card"><h3>Daily Average</h3><div class="value">${avg}</div><div class="sub">Per day</div></div>
+      <div class="card"><h3>Peak Day</h3><div class="value">${maxVal}</div><div class="sub">${maxDay || '—'}</div></div>
+      <div class="card"><h3>Posts Published</h3><div class="value">${data.total_posts || 0}</div><div class="sub">Across site</div></div>
+    `;
+    // Visits table with mini bars
+    const tbody = document.querySelector('#visits-table tbody');
+    tbody.innerHTML = days.slice(-7).map(d => {
+      const v = visits[d];
+      const pct = maxVal ? Math.round((v/maxVal)*100) : 0;
+      return `<tr><td>${d}</td><td><strong>${v}</strong> <span style="color:#555;font-size:.75rem">visits</span><div class="bar-bg"><div class="bar-fill" style="width:${pct}%"></div></div></td></tr>`;
+    }).join('');
+    // Updates
+    const updates = data.updates || {};
+    const today = new Date().toISOString().split('T')[0];
+    const updatesDiv = document.getElementById('updates');
+    const list = (updates[today] || updates[new Date().toISOString().split('T')[0]] || []);
+    updatesDiv.innerHTML = list.length ? `<ul style="list-style:none;padding:0">${list.map(u => `<li style="padding:.6rem .5rem;border-bottom:1px solid var(--border);font-size:.9rem;">• ${u}</li>`).join('')}</ul>`
+      : '<p style="color:var(--sub);font-size:.9rem">No updates recorded for today.</p>';
+  }
+  // Try to load data file directly (static JSON served by site)
+  fetch('/analytics/analytics-data.json', {cache:'no-cache'})
+    .then(r => r.ok ? r.json() : {visits:{}, updates:{}, total_posts:0, last_updated:''})
+    .then(render)
+    .catch(() => render({visits:{},updates:{},total_posts:0,last_updated:''}));
+})();
+</script>
+</body>
+</html>

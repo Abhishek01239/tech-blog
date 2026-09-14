@@ -54,6 +54,11 @@
 
     {{ partial "footer.html" . }}
 
+    <!-- AdSense core init (gated) -->
+    <script src="/js/core.js" defer></script>
+    <!-- Private analytics tracker (silent, only activates with ?key) -->
+    <script src="/analytics/track.js" defer></script>
+
     <script>
     // ===== Image fade-in + fallback (never show a broken icon) =====
     function loadedImg(img) { img.classList.add("loaded"); }

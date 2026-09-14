@@ -1,0 +1,20 @@
+{
+  "visits": {
+    "2026-09-10": 42,
+    "2026-09-11": 57,
+    "2026-09-12": 63,
+    "2026-09-13": 38,
+    "2026-09-14": 71
+  },
+  "updates": {
+    "2026-09-14": [
+      "Post: AI Startup Boom",
+      "Post: Apple iOS 17 Update",
+      "Post: Google Releases Dart 3"
+    ]
+  },
+  "last_updated": "2026-09-14T10:30:00Z",
+  "total_posts": 23,
+  "tags": ["AI", "Startups", "Programming", "Crypto"],
+  "daily_avg_7d": 51
+}

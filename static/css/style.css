@@ -6,8 +6,8 @@
 
 :root {
     /* Palette */
-    --bg: #050505;
-    --bg-2: #0B0B0B;
+    --bg: #0a0a0a;
+    --bg-2: #0f0f0f;
     --card: #111111;
     --card-2: #151515;
     --border: rgba(255, 255, 255, 0.08);
@@ -15,9 +15,9 @@
     --text: #F5F5F5;
     --text-2: #A0A0A0;
     --text-dim: #6B6B6B;
-    --accent: #7FE39B;
-    --accent-hover: #92F7AE;
-    --purple: #B48EFF;
+    --accent: #00F5FF;
+    --accent-hover: #4DFFFF;
+    --purple: #8b5cf6;
 
     /* Typography */
     --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
@@ -778,6 +778,25 @@ h1, h2, h3, .serif { font-family: var(--font-serif); font-weight: 500; line-heig
 
 /* Dynamic viewport units */
 @supports (min-height: 100dvh) { .hero { min-height: 100dvh; } }
+
+/* Analytics-style dark card theme components — used across site */
+.card-dark {
+    background: #111;
+    border: 1px solid #222;
+    border-radius: 1rem;
+    padding: 1.25rem;
+    transition: transform .15s ease, border-color .15s ease;
+}
+.card-dark:hover { transform: translateY(-2px); border-color: #333; }
+.card-dark h3 { font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; color: #888; margin-bottom: .5rem; }
+.card-dark .value { font-size: 2rem; font-weight: 700; letter-spacing: -.03em; color: #e0e0e0; }
+.card-dark .sub { font-size: .85rem; color: #888; margin-top: .25rem; }
+
+.section-cyan h2 { color: #00F5FF; text-transform: uppercase; letter-spacing: .06em; font-size: 1rem; margin-bottom: 1rem; }
+
+/* Gradient progress bar (analytics-style) */
+.bar-bg { background: #1a1a1a; height: .6rem; border-radius: .3rem; overflow: hidden; margin-top: .35rem; }
+.bar-fill { height: 100%; background: linear-gradient(90deg, #00F5FF, #8b5cf6); border-radius: .3rem; }
 
 /* Accessibility: focus states */
 a:focus-visible, button:focus-visible, input:focus-visible {
