@@ -1,26 +1,90 @@
 {{ define "main" }}
-<section class="cities-page">
-  <div class="container">
-    <header class="cities-intro reveal">
-      <span class="eyebrow">Explore cities</span>
-      <h1>{{ .Title }}</h1>
-      <p>{{ .Description }}</p>
-    </header>
-    <div class="city-grid reveal-stagger">
-      {{ range .Pages.ByDate.Reverse }}
-      <a class="city-card" href="{{ .RelPermalink }}">
-        {{ with .Params.image }}<img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">{{ end }}
-        <div class="city-card-body">
-          <span>{{ with .Params.country }}{{ . }}{{ else }}City Guide{{ end }}</span>
-          <h2>{{ .Title }}</h2>
-          <p>{{ .Description }}</p>
-          <div class="city-card-link">Read guide →</div>
+<section class="cityvora-page">
+  <div class="cityvora-container">
+    <div class="cityvora-hero">
+      <div class="cityvora-hero-copy reveal">
+        <span class="cityvora-kicker">CITYVORA</span>
+        <h1>Explore amazing cities<br>around the world</h1>
+        <p>Discover places, cultures, food, attractions and everything that makes each city unique. Explore practical city guides and travel stories built for curious people.</p>
+        <div class="cityvora-actions">
+          <a class="cityvora-btn cityvora-btn-primary" href="#cities">Explore cities <span>→</span></a>
+          <a class="cityvora-btn cityvora-btn-ghost" href="#newsletter">Get city updates</a>
+        </div>
+        <div class="cityvora-stats">
+          <div><strong>{{ len .Pages }}</strong><span>Guides</span></div>
+          <div><strong>100+</strong><span>Cities planned</span></div>
+          <div><strong>24/7</strong><span>Travel ideas</span></div>
+        </div>
+      </div>
+
+      <a class="cityvora-featured reveal" href="{{ with index .Pages 0 }}{{ .RelPermalink }}{{ else }}/cities/ahmedabad/{{ end }}">
+        <div class="cityvora-featured-image" style="background-image:url('https://images.unsplash.com/photo-1595658658481-d53d3f999875?auto=format&fit=crop&w=1400&q=85');"></div>
+        <div class="cityvora-featured-content">
+          <span class="cityvora-chip">FEATURED CITY</span>
+          <h2>{{ with index .Pages 0 }}{{ .Title }}{{ else }}Ahmedabad{{ end }}</h2>
+          <p>{{ with index .Pages 0 }}{{ .Description }}{{ else }}A vibrant Gujarat city blending heritage, food, architecture and modern lifestyle along the Sabarmati.{{ end }}</p>
+          <span class="cityvora-read">Read full guide <b>→</b></span>
         </div>
       </a>
+    </div>
+
+    <div class="cityvora-section-head reveal" id="cities">
+      <div><span class="cityvora-kicker">DISCOVER</span><h2>Top Cities</h2></div>
+      <span class="cityvora-section-line"></span>
+      <a href="{{ .RelPermalink }}">View all cities <b>→</b></a>
+    </div>
+
+    <div class="cityvora-grid reveal-stagger">
+      {{ $pages := .Pages.ByDate.Reverse }}
+      {{ if gt (len $pages) 0 }}
+        {{ range first 8 $pages }}
+        <a class="cityvora-card" href="{{ .RelPermalink }}">
+          <div class="cityvora-card-image"{{ with .Params.image }} style="background-image:url('{{ . }}');"{{ end }}></div>
+          <div class="cityvora-card-body">
+            <h3>{{ .Title }}</h3>
+            <div class="cityvora-location">⌖ {{ with .Params.state }}{{ . }}, {{ end }}{{ with .Params.country }}{{ . }}{{ else }}India{{ end }}</div>
+            <p>{{ .Description }}</p>
+            <div class="cityvora-card-meta"><span>▣ {{ with .Params.readTime }}{{ . }}{{ else }}5 min{{ end }} read</span><span>◉ City guide</span><span class="cityvora-arrow">→</span></div>
+          </div>
+        </a>
+        {{ end }}
       {{ else }}
-      <div class="city-empty"><h2>Your city library starts here.</h2><p>Send me a city name and I can create its article and push it to this section.</p></div>
+        {{ $demo := slice
+          (dict "name" "Mumbai" "place" "Maharashtra, India" "img" "https://images.unsplash.com/photo-1570168007204-dfb528c6958f?auto=format&fit=crop&w=900&q=80")
+          (dict "name" "Ahmedabad" "place" "Gujarat, India" "img" "https://images.unsplash.com/photo-1595658658481-d53d3f999875?auto=format&fit=crop&w=900&q=80")
+          (dict "name" "Delhi" "place" "Delhi, India" "img" "https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=900&q=80")
+          (dict "name" "Jaipur" "place" "Rajasthan, India" "img" "https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=900&q=80")
+          (dict "name" "Bengaluru" "place" "Karnataka, India" "img" "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?auto=format&fit=crop&w=900&q=80")
+          (dict "name" "Goa" "place" "Goa, India" "img" "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?auto=format&fit=crop&w=900&q=80")
+          (dict "name" "Udaipur" "place" "Rajasthan, India" "img" "https://images.unsplash.com/photo-1606298855672-3efb63017be8?auto=format&fit=crop&w=900&q=80")
+          (dict "name" "Rishikesh" "place" "Uttarakhand, India" "img" "https://images.unsplash.com/photo-1599833975787-5c143f373c70?auto=format&fit=crop&w=900&q=80")
+        }}
+        {{ range $demo }}
+        <a class="cityvora-card" href="/cities/{{ .name | urlize }}/">
+          <div class="cityvora-card-image" style="background-image:url('{{ .img }}');"></div>
+          <div class="cityvora-card-body">
+            <h3>{{ .name }}</h3>
+            <div class="cityvora-location">⌖ {{ .place }}</div>
+            <p>Discover the places, food, culture, neighborhoods and experiences that make {{ .name }} worth exploring.</p>
+            <div class="cityvora-card-meta"><span>▣ 5 min read</span><span>◉ City guide</span><span class="cityvora-arrow">→</span></div>
+          </div>
+        </a>
+        {{ end }}
       {{ end }}
     </div>
+
+    <section class="cityvora-newsletter reveal" id="newsletter">
+      <div class="cityvora-newsletter-art"><div class="cityvora-stack"></div></div>
+      <div class="cityvora-newsletter-copy">
+        <span class="cityvora-kicker">CITYVORA INSIDER</span>
+        <h2>Get premium city guides<br>straight to your inbox.</h2>
+        <p>New destinations, practical travel ideas and city stories — without the noise.</p>
+        <form class="cityvora-subscribe" action="#" method="post">
+          <input type="email" placeholder="Enter your e-mail here" aria-label="Email address" required>
+          <button type="submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
   </div>
 </section>
 {{ end }}
