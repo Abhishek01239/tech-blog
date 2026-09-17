@@ -22,7 +22,7 @@ Ahmedabad is a city where centuries-old neighborhoods, carved wooden houses, bus
 
 ## Why Ahmedabad is worth exploring
 
-The historic walled city of Ahmedabad was founded in 1411 by Sultan Ahmad Shah. UNESCO inscribed the **Historic City of Ahmadabad** on the World Heritage List in 2017. Its heritage value includes the old city walls and gates, historic monuments, traditional pol neighborhoods and timber houses with distinctive architectural details. citeturn0search0turn0search2
+The historic walled city of Ahmedabad was founded in 1411 by Sultan Ahmad Shah. UNESCO inscribed the **Historic City of Ahmadabad** on the World Heritage List in 2017. Its heritage value includes the old city walls and gates, historic monuments, traditional pol neighborhoods and timber houses with distinctive architectural details.
 
 That heritage is still part of everyday city life. A walk through the old city can take you past traditional pol houses, neighborhood shrines, markets and centuries-old streets rather than a collection of isolated monuments.
 
@@ -30,11 +30,11 @@ That heritage is still part of everyday city life. A walk through the old city c
 
 ### 1. The historic walled city
 
-Start in the old city to experience Ahmedabad's traditional urban fabric. Bhadra Fort, the historic gates and the dense network of pols are central to understanding the city's character. UNESCO describes the historic city as a living urban area whose traditional houses, streets and community spaces form an important part of its heritage. citeturn0search0turn0search2
+Start in the old city to experience Ahmedabad's traditional urban fabric. Bhadra Fort, the historic gates and the dense network of pols are central to understanding the city's character. The historic city is a living urban area whose traditional houses, streets and community spaces form an important part of its heritage.
 
 ### 2. Sabarmati Riverfront
 
-The Sabarmati is one of Ahmedabad's defining geographic features. The river runs through the city, separating the historic eastern side from newer development to the west. The riverfront is a useful place to slow down after exploring the denser old-city streets and to see the city from a different perspective. citeturn0search2
+The Sabarmati is one of Ahmedabad's defining geographic features. The river runs through the city, separating the historic eastern side from newer development to the west. The riverfront is a useful place to slow down after exploring the denser old-city streets and to see the city from a different perspective.
 
 ### 3. Sabarmati Ashram
 
@@ -79,7 +79,7 @@ October through March is generally the more comfortable period for exploring the
 
 ## What makes Ahmedabad different
 
-Ahmedabad's appeal comes from the way its history remains embedded in the city rather than being confined to one monument. UNESCO highlights the combination of Sultanate-era monuments, traditional pols, wooden domestic architecture and a multicultural historic urban structure. citeturn0search0turn0search2
+Ahmedabad's appeal comes from the way its history remains embedded in the city rather than being confined to one monument. The city combines Sultanate-era monuments, traditional pols, wooden domestic architecture and a multicultural historic urban structure.
 
 That combination makes Ahmedabad a city to explore slowly: walk the old streets, look closely at the architecture, stop for local food and then cross the river to experience the newer side of the city.
 
@@ -92,4 +92,4 @@ That combination makes Ahmedabad a city to explore slowly: walk the old streets,
 - **Suggested first visit:** 2 days
 - **Best outdoor season:** October to March
 
-**Sources:** UNESCO World Heritage Centre, *Historic City of Ahmadabad*. citeturn0search0turn0search2
+*Source: UNESCO World Heritage Centre, Historic City of Ahmadabad.*
