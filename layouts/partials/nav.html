@@ -7,6 +7,7 @@
             {{ range .Site.Menus.main }}
             <a href="{{ .URL }}" class="{{ if $.IsMenuCurrent "main" . }}active{{ end }}">{{ .Name }}</a>
             {{ end }}
+            <a href="/cities/" class="{{ if eq .Section "cities" }}active{{ end }}">Cities</a>
         </div>
         <div class="nav-actions">
             <button class="nav-search" aria-label="Search" data-search-toggle>
