@@ -1,0 +1,26 @@
+{{ define "main" }}
+<section class="cities-page">
+  <div class="container">
+    <header class="cities-intro reveal">
+      <span class="eyebrow">Explore cities</span>
+      <h1>{{ .Title }}</h1>
+      <p>{{ .Description }}</p>
+    </header>
+    <div class="city-grid reveal-stagger">
+      {{ range .Pages.ByDate.Reverse }}
+      <a class="city-card" href="{{ .RelPermalink }}">
+        {{ with .Params.image }}<img src="{{ . }}" alt="{{ $.Title }}" loading="lazy">{{ end }}
+        <div class="city-card-body">
+          <span>{{ with .Params.country }}{{ . }}{{ else }}City Guide{{ end }}</span>
+          <h2>{{ .Title }}</h2>
+          <p>{{ .Description }}</p>
+          <div class="city-card-link">Read guide →</div>
+        </div>
+      </a>
+      {{ else }}
+      <div class="city-empty"><h2>Your city library starts here.</h2><p>Send me a city name and I can create its article and push it to this section.</p></div>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
