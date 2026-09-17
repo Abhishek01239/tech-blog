@@ -1,0 +1,42 @@
+{{ define "main" }}
+<article class="city-article">
+  <div class="container city-container">
+    <header class="city-header reveal">
+      <div class="city-kicker">{{ with .Params.country }}{{ . }} · {{ end }}City Guide</div>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="city-lede">{{ . }}</p>{{ end }}
+      <div class="city-meta">
+        {{ with .Date }}<span>Published {{ .Format "Jan 2, 2006" }}</span>{{ end }}
+        {{ with .Params.reading_time }}<span>{{ . }} min read</span>{{ end }}
+      </div>
+    </header>
+
+    {{ with .Params.image }}
+    <figure class="city-hero reveal">
+      <img src="{{ . }}" alt="{{ $.Title }}" loading="eager">
+    </figure>
+    {{ end }}
+
+    <div class="city-layout">
+      <aside class="city-facts reveal">
+        <div class="city-facts-card">
+          <span class="eyebrow">Quick facts</span>
+          {{ with .Params.country }}<div><strong>Country</strong><span>{{ . }}</span></div>{{ end }}
+          {{ with .Params.region }}<div><strong>Region</strong><span>{{ . }}</span></div>{{ end }}
+          {{ with .Params.best_time }}<div><strong>Best time</strong><span>{{ . }}</span></div>{{ end }}
+          {{ with .Params.currency }}<div><strong>Currency</strong><span>{{ . }}</span></div>{{ end }}
+        </div>
+      </aside>
+      <div class="city-content prose reveal">
+        {{ .Content }}
+      </div>
+    </div>
+
+    {{ with .Params.tags }}
+    <footer class="city-tags">
+      {{ range . }}<a href="{{ "tags/" | relURL }}{{ . | urlize }}/">#{{ . }}</a>{{ end }}
+    </footer>
+    {{ end }}
+  </div>
+</article>
+{{ end }}
