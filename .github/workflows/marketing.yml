@@ -6,12 +6,8 @@ on:
       - 'content/posts/**'
       - 'static/images/**'
   schedule:
-    - cron: '0 9,15,21 * * *'  # 3x daily, 1hr after article generation
+    - cron: '0 9,15,21 * * *'
   workflow_dispatch:
-  workflow_run:
-    workflows: ["Generate Articles"]
-    types: [completed]
-    branches: [main]
 
 permissions:
   contents: write
@@ -66,14 +62,16 @@ jobs:
           echo "Reddit: posted $N article(s)"
 
       - name: Cross-post to Dev.to
-        env: { DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }} }
+        env:
+          DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
         run: |
           if [ -z "$DEVTO_API_KEY" ]; then echo "Dev.to key not set, skipping"; exit 0; fi
           N=0; while LATEST=$(python scripts/mark_done.py next devto) && [ -n "$LATEST" ]; do SLUG=$(basename "$LATEST" .md); if python scripts/devto_post.py "$LATEST"; then python scripts/mark_done.py post devto "$SLUG"; N=$((N+1)); else break; fi; done
           echo "Dev.to: posted $N article(s)"
 
       - name: Post to Discord
-        env: { DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }} }
+        env:
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
         run: |
           if [ -z "$DISCORD_WEBHOOK" ]; then echo "Discord webhook not set, skipping"; exit 0; fi
           N=0; while LATEST=$(python scripts/mark_done.py next discord) && [ -n "$LATEST" ]; do SLUG=$(basename "$LATEST" .md); TEASER=$(python scripts/teaser.py "$LATEST"); if python scripts/discord_post.py "$TEASER"; then python scripts/mark_done.py post discord "$SLUG"; N=$((N+1)); else break; fi; done
