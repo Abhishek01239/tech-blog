@@ -1,13 +1,13 @@
-{{/* ===== Floating pill navigation ===== */}}
-{{ $current := . }}{{/* . not used directly here; each link compares its URL */}}
+{{/* ===== Cityvora navigation ===== */}}
 <header class="site-header">
     <nav class="nav" role="navigation" aria-label="Main navigation">
-        <a href="/" class="nav-logo" aria-label="TechPulse home">Tech<em>Pulse</em></a>
+        <a href="/" class="nav-logo" aria-label="Cityvora home">City<em>vora</em></a>
         <div class="nav-links" id="navLinks">
             {{ range .Site.Menus.main }}
             <a href="{{ .URL }}" class="{{ if $.IsMenuCurrent "main" . }}active{{ end }}">{{ .Name }}</a>
             {{ end }}
             <a href="/cities/" class="{{ if eq .Section "cities" }}active{{ end }}">Cities</a>
+            <a href="/about/">About</a>
         </div>
         <div class="nav-actions">
             <button class="nav-search" aria-label="Search" data-search-toggle>
