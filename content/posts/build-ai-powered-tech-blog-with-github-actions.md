@@ -10,7 +10,7 @@ tags:
   - Hugo
   - Groq
   - automation
-image: "/images/ai-tech-blog-github-actions.svg"
+image: "/images/build-ai-powered-tech-blog-with-github-actions.jpg"
 ---
 
 Building a tech blog is easy to start and surprisingly hard to maintain. Writing articles, preparing images, publishing the site, and sharing every post across social platforms can turn a simple blog into a repetitive daily task. A better approach is to treat publishing as a software pipeline.
