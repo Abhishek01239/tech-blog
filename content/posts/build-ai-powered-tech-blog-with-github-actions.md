@@ -52,3 +52,5 @@ Start with a small number of articles, inspect the generated output, and only th
 ## Final takeaway
 
 The most useful part of an AI-powered blog is not the AI alone. It is the connection between generation, validation, version control, deployment, and distribution. With Hugo, Groq, GitHub Actions, and a few focused scripts, a tech blog can become a repeatable publishing system instead of a collection of manual tasks.
+
+*Updated for automated social distribution.*
