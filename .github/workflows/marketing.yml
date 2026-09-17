@@ -1,5 +1,10 @@
 name: Marketing Automation
 on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/posts/**'
+      - 'static/images/**'
   schedule:
     - cron: '0 9,15,21 * * *'  # 3x daily, 1hr after article generation
   workflow_dispatch:
@@ -9,7 +14,7 @@ on:
     branches: [main]
 
 permissions:
-  contents: write   # needed to commit the dedup registry back to the repo
+  contents: write
 
 concurrency:
   group: marketing-post
@@ -23,7 +28,6 @@ jobs:
         with:
           persist-credentials: true
 
-      # ---- Telegram (free, unlimited, best reach) ----
       - name: Post to Telegram
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -36,32 +40,15 @@ jobs:
             IMG=$(grep "^image:" "$LATEST" | head -1 | sed 's/image: "//' | sed 's/"$//')
             TEASER=$(python scripts/teaser.py "$LATEST")
             MSG=$(echo "$TEASER" | sed 's/&/\&amp;/g; s/</\&lt;/g; s/>/\&gt;/g')
-            case "$IMG" in
-              /*) IMG="https://tech-blog-eight-blush.vercel.app${IMG}" ;;
-            esac
+            case "$IMG" in /*) IMG="https://tech-blog-eight-blush.vercel.app${IMG}" ;; esac
             if [ -n "$IMG" ]; then
-              RESP=$(curl -sS --max-time 60 "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendPhoto" \
-                -F chat_id="${TELEGRAM_CHANNEL_ID}" \
-                -F photo="$IMG" \
-                -F caption="$MSG" \
-                -F parse_mode="HTML") || true
-              echo "[$SLUG] sendPhoto: $RESP"
+              RESP=$(curl -sS --max-time 60 "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendPhoto" -F chat_id="${TELEGRAM_CHANNEL_ID}" -F photo="$IMG" -F caption="$MSG" -F parse_mode="HTML") || true
             fi
-            RESP2=$(curl -sS --max-time 60 "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-              -d chat_id="${TELEGRAM_CHANNEL_ID}" \
-              -d text="$MSG" -d parse_mode="HTML") || true
-            echo "[$SLUG] sendMessage: $RESP2"
-            if echo "$RESP$RESP2" | grep -q '"ok":true'; then
-              python scripts/mark_done.py post telegram "$SLUG"
-              N=$((N+1))
-            else
-              echo "[$SLUG] not confirmed, stopping retry-loop"
-              break
-            fi
+            RESP2=$(curl -sS --max-time 60 "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" -d chat_id="${TELEGRAM_CHANNEL_ID}" -d text="$MSG" -d parse_mode="HTML") || true
+            if echo "$RESP$RESP2" | grep -q '"ok":true'; then python scripts/mark_done.py post telegram "$SLUG"; N=$((N+1)); else break; fi
           done
           echo "Telegram: posted $N article(s)"
 
-      # ---- Reddit (free, 100 req/min) ----
       - name: Post to Reddit
         env:
           REDDIT_CLIENT_ID: ${{ secrets.REDDIT_CLIENT_ID }}
@@ -72,65 +59,24 @@ jobs:
           if [ -z "$REDDIT_CLIENT_ID" ]; then echo "Reddit key not set, skipping"; exit 0; fi
           N=0
           while LATEST=$(python scripts/mark_done.py next reddit) && [ -n "$LATEST" ]; do
-            SLUG=$(basename "$LATEST" .md)
-            TITLE=$(grep "^title:" "$LATEST" | head -1 | sed 's/title: "//' | sed 's/"$//')
-            URL="https://tech-blog-eight-blush.vercel.app/posts/${SLUG}/"
-            CAT=$(sed -n 's/^categories: \[\(.*\)\]/\1/p' "$LATEST")
-            case "$CAT" in
-              *AI*) SUB="artificial" ;;
-              *Crypto*) SUB="CryptoCurrency" ;;
-              *Programming*) SUB="programming" ;;
-              *Space*) SUB="space" ;;
-              *) SUB="technology" ;;
-            esac
-            echo "Posting [$SLUG] to r/$SUB"
-            if python scripts/reddit_post.py "$SUB" "$TITLE" "$URL"; then
-              python scripts/mark_done.py post reddit "$SLUG"
-              N=$((N+1))
-            else
-              echo "[$SLUG] reddit post failed, stopping loop"
-              break
-            fi
+            SLUG=$(basename "$LATEST" .md); TITLE=$(grep "^title:" "$LATEST" | head -1 | sed 's/title: "//' | sed 's/"$//'); URL="https://tech-blog-eight-blush.vercel.app/posts/${SLUG}/"; CAT=$(sed -n 's/^categories: \[\(.*\)\]/\1/p' "$LATEST")
+            case "$CAT" in *AI*) SUB="artificial" ;; *Crypto*) SUB="CryptoCurrency" ;; *Programming*) SUB="programming" ;; *Space*) SUB="space" ;; *) SUB="technology" ;; esac
+            if python scripts/reddit_post.py "$SUB" "$TITLE" "$URL"; then python scripts/mark_done.py post reddit "$SLUG"; N=$((N+1)); else break; fi
           done
           echo "Reddit: posted $N article(s)"
 
-      # ---- Dev.to (free, unlimited) ----
       - name: Cross-post to Dev.to
-        env:
-          DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }}
+        env: { DEVTO_API_KEY: ${{ secrets.DEVTO_API_KEY }} }
         run: |
           if [ -z "$DEVTO_API_KEY" ]; then echo "Dev.to key not set, skipping"; exit 0; fi
-          N=0
-          while LATEST=$(python scripts/mark_done.py next devto) && [ -n "$LATEST" ]; do
-            SLUG=$(basename "$LATEST" .md)
-            if python scripts/devto_post.py "$LATEST"; then
-              python scripts/mark_done.py post devto "$SLUG"
-              N=$((N+1))
-            else
-              echo "[$SLUG] devto failed, stopping loop"
-              break
-            fi
-          done
+          N=0; while LATEST=$(python scripts/mark_done.py next devto) && [ -n "$LATEST" ]; do SLUG=$(basename "$LATEST" .md); if python scripts/devto_post.py "$LATEST"; then python scripts/mark_done.py post devto "$SLUG"; N=$((N+1)); else break; fi; done
           echo "Dev.to: posted $N article(s)"
 
-      # ---- Discord (0-cost: webhook URL, no OAuth/approval) ----
       - name: Post to Discord
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+        env: { DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }} }
         run: |
           if [ -z "$DISCORD_WEBHOOK" ]; then echo "Discord webhook not set, skipping"; exit 0; fi
-          N=0
-          while LATEST=$(python scripts/mark_done.py next discord) && [ -n "$LATEST" ]; do
-            SLUG=$(basename "$LATEST" .md)
-            TEASER=$(python scripts/teaser.py "$LATEST")
-            if python scripts/discord_post.py "$TEASER"; then
-              python scripts/mark_done.py post discord "$SLUG"
-              N=$((N+1))
-            else
-              echo "[$SLUG] discord failed, stopping loop"
-              break
-            fi
-          done
+          N=0; while LATEST=$(python scripts/mark_done.py next discord) && [ -n "$LATEST" ]; do SLUG=$(basename "$LATEST" .md); TEASER=$(python scripts/teaser.py "$LATEST"); if python scripts/discord_post.py "$TEASER"; then python scripts/mark_done.py post discord "$SLUG"; N=$((N+1)); else break; fi; done
           echo "Discord: posted $N article(s)"
 
       - name: Post to Bluesky
@@ -141,34 +87,10 @@ jobs:
           if [ -z "$BSKY_HANDLE" ]; then echo "Bluesky not set, skipping"; exit 0; fi
           N=0
           while LATEST=$(python scripts/mark_done.py next bluesky) && [ -n "$LATEST" ]; do
-            SLUG=$(basename "$LATEST" .md)
-            TEASER=$(python scripts/teaser.py "$LATEST")
-            # Resolve the cover image (local path -> absolute, or remote URL)
-            IMG=$(grep "^image:" "$LATEST" | head -1 | sed 's/image: "//' | sed 's/"$//')
-            if [ -n "$IMG" ]; then
-              case "$IMG" in
-                /*) IMG="$PWD/static${IMG}" ;;   # local file in repo
-                http*) ;;                        # already a URL
-                *) IMG="" ;;                     # unsupported
-              esac
-            fi
-            if [ -n "$IMG" ]; then
-              if python scripts/bluesky_post.py "$TEASER" "$IMG"; then
-                python scripts/mark_done.py post bluesky "$SLUG"
-                N=$((N+1))
-              else
-                echo "[$SLUG] bluesky failed, stopping loop"
-                break
-              fi
-            else
-              if python scripts/bluesky_post.py "$TEASER"; then
-                python scripts/mark_done.py post bluesky "$SLUG"
-                N=$((N+1))
-              else
-                echo "[$SLUG] bluesky failed, stopping loop"
-                break
-              fi
-            fi
+            SLUG=$(basename "$LATEST" .md); TEASER=$(python scripts/teaser.py "$LATEST"); IMG=$(grep "^image:" "$LATEST" | head -1 | sed 's/image: "//' | sed 's/"$//')
+            case "$IMG" in /*) IMG="$PWD/static${IMG}" ;; http*) ;; *) IMG="" ;; esac
+            if [ -n "$IMG" ]; then OK=$(python scripts/bluesky_post.py "$TEASER" "$IMG" && echo yes || echo no); else OK=$(python scripts/bluesky_post.py "$TEASER" && echo yes || echo no); fi
+            if [ "$OK" = yes ]; then python scripts/mark_done.py post bluesky "$SLUG"; N=$((N+1)); else break; fi
           done
           echo "Bluesky: posted $N article(s)"
 
@@ -177,50 +99,15 @@ jobs:
           MASTODON_INSTANCE: ${{ secrets.MASTODON_INSTANCE }}
           MASTODON_TOKEN: ${{ secrets.MASTODON_TOKEN }}
         run: |
-          echo "DIAG: MASTODON_TOKEN set=[$([ -n "$MASTODON_TOKEN" ] && echo YES || echo NO)]"
-          echo "DIAG: MASTODON_INSTANCE set=[$([ -n "$MASTODON_INSTANCE" ] && echo YES || echo NO)]"
           if [ -z "$MASTODON_TOKEN" ]; then echo "Mastodon not set, skipping"; exit 0; fi
-          N=0
-          while LATEST=$(python scripts/mark_done.py next mastodon) && [ -n "$LATEST" ]; do
-            SLUG=$(basename "$LATEST" .md)
-            TEASER=$(python scripts/teaser.py "$LATEST")
-            if python scripts/mastodon_post.py "$TEASER"; then
-              python scripts/mark_done.py post mastodon "$SLUG"
-              N=$((N+1))
-            else
-              echo "[$SLUG] mastodon failed, stopping loop"
-              break
-            fi
-          done
+          N=0; while LATEST=$(python scripts/mark_done.py next mastodon) && [ -n "$LATEST" ]; do SLUG=$(basename "$LATEST" .md); TEASER=$(python scripts/teaser.py "$LATEST"); if python scripts/mastodon_post.py "$TEASER"; then python scripts/mark_done.py post mastodon "$SLUG"; N=$((N+1)); else break; fi; done
           echo "Mastodon: posted $N article(s)"
 
-      # ---- Commit the dedup registry back to the repo so it persists ----
-      # Registry pushes race against other concurrent runs (workflow_run +
-      # cron can overlap), so pull --rebase before push to survive a
-      # "fetch first" rejection.
       - name: Commit posting registry
         run: |
-          git config user.name "TechPulse Bot"
-          git config user.email "techpulse@users.noreply.github.com"
-          git add .marketing || true
-          if git diff --cached --quiet; then
-            echo "No registry changes to commit"
-          else
-            git commit -m "chore: update posting registry [skip ci]" || true
-            for i in 1 2 3 4 5; do
-              if GIT_TERMINAL_PROMPT=0 git push; then
-                echo "registry push OK"
-                break
-              else
-                echo "push rejected (race), pulling rebase and retrying ($i)..."
-                GIT_TERMINAL_PROMPT=0 git pull --rebase origin main && \
-                  { git push && echo "registry push OK after rebase"; break; }
-              fi
-              sleep 2
-            done
-          fi
+          git config user.name "TechPulse Bot"; git config user.email "techpulse@users.noreply.github.com"; git add .marketing || true
+          if git diff --cached --quiet; then echo "No registry changes to commit"; else git commit -m "chore: update posting registry [skip ci]" || true; for i in 1 2 3 4 5; do if GIT_TERMINAL_PROMPT=0 git push; then break; else GIT_TERMINAL_PROMPT=0 git pull --rebase origin main && git push && break; fi; sleep 2; done; fi
 
-      # ---- SEO pings (always free, no auth) ----
       - name: Ping Google & Bing
         run: |
           curl -s "https://www.google.com/ping?sitemap=https://tech-blog-eight-blush.vercel.app/sitemap.xml" > /dev/null || true
