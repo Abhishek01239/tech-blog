@@ -6,7 +6,7 @@ description: "S&P Global announced a deal to acquire blockchain security leader 
 tags: ["OpenZeppelin", "S&P Global", "acquisition", "blockchain", "security"]
 categories: ["Cybersecurity"]
 author: "Tech Tutorials Hub"
-image: ""
+image: "/images/sp-global-acquires-openzeppelin-to-anchor-onchain-security.jpg"
 ---
 
 ## Lead
