@@ -46,6 +46,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No new articles to commit"
           else
-            git commit -m "docs: auto-generate $(date +%Y-%m-%d) articles + images [skip ci]"
+            git commit -m "docs: auto-generate $(date +%Y-%m-%d) articles + images"
             git push
           fi
