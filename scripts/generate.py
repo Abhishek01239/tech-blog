@@ -138,18 +138,15 @@ def get_groq_client():
         exit(1)
     return Groq(api_key=api_key)
 
-# Groq models that are actually live on this account (re-verified 2026-08-25 via
-# the Diagnose Groq Models workflow). The original llama-3.3-70b-versatile and
-# every llama-3.1/3.3 variant were decommissioned by Groq, which silently killed
-# the daily pipeline for 17 days. We probe each with response_format=json_object
-# (required by generate_news_article) so a model that can't do structured output
-# is skipped, not selected.
+# Groq models currently supported for production/developer use.
+# Keep the preferred high-quality model first, with fallbacks in case of
+# temporary availability/rate-limit differences. Groq decommissioned
+# qwen/qwen3.6-27b and the Compound systems in September 2026, so they must
+# not remain in this list.
 GROQ_MODELS = [
-    "qwen/qwen3.6-27b",
-    "openai/gpt-oss-20b",
     "openai/gpt-oss-120b",
-    "groq/compound-mini",
-    "groq/compound",
+    "openai/gpt-oss-20b",
+    "qwen/qwen3.8-27b",
 ]
 
 
@@ -182,7 +179,7 @@ def pick_working_model(client):
     )
 
 
-def generate_news_article(client, topic=None, model="llama-3.3-70b-versatile"):
+def generate_news_article(client, topic=None, model="openai/gpt-oss-120b"):
     """Generate a tech news article using Groq."""
     prompt = f"""Write a tech news article about a recent development in technology.
 
