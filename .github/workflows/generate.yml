@@ -1,0 +1,70 @@
+name: Generate Articles
+
+on:
+  schedule:
+    # 3× daily — 08:00 / 14:00 / 20:00 UTC
+    - cron: "0 8,14,20 * * *"
+  workflow_dispatch:
+    inputs:
+      num_articles:
+        description: "How many articles to generate"
+        required: false
+        default: "5"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: generate-articles
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install --quiet groq pillow
+
+      - name: Generate tech-news articles
+        env:
+          GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+          NUM_ARTICLES: ${{ github.event.inputs.num_articles || '5' }}
+          BLOG_AUTHOR: "TechPulse"
+        run: |
+          python scripts/generate.py
+
+      - name: Commit & push new articles
+        run: |
+          git config user.name "TechPulse Bot"
+          git config user.email "techpulse@users.noreply.github.com"
+
+          git add content/posts/ static/images/ generation-summary.json || true
+
+          if git diff --cached --quiet; then
+            echo "No new articles to commit"
+            exit 0
+          fi
+
+          git commit -m "chore: auto-generate daily tech news articles [skip ci]"
+
+          # Retry push a few times in case of concurrent marketing workflow
+          for i in 1 2 3 4 5; do
+            if GIT_TERMINAL_PROMPT=0 git push origin main; then
+              echo "Pushed successfully"
+              break
+            fi
+            echo "Push failed, rebasing and retrying..."
+            GIT_TERMINAL_PROMPT=0 git pull --rebase origin main || true
+            sleep 3
+          done
