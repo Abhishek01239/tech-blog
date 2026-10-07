@@ -43,3 +43,7 @@ title = "TechPulse"
   name = "Programming"
   url = "/tags/programming/"
   weight = 5
+
+[caches]
+  [caches.images]
+    dir = ":cacheDir/images"
