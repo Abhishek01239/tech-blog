@@ -1,4 +1,5 @@
 name: Ensure Article Images
+# Backfill missing article covers with the repository's verified image generator.
 
 on:
   push:
