@@ -6,7 +6,7 @@ description: "Google paused new product reports to its open-source bug bounty af
 tags: ["cybersecurity", "google", "ai", "bug-bounty"]
 categories: ["Cybersecurity"]
 author: "TechPulse"
-image: ""
+image: "/images/google-pauses-oss-bug-bounty-ai-slop.jpg"
 ---
 
 Google has temporarily stopped accepting new product vulnerability reports through its Open Source Software Vulnerability Reward Program, citing a sharp rise in automated submissions that human reviewers say are mostly wrong.
