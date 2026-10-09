@@ -6,7 +6,7 @@ description: "Anthropic merged its cyber verification and Glasswing programs int
 tags: ["anthropic", "ai", "cybersecurity", "claude"]
 categories: ["Artificial Intelligence"]
 author: "TechPulse"
-image: ""
+image: "/images/anthropic-three-tier-cyber-verification.jpg"
 ---
 
 Anthropic is folding its Cyber Verification Program and Project Glasswing into one offering, with three tiers of access to its most capable models for security teams that can prove who they are.
