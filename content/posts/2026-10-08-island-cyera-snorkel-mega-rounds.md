@@ -6,7 +6,7 @@ description: "Island and Cyera each raised $400 million for enterprise security,
 tags: ["startups", "cybersecurity", "funding", "ai"]
 categories: ["Startups"]
 author: "TechPulse"
-image: ""
+image: "/images/island-cyera-snorkel-mega-rounds.jpg"
 ---
 
 Two cybersecurity companies closed $400 million rounds in the same week, and an AI data specialist added $350 million, a cluster that shows where late-stage money is still willing to write large checks.

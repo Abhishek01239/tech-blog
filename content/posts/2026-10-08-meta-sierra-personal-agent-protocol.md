@@ -6,6 +6,7 @@ description: "Meta and Sierra, backed by Walmart, Shopify and Stripe, have unvei
 tags: [AI, Meta, Sierra, AI Agents, Open Standards, Agentic Commerce, OAuth]
 categories: ["Tech News"]
 author: "TechPulse"
+image: "/images/meta-sierra-personal-agent-protocol.jpg"
 ---
 
 # Meta and Sierra Want to Give Your AI Agent a Handshake: Inside the Personal Agent Protocol

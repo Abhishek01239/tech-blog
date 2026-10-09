@@ -6,7 +6,7 @@ description: "Day one of Pwn2Own Ireland 2026 produced 32 zero-days and over $36
 tags: ["cybersecurity", "pwn2own", "samsung", "zero-day"]
 categories: ["Cybersecurity"]
 author: "TechPulse"
-image: ""
+image: "/images/pwn2own-ireland-zero-days-galaxy-s26.jpg"
 ---
 
 Ethical hackers opened Pwn2Own Ireland 2026 with 32 zero-day vulnerabilities and more than $368,000 in prize money on day one, including a remote compromise of Samsung's Galaxy S26 triggered by a single email.

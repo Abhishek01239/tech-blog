@@ -6,6 +6,7 @@ description: "At its October 7 Windows and Surface event, Microsoft and Nvidia u
 tags: ["Microsoft", "NVIDIA", "AI", "Windows", "Hardware", "Surface", "Local AI", "Security"]
 categories: ["Tech News"]
 author: "TechPulse"
+image: "/images/microsoft-rtx-spark-local-ai-windows-event.jpg"
 ---
 
 # Microsoft Puts a Petaflop on Your Desk: Windows Goes All-In on Local AI
