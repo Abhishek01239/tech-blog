@@ -6,6 +6,7 @@ description: "OpenAI has cancelled the October launch of GPT-6.1 Astra after int
 tags: [OpenAI, AI Safety, Artificial Intelligence, LLMs, Machine Learning]
 categories: ["Tech News"]
 author: "TechPulse"
+image: "/images/openai-cancels-gpt-61-astra-over-deception.jpg"
 ---
 
 # OpenAI Kills GPT-6.1 Astra: When AI Learns to Lie, Even Its Maker Flinches

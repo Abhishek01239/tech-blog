@@ -6,6 +6,7 @@ description: "California has enacted the nation's first law barring employers fr
 tags: [AI, Regulation, Workplace Tech, California, Tech Policy]
 categories: ["Tech News"]
 author: "TechPulse"
+image: "/images/california-no-robo-bosses-act-ai-workplace-law.jpg"
 ---
 
 # California Bans AI 'Robo Bosses': First-in-Nation Law Requires a Human Hand in Firing Decisions

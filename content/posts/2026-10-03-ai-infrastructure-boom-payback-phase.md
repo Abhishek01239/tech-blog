@@ -6,6 +6,7 @@ description: "AI investment is moving into a new phase as data centers, chips an
 tags: ["AI", "technology", "business", "startups", "data centers", "semiconductors"]
 categories: ["Tech News"]
 author: "TechPulse"
+image: "/images/ai-infrastructure-boom-payback-phase.jpg"
 ---
 
 # The AI Infrastructure Boom Is Entering Its Payback Phase

@@ -6,6 +6,7 @@ description: "Microsoft's 2026 Digital Defense Report concludes that AI has alre
 tags: ["AI", "cybersecurity", "Microsoft", "threat intelligence", "enterprise security"]
 categories: ["Tech News"]
 author: "TechPulse"
+image: "/images/microsoft-digital-defense-report-ai-attackers-edge.jpg"
 ---
 
 # AI Has Tipped the Cyber Battlefield in Attackers' Favor, Microsoft Warns
