@@ -6,6 +6,7 @@ description: "Reflection AI has introduced Beam, a 501-billion-parameter sparse 
 tags: [AI, Artificial Intelligence, LLMs, Open Weight, Coding]
 categories: ["Tech News"]
 author: "TechPulse"
+image: "/images/reflection-ai-beam-open-weight-model.jpg"
 ---
 
 # Reflection AI’s Beam Puts Efficiency at the Center of the Open-Model Race
