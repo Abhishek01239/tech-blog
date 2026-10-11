@@ -6,7 +6,7 @@ description: "SpaceX has reached a definitive agreement to acquire Grain Managem
 tags: ["SpaceX", "Starlink", "Mobile", "Spectrum", "Telecom", "FCC"]
 categories: ["Space", "Telecom"]
 author: "TechPulse"
-image: "/images/spacex-starlink-800mhz-spectrum.jpg"
+image: "https://res.cloudinary.com/muc9b5sj/image/upload/v1791746800/spacex-starlink-800mhz-spectrum.png"
 ---
 
 SpaceX announced on October 8, 2026, a definitive agreement to acquire 100% of Grain Management’s nationwide 800 MHz low-band spectrum portfolio. The deal, subject to FCC approval, is intended to supply the coverage layer that lets Starlink Mobile deliver service indoors on ordinary smartphones and compete as a facilities-based US mobile carrier.
