@@ -1,5 +1,6 @@
 name: Ensure Article Images
 # Backfill missing article covers with the repository's verified image generator.
+# A push to main runs this workflow so generated covers are committed locally.
 
 on:
   push:
