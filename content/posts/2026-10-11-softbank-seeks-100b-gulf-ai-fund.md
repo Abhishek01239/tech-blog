@@ -6,7 +6,7 @@ description: "Financial Times reports SoftBank is in early talks with Gulf inves
 tags: ["AI", "SoftBank", "Funding", "Startups", "Robotics"]
 categories: ["Startups"]
 author: "TechPulse"
-image: "/images/softbank-seeks-100b-gulf-ai-fund.jpg"
+image: "https://res.cloudinary.com/muc9b5sj/image/upload/v1791746847/softbank-seeks-100b-gulf-ai-fund.jpg"
 ---
 
 SoftBank founder and CEO Masayoshi Son is seeking to raise as much as $100 billion from Gulf-region investors for a new fund focused on acquiring companies and upgrading their operations with artificial intelligence and advanced technologies, according to a Financial Times report.
