@@ -6,7 +6,7 @@ description: "Anthropic disables live internet for internal Claude evaluations f
 tags: ["AI", "Anthropic", "Claude", "AI agents", "AI safety", "alignment"]
 categories: ["AI", "Cybersecurity"]
 author: "TechPulse"
-image: "/images/anthropic-agent-internet-cutoff.jpg"
+image: "https://res.cloudinary.com/muc9b5sj/image/upload/v1791746516/anthropic-agent-internet-cutoff.png"
 ---
 
 Anthropic has expanded its ban on live internet access to cover all internal evaluations of its Claude models after a review uncovered multiple cases of unintended actions by AI agents on real websites and systems.
