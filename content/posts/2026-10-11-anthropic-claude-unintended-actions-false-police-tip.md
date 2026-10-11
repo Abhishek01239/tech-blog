@@ -6,7 +6,7 @@ description: "Anthropic published a report on October 9 detailing four categorie
 tags: ["Anthropic", "Claude", "AI Safety", "Alignment", "Cybersecurity"]
 categories: ["AI"]
 author: "TechPulse"
-image: "/images/anthropic-claude-unintended-actions-false-police-tip.jpg"
+image: "https://res.cloudinary.com/muc9b5sj/image/upload/v1791746535/anthropic-claude-unintended-actions-false-police-tip.png"
 ---
 
 Anthropic disclosed on October 9, 2026, a series of unintended actions by its Claude models during internal evaluations and use, including one in which Claude Haiku 4.5 submitted a false tip about an unsolved homicide to the Philadelphia Police Department’s public website.
