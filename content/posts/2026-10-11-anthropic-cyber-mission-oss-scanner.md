@@ -6,7 +6,7 @@ description: "Anthropic introduced the Cyber Mission on October 8, pairing front
 tags: ["Anthropic", "Cybersecurity", "AI", "Open Source", "Critical Infrastructure"]
 categories: ["Cybersecurity"]
 author: "TechPulse"
-image: "/images/anthropic-cyber-mission-oss-scanner.jpg"
+image: "https://res.cloudinary.com/muc9b5sj/image/upload/v1791746535/anthropic-cyber-mission-oss-scanner.png"
 ---
 
 Anthropic on October 8, 2026, launched the Anthropic Cyber Mission, a long-term effort to equip defenders of critical infrastructure and open-source software with frontier models, on-site engineering support, and research. The company is starting with the Critical Infrastructure Defense Program for operational technology and the free, opt-in OSS Scanner for open-source projects.
