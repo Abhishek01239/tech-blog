@@ -3,7 +3,7 @@ title: "S&P Global Acquires OpenZeppelin to Anchor On‑Chain Security"
 date: 2026-09-19
 draft: false
 description: "S&P Global announced a deal to acquire blockchain security leader OpenZeppelin, expanding its digital‑asset risk suite and cementing its foothold in crypto finance."
-tags: ["OpenZeppelin", "S&P Global", "acquisition", "blockchain", "security"]
+tags: ["OpenZeppelin", "S&P Global", "acquisition", "blockchain", "security", "Crypto"]
 categories: ["Cybersecurity"]
 author: "Tech Tutorials Hub"
 image: "/images/sp-global-acquires-openzeppelin-to-anchor-onchain-security.jpg"
