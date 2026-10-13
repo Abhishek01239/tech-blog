@@ -262,8 +262,8 @@ def existing_image_hashes():
 def save_article(article, existing_titles=None, existing_hashes=None, used_titles=None, seed=0):
     """Save article as Hugo markdown with a UNIQUE featured image.
 
-    Returns the saved Path, or None if the title is a duplicate of an existing
-    post / already-generated-this-run article (skipped, not saved).
+    Returns the saved Path, or None if the title is a duplicate or a unique,
+    verified cover cannot be generated (skipped, not saved).
     """
     existing_titles = existing_titles or set()
     used_titles = used_titles or set()
@@ -282,7 +282,18 @@ def save_article(article, existing_titles=None, existing_hashes=None, used_title
 
     category = article.get("category", "general")
     image_url = get_image_url(category, slug, article["title"], existing_hashes, seed)
-    image_line = f'image: "{image_url}"' if image_url else "image: \"\""
+    if not image_url:
+        print(f"  WARN: skipping article without a verified cover: {article['title']!r}")
+        return None
+    img_path = IMAGE_DIR / f"{slug}.jpg"
+    if image_url != f"/images/{slug}.jpg" or not is_pollinations_image(img_path):
+        print(f"  WARN: skipping article with an invalid cover: {article['title']!r}")
+        return None
+    image_hash = pollinations_image_hash(img_path)
+    if not image_hash or (existing_hashes is not None and image_hash in existing_hashes):
+        print(f"  WARN: skipping article with a duplicate/empty cover: {article['title']!r}")
+        return None
+    image_line = f'image: "{image_url}"'
     tags_yaml = json.dumps(article.get("tags", [category]))
 
     frontmatter = f"""---
@@ -299,9 +310,8 @@ author: "{os.environ.get('BLOG_AUTHOR', 'TechPulse')}"
     content = f"{frontmatter}\n\n{article['content']}"
     filepath.write_text(content, encoding="utf-8")
     used_titles.add(norm)
-    if image_url and existing_hashes is not None:
-        img_path = IMAGE_DIR / f"{slug}.jpg"
-        existing_hashes.add(pollinations_image_hash(img_path))  # prevent same-run dup
+    if existing_hashes is not None:
+        existing_hashes.add(image_hash)  # prevent same-run duplicate covers
     print(f"  -> {filename}")
     return filepath
 
