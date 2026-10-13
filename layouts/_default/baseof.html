@@ -8,7 +8,7 @@
     <meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ", " }}{{ else }}tech news, AI, startups, programming, crypto{{ end }}">
     <meta name="author" content="{{ .Site.Params.author }}">
     <meta name="robots" content="index, follow">
-    <meta name="theme-color" content="#050505">
+    <meta name="theme-color" content="#101114">
     <meta property="og:title" content="{{ .Title }}">
     <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
@@ -18,9 +18,10 @@
     <link rel="canonical" href="{{ .Permalink }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Anton&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/cities.css">
+    <link rel="stylesheet" href="/css/reel-theme.css">
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"WebSite","name":"{{ .Site.Title }}","url":"{{ .Site.BaseURL }}","description":"{{ .Site.Params.description }}"}
     </script>
@@ -36,6 +37,7 @@
     <main>{{ block "main" . }}{{ end }}</main>
     {{ partial "footer.html" . }}
     <script src="/js/core.js" defer></script>
+    <script src="/js/reel-theme.js" defer></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1455389319625277" crossorigin="anonymous"></script>
     <script src="/analytics/track.js" defer></script>
     <script>
