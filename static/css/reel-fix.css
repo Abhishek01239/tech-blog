@@ -1,0 +1,8 @@
+/* Image + placeholder safety for the showreel theme */
+.card-img,.fc-img img,.latest-thumb img,.hero-img-wrap img,.article-hero img,.city-hero img{opacity:1!important}
+.fc-img,.latest-thumb,.hero-img-wrap{background:repeating-linear-gradient(45deg,var(--cream) 0 10px,var(--paper) 10px 20px)!important}
+.fc-img{aspect-ratio:16/10;min-height:0}
+.fc-img img,.latest-thumb img,.hero-img-wrap img{display:block;width:100%;height:100%;object-fit:cover}
+.latest-thumb{min-height:130px}
+.reveal,.reveal-stagger>*{animation:rt-failsafe 0s 2.5s forwards}
+@keyframes rt-failsafe{to{opacity:1;transform:none}}
