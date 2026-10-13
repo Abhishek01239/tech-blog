@@ -494,7 +494,7 @@ function impulse(ac,sec,decay){
 }
 function buildScore(ac,out,off){
   const T0=ac.currentTime+.08;
-  const at=x=>T0+x-off;
+  const at=x=>T0+Math.max(0,x-off);
   const nb=noiseBuf(ac,2);
   const verb=ac.createConvolver();verb.buffer=impulse(ac,2.2,2.6);
   const vg=ac.createGain();vg.gain.value=.28;verb.connect(vg);vg.connect(out);
