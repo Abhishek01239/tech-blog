@@ -1,0 +1,21 @@
+{{- /* Paired shortcode: title, caption and poster params; inner text becomes a collapsible transcript */ -}}
+{{- if not (.Page.Scratch.Get "motionreel-assets") -}}
+{{- .Page.Scratch.Set "motionreel-assets" true -}}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&display=swap">
+<link rel="stylesheet" href="/css/motion-reel.css">
+<script src="/js/motion-reel.js" defer></script>
+{{- end }}
+<figure class="mreel" data-motion-reel data-poster="{{ .Get "poster" | default "24.3" }}">
+  <div class="mreel-screen">
+    <canvas width="1280" height="720" role="img" aria-label="{{ .Get "title" | default "Motion graphics video" }}"></canvas>
+    <button type="button" class="mreel-veil" data-act="veil" aria-label="Play the video with sound"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.5v17l15-8.5z"/></svg>Play with sound</span></button>
+  </div>
+  <div class="mreel-bar">
+    <button type="button" data-act="play" aria-pressed="false">Play</button>
+    <input type="range" data-act="scrub" min="0" max="1000" value="0" aria-label="Seek">
+    <span data-act="clock">0:00 / 0:40</span>
+    <button type="button" data-act="mute" aria-pressed="true">Sound on</button>
+  </div>
+  {{ with .Get "caption" }}<figcaption>{{ . }}</figcaption>{{ end }}
+  {{ with .Inner }}<details class="mreel-tx"><summary>Read the video as text</summary><div>{{ . | markdownify }}</div></details>{{ end }}
+</figure>

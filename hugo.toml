@@ -44,11 +44,6 @@ title = "TechPulse"
   url = "/tags/programming/"
   weight = 5
 
-[[menu.main]]
-  name = "Showreel"
-  url = "/distilbook-showreel/"
-  weight = 6
-
 [caches]
   [caches.images]
     dir = ":cacheDir/images"
