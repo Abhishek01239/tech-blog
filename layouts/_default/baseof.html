@@ -32,7 +32,7 @@
     </script>
     {{ end }}
 </head>
-<body>
+<body{{ if .IsHome }} class="home-page"{{ end }}>
     {{ partial "bg.html" . }}
     {{ partial "nav.html" . }}
     <main>{{ block "main" . }}{{ end }}</main>

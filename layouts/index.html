@@ -2,9 +2,10 @@
 {{ $posts := where .Site.RegularPages "Section" "posts" }}
 {{ $featured := first 3 $posts }}
 {{ $latest := first 6 (after 3 $posts) }}
+{{ $more := first 3 (after 9 $posts) }}
 
 {{/* ============ HERO ============ */}}
-<section class="hero">
+<section class="hero home-hero">
     <div class="container">
         <div class="hero-grid">
             <div class="hero-copy reveal">
@@ -77,6 +78,23 @@
         </div>
     </div>
 </section>
+
+{{/* ============ MORE STORIES ============ */}}
+{{ with $more }}
+<section class="section home-more">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">Keep exploring</span>
+            <h2>More from TechPulse</h2>
+            <p>More reporting and ideas from across the technology landscape.</p>
+        </div>
+        <div class="featured-grid reveal-stagger">
+            {{ range . }}{{ partial "card.html" (dict "page" . "size" "lg") }}{{ end }}
+        </div>
+        <a class="home-archive-link" href="/posts/">Browse all stories <span aria-hidden="true">→</span></a>
+    </div>
+</section>
+{{ end }}
 
 {{/* ============ QUOTE ============ */}}
 {{ partial "quote.html" . }}
