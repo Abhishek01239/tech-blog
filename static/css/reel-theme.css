@@ -151,8 +151,8 @@ input,textarea,select{border-radius:0}
 @keyframes blink{50%{opacity:0}}
 
 /* kinetic reveals: hard clip + slide, overrides soft fades */
-.reveal,.reveal-stagger>*{opacity:0;transform:translateY(46px);clip-path:inset(0 0 100% 0);transition:opacity .01s linear,transform .7s var(--ease),clip-path .7s var(--ease)}
-.reveal.is-visible,.reveal-stagger>*.revealed{opacity:1;transform:none;clip-path:inset(-20px -20px -20px -20px)}
+.reveal,.reveal-stagger>*{opacity:0;transform:translateY(46px);transition:opacity .45s var(--ease),transform .7s var(--ease)}
+.reveal.is-visible,.reveal-stagger>*.revealed{opacity:1;transform:none}
 .reveal-stagger>*:nth-child(2){transition-delay:.08s}.reveal-stagger>*:nth-child(3){transition-delay:.16s}.reveal-stagger>*:nth-child(4){transition-delay:.24s}.reveal-stagger>*:nth-child(5){transition-delay:.32s}.reveal-stagger>*:nth-child(n+6){transition-delay:.4s}
 
 /* colour-wipe page transition */
@@ -179,6 +179,6 @@ input,textarea,select{border-radius:0}
 }
 @media(prefers-reduced-motion:reduce){
   .bg-scene::before,.rt-hud i{animation:none}
-  .reveal,.reveal-stagger>*{opacity:1!important;transform:none!important;clip-path:none!important;transition:none!important}
+  .reveal,.reveal-stagger>*{opacity:1!important;transform:none!important;transition:none!important}
   .rt-wipe{display:none}
 }
