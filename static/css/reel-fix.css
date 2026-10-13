@@ -6,3 +6,37 @@
 .latest-thumb{min-height:130px}
 .reveal,.reveal-stagger>*{animation:rt-failsafe 0s 2.5s forwards}
 @keyframes rt-failsafe{to{opacity:1;transform:none}}
+
+
+/* Homepage: trade unused viewport height for a tighter editorial rhythm. */
+.home-page main > .home-hero {
+  min-height: clamp(34rem, 76svh, 48rem);
+  padding: 4rem 0 3rem;
+}
+.home-page main > .section { padding: 4.25rem 0; }
+.home-page main > .section-tight { padding: 1.5rem 0; }
+.home-page main > .home-more { padding-top: 2.5rem; }
+.home-page main > .home-more .featured-grid { margin-bottom: 2rem; }
+.home-archive-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .75rem;
+  padding: .85rem 1.1rem;
+  border: 3px solid var(--ink);
+  background: var(--yellow);
+  color: var(--ink);
+  box-shadow: 4px 4px 0 var(--ink);
+  font: 700 .75rem/1 var(--mono);
+  letter-spacing: .08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.home-archive-link:hover { transform: translate(2px,2px); box-shadow: 2px 2px 0 var(--ink); }
+.home-page main + .site-footer { margin-top: 2rem; }
+.home-page .quote-band { min-height: 360px; }
+@media (max-width: 820px) {
+  .home-page main > .home-hero { min-height: auto; padding: 6rem 0 2.5rem; }
+  .home-page main > .section { padding: 3.25rem 0; }
+  .home-page main > .section-tight { padding: 1.1rem 0; }
+  .home-page .quote-band { min-height: 300px; }
+}
