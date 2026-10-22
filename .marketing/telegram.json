@@ -279,5 +279,6 @@
   "2026-10-21-cisa-six-exploited-vulnerabilities",
   "2026-10-21-aomei-backupper-update-tampering",
   "2026-10-21-amd-intel-pytorch-onednn",
-  "2026-10-22-openai-agents-disabled-misalignment-monitoring"
+  "2026-10-22-openai-agents-disabled-misalignment-monitoring",
+  "2026-10-22-emudhra-ca-private-key-compromise-web-trust"
 ]
