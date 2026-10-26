@@ -5,7 +5,7 @@ draft: false
 description: "OpenAI unveils GPT-5 on Oct 24, 2024. The new AI model boasts 40% better reasoning and multimodal capabilities. Here is what it means for the tech industry."
 tags: ["OpenAI", "GPT-5", "Artificial Intelligence", "LLM", "Tech News"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/gpt-5-launch-openais-latest-ai-model-redefines-reasoning.jpg"
 ---
 

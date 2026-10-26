@@ -5,7 +5,7 @@ draft: false
 description: "Microsoft Azure announced today its AI‑optimized Kubernetes service, merging OpenAI models with Azure Arc to boost performance, security and cost for workloads."
 tags: ["Azure", "Kubernetes", "AI"]
 categories: ["Cloud"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/azure-unveils-aioptimized-kubernetes-service-with-openai-int.jpg"
 ---
 

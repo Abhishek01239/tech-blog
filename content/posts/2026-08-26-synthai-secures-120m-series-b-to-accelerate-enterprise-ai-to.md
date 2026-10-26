@@ -5,7 +5,7 @@ draft: false
 description: "SynthAI announced a $120 million Series B on Aug 20, 2024, led by Andreessen Horowitz. The funding fuels product expansion, talent hires, and global market push for its AI platform."
 tags: ["AI", "startup funding", "Series B", "enterprise AI", "innovation"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/synthai-secures-120m-series-b-to-accelerate-enterprise-ai-to.jpg"
 ---
 

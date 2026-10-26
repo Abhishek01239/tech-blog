@@ -5,7 +5,7 @@ draft: false
 description: "GitHub announced Copilot Studio on June 12, 2026, an AI‑driven developer environment that automates code generation, testing, and deployment, aiming to cut development time by up to 40%."
 tags: ["programming language", "developer tools", "AI"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/github-unveils-copilot-studio-aipowered-dev-tool-boosts-prod.jpg"
 ---
 

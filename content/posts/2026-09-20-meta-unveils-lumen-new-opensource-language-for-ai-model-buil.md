@@ -5,7 +5,7 @@ draft: false
 description: "Meta's new open‑source language Lumen aims to simplify AI model development, offering built‑in tensor ops and seamless cloud integration. Learn the details."
 tags: ["Meta", "Lumen", "AI development"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/meta-unveils-lumen-new-opensource-language-for-ai-model-buil.jpg"
 ---
 

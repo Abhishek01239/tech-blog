@@ -5,7 +5,7 @@ draft: false
 description: "OpenAI launches GPT-5, promising 40% better reasoning at half the cost. Here’s how the new model changes the AI landscape and what it means for developers."
 tags: ["OpenAI", "GPT-5", "Generative AI", "LLM"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/openai-unveils-gpt-5-a-leap-in-reasoning-and-efficiency.jpg"
 ---
 

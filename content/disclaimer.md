@@ -1,38 +1,41 @@
 ---
 title: "Disclaimer"
 date: 2025-01-01
+lastmod: 2026-10-26
 draft: false
-description: "Disclaimer for Tech Tutorials Hub."
+description: "Disclaimer for TechPulse."
 ---
 
-*Last updated: January 1, 2025*
+*Last updated: October 26, 2026*
 
-## General Information
+## General information
 
-The information provided on Tech Tutorials Hub is for general informational and educational purposes only.
+Everything on TechPulse is published for general information and news reporting. It is not professional advice, and it should not be treated as a substitute for advice from a qualified professional.
 
-## Code Examples
+## Not financial or investment advice
 
-Code examples and tutorials are provided for educational purposes. We make no warranty that code will work in all environments. Always test code in your own development environment.
+Our coverage of markets, cryptocurrencies, company funding, and valuations is reporting, not recommendation. Nothing on the Site is an offer, solicitation, or recommendation to buy or sell any asset or security. Crypto assets in particular are volatile and carry a high risk of loss. Always do your own research and consult a licensed adviser.
 
-## Affiliate Disclosure
+## How articles are produced
 
-Tech Tutorials Hub may participate in affiliate marketing programs. We may earn commissions from purchases made through links on our site. Affiliate links do not cost you anything extra.
+TechPulse uses an AI-assisted editorial pipeline: stories are drafted with AI assistance against primary sources and checked before publication. Despite that process, automated drafting can miss nuance, and sources can be wrong or incomplete. If you spot an error, [tell us](/contact/) and we will correct it.
+
+## Accuracy and timeliness
+
+Technology moves quickly. An article that was accurate when published may become outdated within days. We do not guarantee that any page is current, complete, or free of error, and we are not obligated to update older articles.
+
+## External links
+
+We link to primary sources and other publications. We do not control those sites and are not responsible for their content, availability, or accuracy.
 
 ## Advertising
 
-This Website participates in the Google AdSense program. Google uses cookies to serve ads based on your visit to this site and other sites on the internet.
+The Site carries advertising served by Google AdSense. Ads are selected automatically by Google and its partners. Their appearance does not constitute an endorsement by TechPulse, and we are not responsible for the products or services advertised.
 
-You can opt out of personalized advertising by visiting https://adssettings.google.com/
+## Professional and legal reliance
 
-## Error and Omissions
-
-While we have made every attempt to ensure that the information contained in this site has been obtained from reliable sources, Tech Tutorials Hub is not responsible for any errors or omissions.
-
-## Consent
-
-By using our Website, you hereby consent to our disclaimer and agree to its terms.
+You use the information on this Site at your own risk. TechPulse and its operator accept no liability for loss or damage arising from reliance on anything published here.
 
 ## Contact
 
-If you have any questions about this Disclaimer, please visit our [Contact page](/contact/).
+Corrections or questions: **jaiswarabhishek12@gmail.com**

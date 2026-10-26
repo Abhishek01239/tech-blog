@@ -5,7 +5,7 @@ draft: false
 description: "Microsoft announces an October 2026 deadline for Azure VMware Solution BYOL licensing, shifting customers to a new consumption model. Find out why it matters."
 tags: ["Microsoft", "Azure", "VMware", "BYOL", "cloud computing", "enterprise", "AI", "innovation"]
 categories: ["Cloud"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/microsoft-sets-oct-2026-deadline-for-azure-vmware-byol-licen.jpg"
 ---
 

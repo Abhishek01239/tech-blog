@@ -5,7 +5,7 @@ draft: false
 description: "OpenAI announces the upcoming launch of o3 Mini, its latest AI reasoning model designed for faster, low‑cost inference, marking a key step in democratizing advanced AI technology."
 tags: ["OpenAI", "o3 Mini", "AI reasoning", "product launch", "innovation"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/openai-unveils-o3-mini-faster-lowcost-ai-reasoning-model.jpg"
 ---
 

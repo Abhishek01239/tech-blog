@@ -5,7 +5,7 @@ draft: false
 description: "The EU has broadened its antitrust probe to include Meta’s AI products, signaling tougher scrutiny for big tech and possible market‑changing penalties."
 tags: ["regulation", "big tech", "EU", "Meta", "AI", "antitrust"]
 categories: ["General"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/eu-antitrust-probe-targets-metas-ai-suite-raising-big-tech-s.jpg"
 ---
 

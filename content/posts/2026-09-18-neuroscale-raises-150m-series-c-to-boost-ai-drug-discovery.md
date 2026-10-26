@@ -5,7 +5,7 @@ draft: false
 description: "NeuroScale lands a $150M Series C round, backed by top VCs, to scale its AI platform for faster drug discovery. The funding marks a major boost for biotech innovation."
 tags: ["NeuroScale", "startup funding", "AI", "drug discovery", "Series C"]
 categories: ["Startups"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/neuroscale-raises-150m-series-c-to-boost-ai-drug-discovery.jpg"
 ---
 

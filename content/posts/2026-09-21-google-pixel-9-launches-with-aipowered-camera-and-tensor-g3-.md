@@ -5,7 +5,7 @@ draft: false
 description: "Google unveils Pixel 9 with AI‑powered camera, Tensor G3 chip, and on‑device features, setting a new benchmark for mobile photography, privacy and translation."
 tags: ["mobile", "AI", "innovation"]
 categories: ["Phones"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/google-pixel-9-launches-with-aipowered-camera-and-tensor-g3-.jpg"
 ---
 

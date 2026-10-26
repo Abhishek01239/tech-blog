@@ -5,7 +5,7 @@ draft: false
 description: "Regulatory news: Big tech companies under scrutiny, what's next for innovation and startups in the industry?"
 tags: ["tech news", "regulatory news", "big tech", "startup", "AI", "innovation"]
 categories: ["General"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/big-tech-faces-heat.jpg"
 ---
 

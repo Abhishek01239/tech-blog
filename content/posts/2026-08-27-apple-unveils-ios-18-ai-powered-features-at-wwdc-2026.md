@@ -5,7 +5,7 @@ draft: false
 description: "Apple announced iOS 18 at WWDC 2026, introducing AI-driven personalization, advanced ARKit tools, and deeper integration with 5G, reshaping mobile experiences."
 tags: ["Apple", "iOS 18", "AI", "AR", "5G", "mobile app update"]
 categories: ["Phones"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/apple-unveils-ios-18-ai-powered-features-at-wwdc-2026.jpg"
 ---
 

@@ -5,7 +5,7 @@ draft: false
 description: "Microsoft Azure rolls out Azure AI Studio, a low‑code service that lets startups and enterprises build generative AI apps faster, integrating OpenAI models and Azure data tools."
 tags: ["Azure", "AI", "cloud computing"]
 categories: ["Cloud"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/azure-ai-studio-debuts-lowcode-generative-ai-platform.jpg"
 ---
 

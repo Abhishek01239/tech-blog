@@ -5,7 +5,7 @@ draft: false
 description: "AWS launches Blocks, an open‑source TypeScript framework that lets developers build AI‑agent back‑ends faster. Learn why this milestone matters for the AI and open‑source ecosystems."
 tags: ["AWS", "open source", "Blocks", "TypeScript", "AI agents", "innovation"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/aws-unveils-blocks-opensource-typescript-framework-for-ai-ag.jpg"
 ---
 

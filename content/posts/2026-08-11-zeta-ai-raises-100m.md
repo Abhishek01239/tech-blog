@@ -5,7 +5,7 @@ draft: false
 description: "Zeta AI secures $100M funding round, accelerating AI innovation and transforming industries with cutting-edge tech, learn more about this game-changing investment"
 tags: ["Zeta AI", "funding round", "AI innovation", "tech news", "startup"]
 categories: ["Ai|Startups"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/zeta-ai-raises-100m.jpg"
 ---
 

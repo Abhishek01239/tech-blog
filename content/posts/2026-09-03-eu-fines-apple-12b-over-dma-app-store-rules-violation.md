@@ -5,7 +5,7 @@ draft: false
 description: "EU regulators fined Apple €1.2 billion on July 15, 2024 for violating the Digital Markets Act’s app‑store rules, igniting debate on antitrust enforcement."
 tags: ["Apple", "EU", "regulation"]
 categories: ["General"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/eu-fines-apple-12b-over-dma-app-store-rules-violation.jpg"
 ---
 

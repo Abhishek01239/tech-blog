@@ -5,7 +5,7 @@ draft: false
 description: "Regulatory news about big tech companies: Latest updates on antitrust laws, fines, and policy changes affecting innovation and startups in the industry"
 tags: ["tech news", "regulatory news", "big tech companies", "antitrust laws", "innovation", "startup"]
 categories: ["General"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/tech-giants-face-heat.jpg"
 ---
 

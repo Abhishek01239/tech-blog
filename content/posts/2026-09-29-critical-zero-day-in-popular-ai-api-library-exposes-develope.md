@@ -5,7 +5,7 @@ draft: false
 description: "A critical vulnerability in a widely used AI API library was discovered this week. Here is what happened, who is affected, and how developers can protect their data."
 tags: ["cybersecurity", "AI", "vulnerability", "tech news", "developers"]
 categories: ["Cybersecurity"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/critical-zero-day-in-popular-ai-api-library-exposes-develope.jpg"
 ---
 

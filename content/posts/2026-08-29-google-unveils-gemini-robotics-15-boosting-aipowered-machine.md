@@ -5,7 +5,7 @@ draft: false
 description: "Google launches Gemini Robotics 1.5, a next‑gen AI model that gives robots real‑time reasoning and multitask skills, reshaping automation across industries."
 tags: ["Google", "Gemini", "AI", "Robotics", "ProductLaunch"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/google-unveils-gemini-robotics-15-boosting-aipowered-machine.jpg"
 ---
 

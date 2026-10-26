@@ -5,7 +5,7 @@ draft: false
 description: "Meta releases Llama 3.1 405B, a massive open-source language model. Discover why this release is a game-changer for AI development and enterprise adoption."
 tags: ["Meta", "Open Source AI", "LLM", "Tech News", "Innovation"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/llama-31-hits-405b-metas-new-open-source-ai-giant.jpg"
 ---
 

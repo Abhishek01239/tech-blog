@@ -5,7 +5,7 @@ draft: false
 description: "Google's Dart 3 programming language is now available, offering improved performance and new features for developers, enhancing mobile and web app development"
 tags: ["tech news", "Dart 3", "programming language", "developer tool", "Google", "innovation"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/google-releases-dart-3.jpg"
 ---
 

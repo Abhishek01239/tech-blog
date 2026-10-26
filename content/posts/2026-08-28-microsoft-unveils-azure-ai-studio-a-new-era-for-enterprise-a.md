@@ -5,7 +5,7 @@ draft: false
 description: "Microsoft's Azure AI Studio launches June 2026, promising faster model building, lower costs, and seamless integration—key news for AI innovators and startups."
 tags: ["Microsoft", "Azure", "AI", "cloud", "product launch"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/microsoft-unveils-azure-ai-studio-a-new-era-for-enterprise-a.jpg"
 ---
 

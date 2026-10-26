@@ -5,7 +5,7 @@ draft: false
 description: "Microsoft announced Windows 12 at its Build 2024 conference, featuring a built‑in AI Copilot, revamped UI, and tighter cloud integration. Read the full breakdown."
 tags: ["Microsoft", "Windows 12", "AI Copilot", "product launch", "innovation"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/microsoft-unveils-windows-12-with-integrated-ai-copilot.jpg"
 ---
 

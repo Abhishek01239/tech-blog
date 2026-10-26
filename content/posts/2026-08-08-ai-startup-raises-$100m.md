@@ -5,7 +5,7 @@ draft: false
 description: "AI startup, NovaTech, secures $100M funding round, revolutionizing AI innovation with cutting-edge tech solutions, learn more"
 tags: ["tech news", "startup funding round", "AI", "innovation"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/ai-startup-raises-$100m.jpg"
 ---
 

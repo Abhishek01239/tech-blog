@@ -5,7 +5,7 @@ draft: false
 description: "Google unveils Pixel 8 with enhanced AI camera, improved battery life, and sleek design, set to revolutionize smartphone industry with its innovative features"
 tags: ["Google", "Pixel 8", "Smartphone", "AI", "Innovation"]
 categories: ["Phones"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/google-pixel-8-launch.jpg"
 ---
 

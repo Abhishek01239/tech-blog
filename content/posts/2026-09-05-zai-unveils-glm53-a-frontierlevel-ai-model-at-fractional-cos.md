@@ -5,7 +5,7 @@ draft: false
 description: "Z.ai launches GLM‑5.3 on Aug 14, 2026 – a 210B‑parameter model that matches GPT‑5.4‑Pro on benchmarks while costing up to 70% less, shaking up the AI race."
 tags: ["Z.ai", "GLM-5.3", "AI model", "startup", "innovation"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/zai-unveils-glm53-a-frontierlevel-ai-model-at-fractional-cos.jpg"
 ---
 

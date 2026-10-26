@@ -5,7 +5,7 @@ draft: false
 description: "Rocket Lab debuts Electron 2, the most powerful small-lift rocket yet. Discover how this innovation changes satellite launches and the space startup landscape."
 tags: ["Rocket Lab", "Electron 2", "Space Technology"]
 categories: ["Space"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/rocket-lab-launches-electron-2-a-new-era-for-small-sats.jpg"
 ---
 

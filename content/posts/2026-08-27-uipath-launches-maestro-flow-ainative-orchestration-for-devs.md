@@ -5,7 +5,7 @@ draft: false
 description: "UiPath unveils Maestro Flow, an AI‑native orchestration canvas that promises faster, enterprise‑grade workflow automation for developers. Learn why it matters."
 tags: ["UiPath", "Maestro Flow", "developer tool", "AI", "innovation"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/uipath-launches-maestro-flow-ainative-orchestration-for-devs.jpg"
 ---
 

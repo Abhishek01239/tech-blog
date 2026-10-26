@@ -5,7 +5,7 @@ draft: false
 description: "Apple announced ARKit 3.2 at its WWDC 2026 keynote, adding real‑time motion capture, multi‑camera tracking, and AI‑driven personalization for iPhone 16, raising the bar for mobile AR apps."
 tags: ["Apple", "ARKit", "mobile app", "AI", "innovation"]
 categories: ["Phones"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/apple-unveils-arkit-32-with-realtime-motion-capture-for-ipho.jpg"
 ---
 

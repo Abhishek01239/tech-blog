@@ -5,7 +5,7 @@ draft: false
 description: "The FTC and EU regulators launch actions against Meta, Google, Amazon, and Apple over AI data use and antitrust concerns, reshaping the tech landscape."
 tags: ["regulation", "big tech", "AI"]
 categories: ["General"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/ftc-and-eu-crack-down-on-big-tech-ai-practices-in-2024.jpg"
 ---
 

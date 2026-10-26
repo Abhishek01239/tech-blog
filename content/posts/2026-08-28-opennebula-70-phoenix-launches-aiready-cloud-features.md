@@ -5,7 +5,7 @@ draft: false
 description: "OpenNebula 7.0 'Phoenix' hits release on July 3, 2025, adding AI/GPU workloads, ARM support, and advanced storage—boosting open‑source cloud innovation for startups and enterprises."
 tags: ["open source", "OpenNebula", "cloud", "AI", "innovation"]
 categories: ["Cloud"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/opennebula-70-phoenix-launches-aiready-cloud-features.jpg"
 ---
 

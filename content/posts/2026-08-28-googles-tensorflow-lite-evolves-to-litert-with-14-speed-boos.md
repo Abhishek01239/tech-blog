@@ -5,7 +5,7 @@ draft: false
 description: "Google announced TensorFlow Lite’s rebrand to LiteRT, delivering a 1.4× GPU speed gain, new NPU support, and seamless PyTorch/JAX conversion in the latest 2.21 release."
 tags: ["TensorFlow", "open source", "AI", "innovation", "tech news"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/googles-tensorflow-lite-evolves-to-litert-with-14-speed-boos.jpg"
 ---
 

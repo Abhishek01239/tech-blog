@@ -5,7 +5,7 @@ draft: false
 description: "Google unveils Pixel 7 with enhanced AI camera, faster processor, and sleek design, set to revolutionize smartphone industry with innovative features"
 tags: ["tech news", "Google", "Pixel 7", "AI", "smartphones"]
 categories: ["Phones"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/google-launches-pixel-7.jpg"
 ---
 

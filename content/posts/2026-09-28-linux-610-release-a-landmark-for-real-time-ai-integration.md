@@ -5,7 +5,7 @@ draft: false
 description: "Linux 6.10 arrives with massive AI scheduling improvements and faster boot times. See how this open source milestone changes the startup landscape."
 tags: ["linux", "open source", "ai", "kernel", "tech news"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/linux-610-release-a-landmark-for-real-time-ai-integration.jpg"
 ---
 

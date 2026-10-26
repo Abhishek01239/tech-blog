@@ -5,7 +5,7 @@ draft: false
 description: "Security startup Wiz uncovered CVE‑2024‑XXXXX zero‑day in Azure Kubernetes Service on March 12, prompting Microsoft to issue a quick patch two days later."
 tags: ["azure", "vulnerability", "AI"]
 categories: ["Cybersecurity"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/wiz-uncovers-critical-azure-kubernetes-zeroday-microsoft-iss.jpg"
 ---
 

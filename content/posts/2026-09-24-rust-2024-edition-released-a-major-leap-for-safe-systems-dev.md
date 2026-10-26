@@ -5,7 +5,7 @@ draft: false
 description: "The Rust team has officially launched the 2024 Edition, introducing async closures and stricter lints. See how this innovation reshapes safe systems programming."
 tags: ["Rust", "Programming Language", "Developer Tools", "Open Source", "Systems Programming"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/rust-2024-edition-released-a-major-leap-for-safe-systems-dev.jpg"
 ---
 

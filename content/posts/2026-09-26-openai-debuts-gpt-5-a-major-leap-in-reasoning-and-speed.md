@@ -5,7 +5,7 @@ draft: false
 description: "OpenAI has officially launched GPT-5, featuring advanced reasoning, 50% faster inference, and native multimodal capabilities. See what this means for developers."
 tags: ["OpenAI", "GPT-5", "Generative AI", "Tech News"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/openai-debuts-gpt-5-a-major-leap-in-reasoning-and-speed.jpg"
 ---
 

@@ -5,7 +5,7 @@ draft: false
 description: "Zeek 9.0, the latest long‑term support release of the open‑source network security monitor, arrives on Sep 17, 2026 with new cluster communication, protocol parsers, and a revamped Spicy parser generator."
 tags: ["Zeek", "open source", "network security", "LTS", "innovation"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/zeek-90-launches-lts-boost-for-network-security-monitoring.jpg"
 ---
 

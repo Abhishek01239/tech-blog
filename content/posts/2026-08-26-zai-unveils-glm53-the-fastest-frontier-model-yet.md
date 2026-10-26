@@ -5,7 +5,7 @@ draft: false
 description: "Z.ai's GLM‑5.3 hits the scene on Aug 14 2026, delivering record‑breaking performance and cost efficiency. Tech news on the latest AI model release and its industry impact."
 tags: ["AI", "model release", "innovation", "startup", "tech news"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/zai-unveils-glm53-the-fastest-frontier-model-yet.jpg"
 ---
 

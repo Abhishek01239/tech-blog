@@ -5,7 +5,7 @@ draft: false
 description: "Google's $32 billion acquisition of Wiz marks the largest venture‑backed deal ever, reshaping AI‑driven security and signaling a new wave of startup exits in 2025."
 tags: ["Google", "Wiz", "acquisition", "cybersecurity", "AI", "startup funding round"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/google-acquires-cybersecurity-star-wiz-for-32b-in-record-dea.jpg"
 ---
 

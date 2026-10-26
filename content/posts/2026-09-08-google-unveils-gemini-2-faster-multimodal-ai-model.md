@@ -5,7 +5,7 @@ draft: false
 description: "Google's Gemini 2 AI model launches Sep 5, 2026, delivering up to 10× faster inference, multimodal reasoning and tighter Workspace integration, sparking AI race."
 tags: ["Google", "Gemini 2", "AI", "product launch"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/google-unveils-gemini-2-faster-multimodal-ai-model.jpg"
 ---
 

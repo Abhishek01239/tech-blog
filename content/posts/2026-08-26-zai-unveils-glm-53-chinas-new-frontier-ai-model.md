@@ -5,7 +5,7 @@ draft: false
 description: "Z.ai launches GLM-5.3 on Aug 14, 2026, a high‑performance LLM that rivals top frontier models. The breakthrough reshapes the global AI race and pricing dynamics."
 tags: ["AI", "Z.ai", "GLM-5.3", "model release", "innovation"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/zai-unveils-glm-53-chinas-new-frontier-ai-model.jpg"
 ---
 

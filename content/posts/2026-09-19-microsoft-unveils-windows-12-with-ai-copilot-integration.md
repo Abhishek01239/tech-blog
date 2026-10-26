@@ -5,7 +5,7 @@ draft: false
 description: "Microsoft rolls out Windows 12 on Sep 10, 2026, featuring AI Copilot, redesigned UI, and tighter cloud sync—set to reshape personal computing and enterprise workflows."
 tags: ["Microsoft", "Windows12", "AI", "Copilot", "product launch"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/microsoft-unveils-windows-12-with-ai-copilot-integration.jpg"
 ---
 

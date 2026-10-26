@@ -5,7 +5,7 @@ draft: false
 description: "Chinese startup Z.ai released GLM‑5.3 on Aug 14, 2026—a 210 B‑parameter model that rivals GPT‑5.4‑Pro in benchmarks while cutting costs by 70%, shaking the AI frontier."
 tags: ["Z.ai", "GLM-5.3", "AI model", "GPT-5.4-Pro", "startup"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/zai-launches-glm53-chinas-ai-model-takes-on-gpt54pro.jpg"
 ---
 

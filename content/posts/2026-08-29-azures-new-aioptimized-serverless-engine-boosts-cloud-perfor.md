@@ -5,7 +5,7 @@ draft: false
 description: "Microsoft Azure launches its AI‑Optimized Serverless Engine on Aug 29, 2026, delivering 40% faster workloads, lower costs, and deeper Azure AI integration."
 tags: ["cloud computing", "AI", "Azure", "serverless", "innovation"]
 categories: ["Cloud"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/azures-new-aioptimized-serverless-engine-boosts-cloud-perfor.jpg"
 ---
 

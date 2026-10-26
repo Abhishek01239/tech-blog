@@ -5,7 +5,7 @@ draft: false
 description: "Samsung launches Galaxy AI 2.0, bringing real-time on-device language translation to billions of users. Here’s why this mobile tech update changes everything."
 tags: ["Samsung", "Galaxy AI", "Mobile Tech", "On-Device AI", "Innovation"]
 categories: ["Phones"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/samsung-unveils-galaxy-ai-20-real-time-translation-on-device.jpg"
 ---
 

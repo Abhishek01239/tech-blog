@@ -5,7 +5,7 @@ draft: false
 description: "Google Cloud launches AI‑powered code conversion for DMS, using Gemini to auto‑migrate legacy databases to PostgreSQL and AlloyDB, boosting migration speed and accuracy."
 tags: ["Google Cloud", "AI", "cloud computing", "innovation", "tech news"]
 categories: ["Cloud"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/google-cloud-unveils-aiassisted-code-conversion-in-database-.jpg"
 ---
 

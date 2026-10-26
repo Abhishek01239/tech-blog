@@ -5,7 +5,7 @@ draft: false
 description: "Hugging Face launches Transformers 2.0 on Sep 2, 2026, boosting open‑source AI with 200 new models, 30 language supports, and major performance gains. Read the full tech news."
 tags: ["open source", "AI", "startup", "innovation", "tech news"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/hugging-face-unveils-transformers20-adding-200-models-and-30.jpg"
 ---
 

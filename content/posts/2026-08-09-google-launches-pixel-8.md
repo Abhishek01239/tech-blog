@@ -5,7 +5,7 @@ draft: false
 description: "Google unveils its latest flagship smartphone, the Pixel 8, with enhanced AI capabilities and improved camera features, set to rival top devices in the market, learn more"
 tags: ["Google", "Pixel 8", "Smartphone", "AI", "Innovation"]
 categories: ["Ai|Phones"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/google-launches-pixel-8.jpg"
 ---
 

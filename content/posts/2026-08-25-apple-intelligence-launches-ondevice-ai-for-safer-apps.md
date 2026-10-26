@@ -5,7 +5,7 @@ draft: false
 description: "Apple rolls out Apple Intelligence, letting iOS apps run AI models on the device for enhanced privacy, speed, and new on‑device features. Learn the impact on developers and users."
 tags: ["Apple", "AI", "mobile app", "innovation", "privacy"]
 categories: ["Phones"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/apple-intelligence-launches-ondevice-ai-for-safer-apps.jpg"
 ---
 

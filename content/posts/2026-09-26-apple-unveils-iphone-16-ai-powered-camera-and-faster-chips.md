@@ -5,7 +5,7 @@ draft: false
 description: "Apple releases iPhone 16 with on-device AI, Camera Control, and A18 chip. See how this mobile tech update changes photography and startup dev."
 tags: ["Apple", "iPhone 16", "AI", "Mobile Tech", "Innovation"]
 categories: ["Phones"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/apple-unveils-iphone-16-ai-powered-camera-and-faster-chips.jpg"
 ---
 

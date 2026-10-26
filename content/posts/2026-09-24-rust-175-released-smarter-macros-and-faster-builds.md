@@ -5,7 +5,7 @@ draft: false
 description: "Rust 1.75 arrives with inline const in traits and improved macro expansion. See how this stable release simplifies complex developer workflows."
 tags: ["Rust", "Programming", "Developer Tools", "Open Source"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/rust-175-released-smarter-macros-and-faster-builds.jpg"
 ---
 

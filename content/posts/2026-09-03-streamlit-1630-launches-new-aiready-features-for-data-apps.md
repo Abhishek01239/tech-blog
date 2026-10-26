@@ -5,7 +5,7 @@ draft: false
 description: "Streamlit 1.63.0, released Sep 1, 2026, adds performance boosts, AI component upgrades, and tighter CI pipelines—fueling faster data‑app development for startups and enterprises."
 tags: ["open source", "Streamlit", "release", "AI", "innovation"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/streamlit-1630-launches-new-aiready-features-for-data-apps.jpg"
 ---
 

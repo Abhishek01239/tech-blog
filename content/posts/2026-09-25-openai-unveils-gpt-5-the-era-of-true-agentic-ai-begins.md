@@ -5,7 +5,7 @@ draft: false
 description: "OpenAI releases GPT-5, featuring real-time reasoning and autonomous agent capabilities. See why this latest AI model breakthrough changes everything."
 tags: ["OpenAI", "GPT-5", "Agentic AI", "Tech News", "Innovation"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/openai-unveils-gpt-5-the-era-of-true-agentic-ai-begins.jpg"
 ---
 

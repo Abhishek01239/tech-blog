@@ -5,7 +5,7 @@ draft: false
 description: "Apple has officially launched Vision Pro 2, slashing the price by 40% and integrating advanced AI. See why this move changes the spatial computing game."
 tags: ["Apple", "Vision Pro", "Spatial Computing", "AI", "Product Launch"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/apple-unveils-vision-pro-2-the-affordable-spatial-computing-.jpg"
 ---
 

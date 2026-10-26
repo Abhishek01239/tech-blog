@@ -5,7 +5,7 @@ draft: false
 description: "EU and US regulators intensify scrutiny on Google, Apple, Meta, and Amazon, unveiling new antitrust actions and potential fines, reshaping the tech landscape."
 tags: ["regulation", "big tech", "antitrust"]
 categories: ["General"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/eu--us-crackdown-google-apple-meta-amazon-face-antitrust-hea.jpg"
 ---
 

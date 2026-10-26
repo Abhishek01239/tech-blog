@@ -5,7 +5,7 @@ draft: false
 description: "Lockheed Martin has been awarded a NASA contract to develop the GeoXO weather satellite constellation, featuring AI‑driven Lightning Mapper instruments to boost storm forecasting and satellite launch capabilities."
 tags: ["Lockheed Martin", "NASA", "GeoXO", "satellite launch", "AI", "space technology"]
 categories: ["Space"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/lockheed-martin-secures-nasa-geoxo-weather-satellite-contrac.jpg"
 ---
 

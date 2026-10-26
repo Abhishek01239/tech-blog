@@ -5,7 +5,7 @@ draft: false
 description: "Google Cloud launches Vertex AI Search, a generative‑AI data‑lake service delivering instant, context‑aware answers for enterprises. Details inside today."
 tags: ["Google Cloud", "Vertex AI Search", "AI", "cloud computing", "innovation"]
 categories: ["Cloud"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/google-cloud-launches-vertex-ai-search-generative-ai-meets-d.jpg"
 ---
 

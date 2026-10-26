@@ -5,7 +5,7 @@ draft: false
 description: "Zeta AI raises $30 million in series B funding round, led by prominent investors, to accelerate AI innovation and expansion"
 tags: ["tech news", "startup funding round", "AI", "innovation"]
 categories: ["Ai|Startups"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/zeta-ai-raises-30m.jpg"
 ---
 

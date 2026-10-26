@@ -5,7 +5,7 @@ draft: false
 description: "Z.ai’s GLM‑5.3 drops on Aug 14 2026, delivering 210 B parameters and top‑tier benchmark scores at a fraction of GPT‑5.4‑Pro’s cost, shaking the AI frontier."
 tags: ["AI", "startup", "GLM-5.3", "Z.ai", "innovation"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/zai-unveils-glm53-a-frontierlevel-ai-model-challenging-gpt54.jpg"
 ---
 

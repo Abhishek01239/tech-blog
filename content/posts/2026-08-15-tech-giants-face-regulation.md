@@ -5,7 +5,7 @@ draft: false
 description: "Big tech companies under fire as regulatory bodies crack down on antitrust and data privacy issues, what does this mean for the future of innovation and startup growth in the tech industry?"
 tags: ["tech news", "regulatory news", "big tech", "antitrust", "data privacy", "startup", "innovation", "AI"]
 categories: ["General"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/tech-giants-face-regulation.jpg"
 ---
 

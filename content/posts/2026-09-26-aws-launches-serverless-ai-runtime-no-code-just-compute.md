@@ -5,7 +5,7 @@ draft: false
 description: "AWS debuts a serverless AI runtime that slashes infrastructure costs. See how this cloud computing update changes AI deployment for startups."
 tags: ["AWS", "AI", "Cloud Computing", "Serverless"]
 categories: ["Cloud"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/aws-launches-serverless-ai-runtime-no-code-just-compute.jpg"
 ---
 

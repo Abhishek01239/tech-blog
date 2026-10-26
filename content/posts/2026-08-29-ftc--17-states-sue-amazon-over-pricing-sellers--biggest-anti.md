@@ -5,7 +5,7 @@ draft: false
 description: "FTC joins 17 states in a $1.5 billion antitrust lawsuit against Amazon, accusing the e‑commerce giant of price‑inflation and unfair seller practices. Full story."
 tags: ["regulation", "antitrust", "e\u2011commerce"]
 categories: ["General"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/ftc--17-states-sue-amazon-over-pricing-sellers--biggest-anti.jpg"
 ---
 

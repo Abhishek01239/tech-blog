@@ -5,7 +5,7 @@ draft: false
 description: "Samsung’s latest flagship, the Galaxy S24 Ultra, debuts AI‑enhanced camera processing and adaptive battery management, promising sharper photos and longer runtimes."
 tags: ["tech news", "mobile app", "phone technology update", "AI", "innovation"]
 categories: ["Phones"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/samsung-launches-galaxy-s24-ultra-with-ai-camera--battery-bo.jpg"
 ---
 

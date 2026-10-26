@@ -5,7 +5,7 @@ draft: false
 description: "Streamlit 1.63.0 hits GitHub on Sep 1, 2026, adding fresh UI components, faster caching, and tighter AI integration—pushing low‑code data apps forward."
 tags: ["streamlit", "open source", "release", "data apps", "AI"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/streamlit-1630-launches-new-ui-widgets-and-performance-boost.jpg"
 ---
 

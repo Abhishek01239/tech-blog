@@ -5,7 +5,7 @@ draft: false
 description: "Hugging Face surpasses 100,000 models, signaling a massive shift in open-source AI. Explore how this milestone impacts enterprise innovation and the future of tech."
 tags: ["Hugging Face", "Open Source AI", "Machine Learning"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/hugging-face-hits-100k-models-a-new-era-for-open-ai.jpg"
 ---
 

@@ -1,11 +1,19 @@
-baseURL = "/"
+baseURL = "https://tech-blog-eight-blush.vercel.app/"
 languageCode = "en-us"
 title = "TechPulse"
+enableRobotsTXT = true
 
 [params]
   description = "Daily tech news — AI, startups, products, and what's shaping the future."
   author = "TechPulse"
-  github_repo = "https://github.com/yourusername/tech-blog"
+  github_repo = "https://github.com/Abhishek01239/tech-blog"
+  contactEmail = "jaiswarabhishek12@gmail.com"
+  # Google AdSense publisher ID, used for the verification meta tag and ads.txt.
+  adsensePublisher = "ca-pub-1455389319625277"
+  # Ad unit IDs from AdSense > Ads > By ad unit. Leave empty until units exist;
+  # ad slots render nothing while empty, so no empty boxes appear on the site.
+  adsenseSlotArticle = ""
+  adsenseSlotSidebar = ""
 
 [markup]
   [markup.goldmark]
@@ -13,7 +21,7 @@ title = "TechPulse"
       unsafe = true
 
 [outputs]
-  home = ["HTML", "RSS", "JSON"]
+  home = ["HTML", "RSS"]
 
 [sitemap]
   changefreq = "weekly"
@@ -43,6 +51,11 @@ title = "TechPulse"
   name = "Programming"
   url = "/tags/programming/"
   weight = 5
+
+[[menu.main]]
+  name = "Contact"
+  url = "/contact/"
+  weight = 6
 
 [caches]
   [caches.images]

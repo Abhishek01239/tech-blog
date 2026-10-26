@@ -2,6 +2,7 @@
 title: "How to Build an AI-Powered Tech Blog with GitHub Actions"
 description: "A practical guide to combining Hugo, Groq, GitHub Actions, and automated marketing into a hands-off tech publishing pipeline."
 date: 2026-09-17T15:15:00+05:30
+author: "TechPulse"
 categories:
   - programming
 tags:

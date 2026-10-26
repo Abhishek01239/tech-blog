@@ -5,7 +5,7 @@ draft: false
 description: "SpaceX hits a historic milestone with its 100th Falcon 9 launch this year. Explore how this feat in space technology reshapes the satellite launch industry."
 tags: ["SpaceX", "Falcon 9", "Satellite Launch", "Space Technology"]
 categories: ["Space"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/spacex-achieves-record-100th-falcon-9-launch-in-2024.jpg"
 ---
 

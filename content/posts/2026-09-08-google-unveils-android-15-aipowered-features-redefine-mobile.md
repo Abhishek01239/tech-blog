@@ -5,7 +5,7 @@ draft: false
 description: "Google rolls out Android 15 on Sep 5, 2026, adding on‑device AI, smarter widgets, and a 30% battery boost. See how the update reshapes the mobile ecosystem."
 tags: ["Android15", "Google", "AI", "mobile innovation", "tech news"]
 categories: ["Phones"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/google-unveils-android-15-aipowered-features-redefine-mobile.jpg"
 ---
 

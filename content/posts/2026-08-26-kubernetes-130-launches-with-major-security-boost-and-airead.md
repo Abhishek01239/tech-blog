@@ -5,7 +5,7 @@ draft: false
 description: "Kubernetes 1.30, the latest LTS release, arrives on June 12 with 200+ new APIs, enhanced security, and AI‑ready extensions, marking a key open‑source milestone."
 tags: ["kubernetes", "open source", "cloud", "devops"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/kubernetes-130-launches-with-major-security-boost-and-airead.jpg"
 ---
 

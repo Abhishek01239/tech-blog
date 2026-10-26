@@ -24,6 +24,8 @@
         {{ .Content }}
     </div>
 
+    {{ partial "ad-slots.html" (dict "slot" site.Params.adsenseSlotArticle "class" "ad-article") }}
+
     <div class="article-tags reveal">
         {{ range .Params.tags }}<a class="tag" href="/tags/{{ . | urlize }}/">{{ . }}</a>{{ end }}
     </div>

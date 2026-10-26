@@ -1,40 +1,60 @@
 ---
 title: "Terms of Service"
 date: 2025-01-01
+lastmod: 2026-10-26
 draft: false
-description: "Terms of Service for Tech Tutorials Hub."
+description: "Terms of Service for TechPulse."
 ---
 
-*Last updated: January 1, 2025*
+*Last updated: October 26, 2026*
 
-## Acceptance of Terms
+## Acceptance of terms
 
-By accessing and using Tech Tutorials Hub, you accept and agree to be bound by these Terms of Service.
+By accessing TechPulse ("the Site"), you agree to these terms. If you do not agree, please do not use the Site. We may update these terms at any time; continued use after an update means you accept the revised terms.
 
-## Intellectual Property
+## Use of the Site
 
-All content on this Website, including text, graphics, logos, code examples, and tutorials, is the property of Tech Tutorials Hub and is protected by copyright laws.
+You may read, quote, and link to our articles for personal, educational, and journalistic use. You may not:
 
-You are granted a limited, non-exclusive license to read and learn from the tutorials for personal or educational purposes.
+- republish articles in full, or in substantial part, without written permission;
+- scrape or bulk-download the Site in a way that degrades service for other readers;
+- use the Site to distribute malware, attempt unauthorised access, or interfere with its operation;
+- represent our content as your own.
 
-You may not reproduce, duplicate, or copy large portions of our content without permission.
+Short excerpts with clear attribution and a link back to the original article are welcome.
 
-## User Conduct
+## Content and accuracy
 
-When using this Website, you agree to not submit spam, malware, or harmful content in comments.
+We work to report accurately and to attribute claims to their sources, but the Site is provided for general information only. Technology news changes quickly, and articles reflect what was known at the time of publication. We do not guarantee that any article is complete, current, or error-free. See our [Disclaimer](/disclaimer/) for detail.
 
-## Disclaimer of Warranties
+## No professional advice
 
-This Website is provided "as is" without warranties of any kind. We make no representations or warranties regarding the accuracy or completeness of content.
+Nothing on the Site is financial, investment, legal, or medical advice. This applies in particular to coverage of markets, crypto assets, and company funding. Do your own research and consult a qualified professional before acting on anything you read here.
 
-## Limitation of Liability
+## Advertising
 
-Tech Tutorials Hub shall not be liable for any damages arising from use or inability to use the Website.
+The Site displays advertising through Google AdSense. Ads are selected by Google and its partners, not by us, and their presence is not an endorsement of the advertised product or service. Our [Privacy Policy](/privacy/) explains the cookies involved and how to control them.
 
-## Changes to Terms
+## Third-party links
 
-We reserve the right to modify these Terms of Service at any time.
+Articles link to external websites. We do not control those sites and are not responsible for their content, accuracy, or practices.
+
+## Intellectual property
+
+The Site's name, design, and original written content are owned by TechPulse. Trademarks, images, and quoted material belonging to others remain the property of their respective owners and appear for reporting purposes.
+
+## Comments and correspondence
+
+If you send us a correction, tip, or feedback, you grant us permission to use that information to improve or update our coverage. We will not publish your identity without permission.
+
+## Limitation of liability
+
+To the fullest extent permitted by law, TechPulse is not liable for any indirect, incidental, or consequential loss arising from your use of the Site or reliance on its content.
+
+## Changes and termination
+
+We may modify, suspend, or discontinue any part of the Site at any time without notice.
 
 ## Contact
 
-If you have questions about these Terms, please visit our [Contact page](/contact/).
+Questions about these terms: **jaiswarabhishek12@gmail.com**

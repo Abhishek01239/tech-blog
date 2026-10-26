@@ -5,7 +5,7 @@ draft: false
 description: "In March 2026, Canadian telecom Telus disclosed a breach by ShinyHunters, revealing the theft of over 700 TB of data, including PII, call logs, and source code."
 tags: ["Telus", "ShinyHunters", "data breach", "cybersecurity incident", "AI"]
 categories: ["Cybersecurity"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/telus-breach-shinyhunters-exfiltrate-700tb-in-massive-data-h.jpg"
 ---
 

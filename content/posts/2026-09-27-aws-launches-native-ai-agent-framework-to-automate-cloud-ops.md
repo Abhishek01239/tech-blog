@@ -5,7 +5,7 @@ draft: false
 description: "AWS unveils its new native AI agent framework, promising to automate complex cloud operations and reduce infrastructure costs by 30% for enterprises."
 tags: ["AWS", "AI Agents", "Cloud Computing", "Automation", "DevOps"]
 categories: ["Cloud"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/aws-launches-native-ai-agent-framework-to-automate-cloud-ops.jpg"
 ---
 

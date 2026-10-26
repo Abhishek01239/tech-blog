@@ -5,7 +5,7 @@ draft: false
 description: "The CNCF releases Kubernetes 1.30 on Aug 14, 2026, introducing AI‑driven autoscaling, enhanced security, and a new LTS roadmap, signaling a major shift for cloud‑native workloads."
 tags: ["kubernetes", "open source", "cloud native"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/kubernetes-130-adds-ai-autoscaling-elevates-cloud-native-ops.jpg"
 ---
 

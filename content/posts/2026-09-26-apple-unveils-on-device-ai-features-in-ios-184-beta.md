@@ -5,7 +5,7 @@ draft: false
 description: "Apple reveals major on-device AI updates in iOS 18.4, focusing on privacy and speed. See how this tech news changes the mobile landscape for users."
 tags: ["Apple", "iOS 18", "Generative AI", "Mobile Tech"]
 categories: ["Phones"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/apple-unveils-on-device-ai-features-in-ios-184-beta.jpg"
 ---
 

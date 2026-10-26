@@ -5,7 +5,7 @@ draft: false
 description: "pgAdmin 4 v9.18 released on Sep 17, 2026, adds 29 bug fixes, four critical security patches, and fresh UI tweaks, reinforcing its role as the top open‑source PostgreSQL tool."
 tags: ["open source", "pgAdmin", "PostgreSQL", "release", "database"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/pgadmin-4-v918-launches-with-security-fixes-and-new-features.jpg"
 ---
 

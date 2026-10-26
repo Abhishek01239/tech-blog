@@ -5,7 +5,7 @@ draft: false
 description: "Microsoft Azure rolls out Azure Container Apps v2, adding AI‑driven autoscaling and 30% cost cuts today. Learn how the upgrade reshapes cloud workloads."
 tags: ["Azure", "cloud computing", "AI", "innovation"]
 categories: ["Cloud"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/azure-container-apps-v2-adds-ai-autoscaling-cuts-costs-30.jpg"
 ---
 

@@ -5,7 +5,7 @@ draft: false
 description: "Rust 1.80 is here with major async improvements and performance boosts. See how this release changes the developer tool landscape for AI startups and cloud innovation."
 tags: ["Rust", "Programming Language", "Developer Tools", "Open Source", "Tech News"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/rust-180-launches-the-ecosystems-big-moment-has-arrived.jpg"
 ---
 

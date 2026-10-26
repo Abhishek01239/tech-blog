@@ -5,7 +5,7 @@ draft: false
 description: "Discover the latest programming language update from Google, empowering developers with enhanced performance and productivity"
 tags: ["tech news", "programming language", "Google Dart", "developer tool", "innovation"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/google-launches-dart-3.jpg"
 ---
 

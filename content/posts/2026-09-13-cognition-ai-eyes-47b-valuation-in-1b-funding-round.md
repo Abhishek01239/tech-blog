@@ -5,7 +5,7 @@ draft: false
 description: "Cognition AI secures up to $1 billion in a new funding round, pushing its valuation to $47 billion and cementing its place as a leading AI coding startup."
 tags: ["Cognition AI", "funding round", "AI startup", "valuation", "tech news"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/cognition-ai-eyes-47b-valuation-in-1b-funding-round.jpg"
 ---
 

@@ -5,7 +5,7 @@ draft: false
 description: "AWS unveils Amazon MSK Replicator, a fully managed service that copies Kafka data across clusters and regions, boosting reliability and global reach for developers."
 tags: ["AWS", "MSK", "cloud computing", "AI", "innovation"]
 categories: ["Cloud"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/aws-launches-amazon-msk-replicator-for-seamless-crossregion-.jpg"
 ---
 

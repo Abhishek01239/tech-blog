@@ -5,7 +5,7 @@ draft: false
 description: "The EU's latest AI regulatory framework targets major tech firms with strict compliance mandates and heavy fines, reshaping the global innovation landscape."
 tags: ["regulatory news about big tech companies", "AI", "tech news", "startup", "innovation"]
 categories: ["General"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/eu-unveils-new-ai-rules-big-tech-faces-4b-fines.jpg"
 ---
 

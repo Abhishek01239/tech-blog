@@ -5,7 +5,7 @@ draft: false
 description: "Linux 6.13 is here! Discover the latest kernel release featuring enhanced AI inference support, new scheduler features, and critical updates for developers."
 tags: ["Linux", "Open Source", "AI", "Kernel", "Tech News"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/linux-613-released-major-ai-integration-and-performance-gain.jpg"
 ---
 

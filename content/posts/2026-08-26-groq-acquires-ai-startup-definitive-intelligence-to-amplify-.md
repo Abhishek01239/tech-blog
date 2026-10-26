@@ -5,7 +5,7 @@ draft: false
 description: "Groq announced the acquisition of AI specialist Definitive Intelligence on July 15, 2024, a move set to accelerate its hardware‑accelerated inference platform and reshape the AI startup landscape."
 tags: ["startup acquisition", "AI", "Groq", "Definitive Intelligence", "innovation"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/groq-acquires-ai-startup-definitive-intelligence-to-amplify-.jpg"
 ---
 

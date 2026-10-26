@@ -5,7 +5,7 @@ draft: false
 description: "Regulators hit major tech giants with a $4.5B fine over AI data scraping. Learn how this regulatory news about big tech changes the startup landscape and AI innovation."
 tags: ["tech news", "regulatory news about big tech companies", "startup", "AI", "innovation"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/eu-slaps-record-fine-on-big-tech-over-ai-data-practices.jpg"
 ---
 

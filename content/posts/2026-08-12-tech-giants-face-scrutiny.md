@@ -5,7 +5,7 @@ draft: false
 description: "Regulatory news about big tech companies: Latest updates on antitrust laws, data privacy, and innovation in the tech industry, affecting startups and AI development"
 tags: ["tech news", "regulatory news", "big tech companies", "startup", "AI", "innovation"]
 categories: ["General"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/tech-giants-face-scrutiny.jpg"
 ---
 

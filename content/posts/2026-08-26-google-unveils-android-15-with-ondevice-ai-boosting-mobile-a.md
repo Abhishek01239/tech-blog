@@ -5,7 +5,7 @@ draft: false
 description: "Google unveiled Android 15 at I/O 2026, adding an on‑device LLM that powers smarter apps, boosts privacy, and sets a new AI benchmark for smartphones today."
 tags: ["Google", "Android15", "AI", "mobile app", "innovation"]
 categories: ["Phones"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/google-unveils-android-15-with-ondevice-ai-boosting-mobile-a.jpg"
 ---
 

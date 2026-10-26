@@ -5,7 +5,7 @@ draft: false
 description: "Researchers uncover a severe zero-day vulnerability in a top AI inference engine, exposing millions of servers to remote code execution risks."
 tags: ["cybersecurity", "AI", "vulnerability"]
 categories: ["Cybersecurity"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/critical-zero-day-found-in-major-ai-inference-engine.jpg"
 ---
 

@@ -1,38 +1,46 @@
 ---
 title: "Contact"
 date: 2025-01-01
+lastmod: 2026-10-26
 draft: false
-description: "Contact Tech Tutorials Hub."
+description: "Contact TechPulse — corrections, tips, and advertising inquiries."
 ---
 
-## Contact Us
+## Contact TechPulse
 
-Have a question, suggestion, or want to collaborate? We'd love to hear from you.
+We read everything that comes in. For the fastest response, use the address that matches your reason for writing.
 
-### General Inquiries
+### Corrections and feedback
 
-- **Email:** contact@tech-tutorials-hub.com
+Spotted an error, an outdated fact, or something that needs context? Tell us which article and what should change.
 
-### Content Suggestions
+**Email:** jaiswarabhishek12@gmail.com
 
-- **Email:** topics@tech-tutorials-hub.com
+### News tips
 
-### Advertising & Partnerships
+Have a document, a leak, or a story we should be covering? Send it over. If you need to correspond anonymously, say so in your first message and we will work out a channel.
 
-- **Email:** ads@tech-tutorials-hub.com
+**Email:** jaiswarabhishek12@gmail.com
 
-### Technical Issues
+### Advertising and partnerships
 
-- **Email:** support@tech-tutorials-hub.com
+For advertising, sponsorship, or partnership questions:
 
-### Response Time
+**Email:** jaiswarabhishek12@gmail.com
 
-We typically respond within 2-3 business days.
+### Technical issues
 
-### Social Media
+Broken page, bad link, or something not rendering correctly on your device? Include the URL and your browser.
 
-- **GitHub:** https://github.com/tech-tutorials-hub
+**Email:** jaiswarabhishek12@gmail.com
 
-### Legal
+### Elsewhere
 
-For legal inquiries, please refer to our [Privacy Policy](/privacy/) and [Terms of Service](/terms/).
+- **GitHub:** https://github.com/Abhishek01239
+- **RSS:** /index.xml
+
+### Response time
+
+We aim to reply within 2–3 business days. Corrections are prioritised and usually handled faster.
+
+For how we handle your information, see our [Privacy Policy](/privacy/); for the terms of use, see [Terms of Service](/terms/).

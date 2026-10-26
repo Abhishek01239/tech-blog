@@ -5,7 +5,7 @@ draft: false
 description: "Amazon Web Services unveils a new AI-powered autoscaling feature, promising to cut cloud costs by 30% for startups and enterprises. Here is the full breakdown."
 tags: ["AWS", "Cloud Computing", "AI", "Tech News", "Innovation"]
 categories: ["Cloud"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/aws-launches-ai-driven-autoscaling-for-cloud-computing.jpg"
 ---
 

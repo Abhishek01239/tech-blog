@@ -5,7 +5,7 @@ draft: false
 description: "In June 2024 U.S. antitrust agencies announced a coordinated investigation into Microsoft, OpenAI and Nvidia, signaling a new wave of regulatory pressure on AI powerhouses."
 tags: ["regulation", "big tech", "AI", "antitrust", "tech news"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/doj--ftc-move-to-probe-microsoft-openai-nvidia-ai-dominance.jpg"
 ---
 

@@ -5,7 +5,7 @@ draft: false
 description: "The EU opens a fresh antitrust investigation into Meta, Google, and Amazon over AI‑driven services, demanding transparency and competition safeguards. by mid‑2025."
 tags: ["regulation", "big tech", "antitrust", "AI", "innovation"]
 categories: ["General"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/eu-antitrust-probe-targets-meta-google-and-amazon-in-ai-push.jpg"
 ---
 

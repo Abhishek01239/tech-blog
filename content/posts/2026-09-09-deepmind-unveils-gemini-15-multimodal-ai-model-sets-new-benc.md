@@ -5,7 +5,7 @@ draft: false
 description: "DeepMind's Gemini 1.5 model launches today, promising multimodal reasoning, lower latency, and 2x cost efficiency—signaling a new AI benchmark for developers."
 tags: ["AI", "DeepMind", "Gemini", "Machine Learning", "Innovation"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/deepmind-unveils-gemini-15-multimodal-ai-model-sets-new-benc.jpg"
 ---
 

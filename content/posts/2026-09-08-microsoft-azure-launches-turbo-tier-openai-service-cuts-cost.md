@@ -5,7 +5,7 @@ draft: false
 description: "Microsoft Azure unveiled the Turbo tier for its OpenAI Service on Aug 15, 2024, promising 2× faster response times and up to 30% lower pricing, boosting AI workloads."
 tags: ["Microsoft Azure", "OpenAI", "cloud computing"]
 categories: ["Cloud"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/microsoft-azure-launches-turbo-tier-openai-service-cuts-cost.jpg"
 ---
 

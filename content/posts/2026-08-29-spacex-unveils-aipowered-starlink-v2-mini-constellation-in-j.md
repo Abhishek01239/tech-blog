@@ -5,7 +5,7 @@ draft: false
 description: "SpaceX's June 12 launch of 400 AI‑enabled Starlink V2 Mini satellites promises faster global broadband and showcases next‑gen space tech, sparking competition."
 tags: ["space technology", "satellite launch", "startup", "AI", "innovation"]
 categories: ["Space"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/spacex-unveils-aipowered-starlink-v2-mini-constellation-in-j.jpg"
 ---
 

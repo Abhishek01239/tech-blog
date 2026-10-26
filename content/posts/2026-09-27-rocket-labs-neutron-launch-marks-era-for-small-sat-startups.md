@@ -5,7 +5,7 @@ draft: false
 description: "Rocket Lab successfully launches Neutron, its medium-lift vehicle. This breakthrough reshapes the space technology landscape for AI and satellite startups."
 tags: ["space technology", "satellite launch", "Rocket Lab", "innovation"]
 categories: ["Space"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/rocket-labs-neutron-launch-marks-era-for-small-sat-startups.jpg"
 ---
 

@@ -5,7 +5,7 @@ draft: false
 description: "AI startup secures $50M funding round, revolutionizing tech industry with innovative solutions and products, learn more about this groundbreaking development"
 tags: ["tech news", "startup funding round", "AI", "innovation"]
 categories: ["Ai|Startups"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/ai-startup-raises-50m.jpg"
 ---
 

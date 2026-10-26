@@ -5,7 +5,7 @@ draft: false
 description: "Rust 1.80 arrives with major async improvements and Windows support upgrades. See why this programming language release is reshaping the tech industry."
 tags: ["Rust", "Open Source", "Developer Tools", "Systems Programming"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/rust-180-launched-the-language-thats-taking-over-systems-cod.jpg"
 ---
 

@@ -5,7 +5,7 @@ draft: false
 description: "Google announced Android 15 on June 12, 2026, featuring AI‑driven app suggestions, deeper 5G integration, enhanced privacy controls, and a new developer toolkit to accelerate AI innovation."
 tags: ["Android 15", "AI", "5G", "mobile app update", "Google", "tech news"]
 categories: ["Phones"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/google-rolls-out-android-15-with-aiboosted-apps-and-5g-enhan.jpg"
 ---
 

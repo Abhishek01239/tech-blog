@@ -5,7 +5,7 @@ draft: false
 description: "CodeRabbit's new Agentic Change Management tool, unveiled on Aug 12, 2026, offers AI‑driven governance for software teams, promising safer, faster releases."
 tags: ["CodeRabbit", "Agentic Change Management", "AI", "developer tools", "software governance"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/coderabbit-launches-agentic-change-management-for-aigenerate.jpg"
 ---
 

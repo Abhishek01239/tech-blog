@@ -5,7 +5,7 @@ draft: false
 description: "Groq launches Groq Code CLI 0.1.3 on March 19, 2026, delivering ultra‑low‑latency AI code generation, deep customization, and native LPU support for developers."
 tags: ["Groq", "developer tools", "AI", "code CLI", "innovation"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/groq-unveils-fasttrack-groq-code-cli-013-for-aipowered-codin.jpg"
 ---
 

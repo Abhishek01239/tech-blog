@@ -5,7 +5,7 @@ draft: false
 description: "Big tech companies face new regulations, potential fines, and stricter oversight, learn how this impacts innovation and the industry"
 tags: ["tech news", "regulatory news", "big tech", "innovation"]
 categories: ["General"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/tech-giants-face-regulations.jpg"
 ---
 

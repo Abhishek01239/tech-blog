@@ -5,7 +5,7 @@ draft: false
 description: "The US DOJ files a landmark antitrust suit against Amazon, alleging the e‑commerce giant is monopolizing AI cloud services and hurting competition. Read more."
 tags: ["regulation", "big tech", "antitrust", "AI", "Amazon"]
 categories: ["General"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/us-doj-sues-amazon-over-ai-cloud-monopoly-claims.jpg"
 ---
 

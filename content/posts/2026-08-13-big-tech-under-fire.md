@@ -5,7 +5,7 @@ draft: false
 description: "Regulatory news: Big tech companies face increased scrutiny, fines, and potential breakups, what does this mean for the industry and consumers?"
 tags: ["tech news", "regulatory news", "big tech companies", "innovation"]
 categories: ["General"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/big-tech-under-fire.jpg"
 ---
 

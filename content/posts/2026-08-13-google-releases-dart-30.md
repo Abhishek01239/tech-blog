@@ -5,7 +5,7 @@ draft: false
 description: "Discover Google's latest programming language update, Dart 3.0, with enhanced features for mobile, web, and desktop app development"
 tags: ["tech news", "programming language", "Dart 3.0", "Google", "developer tool"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/google-releases-dart-30.jpg"
 ---
 

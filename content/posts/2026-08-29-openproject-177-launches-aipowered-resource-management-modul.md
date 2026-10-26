@@ -5,7 +5,7 @@ draft: false
 description: "OpenProject rolls out version 17.7, adding AI‑driven resource planning, new APIs, and tighter security—marking a major milestone for the open‑source project management suite."
 tags: ["open source", "OpenProject", "release", "AI", "innovation"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/openproject-177-launches-aipowered-resource-management-modul.jpg"
 ---
 

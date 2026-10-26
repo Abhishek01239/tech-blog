@@ -5,7 +5,7 @@ draft: false
 description: "Bending Spoons announced a $1.36 billion cash acquisition of collaboration platform Miro on Sep 10 2026, reshaping the SaaS landscape amid AI‑driven market shifts."
 tags: ["Bending Spoons", "Miro", "acquisition", "SaaS", "AI", "tech news"]
 categories: ["Startups"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/bending-spoons-buys-miro-for-136b-in-cash-deal.jpg"
 ---
 

@@ -5,7 +5,7 @@ draft: false
 description: "Meta's latest open‑source AI milestone, Llama 3.0, launches on Sep 1 2026 with a 70‑billion‑parameter model, new licensing, and tools that could reshape the AI ecosystem."
 tags: ["open source", "AI", "Meta", "Llama 3.0", "innovation"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/meta-unveils-llama-30-opensource-ai-model-hits-70b-parameter.jpg"
 ---
 

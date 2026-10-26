@@ -5,7 +5,7 @@ draft: false
 description: "Karmada reaches CNCF graduation on Sep 7, 2026, launching v1.19 with multi‑component AI scheduling. See why this open‑source milestone matters for cloud and AI innovators."
 tags: ["Karmada", "CNCF", "open source", "AI", "Kubernetes"]
 categories: ["Cloud"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/karmada-graduates-from-cncf-unveils-v119-for-multicluster-ai.jpg"
 ---
 

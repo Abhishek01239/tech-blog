@@ -5,7 +5,7 @@ draft: false
 description: "NeuralFlow secures $180M Series B led by Sequoia to scale its enterprise AI platform. The startup aims to redefine workplace automation for global corporations."
 tags: ["startup funding", "AI innovation", "enterprise tech", "NeuralFlow", "Series B"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/neuralflow-raises-180m-series-b-to-revolutionize-enterprise-.jpg"
 ---
 

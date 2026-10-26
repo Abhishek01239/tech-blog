@@ -5,7 +5,7 @@ draft: false
 description: "SynthAI lands a $150M Series C led by Andreessen Horowitz, scaling its synthetic data platform for AI training and marking a major push in data innovation."
 tags: ["startup", "funding", "AI", "innovation", "synthetic data"]
 categories: ["Startups"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/synthai-secures-150m-series-c-to-accelerate-synthetic-data-r.jpg"
 ---
 

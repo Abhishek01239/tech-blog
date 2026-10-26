@@ -5,7 +5,7 @@ draft: false
 description: "JetBrains rolls out Ktor 3.6.0, adding experimental HTTP/3, typed OpenID Connect authentication, and a suite of quality‑of‑life upgrades for Kotlin developers."
 tags: ["Ktor", "JetBrains", "open source", "Kotlin", "HTTP/3"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/jetbrains-releases-ktor-360-with-http-3--openid-connect-supp.jpg"
 ---
 

@@ -5,7 +5,7 @@ draft: false
 description: "Apple's iOS 18 debut at WWDC 2024 adds AI-driven widgets, on‑device processing, and new App Store tools, promising faster, smarter iPhone experiences."
 tags: ["Apple", "iOS18", "AI"]
 categories: ["Phones"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/apple-unveils-ios-18-with-ai-widgets-and-ondevice-intelligen.jpg"
 ---
 

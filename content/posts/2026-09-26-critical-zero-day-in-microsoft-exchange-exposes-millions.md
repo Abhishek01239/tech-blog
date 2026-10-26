@@ -5,7 +5,7 @@ draft: false
 description: "Microsoft patches critical Exchange Server zero-day exploited in active attacks. Millions of servers at risk. Here is what you need to know now."
 tags: ["cybersecurity", "Microsoft", "vulnerability", "zero-day", "enterprise security"]
 categories: ["Cybersecurity"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/critical-zero-day-in-microsoft-exchange-exposes-millions.jpg"
 ---
 

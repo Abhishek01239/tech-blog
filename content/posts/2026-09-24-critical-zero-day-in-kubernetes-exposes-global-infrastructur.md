@@ -5,7 +5,7 @@ draft: false
 description: "A severe Kubernetes vulnerability is putting global cloud infrastructure at risk. Experts urge immediate patches as attackers actively exploit the flaw."
 tags: ["cybersecurity", "cloud security", "Kubernetes", "zero-day", "tech news"]
 categories: ["Cybersecurity"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/critical-zero-day-in-kubernetes-exposes-global-infrastructur.jpg"
 ---
 

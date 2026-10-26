@@ -5,7 +5,7 @@ draft: false
 description: "OpenAI has launched GPT-5, featuring advanced reasoning and multimodal capabilities. Discover how this major tech company product launch reshapes the AI landscape."
 tags: ["OpenAI", "GPT-5", "Artificial Intelligence", "Tech News"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/openai-unveils-gpt-5-a-leap-in-ai-reasoning-and-multimodal-p.jpg"
 ---
 

@@ -5,7 +5,7 @@ draft: false
 description: "Tech news: TypeScript 7, released July 8, 2026, introduces a native binary language service, cutting type‑checking time and powering faster AI‑driven tooling."
 tags: ["TypeScript", "Microsoft", "programming language", "AI", "innovation"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/typescript-7-launches-native-binary-engine-boosting-speed.jpg"
 ---
 

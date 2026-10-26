@@ -5,7 +5,7 @@ draft: false
 description: "Mistral AI releases the open‑source Mistral 7B v0.2 model on Sep 10, 2024, delivering 7 billion parameters, lower latency, and new safety tools for developers."
 tags: ["open source", "Mistral AI", "large language model", "AI innovation", "tech news"]
 categories: ["Ai"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/mistral-ai-unveils-opensource-mistral7b-v02-boosting-ai-inno.jpg"
 ---
 

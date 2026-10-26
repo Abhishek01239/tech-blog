@@ -5,7 +5,7 @@ draft: false
 description: "Critical SAP NetWeaver zero‑day (CVE‑2025‑31324) discovered in April 2025 enables remote code execution, sparking urgent patches across enterprises worldwide."
 tags: ["SAP", "zero\u2011day", "vulnerability", "enterprise security", "tech news"]
 categories: ["Cybersecurity"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/critical-sap-netweaver-zeroday-sparks-global-patch-rush.jpg"
 ---
 

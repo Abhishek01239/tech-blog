@@ -5,7 +5,7 @@ draft: false
 description: "ISC announces the BIND 9.18.42 release, a key open‑source DNS milestone packed with security patches, performance tweaks, and new features for enterprises and developers."
 tags: ["open source", "BIND", "DNS", "ISC", "milestone"]
 categories: ["Programming"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/isc-bind-91842-released-major-milestone-for-dns-security.jpg"
 ---
 

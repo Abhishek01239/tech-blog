@@ -5,7 +5,7 @@ draft: false
 description: "SpaceX's Astrum satellite launch on Aug 25, 2026 demonstrates breakthrough space technology, AI integration, and startup-driven innovation reshaping the industry today."
 tags: ["space technology", "satellite launch", "startup", "AI", "innovation", "tech news"]
 categories: ["Space"]
-author: "Tech Tutorials Hub"
+author: "TechPulse"
 image: "/images/spacexs-astrum-satellite-launch-marks-new-leap-in-space-tech.jpg"
 ---
 
