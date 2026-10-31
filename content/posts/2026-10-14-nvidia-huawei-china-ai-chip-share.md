@@ -6,6 +6,7 @@ description: "New IDC data reveals Nvidia's share of China's data-center AI chip
 tags: [AI, Semiconductors, Nvidia, Huawei, China, Hardware]
 categories: ["Tech News"]
 author: "TechPulse"
+image: "/images/nvidia-huawei-china-ai-chip-share.jpg"
 ---
 
 # Nvidia's Grip on China's AI Chip Market Slips to 34% as Huawei Closes In

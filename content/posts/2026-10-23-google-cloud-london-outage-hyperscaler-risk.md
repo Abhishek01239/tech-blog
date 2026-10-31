@@ -6,6 +6,7 @@ description: "A six-hour power failure at Google Cloud's London data centre knoc
 tags: [Google Cloud, Cloud Computing, Outage, Cybersecurity, DevOps, Tech News]
 categories: ["Tech News"]
 author: "TechPulse"
+image: "/images/google-cloud-london-outage-hyperscaler-risk.jpg"
 ---
 
 # When London Went Dark: What the Google Cloud Outage Teaches Us About Hyperscaler Risk

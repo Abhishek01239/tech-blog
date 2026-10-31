@@ -3,7 +3,7 @@ title: "Oracle Launches AI Security Mesh Powered by OpenAI Cyber Models"
 date: 2026-10-28
 draft: false
 description: "At Oracle AI World, Oracle introduced AI Security Mesh, a managed platform that pairs OpenAI frontier cyber models with Oracle testing tools to help enterprises find, prioritize, and remediate vulnerabilities under human control."
-image: "https://res.cloudinary.com/csacimzi/image/upload/v1761622800/techpulse/articles/oracle-ai-security-mesh-openai.png"
+image: "/images/oracle-ai-security-mesh-openai-cyber-models.jpg"
 tags: [Oracle, OpenAI, AI Security Mesh, cybersecurity, enterprise AI, vulnerability management]
 categories: [Cybersecurity, Artificial Intelligence]
 author: "TechPulse"

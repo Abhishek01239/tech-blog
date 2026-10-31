@@ -3,7 +3,7 @@ title: "Google DeepMind Unveils Gemini 4 Carbon: Frontier Model With State-of-th
 date: 2026-10-29
 draft: false
 description: "Google DeepMind announces Gemini 4 Carbon, its strongest model yet, leading benchmarks in vulnerability detection, exploitation, and patching while advancing long-horizon agentic coding."
-image: "https://res.cloudinary.com/demo/image/upload/v1/techpulse/articles/gemini-4-carbon-cybersecurity.jpg"
+image: "/images/google-gemini-4-carbon-cybersecurity.jpg"
 tags: [Google, DeepMind, Gemini, AI, cybersecurity, frontier models]
 categories: [Artificial Intelligence, Cybersecurity]
 author: "TechPulse"

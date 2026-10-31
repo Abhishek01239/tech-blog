@@ -6,6 +6,7 @@ description: "Anthropic has launched Claude Duet, an always-on AI agent for prof
 tags: [AI, Anthropic, Claude Duet, AI Agents, Walmart, Tech News]
 categories: ["Tech News"]
 author: "TechPulse"
+image: "/images/anthropic-claude-duet-ai-agents.jpg"
 ---
 
 # Anthropic Enters the Agent Wars: Claude Duet Brings Always-On AI to Professionals

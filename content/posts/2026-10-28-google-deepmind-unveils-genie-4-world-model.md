@@ -6,7 +6,7 @@ description: "DeepMind's Genie 4 generates photorealistic interactive worlds wit
 tags: ["AI", "World Models", "Google DeepMind", "Genie", "Simulation"]
 categories: ["Artificial Intelligence"]
 author: "TechPulse"
-image: "https://res.cloudinary.com/demo/image/upload/v1720000000/techpulse/articles/genie-4-world-model.jpg"
+image: "/images/google-deepmind-unveils-genie-4-world-model.jpg"
 ---
 
 # Google DeepMind Unveils Genie 4: World Model With Native Audio and Real-Time Steering

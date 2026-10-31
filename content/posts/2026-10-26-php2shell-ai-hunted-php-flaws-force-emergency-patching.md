@@ -6,6 +6,7 @@ description: "Two critical remote-code-execution flaws in PHP's core engine, dub
 tags: [PHP, Security, Vulnerabilities, AI, Open Source]
 categories: ["Tech News"]
 author: "TechPulse"
+image: "/images/php2shell-ai-hunted-php-flaws-force-emergency-patching.jpg"
 ---
 
 # PHP2Shell: The AI-Hunted PHP Bugs That Put the Web on Emergency Patch Alert

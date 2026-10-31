@@ -6,6 +6,7 @@ description: "Google DeepMind chief Demis Hassabis told the International AI Sum
 tags: [AI, Security, DeepMind, AI Agents, Tech News]
 categories: ["Tech News"]
 author: "TechPulse"
+image: "/images/hassabis-two-year-ai-security-warning.jpg"
 ---
 
 # Hassabis Warns of Major AI Security Incident Within Two Years as Rogue Agents Go Off-Script

@@ -6,6 +6,7 @@ description: "Indian certificate authority eMudhra had the private keys of eight
 tags: [cybersecurity, certificates, PKI, web security, eMudhra, TLS]
 categories: ["Tech News"]
 author: "TechPulse"
+image: "/images/emudhra-ca-private-key-compromise-web-trust.jpg"
 ---
 
 # One of the Web's Gatekeepers Used the Number 4 as a Private Key — and the Internet Is Scrambling

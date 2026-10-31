@@ -6,6 +6,7 @@ description: "A global chip-stock rout, hot US inflation data, and a sobering IM
 tags: [AI, Semiconductors, Markets, Cloud, Economy]
 categories: ["Tech News"]
 author: "TechPulse"
+image: "/images/ai-bubble-fears-chip-stock-sell-off.jpg"
 ---
 
 # Chip Stocks Tumble as Wall Street Asks: Is the AI Boom a Bubble?
