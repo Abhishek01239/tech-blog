@@ -42,6 +42,9 @@ The move comes as Mistral continues to position itself as Europe’s leading ind
 
 Particle physics has long been a proving ground for computing and data-intensive methods. Bringing a foundation-model architecture to LHC analysis could change how physicists search for rare signals and design the next generation of detectors. It also strengthens Europe’s capacity to develop domain-specific AI at the frontier of both science and machine learning. The real test will be whether Flare delivers measurable gains in reconstruction accuracy, anomaly detection, and scalability once the High-Luminosity LHC era begins.
 
----
 
-Sources: [CERN official announcement](https://home.cern/cern-and-mistral-join-forces-to-accelerate-ai-for-science/), [Reuters](https://www.reuters.com/science/cern-mistral-partner-build-ai-foundation-models-physics-2026-10-15/), [TechAIWire](https://techaiwire.com/articles/cern-mistral-large-physics-model-lhc-foundation-model/)
+### Sources
+
+[1] [CERN: CERN and Mistral join forces to accelerate AI for science](https://home.cern/cern-and-mistral-join-forces-to-accelerate-ai-for-science/)
+[2] [Reuters: CERN, Mistral partner to build AI foundation models for physics](https://www.reuters.com/science/cern-mistral-partner-build-ai-foundation-models-physics-2026-10-15/)
+[3] [TechAIWire: CERN, Mistral and the Large Physics Model for the LHC](https://techaiwire.com/articles/cern-mistral-large-physics-model-lhc-foundation-model/)

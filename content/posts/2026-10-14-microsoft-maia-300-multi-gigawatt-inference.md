@@ -27,6 +27,11 @@ That does not mean Microsoft is abandoning merchant GPUs. The company is expandi
 
 The key test begins in 2027: whether the promised efficiency holds outside Microsoft's own comparisons, and whether the new racks translate into lower-cost, dependable capacity for Azure customers.
 
+### Sources
+
+[1] [Microsoft: Azure Maia expansion and Maia 300](https://blogs.microsoft.com/blog/2026/10/12/microsoft-to-expand-azure-maia-system-to-multi-gigawatt-deployments/)
+[2] [UPI: Microsoft announces Azure Maia 300](https://www.upi.com/Top_News/US/2026/10/12/microsoft-azure-maia-300-ai-chips-nvidia/3511791823960/)
+
 ## References
 
 [1]: https://blogs.microsoft.com/blog/2026/10/12/microsoft-to-expand-azure-maia-system-to-multi-gigawatt-deployments/ "Microsoft: Azure Maia expansion and Maia 300"

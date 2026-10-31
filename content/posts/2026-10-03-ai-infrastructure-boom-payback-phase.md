@@ -168,7 +168,8 @@ Huge investments in computing, data centers, chips and power infrastructure can 
 
 For developers and startups, that creates an important lesson: the next opportunity in AI may not be simply building a more impressive model. It may be finding a practical problem where AI can create enough measurable value that customers are willing to pay for it.
 
-**Sources:**
+### Sources
 
-- Reuters, "AI's race to transform the world before the money runs out" — October 3, 2026
-- https://www.reuters.com/business/retail-consumer/ais-race-transform-world-before-money-runs-out-2026-10-03/
+[1] [Reuters — AI's race to transform the world before the money runs out](https://www.reuters.com/business/retail-consumer/ais-race-transform-world-before-money-runs-out-2026-10-03/)
+[2] [PwC — Global investment in AI infrastructure to hit US$31.6 trillion through 2050](https://www.pwc.com/gx/en/news-room/press-releases/2026/global-investment-in-ai-infrastructure.html)
+[3] [Bain & Company — New Innovation Is Required to Fund AI's $6 Trillion Buildout](https://www.bain.com/insights/new-innovation-is-required-to-fund-ais-6-trillion-buildout-technology-report-2026/)

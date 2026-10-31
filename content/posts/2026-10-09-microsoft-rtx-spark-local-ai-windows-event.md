@@ -43,4 +43,8 @@ The economics are hard to ignore. With cloud AI inference costs still climbing a
 
 The first RTX Spark systems arrive October 16. Whether developers and creators actually trade their MacBooks for a Windows petaflop remains the industry's most interesting open question — but as of October 7, the challenge is officially on.
 
-*Sources: Ars Technica, Engadget, The Spokesman-Review, Windows Latest, IT-Connect, Techaeris, TechEngage*
+### Sources
+
+[1] [Microsoft — Windows and Surface October 2026 news](https://news.microsoft.com/windows-surface-october-2026-news/)
+[2] [NVIDIA — NVIDIA, Microsoft Kick Off a New Beginning for Windows PCs With RTX Spark and AI Agents](https://blogs.nvidia.com/blog/local-ai-rtx-spark-microsoft-windows-event/)
+[3] [The Verge — Everything announced at Microsoft's Surface Laptop Ultra event](https://www.theverge.com/tech/1007147/microsoft-surface-laptop-ultra-windows-event-everything-announced)

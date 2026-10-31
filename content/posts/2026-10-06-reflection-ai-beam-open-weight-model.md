@@ -129,8 +129,8 @@ A 501-billion-parameter model activating only 23 billion parameters at a time sh
 
 Beam’s current benchmark claims still need independent verification, and the weights are not publicly available yet. But if Reflection can deliver strong real-world coding performance at substantially lower inference cost, it could give developers another serious option in an increasingly competitive open-AI ecosystem.
 
-**Sources**
+### Sources
 
-- Reflection AI — “Introducing Beam: Reflection’s 501B open-weight model,” October 5, 2026.
-- Reuters — “Nvidia-backed Reflection unveils first AI model to take on Chinese open models,” October 5, 2026.
-- TechCrunch — “Reflection debuts Beam, an open-weight AI model to rival Chinese models at lower compute cost,” October 5, 2026.
+[1] [Reflection AI — Introducing Beam: Reflection's 501B open-weight model](https://reflection.ai/blog/introducing-beam)
+[2] [Reuters — Nvidia-backed Reflection unveils first AI model to take on Chinese open models](https://www.reuters.com/technology/nvidia-backed-reflection-unveils-first-ai-model-take-chinese-open-models-2026-10-05/)
+[3] [CNBC — SpaceX signs compute deal with open-source AI startup Reflection](https://www.cnbc.com/2026/06/22/spacex-ai-colossus-data-center-reflection.html)

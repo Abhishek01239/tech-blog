@@ -35,4 +35,8 @@ The broader message is that the AI security race is not a future problem. As Mic
 
 ---
 
-*Sources: Microsoft 2026 Digital Defense Report, as reported by AI Weekly and industry coverage in early October 2026.*
+### Sources
+
+[1] [Microsoft — Microsoft Digital Defense Report 2026](https://www.microsoft.com/en-us/corporate-responsibility/topics/cybersecurity/reports/microsoft-digital-defense-report/)
+[2] [Microsoft — 2026 Microsoft Digital Defense Report (PDF)](https://cdn-dynmedia-1.microsoft.com/is/content/microsoftcorp/microsoft/msc/documents/presentations/CSR/Microsoft-Digital-Defense-Report-2026-v1.1.pdf)
+[3] [AI Weekly — Microsoft 2026 Digital Defense Report: AI Has Tipped Near-Term Advantage to Attackers](https://aiweekly.co/alerts/microsoft-2026-digital-defense-report-ai-has-tipped-near-term-advantage-to)

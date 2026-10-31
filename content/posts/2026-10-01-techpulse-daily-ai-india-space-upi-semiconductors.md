@@ -100,3 +100,18 @@ Semiconductor manufacturing supports AI hardware, smartphones, vehicles, communi
 The common thread across today’s stories is infrastructure: AI agents need safer tool access, AI startups need compute, space missions need reliable commercial transportation, UPI needs sustainable payment infrastructure, and semiconductor ambitions require a complete manufacturing ecosystem.
 
 For India in particular, the combination of AI compute, digital payments and semiconductor manufacturing shows how software infrastructure and physical technology infrastructure are increasingly developing together.
+
+### Sources
+
+[1] [The Guardian: OpenAI announces Dots agent amid safety concerns](https://www.theguardian.com/technology/2026/sep/29/openai-announces-dots-agent-safety-concerns)
+[2] [The Verge: OpenAI pauses training of its most capable models](https://www.theverge.com/ai-artificial-intelligence/1001049/openai-training-pause)
+[3] [The Verge: OpenAI agents accessed an Australian government website](https://www.theverge.com/ai-artificial-intelligence/999874/openai-agents-hacked-an-australian-government-website-in-search-for-data)
+[4] [PIB: IndiaAI Mission shared compute capacity](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2298788&lang=1&reg=6)
+[5] [NASA: NASA's SpaceX Crew-13 mission](https://www.nasa.gov/mission/nasas-spacex-crew-13/)
+[6] [NASA: NASA sets Crew-13 launch and docking coverage](https://www.nasa.gov/news-release/nasa-sets-crew-13-launch-docking-coverage/)
+[7] [NASA: What you need to know about NASA's SpaceX Crew-13 mission](https://www.nasa.gov/missions/station/commercial-crew/what-you-need-to-know-about-nasas-spacex-crew-13-mission/)
+[8] [Reuters: The hidden cost of free UPI](https://www.reuters.com/world/india/hidden-cost-free-upi-2026-09-29/)
+[9] [Reuters: India hopes GST Council will review tax on UPI merchant fees](https://www.reuters.com/world/india/india-hopes-gst-council-will-review-tax-upi-merchant-fees-2026-09-24/)
+[10] [PIB: Semicon India 2026 semiconductor manufacturing update](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2311726&lang=2&reg=48)
+[11] [PIB: Semicon 2.0 programme announcement](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2312605&lang=2&reg=48)
+[12] [PIB: Commercial production begins at five semiconductor units](https://www.pib.gov.in/PressReleseDetailm.aspx?PRID=2311630&lang=2&reg=48)

@@ -11,15 +11,15 @@ image: "/images/ai-layoffs-barclays-block-meta-efficiency-purge.jpg"
 
 # The AI Efficiency Purge: Barclays, Block, and Meta Lead a New Wave of Tech-Driven Layoffs
 
-Something has shifted in the way large companies talk about artificial intelligence. For years, AI was the promise of new products and new revenue. This month, it has become the stated justification for shrinking the workforce itself.
+Something has shifted in the way large companies talk about artificial intelligence. For years, AI was the promise of new products and new revenue. Over the past year, it has become the stated justification for shrinking the workforce itself.
 
 Barclays, one of the world's largest banks, announced plans on Thursday to cut around 5,000 jobs, roughly five percent of its global workforce, as it leans on artificial intelligence to become more efficient. The announcement came alongside an earnings update showing the bank's net profit grew 13 percent in the third quarter, a detail that has not gone unnoticed by critics who question whether the cuts are born of necessity or opportunity.
 
-Barclays is far from alone. Financial technology company Block is laying off more than 4,000 of its 10,000-plus employees, reconfiguring to capitalize on its use of AI. "The core thesis is simple. Intelligence tools have changed what it means to build and run a company," Jack Dorsey wrote in a letter to shareholders. "A significantly smaller team, using the tools we're building, can do more and do it better." Investors appear to have endorsed the thesis: Block's shares are up sharply this year, reversing a prior decline.
+Barclays is far from alone. In February, financial technology company Block laid off more than 4,000 of its 10,000-plus employees, reconfiguring to capitalize on its use of AI. "The core thesis is simple. Intelligence tools have changed what it means to build and run a company," Jack Dorsey wrote in a letter to shareholders. "A significantly smaller team, using the tools we're building, can do more and do it better." Investors appear to have endorsed the thesis: Block's shares are up sharply this year, reversing a prior decline.
 
 Kroger, the largest standalone U.S. supermarket chain, said it will lay off 3,000 corporate employees over the next three years as it ramps up its use of AI. "Technology is reshaping what's possible," CEO Greg Foran wrote in a memo to employees. "The way work gets done is changing across every industry; we must adapt and take advantage of technology."
 
-And Meta, the company behind Facebook and Instagram, is laying off roughly 8,000 workers, about 10 percent of its workforce, even as it ramps up spending on AI infrastructure and highly paid AI-expert hires. Meta has warned investors that its 2026 expenses could grow to as much as $169 billion, driven largely by infrastructure costs and compensation for the AI specialists it is recruiting.
+And Meta laid off roughly 8,000 workers, about 10 percent of its workforce, in April, even as it ramps up spending on AI infrastructure and highly paid AI-expert hires. Meta has warned investors that its 2026 expenses could grow to as much as $169 billion, driven largely by infrastructure costs and compensation for the AI specialists it is recruiting.
 
 ## A structural shift, not a downturn
 
@@ -37,9 +37,9 @@ There is also a safety dimension that executives citing "efficiency" rarely ment
 
 ## What to watch
 
-Three signals will tell us whether this is a lasting restructuring or a phase. First, whether companies that cut deeply see sustained productivity gains without quality or compliance failures. Second, whether regulators — particularly in the EU, which has been aggressive on AI and antitrust — treat AI-justified mass layoffs as a labor or competition issue. Third, whether the displaced workers are absorbed into new AI-adjacent roles, asoptimists predict, or whether the transition proves harsher.
+Three signals will tell us whether this is a lasting restructuring or a phase. First, whether companies that cut deeply see sustained productivity gains without quality or compliance failures. Second, whether regulators — particularly in the EU, which has been aggressive on AI and antitrust — treat AI-justified mass layoffs as a labor or competition issue. Third, whether the displaced workers are absorbed into new AI-adjacent roles, as optimists predict, or whether the transition proves harsher.
 
-For now, the direction is unmistakable. The largest companies in banking, payments, retail, and social media have converged on the same message in the same month: AI is no longer just a product to sell — it is a reason to employ fewer people. How that message plays with investors, voters, and regulators will be one of the defining tech stories of the coming year.
+For now, the direction is unmistakable. The largest companies in banking, payments, retail, and social media have converged on the same message this year: AI is no longer just a product to sell — it is a reason to employ fewer people. How that message plays with investors, voters, and regulators will be one of the defining tech stories of the coming year.
 
 ## Why It Matters
 
@@ -47,4 +47,9 @@ Because the companies making these cuts are profitable and growing, the usual ex
 
 ---
 
-*Sources: Associated Press and Agence France-Presse reporting, October 2026.*
+### Sources
+
+[1] [BBC News — Barclays cutting 5000 jobs as it increases reliance on AI](https://www.bbc.com/news/articles/cm4g1p347qgxo)
+[2] [ABC News — Barclays is latest to redirect spending toward AI as it trims workforce](https://abcnews.com/Business/wireStory/barclays-latest-redirect-spending-ai-trims-workforce-137514332)
+[3] [Reuters — Jack Dorsey's Block to cut nearly half its workforce in AI overhaul, shares surge](https://www.reuters.com/business/blocks-fourth-quarter-profit-rises-announces-over-4000-job-cuts-2026-02-26/)
+[4] [BNN Bloomberg — Meta layoffs: Company cuts 8,000, Microsoft offers buyouts](https://www.bnnbloomberg.ca/business/company-news/2026/04/23/meta-slashes-8000-jobs-or-10-of-its-workforce-as-microsoft-offers-buyouts/)

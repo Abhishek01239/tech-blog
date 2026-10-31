@@ -37,3 +37,8 @@ For now, the release gives developers a new Meta model family to test and puts m
 ## Why It Matters
 
 The release is as much a distribution play as a model launch: Meta is putting Muse Wonder into developer and coding products now, with a subscriber-first path into its personal assistant. That sequencing lets Meta test agent behavior with builders before a broader consumer rollout, while also testing whether subscriptions around Muse can convert AI spending into revenue. The promised safety report will matter because the features Meta is selling depend on trusting the model with memory and with actions.
+
+### Sources
+
+[1] [Meta: Introducing Muse Wonder and Muse Wonder Full](https://about.fb.com/news/2026/10/introducing-muse-wonder-models/)
+[2] [Reuters: Meta releases Muse Wonder AI models](https://www.reuters.com/business/meta-releases-muse-wonder-ai-models-challenge-anthropic-openai-2026-10-12/)

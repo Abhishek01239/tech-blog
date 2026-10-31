@@ -35,6 +35,9 @@ World models are widely viewed as a critical path toward more capable AI agents 
 
 For developers and businesses, the phased rollout means early experimentation will be limited to high-tier subscribers and partners, with broader API access expected to follow. Pricing for the Gemini API tier has not yet been detailed. As more labs ship controllable world models, expect rapid progress in synthetic data generation for robotics and richer creative tools for media production.
 
-Sources: [Google DeepMind blog](https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/), [Google announcement](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-genie-4/), TechCrunch, Ars Technica, The Verge coverage of the October 27, 2026 release.
-
 *How do you see world models changing creative work or robotics training in the next year? Share your take below.*
+
+### Sources
+
+[1] [Google DeepMind: Genie 4, a new generation of world simulation](https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/)
+[2] [Google: Introducing Genie 4](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-genie-4/)

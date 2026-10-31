@@ -49,6 +49,10 @@ The model’s visual understanding strengths also open applications in document 
 
 Gemini 4 Argon’s general availability marks Google’s return to the leading edge of the frontier model race after a period of more limited releases. By combining strong benchmark results, a 1M-token window, and lower introductory pricing, it gives developers and companies a practical new option for agentic and deep-work applications. How it performs in real production settings versus Claude and GPT-class systems will be closely watched in the coming weeks.
 
----
 
-Sources: [Google Blog – Introducing Gemini 4 Argon](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/), [Google Blog – Gemini 4 Argon availability](https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/), [Reuters](https://www.reuters.com/business/google-launches-flagship-ai-model-gemini-4-argon-developers-businesses-2026-10-13/), [The Verge](https://www.theverge.com/ai-artificial-intelligence/1009862/google-releases-gemini-4-argon)
+### Sources
+
+[1] [Google Blog: Introducing Gemini 4 Argon](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/)
+[2] [Google Blog: Gemini 4 Argon availability](https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/)
+[3] [Reuters: Google launches flagship AI model Gemini 4 Argon](https://www.reuters.com/business/google-launches-flagship-ai-model-gemini-4-argon-developers-businesses-2026-10-13/)
+[4] [The Verge: Google releases Gemini 4 Argon](https://www.theverge.com/ai-artificial-intelligence/1009862/google-releases-gemini-4-argon)
