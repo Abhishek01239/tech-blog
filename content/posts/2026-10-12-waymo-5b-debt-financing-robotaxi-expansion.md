@@ -42,3 +42,7 @@ Waymo still faces real risks. Regulatory timelines remain uncertain in new juris
 Still, the significance of this week's news extends beyond one company. When the world's largest credit managers are willing to lend against the future cash flows of a robotaxi network, the autonomous driving industry has crossed an important psychological threshold. This is no longer a technology question — the machines drive well enough, in enough cities, that lenders are underwriting the answer. It is now a logistics, operations, and finance question.
 
 For years, the joke in Silicon Valley was that autonomy was "always ten years away." Waymo's $5 billion loan is the financial system's way of saying: not anymore. The race to put driverless vehicles on every street corner now runs through bond markets and term loans as much as through neural networks — and the companies that master both will define how the world moves in the decade ahead.
+
+### Sources
+- [Waymo — Waymo Closes $5 Billion Debt Financing to Accelerate Business Expansion](https://waymo.com/blog/2026/10/waymo-closes-5-billion-debt-financing)
+- [Quartz — Waymo closed a $5 billion term loan, its first debt financing](https://qz.com/waymo-5-billion-term-loan-debt-financing-robotaxi-100826)

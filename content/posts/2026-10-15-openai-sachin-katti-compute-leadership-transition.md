@@ -27,3 +27,7 @@ The immediate development is therefore a leadership handoff, not a disclosed cha
 
 [1]: https://www.linkedin.com/posts/sachin-katti-72777943_after-an-incredible-year-at-openai-ive-activity-7516168693463019520-y3qE "Sachin Katti: OpenAI departure announcement"
 [2]: https://www.cnbc.com/2026/10/14/openais-sachin-katti-to-leave-infrastructure-role-stay-on-as-advisor.html "CNBC: OpenAI compute leader Sachin Katti to leave role"
+
+## Why It Matters
+
+Katti's description of the role covers silicon, systems, data centers, energy, supply chains, financing, and the economics of AI, which shows how broadly OpenAI defines compute leadership. The transition keeps that portfolio inside the company under an executive already serving as CTO of compute, while Katti remains available as an adviser. The unverified gigawatt figure in his account is a reminder that the public record of OpenAI's infrastructure buildout still depends heavily on company statements.

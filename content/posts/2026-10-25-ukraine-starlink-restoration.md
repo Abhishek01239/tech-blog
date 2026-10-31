@@ -28,6 +28,10 @@ A separate Reuters investigation, based on interviews with six former senior U.S
 
 Restoring service addressed an immediate problem for Ukraine, but left the broader dependency question unresolved: a private company operates a satellite network that has become important to military communications, while responsibility and decision-making can remain difficult to establish publicly. [1] [4]
 
+## Why It Matters
+
+The restoration resolved a frontline communications problem but not the underlying arrangement: a privately operated satellite network is central to Ukraine’s military communications, and neither Musk nor the U.S. government took responsibility for the restrictions. Ukraine’s 400 kph figure describes connectivity for fast-moving equipment, not internet throughput, and Musk’s allegation about offensive drone use remains contested. The episode shows how quickly operational capability can depend on decisions made outside the government relying on it.
+
 ### Sources
 [1] [Reuters: Ukraine says Starlink and Starshield returned to over 400 kph](https://www.reuters.com/world/europe/ukraine-says-starlink-starshield-operating-400-kph-after-week-throttling-2026-10-24/)
 [2] [Deutsche Welle: Ukraine says Starlink speeds restored to normal](https://www.dw.com/en/ukraine-starlink-satellite-speeds-restored-to-normal/a-79752155)

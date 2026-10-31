@@ -44,3 +44,7 @@ It also illustrates a shifting stance on extortion. Companies like Kraken have p
 There are risks to this approach too. Attackers may escalate leaks to punish defiance, and bounties rarely produce arrests when attackers operate from safe jurisdictions. But as a signal of where enterprise incident response may be heading, GMO's move is one of the clearest yet: don't fund the attack — fund the manhunt.
 
 For now, GMO says it will continue working with law enforcement, compensating customers, and pursuing takedowns of any replacement leak sites. The bounty program remains open, and the investigation is ongoing.
+
+### Sources
+- [The Hacker News — Japan's GMO Offers $1 Million Bounty to Catch Hackers](https://thehackernews.com/2026/10/japans-gmo-offers-1-million-bounty-to.html)
+- [GMO Internet Group — GMO Cybercrime Bounty](https://cybercrimebounty.gmo/)

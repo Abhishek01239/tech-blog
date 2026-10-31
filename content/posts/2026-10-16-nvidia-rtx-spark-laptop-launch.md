@@ -26,3 +26,7 @@ That makes the first systems most relevant to people who need substantial local 
 - [1] [NVIDIA: RTX Spark Launches With Hundreds of Top Games on October 16](https://www.nvidia.com/en-us/geforce/news/rtx-spark-dlss-reflex-ray-tracing-games/)
 - [2] [NVIDIA and Microsoft: Windows PCs for the Age of Personal AI](https://nvidianews.nvidia.com/news/nvidia-microsoft-windows-pcs-agents-rtx-spark)
 - [3] [Windows Central: NVIDIA RTX Spark review and benchmarks](https://www.windowscentral.com/hardware/nvidia/rtx-spark-review-benchmarks-2026)
+
+## Why It Matters
+
+The pitch rests on a trade-off that is unusual for laptops: a large unified memory pool and strong GPU hardware, paired with CPU performance that early testing found behind some competing chips. For buyers, that makes the platform a question of workload fit rather than a straightforward generational upgrade. Its broader significance depends on whether software makers build local agents and creator tools that can actually use the extra memory.

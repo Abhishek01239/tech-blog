@@ -24,6 +24,10 @@ Amazon also says Luna is included with Prime at no additional cost and is availa
 
 Luna’s strategy will depend on which publishers and games Amazon can secure for same-day streaming, and whether future releases match the scale of *Galactic Racer*. The company has not yet supplied those details. [1]
 
+## Why It Matters
+
+The plan signals that Amazon sees Prime membership, rather than a stand-alone subscription, as its route into cloud gaming. Delivering on it depends on publisher agreements Amazon has not disclosed, and the fivefold growth claim comes without an absolute user count or methodology, so the reach of the strategy remains unmeasured. For Prime members, the practical question is whether future titles match the scale of *Star Wars: Galactic Racer* or remain isolated experiments.
+
 ### Sources
 [1] [Amazon Game Studios: One Year of Amazon Luna](https://www.amazongamestudios.com/en-us/news/articles/one-year-of-amazon-luna)
 [2] [The Verge: Amazon plans more day-and-date Luna game releases](https://www.theverge.com/tech/1017741/amazon-is-planning-more-day-and-date-releases-for-luna)

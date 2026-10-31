@@ -42,3 +42,11 @@ The public benefit angle adds another layer. Anthropic recently pledged to dedic
 Anthropic's draft S-1 arrives at a moment of intense scrutiny for the AI sector, with chip stocks recently rattled by bubble fears and regulators probing AI market power. Whether Wall Street embraces a company with 15x revenue growth, positive free cash flow, a paper loss approaching the GDP of a mid-sized country, and three-quarters of a trillion dollars in compute commitments will say a great deal about how much faith investors still place in the AI buildout. The offering, expected as soon as November, may be the last major AI IPO of 2026 — and it is shaping up to be the defining test of the entire industry's financial model.
 
 *Figures per Anthropic's draft S-1 prospectus as reported by the Wall Street Journal and secondary coverage on October 20–21, 2026. Anthropic declined to comment.*
+
+## Why It Matters
+
+The filing places the AI buildout's central trade-off on a public ledger: revenue growing faster than almost any comparable business, paired with multi-year compute commitments that are mostly non-cancellable and must be paid whether or not demand holds. Customer concentration compounds that exposure, since a fifth to a quarter of first-half revenue came from two customers without long-term contracts. How investors price those obligations against the growth will set the benchmark for every AI company that follows it to market.
+
+### Sources
+- [Wall Street Journal — Anthropic S-1 Shows Red-Hot Growth, Risks and Massive ...](https://www.wsj.com/tech/ai/anthropic-revenue-growth-ipo-accaf0f1)
+- [Wall Street Journal — The Biggest Takeaways From Anthropic's IPO Prospectus](https://www.wsj.com/tech/ai/anthropic-ipo-s1-report-takeaways-6eebd721)

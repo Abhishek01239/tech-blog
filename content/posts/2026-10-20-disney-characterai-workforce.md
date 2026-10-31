@@ -24,6 +24,10 @@ Character.AI said it anticipated completing the sale process in late November or
 
 The proposed arrangement points to a possible split between talent and product: Disney may bring a large portion of the team into its organization, while the fate of the consumer chatbot platform depends on the bankruptcy sale. The employment offers alone do not establish who will ultimately own all company assets or whether the service will continue long term.
 
+## Why It Matters
+
+The arrangement shows how a bankruptcy sale can separate a company's people and intellectual property from its consumer product. Disney is acting as stalking-horse bidder for selected assets and a licence, while the platform's survival depends on a buyer willing to keep operating it. Because the employment offers sit inside a court-supervised process where other bids may compete, neither final ownership of the assets nor the service's future is settled.
+
 ### Sources
 [1] [TechCrunch: Disney agrees to hire the majority of Character.AI’s workforce](https://techcrunch.com/2026/10/18/disney-agrees-to-hire-the-majority-of-character-ais-workforce/)
 [2] [Character Technologies bankruptcy-court motion](https://cases.stretto.com/public/x936/14939/PLEADINGS/1493910132680000000114.pdf)

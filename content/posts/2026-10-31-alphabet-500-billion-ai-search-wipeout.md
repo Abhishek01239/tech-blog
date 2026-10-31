@@ -38,3 +38,11 @@ Some analysts argue the panic is overdone. Cloud revenue is doubling, the ad bus
 But the bear case just got its clearest data point yet. For twenty years, Google's business model was the closest thing tech had to a money printer: users search, users click, advertisers pay. This week, the company that built that machine told the world, in its own numbers, that AI is dismantling it faster than AI is rebuilding it. Roughly $500 billion of market value evaporated in six and a half hours of trading — the market's way of saying the AI investment thesis now has a hole in it that only time, and a lot of capital expenditure, can fill.
 
 Whether that hole gets patched or becomes a crater may well be the defining question of the next year in tech.
+
+## Why It Matters
+
+The quarter makes the trade-off explicit: AI Mode is diverting queries from the ad-bearing links that fund Alphabet, while capital expenditure roughly doubles and free cash flow turns negative. Cloud growth and Gemini’s user base show the spending is producing revenue, but the company itself tied near-term margins to building capacity ahead of demand. The sell-off is the market repricing that timing gap rather than disputing demand for AI.
+
+### Sources
+- [NBC News — Alphabet stock price plunges on Google AI fears](https://www.nbcnews.com/business/markets/alphabet-google-stock-ai-advertising-rcna606322)
+- [The Guardian — Google owner Alphabet loses $500bn in market value](https://www.theguardian.com/technology/2026/oct/28/google-alphabet-q3-earnings-report)

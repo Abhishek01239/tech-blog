@@ -44,3 +44,7 @@ There are also open governance questions. At launch, no specification, licence, 
 The Personal Agent Protocol is not a product launch — nothing shipped on October 6. But it marks a strategic shift in how the industry thinks about AI agents: from adversarial scraping and blocking to standardized, permissioned access. For developers, it signals that OAuth-style agent authentication is likely to become a core competency. For businesses, it offers a way to welcome agent traffic on their own terms — deciding what agents can see, do, and buy. And for consumers, it hints at a near future where your AI assistant is a first-class customer, not a suspicious bot to be shown the door.
 
 The rails are being laid. The next few months — the v0.1 spec, the reference implementation, and whether OpenAI and Google decide to board the train — will determine whether your next checkout is done by you, or for you.
+
+### Sources
+- [Sierra — Introducing Personal Agent Protocol](https://sierra.ai/blog/introducing-personal-agent-protocol)
+- [Constellation Research — Meta, Sierra pitch Personal Agent Protocol to govern how personal AI agents deal with business](https://www.constellationr.com/insights/news/meta-sierra-pitch-personal-agent-protocol-govern-how-personal-ai-agents-deal-business)

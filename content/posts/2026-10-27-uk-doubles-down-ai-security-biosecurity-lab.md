@@ -42,3 +42,7 @@ For the AI industry, the message is twofold. Frontier labs are now expected to f
 The budget's AI measures are expected to be confirmed in the chancellor's statement on Wednesday. Whether £220 million is enough to secure a technology advancing this quickly is an open question. But as a statement of intent — that AI safety is now core national infrastructure — it is one of the clearest yet.
 
 *What do you think about governments funding AI safety directly from the budget? Is this the right model, or should the labs carry the cost alone? Drop your thoughts in the comments.*
+
+### Sources
+- [GOV.UK — Chancellor unveils Britain's ambitious plan for AI](https://www.gov.uk/government/news/chancellor-unveils-britains-ambitious-plan-for-ai)
+- [Reuters — UK government sets out $800 million of AI security funding](https://www.reuters.com/world/uk/uk-government-sets-out-800-million-ai-security-funding-2026-10-23/)

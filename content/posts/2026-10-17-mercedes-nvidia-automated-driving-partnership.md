@@ -26,3 +26,7 @@ The announcement therefore signals deeper joint development rather than a consum
 - [1] [NVIDIA: Mercedes-Benz and NVIDIA Expand Strategic Partnership](https://nvidianews.nvidia.com/news/mercedes-benz-and-nvidia-expand-strategic-partnership-to-advance-safe-highly-automated-driving-in-the-next-decade)
 - [2] [Mercedes-Benz: Mercedes-Benz and NVIDIA Expand Strategic Partnership](https://group.mercedes-benz.com/company/news/mb-and-nvidia-expand-strategic-partnership.html)
 - [3] [Tbreak: Mercedes-Benz and NVIDIA Extend Their Automated Driving Partnership Toward Level 4](https://tbreak.com/mercedes-benz-nvidia-partnership-automated-driving/)
+
+## Why It Matters
+
+The inclusion of Halos as a parallel safety layer points to the central engineering problem in automated driving: redundancy has to be designed in, not added after performance testing. Extending the collaboration into simulation and digital production also suggests the companies see tooling and manufacturing as part of the same stack, not separate from the driving software. For now, the customer-facing effect is likely to arrive through assistance features, while the driverless applications remain a later development goal.

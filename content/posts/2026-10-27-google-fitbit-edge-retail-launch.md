@@ -29,6 +29,10 @@ Google listed the standard Edge at $179.99 and identified Oct. 27 as its retail-
 
 The Edge adds a display and onboard location tracking to a straightforward activity band, but it is not a full smartwatch substitute. The Verge notes it lacks contactless payments, a microphone and speakers. Buyers weighing the $179.99 price can compare those omissions with their need for a lighter device focused on exercise and health tracking. [2]
 
+## Why It Matters
+
+The Edge sits deliberately between a band and a smartwatch: more display and onboard GPS than a band, without contactless payments, a microphone or speakers. Reviewers’ testing shows how settings change the advertised seven-day battery life—about a day and a half with the always-on display—and where automatic detection can misjudge pace. At $179.99, buyers are paying for a lighter, exercise-focused device and should weigh those omissions against the features they actually need.
+
 ### Sources
 
 [1] [Google: Fitbit Edge announcement](https://blog.google/products-and-platforms/devices/fitbit/google-fitbit-edge/)

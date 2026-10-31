@@ -54,3 +54,11 @@ One thing is clear: the world's most popular programming language is getting fas
 ---
 
 *What are your thoughts on Python 3.15? Will lazy imports change how you structure your code? Let us know in the comments.*
+
+## Why It Matters
+
+Python 3.15 matters less for any single feature than for how several long-running efforts now reinforce one another: lazy imports attack startup latency, the JIT targets runtime speed, and UTF-8 defaults remove a class of cross-platform encoding bugs. The JIT and free-threading work remain experimental, so the gains will vary by platform and workload. The practical constraint is ecosystem readiness, since libraries need time to publish compatible wheels before teams can treat 3.15 as a drop-in upgrade.
+
+### Sources
+- [Python Software Foundation — What's new in Python 3.15](https://docs.python.org/3/whatsnew/3.15.html)
+- [BetaNews — Python 3.15 released with lazy imports and UTF-8 default](https://betanews.com/article/python-3-15-release/)

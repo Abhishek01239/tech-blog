@@ -36,3 +36,6 @@ Rivals will be pushed to publish similar programs. OpenAI and Google already gat
 The October 14 webinar should clarify evidence requirements and how fast Red Team Access is approved. The practical test is whether incident responders get through in days, not weeks, when a live case is underway. If the queue slips, teams will keep using weaker, less restricted models for the work that matters most.
 
 Watch also for whether the real-time blocks on mass-disruption tasks hold once red teams are inside the program. A verification badge is only useful if the remaining limits are specific and enforced.
+
+### Sources
+- [Anthropic — Expanding the Cyber Verification Program](https://www.anthropic.com/news/cyber-verification-program)

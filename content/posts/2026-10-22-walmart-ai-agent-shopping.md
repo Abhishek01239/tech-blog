@@ -24,6 +24,10 @@ Walmart says an assistant can help find a customer’s usual items without recei
 
 The retailer is testing a controlled path for agentic commerce rather than promising fully hands-off shopping. Profiles are planned, gateway access is in beta, and shoppers retain approval and revocation controls. Reuters reports the tools do not require Walmart+ membership. [2] [3]
 
+## Why It Matters
+
+Walmart is treating agentic commerce as a permissions problem: a dedicated profile, per-purchase approval and spending caps keep the shopper, rather than the assistant, in control of checkout. Withholding payment-card data and allowing access to be revoked by deleting a profile sets a model other retailers can adopt or reject. The rollout is deliberately partial, with profiles still planned and gateway access invitation-only, so its effect on how assistants shop will only appear after broader access.
+
 ### Sources
 [1] [Walmart: Making It Possible for Agents to Shop on Behalf of Customers](https://corporate.walmart.com/news/2026/10/Making-It-Possible-for-Agents-to-Shop-on-Behalf-of-Customers)
 [2] [Reuters: Walmart launches tools for AI agents to shop for customers](https://www.reuters.com/business/finance/walmart-launches-tools-ai-agents-shop-customers-2026-10-21/)

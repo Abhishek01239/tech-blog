@@ -24,6 +24,10 @@ The result tests whether a legged robot can chain perception, planning and conta
 
 It remains a controlled research demonstration, not evidence that quadrupeds are ready for general household manipulation. Still, the cube forces the robot to make repeated precise contacts while tracking the object’s state. IEEE Spectrum highlighted the autonomous feet-only solve and linked to ETH’s project materials. [1] [3]
 
+## Why It Matters
+
+The demonstration matters less as a cube-solving stunt than as evidence that a legged robot can chain perception, planning and repeated precise foot contacts over a task lasting several minutes. Because the system must track both its own pose and the cube’s changing state, it tests capabilities that pushing or carrying objects does not. The researchers still describe a controlled setting, so the result sets a research benchmark rather than a near-term household application.
+
 ### Sources
 [1] [ETH Zurich Robotics Systems Lab: Solving a giant Rubik’s Cube with a quadruped](https://leggedrobotics.github.io/rubik-skills/)
 [2] [arXiv: Solving a Giant Rubik’s Cube with a Quadruped Robot](https://arxiv.org/abs/2610.24610)

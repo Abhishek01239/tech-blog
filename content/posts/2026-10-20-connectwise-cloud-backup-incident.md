@@ -26,6 +26,10 @@ ConnectWise says its backup archives remain encrypted, isolated and preserved, a
 
 For affected organizations, the incident creates both an investigation burden and a backup-and-restore gap. The clearest status as of Oct. 20 is that affected services remain suspended while partners are asked to investigate their own and managed tenants; restoration timing and the full downstream scope remain unresolved. [1] [2]
 
+## Why It Matters
+
+The failure mode here is identity rather than stored data: revoking certificates and disabling application identities stops new authentication but cannot undo mailbox forwarding rules, consent grants or role assignments already made inside customer tenants. That leaves managed service providers with an investigation burden ConnectWise says it cannot carry for them, since the company states it cannot independently inspect all downstream environments. With backups, restores and monitoring still suspended, affected partners face an investigation without an available restore path.
+
 ### Sources
 [1] [ConnectWise Trust Center: Cloud Backup service interruption](https://www.connectwise.com/company/trust/advisories)
 [2] [ConnectWise technical investigation and remediation guide](https://www.connectwise.com/contentassets/10777cd3364d440c86ed5270a94a5f24/connectwise-cloud-backup-technical-investigation-and-remediation-guide-1.pdf)

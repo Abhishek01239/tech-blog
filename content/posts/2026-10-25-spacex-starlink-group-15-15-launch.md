@@ -24,6 +24,10 @@ The deployment is part of a high-frequency launch program that depends on reusab
 
 Spaceflight Now cited a company filing on Starlink’s constellation size, but that aggregate figure includes satellites from other missions and does not measure the effect of Group 15-15 by itself. The confirmed scope here is narrower: 27 satellites launched on Oct. 23, and SpaceX reported recovery of the reused first stage. [1] [2]
 
+## Why It Matters
+
+Each batch of 27 satellites is incremental for coverage, but the mission illustrates the cadence SpaceX depends on: a booster flying its 36th mission, recovered after separation, following three scrubbed attempts. The launch page confirms the payload and orbital destination without saying how many satellites became operational or what capacity they add. That gap is why a single launch is best read as one step in a sustained deployment program rather than a measurable change in service.
+
 ### Sources
 [1] [SpaceX: Starlink mission, October 23, 2026](https://www.spacex.com/launches/sl-15-15)
 [2] [Spaceflight Now: SpaceX launches Starlink 15-15 after three scrubs](https://spaceflightnow.com/2026/10/20/live-coverage-spacex-to-launch-27-starlink-satellites-on-falcon-9-rocket-from-vandenberg-sfb-5/)

@@ -28,3 +28,7 @@ The incident illustrates the reach of a third-party system that supports public 
 - [1] [California Department of Education: ETS Begins Notifying California Students and Families Following Data Security Incident](https://www.cde.ca.gov/nr/ne/yr26/yr26rel45.asp)
 - [2] [California Department of Education: Educational Testing Service (ETS) Notification](https://www.cde.ca.gov/nr/in/ets-notification.asp)
 - [3] [Reuters: Hacker Gets Data on Millions of California Students, State Education Department Says](https://www.reuters.com/world/us/hacker-gets-data-millions-california-students-state-education-department-says-2026-10-17/)
+
+## Why It Matters
+
+The exposed fields include disability-related information and assessment records, categories that can be more sensitive than a name or address because they describe a student's needs and performance. The state's decision to offer identity-protection services for two years reflects the duration of risk that follows a copied record, even when Social Security numbers and financial details were not involved. The gap between the May-to-September access window and the September discovery also shows how long a compromised credential can operate before it is noticed.

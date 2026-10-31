@@ -22,6 +22,10 @@ OpenAI says GPT-6.1 Sol will be the default model and that the deployment suppor
 
 That makes this a large enterprise test of AI assistance in everyday work rather than a published verdict on its value. The useful evidence to watch will be regular adoption, the kinds of workflows employees delegate, and whether the resulting work can be checked and maintained reliably. [2]
 
+## Why It Matters
+
+The rollout moves agentic AI from a thousand-person pilot to a population large enough that adoption, support and oversight problems surface at company scale. Uber's pilot skewed toward non-engineers, which suggests the value case rests on everyday knowledge work rather than software development alone. Since neither company has published a financial return, the measure that matters will be sustained usage and whether the workflows employees build can be checked and maintained.
+
 ### Sources
 [1] [OpenAI: Uber brings ChatGPT Work to all employees](https://openai.com/index/uber-chatgpt-work-rollout/)
 [2] [TechCrunch: Uber puts all 30,000 employees on ChatGPT Work](https://techcrunch.com/2026/10/22/uber-puts-all-30000-employees-on-chatgpt-work/)

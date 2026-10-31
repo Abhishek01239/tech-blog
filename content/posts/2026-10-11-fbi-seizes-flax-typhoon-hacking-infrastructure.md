@@ -36,3 +36,7 @@ The case is a vivid illustration of how Beijing increasingly outsources cyber op
 It also sends an urgent message to every organization running Microsoft Exchange or Microsoft 365: if your mail environment is internet-reachable and multi-factor authentication isn't universally enforced, you may already be a victim. The security recommendations are familiar but bear repeating — patch aggressively, enforce MFA everywhere, monitor for anomalous Exchange Web Services traffic, and assume credential attacks are ongoing.
 
 Officials caution that the seizure is a temporary degradation, not an all-kill. The advisory explicitly warns that Integrity Tech retains the capability to rebuild its infrastructure. For defenders, that means this week's victory is a window to harden systems — not an excuse to stand down.
+
+### Sources
+- [U.S. Department of Justice — Justice Department and FBI Seize Vulnerability Scanning and Spear Phishing Tools Operated and Used by China-State Sponsored Hackers](https://www.justice.gov/opa/pr/justice-department-and-fbi-seize-vulnerability-scanning-and-spear-phishing-tools-operated)
+- [Cybersecurity Dive — FBI seizes domains linked to China-nexus botnet](https://www.cybersecuritydive.com/news/fbi-seizes-domains-china-botnet-flax-typhoon/832611/)

@@ -24,6 +24,10 @@ The Record reported that AOMEI had not yet identified or notified customers know
 
 Organizations that used Backupper during the reported exposure period may want to review endpoint telemetry, apply available updates and investigate suspicious downloads or outbound connections. Server-side remediation alone does not establish that any affected endpoint is clean. The sources do not provide a verified infection total, so a definitive victim count remains unknown. [1] [3]
 
+## Why It Matters
+
+The campaign's defining feature is timing: tampering that lasted minutes and was then reverted defeats the assumption that inspecting an update server later will reveal what happened. Trust in a routine, signed update channel is precisely what made the payloads effective, and the affected organisations span IT services, telecommunications and higher education across many countries. With no verified infection total, the practical burden falls on defenders reviewing endpoint telemetry for the downloader, backdoor and outbound connections.
+
 ### Sources
 [1] [Google Cloud: Investigating ephemeral supply-chain tampering](https://cloud.google.com/blog/topics/threat-intelligence/investigating-ephemeral-supply-chain-tampering)
 [2] [SecurityWeek: AOMEI Backupper compromised in short-burst campaign](https://www.securityweek.com/aomei-backupper-compromised-in-short-burst-supply-chain-campaign/)

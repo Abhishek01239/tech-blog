@@ -29,3 +29,7 @@ The launch addresses a real operational gap: an agent failure can originate in a
 
 [1]: https://www.digitalocean.com/blog/introducing-insights "DigitalOcean: Introducing Insights"
 [2]: https://www.developer-tech.com/news/digitalocean-launches-insights-to-unify-agent-and-infrastructure-observability/ "Developer-Tech: DigitalOcean launches Insights"
+
+## Why It Matters
+
+By building on OpenTelemetry and embedding collection in its own products, DigitalOcean is competing on convenience as much as on features: teams can start without installing a separate collector, but the signals they see are bounded by the products the service supports. The inclusion of dashboards, PromQL queries, alerts, an API, and role-based access suggests the preview is aimed at everyday operations rather than a narrow demo. Its value will hinge on whether those controls remain available once the service moves beyond preview and billing begins.

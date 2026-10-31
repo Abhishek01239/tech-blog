@@ -22,6 +22,10 @@ Axios identifies Zhuo as a former Meta vice president of product design and Nara
 
 The deal gives Meta additional talent and software for internal analytics, but the sources do not disclose purchase price, team size or an integration timeline. Those details will matter in judging how much of Sundial’s product becomes part of Meta’s own tooling. [1] [3]
 
+## Why It Matters
+
+Bringing Sundial inside Meta gives the company both a natural-language analytics product and the team that built it, rather than technology it would have to integrate from outside. The stated goals—descriptive analysis, AI-run experimentation and monitoring—describe an internal stack that could change how Meta’s own teams query and act on data. How much of that materializes depends on details the reports do not disclose, including price, team size and integration timeline.
+
 ### Sources
 [1] [Axios: Meta acquires AI data platform Sundial](https://www.axios.com/2026/10/23/meta-ai-data-platform-sundial)
 [2] [The Verge: Meta is acquiring an AI analytics company](https://www.theverge.com/tech/1018103/meta-is-acquiring-an-ai-analytics-company)

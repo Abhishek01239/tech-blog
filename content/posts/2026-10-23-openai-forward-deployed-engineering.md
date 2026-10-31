@@ -24,6 +24,10 @@ The company says it later rebuilt solutions around Codex and shared skills and p
 
 OpenAI’s broader Deployment Company announcement also described engineers working inside organizations to build production systems. Together, the initiatives suggest customer implementation is a route the company sees as important for moving model capability into business use. Buyers will need to assess whether such engagements leave behind maintainable systems and reusable value. [3]
 
+## Why It Matters
+
+The FDE model reframes enterprise AI adoption as an implementation problem, where the difficulty is fitting a system into existing workflows rather than obtaining a capable model. OpenAI's semiconductor example shows the intended pattern: custom builds first, then consolidation into shared skills and plugins so later deployments cost far less. Because those results are company-reported and drawn from a single engagement, buyers should judge such work by whether it leaves maintainable systems behind.
+
 ### Sources
 [1] [OpenAI: What forward-deployed engineering means at OpenAI](https://openai.com/index/forward-deployed-engineering-means/)
 [2] [OpenAI Forward Deployed Engineering](https://openai.com/business/forward-deployed-engineering/)

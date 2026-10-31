@@ -26,6 +26,10 @@ The decision does not require Apple to open its store worldwide. The court allow
 
 Fortnite’s Australian return is the immediate result. The larger test will be the scheduled 2027 changes and whether they alter how developers distribute apps and collect payments on iPhones in Australia. The ruling is geographically limited, and Apple’s planned appeal could affect implementation. [1] [4]
 
+## Why It Matters
+
+The ruling turns a private dispute into a national distribution rule, since the findings concern restrictions on installing apps outside the App Store and on alternative payment options, not merely Fortnite's removal. Its reach is deliberately bounded: Apple may keep security scanning and notarization, and is not required to list rival marketplaces inside its store. Implementation is still contingent, with core changes scheduled for 2027 and an appeal that could alter timing.
+
 ### Sources
 [1] [Australian Federal Court: Epic Games Inc v Apple Inc (No 2) [2026] FCA 1552](https://www.judgments.fedcourt.gov.au/judgments/Judgments/fca/single/2026/2026fca1552)
 [2] [Reuters: Fortnite returns to Apple App Store in Australia after ruling](https://www.reuters.com/technology/epic-games-fortnite-returns-apple-app-store-australia-2026-10-22/)

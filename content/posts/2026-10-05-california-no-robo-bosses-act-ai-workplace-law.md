@@ -40,3 +40,6 @@ For anyone building HR technology, management platforms, or "boss-ware" producti
 More broadly, SB 947 signals a shift in how AI regulation is being framed: not as a question of model capability or existential risk, but of accountability in everyday decisions. Illinois' AI employment disclosure law, in effect since January, requires transparency but still allows AI to be the sole decision-maker. California has now drawn a harder line — one that other states, and eventually Congress, will be measured against.
 
 The message from Sacramento is simple: AI can advise, analyze, and recommend. But when it comes to deciding whether a person keeps their job, a human must decide — and be able to say why.
+
+### Sources
+- [California State Senate — Newsom Signs McNerney’s No Robo Bosses Act of 2026 Requiring Human Oversight of AI in the Workplace](https://sd05.senate.ca.gov/news/newsom-signs-mcnerneys-no-robo-bosses-act-2026-requiring-human-oversight-ai-workplace)

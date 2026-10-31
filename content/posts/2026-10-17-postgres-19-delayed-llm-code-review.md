@@ -44,3 +44,6 @@ For enterprises, the practical guidance is straightforward. Teams that budgeted 
 There is also a security dimension to this trend. PostgreSQL historically averaged a couple of CVEs per release cycle; the August 2026 patch release for PostgreSQL 18 shipped fixes for 28. The same AI-assisted tooling that is disrupting release schedules is also dramatically expanding the number of known vulnerabilities being found and fixed — a net positive, even if it makes release calendars messier.
 
 The irony is hard to miss: PostgreSQL 19 will ship later than planned, but precisely because of that, it will likely arrive as a cleaner, better-audited baseline than the version that would have gone out on the original schedule. In an industry still arguing about whether AI makes software better or worse, Postgres just offered a data point on the uncomfortable middle: AI makes software better, but slower — at least until the humans catch up.
+
+### Sources
+- [The Register — Postgres 19 delayed after AI reviewers find more bugs than humans can fix](https://www.theregister.com/databases/2026/10/16/postgres-19-delayed-after-ai-reviewers-find-more-bugs-than-humans-can-fix/5303471)

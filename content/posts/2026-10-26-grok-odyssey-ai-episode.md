@@ -31,6 +31,10 @@ TechCrunch’s report also included the writer’s critical assessment of the fo
 
 For now, Grok has published an opening installment; a full-length version remains a stated future ambition rather than an announced completed film.
 
+## Why It Matters
+
+The episode is evidence that Grok Imagine published a seven-minute installment, not that the full-length, historically accurate film Musk described in July exists. The account named Wonder Studios and Dev Walker but supplied no production details, and the outlets’ assessments of the footage were reviewers’ opinions. Readers should treat the release as a short proof of concept whose accuracy and human input remain unverified.
+
 ### Sources
 
 [1] [Grok Imagine’s Episode 1 post on X](https://x.com/imagine/status/2113712964419063911)

@@ -26,6 +26,10 @@ The company says new groups in AirLink Management Service let administrators app
 
 Semtech plans live demonstrations at IACP 2026, but its announcement does not report independent performance tests, adoption figures or measured response-time improvements. The practical value will depend on carrier availability, device compatibility and agencies’ own security requirements. [1] [2]
 
+## Why It Matters
+
+For public-safety agencies, the announcement bundles prioritized carrier slices, software-based cryptographic compliance and fleet-wide configuration control into routers they may already deploy. Each element carries a caveat: slicing does not promise immunity from congestion, FIPS 140-3 support depends on module validation for specific devices, and the claimed benefits rest on vendor demonstrations rather than field results. Procurement decisions will therefore turn on carrier availability and each agency’s own verification.
+
 ### Sources
 [1] [Semtech: 5G network slicing and FIPS 140-3 for IACP 2026](https://www.semtech.com/company/press/semtech-brings-5g-network-slicing-fips-140-3-to-iacp-2026)
 [2] [Financial Times Markets: Semtech public-safety router announcement](https://markets.ft.com/data/announce/detail?dockey=600-202610240800BIZWIRE_USPRX____20261024_BW697343-1)

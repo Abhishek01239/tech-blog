@@ -40,3 +40,11 @@ For chatbot developers, the practical implications are significant. Age verifica
 The law puts New York at the front of a regulatory wave that the AI industry can no longer ignore. As more states weigh copycat legislation — and as reports of harmful chatbot interactions continue to surface — the pressure on companies to build minor-safe modes by default is only likely to grow. OpenAI, Anthropic, and other major players will need to decide whether to build state-specific compliance features or adopt the strictest common denominator nationwide.
 
 For now, the message from Albany is clear: an AI that pretends to be your child's best friend is no longer welcome in New York. Whether the rest of the country follows — and whether the courts let it stand — will be one of the most closely watched stories in tech policy over the coming year.
+
+## Why It Matters
+
+The law shifts the compliance burden onto operators: age verification plus behavior rules that effectively require a different configuration for users under 18. That makes implementation, not intent, the contested ground—Tech:NYC calls the language vague, and the statute’s breadth makes litigation likely. How OpenAI, Anthropic and other developers choose between state-specific modes and a nationwide standard will determine how far the New York model travels.
+
+### Sources
+- [AP News — New York bans 'unsafe AI companion features' for chatbots](https://apnews.com/article/chatbots-ai-new-york-legislation-bans-children-03a4e090a7df1532838a5cb6f93a23ba)
+- [Governor of New York — Governor Hochul Signs Nation-Leading Legislation to Protect Kids From AI Chatbots](https://www.governor.ny.gov/news/governor-hochul-signs-nation-leading-legislation-protect-kids-ai-chatbots-and-ensure-baby)

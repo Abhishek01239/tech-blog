@@ -24,6 +24,10 @@ Open weights give outside developers more ability to run and modify a model than
 
 Moonshot frames the change as a trade-off between limiting offensive cyber performance and preserving dual-use coding capabilities for defensive work. Whether removing selected training data reliably reduces harmful capability after release, or how downstream users may adapt the model, remains uncertain. The company’s planned Nov. 4 release date is a future target, not confirmation that the weights are already public. [1] [3]
 
+## Why It Matters
+
+Moonshot’s change tests a specific claim: that removing cyber material from mid-training and reinforcement learning can lower exploit capability without erasing general coding skill. The company’s own benchmark gap—81.0% against 90.5%—is the only evidence offered, and it has not been independently verified. Because the weights are meant to be published, the intervention limits what the model learned rather than what users can do with it after downloading it.
+
 ### Sources
 [1] [Reuters: Moonshot curbs hacking ability in new Kimi model](https://www.reuters.com/technology/moonshot-curbs-hacking-ability-new-kimi-model-fears-grow-over-ai-powered-2026-10-24/)
 [2] [The News: Moonshot AI restricts open-weight hacking ability in Kimi](https://www.thenews.com.pk/latest/1421096-moonshot-ai-restricts-open-weight-hacking-ability-in-new-kimi-model-as-fears-grow-over-ai-powered-cyberattacks)

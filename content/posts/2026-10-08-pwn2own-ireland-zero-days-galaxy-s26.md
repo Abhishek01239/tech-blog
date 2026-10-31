@@ -36,3 +36,6 @@ The AI targets matter for a different buyer. LiteLLM is glue in a lot of interna
 ZDI will publish advisories on its usual timeline after vendors patch. The rest of the Cork schedule will add to the prize pool and the zero-day count. Teams that missed day one still have categories left, and collisions will decide how much of the phone work is truly new.
 
 For defenders, the immediate move is narrower: watch Samsung and Google security bulletins, and treat inbound email rendering on the latest Android flagships as the exposure until those bulletins land.
+
+### Sources
+- [Zero Day Initiative — Pwn2Own Ireland 2026 - Day One Results](https://www.thezdi.com/blog/2026/10/6/pwn2own-ireland-2026-day-one-results)

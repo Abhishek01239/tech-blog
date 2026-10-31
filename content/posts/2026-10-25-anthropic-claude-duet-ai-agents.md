@@ -44,3 +44,11 @@ For Anthropic, the professional focus of Claude Duet is consistent with the stra
 The stakes are high across the industry. Tech companies including OpenAI, Google, Anthropic, and Meta are investing heavily in agents, which much of the sector views as the next phase of the AI boom that began with ChatGPT's launch in late 2022. If chatbots were about answering questions, agents are about doing work — and the companies that win the trust of users, and of the platforms agents must navigate, will shape how the next chapter of computing unfolds.
 
 For now, Claude Duet is in preview, and its guardrails will face their real test as millions of users begin delegating their professional lives to it. One thing is clear: the agent wars are no longer coming. They are here.
+
+## Why It Matters
+
+Claude Duet’s approval step is the feature that determines whether an always-on agent is usable in professional settings: the agent shows what it intends to do before sending a message, making a payment, signing a document or deleting anything. The contrast with Walmart’s agent profiles and Amazon’s blocking of outside agents shows that the harder problem is not model capability but who authorizes an agent’s actions and who owns the resulting transaction. The preview will be judged on whether those guardrails hold as the agent moves from demonstration to daily use.
+
+### Sources
+- [Anthropic — Introducing Claude Duet](https://claude.com/resources/articles/claude-duet)
+- [Reuters — Anthropic unveils Claude Duet AI agent app](https://www.reuters.com/technology/anthropic-unveils-claude-duet-ai-agent-app-2026-10-21/)

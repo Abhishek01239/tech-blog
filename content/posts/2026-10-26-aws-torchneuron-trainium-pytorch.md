@@ -23,6 +23,10 @@ The beta makes software available to developers using supported EC2 Trainium2 an
 
 Independent launch-day coverage likewise described the release as open-source software under Apache 2.0 and reported the device/configuration change, presenting it as an alternative route to accelerator hardware. Those workflow claims are not evidence of measured speed or cost gains. TorchNeuron’s public beta marked a new developer-facing step for AWS’s accelerator ecosystem; its practical reach will depend on compatibility, performance testing and the availability of Trainium instances. [3]
 
+## Why It Matters
+
+TorchNeuron matters because Trainium becomes reachable through standard PyTorch device and compile paths, lowering the cost of trying an alternative accelerator without a rewrite. The documented gaps—unsupported operators, sparse tensors, dynamic shapes and forward-mode autograd—mean teams must validate their own models rather than assume portability. Whether the beta becomes adoption will depend on that testing and on Trainium instance availability, not on the interface alone.
+
 ### Sources
 
 [1] [Native PyTorch Support for AWS Trainium (Public Beta) — AWS](https://aws.amazon.com/about-aws/whats-new/2026/10/aws-announce-native-pytorch-support-trainium/)

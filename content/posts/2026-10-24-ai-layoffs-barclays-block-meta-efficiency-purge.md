@@ -41,6 +41,10 @@ Three signals will tell us whether this is a lasting restructuring or a phase. F
 
 For now, the direction is unmistakable. The largest companies in banking, payments, retail, and social media have converged on the same message in the same month: AI is no longer just a product to sell — it is a reason to employ fewer people. How that message plays with investors, voters, and regulators will be one of the defining tech stories of the coming year.
 
+## Why It Matters
+
+Because the companies making these cuts are profitable and growing, the usual explanations of weak demand or recession are unavailable, and the efficiency claim has to stand on its own. That makes it harder to test: headcount reductions show up quickly, while the AI infrastructure spending meant to justify them lands on different lines and a longer timeline. The political and regulatory reaction, from local opposition to data centers to tighter oversight of AI practices, is where those two ledgers will eventually be reconciled.
+
 ---
 
 *Sources: Associated Press and Agence France-Presse reporting, October 2026.*

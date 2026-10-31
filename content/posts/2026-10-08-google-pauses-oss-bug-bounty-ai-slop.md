@@ -38,3 +38,7 @@ Platforms such as HackerOne and vendor programs at Microsoft, Apple, and Meta ar
 Google's Q1 2027 update will be the test. A useful redesign would separate machine-assisted discovery from machine-written claims, require reproducible evidence, and keep a lane open for supply-chain issues. Until then, researchers should route eligible Cloud findings through the Cloud VRP and treat the OSS product channel as closed.
 
 The broader question is whether bounty economics survive a world where generating a report is cheap and verifying it is not. Programs that pay for verified fixes, rather than for plausible prose, are the ones likely to stay open.
+
+### Sources
+- [TechCrunch — Google froze its open source bug bounty program due to a 'significant rise' in AI submissions](https://techcrunch.com/2026/10/04/google-froze-its-open-source-bug-bounty-program-due-to-a-significant-rise-in-ai-submissions/)
+- [Help Net Security — AI slop submissions force Google to freeze its open-source bug bounty](https://www.helpnetsecurity.com/2026/10/05/google-ai-generated-vulnerability-reports-pause/)

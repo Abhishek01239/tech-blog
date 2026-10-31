@@ -24,6 +24,10 @@ NASA is contributing the MEGANE gamma-ray and neutron spectrometer, a sampling t
 
 JAXA had announced the Oct. 20 launch time and backup period two days earlier. With the launch now reported as completed, the mission moves from schedule to cruise and spacecraft operations. The next major milestone is arrival at Mars, followed by years of observations before the planned Phobos sampling and Earth return. [1] [2] [3]
 
+## Why It Matters
+
+The origin of Mars's moons is a question that returned material can help settle, because remote observations can support either the captured-asteroid or the impact-debris explanation without deciding between them. The mission also extends Japan's sample-return work from asteroids to a planetary system, with NASA contributing an instrument and expecting to curate part of the sample. The payoff is staged and distant, resting on two soft landings, observations in the Mars system and a capsule return still years away.
+
 ### Sources
 [1] [JAXA: MMX launch-time announcement](https://global.jaxa.jp/press/2026/10/20261018-1_e.html)
 [2] [Reuters launch report via The Jerusalem Post](https://www.jpost.com/science/space/article-912232)

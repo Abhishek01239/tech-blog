@@ -44,3 +44,7 @@ Three takeaways for anyone watching the AI industry:
 3. **The enterprise stack is consolidating.** Between ChatGPT Work, Codex, agent tooling, and now a dedicated automation-tier model, OpenAI is assembling an end-to-end enterprise platform rather than a chatbot with an API.
 
 For enterprises, the practical advice is straightforward: if you've been piloting AI for document-heavy workflows but held back on cost, this is the moment to rerun the numbers. For everyone else, Terra is a signal that the AI market is maturing — from selling magic to selling unit economics. That's less exciting, but it's how infrastructure businesses are actually built.
+
+### Sources
+- [OpenAI — Introducing GPT-6.1 Terra](https://openai.com/index/introducing-gpt-6-1-terra/)
+- [PYMNTS — OpenAI Unveils Half-Price AI Model to Target Enterprise Automation](https://www.pymnts.com/news/artificial-intelligence/2026/openai-unveils-half-price-ai-model-to-target-enterprise-automation/)

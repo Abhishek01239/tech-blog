@@ -24,6 +24,10 @@ The reference design signals NVIDIA’s effort to package more of the infrastruc
 
 NVIDIA says partners including Dell Technologies, Foxconn, HPE, Lenovo, Quanta Cloud Technology, Schneider Electric and Vertiv are working toward worldwide delivery in early 2027. That is planned availability, not confirmation that shipments have begun. For buyers, the practical question is whether power capacity, water, transport and site preparation can keep pace with the factory schedule. [1] [4]
 
+## Why It Matters
+
+DSX POD moves integration work upstream into factories, which changes what a customer coordinates on site but does not remove the utility, construction and permitting dependencies NVIDIA's documentation still lists. The 14-day figure applies only to sites with power, water, cooling and network connections already prepared, so the schedule gain accrues mainly to operators who already have capacity. Whether the format delivers depends on partners shipping in early 2027 and on sites being ready to receive containers.
+
 ### Sources
 [1] [NVIDIA: DSX POD AI factories for Europe](https://nvidianews.nvidia.com/news/nvidia-introduces-dsx-pod-ai-factories-to-accelerate-europes-infrastructure-deployment)
 [2] [CNBC: Vera Rubin racks designed for truck shipment](https://www.cnbc.com/2026/10/21/nvidia-announces-vera-rubin-racks-that-can-be-shipped-on-a-truck-.html)

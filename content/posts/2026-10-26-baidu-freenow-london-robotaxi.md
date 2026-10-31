@@ -25,6 +25,10 @@ The demonstration placed the partnership among several efforts pursuing automate
 
 The Oct. 22 display was a new, dated public event within an existing testing programme. No launch date more precise than 2027 was established in the reports, and the stated timetable remains a target rather than a confirmed start date. [1] [2]
 
+## Why It Matters
+
+For London, the Oct. 22 display shows that Baidu’s robotaxi partnership is testing in the capital, but not that driverless service has arrived: safety drivers remain, and 2027 is a target rather than a date. The event also places the partnership against Wayve and Uber’s safety-driver service and Waymo’s year-end driverless ambition, each at a different stage. Riders and regulators will judge progress by permits and removed safety drivers, neither of which the reports establish.
+
 ### Sources
 
 [1] [China’s Baidu tests robotaxi on London streets — Reuters](https://www.reuters.com/business/finance/chinas-baidu-tests-robotaxi-london-streets-2026-10-23/)

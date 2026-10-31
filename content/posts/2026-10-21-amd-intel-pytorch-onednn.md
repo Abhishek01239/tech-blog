@@ -24,6 +24,10 @@ A separate collaboration concerns AI Compute Extensions, or ACE, a planned x86 i
 
 The immediate news is software alignment: AMD’s ZenDNN work is slated to join the oneDNN ecosystem, while both vendors back that library as PyTorch’s default x86 acceleration path. Whether the move simplifies deployments or changes workload performance will become clearer as code lands and users test it across systems. [1] [3]
 
+## Why It Matters
+
+The alignment matters more for maintenance than for near-term speed: a shared open-source library means optimizations for x86 no longer have to be duplicated across competing vendor-specific paths. It also gives AMD a formal role in a project governed by the Unified Acceleration Foundation alongside Intel, which is where future decisions about that path will be made. Because no benchmarks or release dates were disclosed, the benefits will only be measurable as code lands and users test it on both vendors' processors.
+
 ### Sources
 [1] [AMD: Collaborating with Intel to simplify AI development on x86 CPUs with PyTorch](https://newsroom.amd.com/news/amd-intel-collaborate-simplify-ai-development-on-x86-cpus-pytorch/)
 [2] [Intel: AMD and Intel collaborate to simplify AI development on x86 CPUs using PyTorch](https://www.intel.com/content/www/us/en/newsroom/news/data-center/amd-intel-simplify-x86-ai-development-with-pytorch.html)

@@ -38,3 +38,7 @@ The incident also lands at an uncomfortable moment for the CA ecosystem, which h
 For organizations, the guidance is straightforward: update browsers and operating systems, audit anything that performs certificate validation outside a browser (embedded devices, middleware, CI/CD pipelines), and check whether any systems chain to the affected eMudhra roots. For the industry, the lesson is older still: randomness is not optional, key-generation code deserves the same scrutiny as the keys themselves, and the web's trust model is only as strong as its weakest integer.
 
 The padlock still means something — but only because thousands of engineers spent a very bad weekend making sure it still does.
+
+### Sources
+- [Google Security Blog — Protecting Chrome and Android Users from Compromised eMudhra Intermediate CA Certificates](https://blog.google/security/protecting-chrome-and-android-users-from-compromised-emudhra-intermediate-ca-certificates/)
+- [The Hacker News — Eight eMudhra CA Keys Compromised, Triggering Browser Blocks](https://thehackernews.com/2026/10/eight-emudhra-ca-keys-compromised.html)

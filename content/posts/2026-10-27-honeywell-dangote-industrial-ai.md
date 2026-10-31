@@ -27,6 +27,10 @@ The project sits alongside a larger refinery expansion. Reuters says Honeywell i
 
 The announcement moves AI into a process industry where decisions affect equipment, throughput and product yield. For now, the public evidence establishes a launch and intended functions, not independently verified performance gains. The $60 million figure is best treated as Honeywell’s conditional estimate pending operational results at the refinery. [1] [3]
 
+## Why It Matters
+
+Deploying at a live refinery puts industrial AI into a setting where recommendations affect equipment, throughput and product yield, a harder test than a pilot or a benchmark. The $60 million figure is a preliminary, gross estimate tied to full-capacity operation and is not presented as money already saved. Judging the platform will require post-deployment results that neither Honeywell nor Reuters has published.
+
 ### Sources
 
 [1] [Honeywell: Forge Plant Cognition launch at Dangote refinery](https://www.honeywell.com/us/en/news/press-releases/2026/10/honeywell-technologies-launches-forge-plant-cognition-with-dangote-built-with-ndivia-ai-dell-technologies)

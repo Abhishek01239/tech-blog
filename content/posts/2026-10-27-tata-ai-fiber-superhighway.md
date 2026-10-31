@@ -29,6 +29,10 @@ Moneycontrol reported that investment is expected to be deployed over three to f
 
 India’s AI infrastructure discussion often centers on compute, power and data-center capacity. Tata’s proposal instead targets the terrestrial links connecting those facilities. Whether the planned network meets demand will depend on execution and customer adoption; the announcement alone does not establish that the fiber is operational. [1] [4]
 
+## Why It Matters
+
+Tata’s plan targets the links between AI facilities rather than the compute inside them, a layer that receives less attention than chips and data-center capacity. The $400 million to $450 million and 10,000 kilometers are plans spread over phases, and contracts for the proposed network had not been announced. Execution and customer uptake, not the announcement, will determine whether the corridor becomes operational infrastructure.
+
 ### Sources
 
 [1] [Tata Communications: Build India’s AI Super Highway](https://www.tatacommunications.com/press-release/tata-communications-to-build-indias-ai-super-highway)

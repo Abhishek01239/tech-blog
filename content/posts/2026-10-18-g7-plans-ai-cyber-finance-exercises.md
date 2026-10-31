@@ -28,3 +28,7 @@ The next meaningful update will be a published scenario, timetable or official e
 - [1] [Reuters: G7 to launch exercises to guard against AI cyber attacks](https://www.reuters.com/world/asia-pacific/g7-launch-exercises-guard-against-ai-cyber-attacks-2026-10-16/)
 - [2] [U.S. Treasury: G7 Cyber Expert Group](https://home.treasury.gov/policy-issues/international/g-7-and-g-20/g7-cyber-expert-group)
 - [3] [U.S. Treasury: G7 cross-border coordination exercise](https://home.treasury.gov/news/press-releases/sb0583)
+
+## Why It Matters
+
+A tabletop exercise is a low-cost way to expose disagreements in decision-making before a real incident forces them into the open, which is why the lack of a date or scenario is less important than the commitment to revise response manuals. The format also fits the G7's existing cyber work, which already includes cross-border coordination drills among authorities. What remains unclear is whether private financial institutions will take part, since their participation is described only as a possibility.

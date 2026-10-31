@@ -42,3 +42,7 @@ Not everything is smooth. SemiAnalysis notes that some Chinese markets experienc
 The SemiAnalysis model matters for three reasons. First, it replaces guesswork with facility-level data, giving investors, policymakers, and the industry a real baseline for measuring the US–China compute gap. Second, it reframes the competition: this is no longer just a chip war but a power-and-infrastructure war in which China is building the physical foundation faster than anyone expected. Third, it highlights the decisive variable — advanced accelerators — that will determine whether 24GW and a 50GW pipeline translate into frontier AI capability.
 
 One thing is clear: the era of treating China's AI infrastructure as an unknowable black box is over. The race for compute is on, measured now in gigawatts, and China is building as if it intends to win.
+
+### Sources
+- [SemiAnalysis — The Chinese AI Infrastructure Boom: Introducing the SemiAnalysis China Datacenter Model](https://newsletter.semianalysis.com/p/the-chinese-ai-infrastructure-boom)
+- [Data Center Dynamics — ByteDance takes up one-fifth of China's data center capacity](https://www.datacenterdynamics.com/en/news/bytedance-takes-up-one-fifth-of-chinas-data-center-capacity/)

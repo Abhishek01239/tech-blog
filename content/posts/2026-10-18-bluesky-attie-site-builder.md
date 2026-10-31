@@ -28,3 +28,7 @@ For now, the interesting shift is the format: a social app is inviting users to 
 - [1] [Bluesky official announcement on Attie site builder](https://bsky.app/profile/bsky.app/post/3mxyyerrxak2m)
 - [2] [TechCrunch: Bluesky expands its AI-powered Attie app](https://techcrunch.com/2026/10/15/bluesky-expands-its-ai-powered-attie-app-to-let-anyone-build-websites-games-and-more/)
 - [3] [The Verge: Bluesky's AI tool Attie now lets you make small social apps](https://www.theverge.com/tech/1012374/bluesky-ai-attie-small-social-games-apps)
+
+## Why It Matters
+
+The builder's reliance on AT Protocol identities is what separates it from a generic prompt-to-site tool: the output can carry a social identity that already exists across compatible services. That interoperability is also a constraint, since the creations are small pages and games rather than full applications with hosting and maintenance commitments. Bluesky's framing of the tool as experimental suggests it is testing whether social creation becomes a habit before committing to a broader platform.

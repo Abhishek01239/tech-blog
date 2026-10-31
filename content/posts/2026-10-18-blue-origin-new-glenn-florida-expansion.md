@@ -28,3 +28,7 @@ For the space industry, the announcement is a signal of investment in heavy-lift
 - [1] [Blue Origin: Building the Infrastructure for More Frequent Launches in Florida](https://www.blueorigin.com/news/building-infrastructure-for-more-frequent-launches-in-florida)
 - [2] [Reuters: Blue Origin targets multiple New Glenn launches weekly by end of decade](https://www.reuters.com/business/media-telecom/blue-origin-targets-multiple-new-glenn-launches-weekly-by-end-decade-2026-10-16/)
 - [3] [CNBC: Blue Origin plans $330 million Florida expansion](https://www.cnbc.com/2026/10/16/blue-origin-new-glenn-florida-expansion.html)
+
+## Why It Matters
+
+Focusing the investment on 9x4 upper-stage production identifies a specific bottleneck rather than a general expansion, since a factory alone cannot lift the launch rate. The company's stated ceiling of 150 upper stages a year is far above any flight rate it has demonstrated, which is why the launch-permit request and integration facilities are part of the same story. The record after the May launchpad explosion and the April second-stage issue shows that reliability, not just factory capacity, will determine whether the cadence goal is reachable.

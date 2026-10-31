@@ -22,6 +22,10 @@ Reuters’ launch coverage noted praise for the device’s design and hinge, alo
 
 The launch is an early test of whether Apple can expand a foldable-phone category already served by Samsung and Huawei. Reuters cited IDC’s forecast that Apple could lead the foldable market by value and units in 2027; that is a market prediction, not a measured outcome. [2]
 
+## Why It Matters
+
+The Duo is Apple’s first attempt to sell a foldable at a $1,999 starting price in a category already served by Samsung and Huawei. Delivery dates slipping to late January and limits on purchases point to constrained supply rather than soft demand, though Apple has published no unit figures. Early reviews praising the design and hinge while criticizing app support and the missing telephoto lens will shape whether buyers treat the form factor as ready for daily use.
+
 ### Sources
 [1] [Apple Newsroom: Apple introduces iPhone Duo](https://www.apple.com/newsroom/2026/09/apple-unveils-iphone-duo/)
 [2] [Reuters: Apple’s foldable iPhone hits stores with a $2,000 price tag](https://www.reuters.com/business/retail-consumer/apple-bets-iphone-duo-can-remake-foldable-market-sales-begin-2026-10-22/)

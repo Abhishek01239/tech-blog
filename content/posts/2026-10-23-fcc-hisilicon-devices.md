@@ -24,6 +24,10 @@ This is not a general ban on cameras, wireless transmitters or all products cont
 
 The commission has not said how many other products may face review or how it will prioritize future enforcement. The release establishes an initial case, not the scale or outcome of subsequent investigations. [1]
 
+## Why It Matters
+
+The action extends equipment review from finished products to the components inside them, a boundary that is harder for importers and device makers to police. The order itself is narrow: it identifies two device types, names no brands or models, and makes no finding that either product was used for surveillance. Its significance therefore lies in precedent, and the commission has not said how many other products it will review.
+
 ### Sources
 [1] [FCC: FCC Blocks Two Devices Containing Foreign Surveillance Chips](https://docs.fcc.gov/public/attachments/DOC-426130A1.txt)
 [2] [Reuters: US blocks two devices with Chinese-made surveillance chips](https://www.reuters.com/world/us-blocks-two-devices-with-chinese-made-surveillance-chips-2026-10-22/)

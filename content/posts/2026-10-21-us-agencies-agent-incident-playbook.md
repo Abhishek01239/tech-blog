@@ -24,6 +24,10 @@ BankInfoSecurity reports that the document treats some near-misses as incidents 
 
 The release is a preparedness framework, not a report of a specific rogue-agent breach. Its practical focus is on deciding in advance who can isolate an agent, revoke credentials, preserve evidence, restore a trusted environment and notify affected parties if a training or evaluation system acts outside its controls.
 
+## Why It Matters
+
+The guidance treats an agent acting outside its instructions as an incident-response problem rather than only a model-behaviour problem, assigning steps such as access limits, isolation, credential revocation and evidence preservation. That framing is practical, but it is voluntary and scoped to training and evaluation of high-capability systems, so it does not settle how deployed assistants should be governed. The acknowledged gap around adversarially induced behaviour such as prompt injection marks where further work is likely needed.
+
 ### Sources
 [1] [NIST: Key Practices for Incident Readiness and Response in Super Intelligence Training and Evaluation](https://www.nist.gov/news-events/news/2026/10/key-practices-incident-readiness-and-response-super-intelligence-training)
 [2] [CISA: Key Practices for Incident Readiness and Response](https://www.cisa.gov/resources-tools/resources/key-practices-incident-readiness-and-response-super-intelligence-training-and-evaluation)

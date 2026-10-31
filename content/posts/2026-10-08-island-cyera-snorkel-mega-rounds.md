@@ -38,3 +38,6 @@ Snorkel's raise sits one layer down. Labs and large enterprises that do not want
 Watch whether Island uses the round to expand beyond the browser into agent gateways, and whether Cyera's extension is a bridge to a listing or another late-stage raise. Snorkel's Series E will be judged on whether frontier-lab revenue holds up once those labs slow external data spend.
 
 The funding tape is not broad. It is concentrated in security and in the picks-and-shovels of model training. That is the opposite of a scattershot AI boom, and it is where the next set of large checks is likely to land.
+
+### Sources
+- [Crunchbase News — The Week’s 10 Biggest Funding Rounds: Cybersecurity, AI And Health Take The Lead](https://news.crunchbase.com/venture/biggest-funding-rounds-cybersecurity-ai-health-island-cyera/)

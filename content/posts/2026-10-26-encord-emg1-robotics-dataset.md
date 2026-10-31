@@ -27,6 +27,10 @@ Encord reported that a combined EMG-and-camera model achieved 15.3 millimeters m
 
 USA TODAY reported that Encord used a head-mounted camera and wrist sensors as a person handled Jenga blocks, while a robot appeared in a demonstration at the summit. Reuters likewise described the Oct. 20 unveiling as a program combining camera vision and muscle sensors for robot-training data. [2] [3] The task illustrates the potential value of synchronized signals, but the public materials frame broader use in robotics as a research direction—not a measured improvement in deployed robots.
 
+## Why It Matters
+
+EMG-1 targets a specific weakness in camera-based hand tracking: fingers hidden by the object being manipulated. Encord’s reported 15.3-millimeter median fingertip error and roughly 25% improvement are company results from an evaluation, not evidence of a robot performing the task autonomously. The dataset’s value will depend on whether researchers can reproduce those gains outside the demonstration.
+
 ### Sources
 
 [1] [Introducing EMG-1: the largest open dataset of wrist EMG synchronized with egocentric video — Encord](https://encord.com/data-labs/introducing-emg-1/)

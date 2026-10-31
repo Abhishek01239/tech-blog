@@ -24,6 +24,10 @@ The mission therefore involves more than deploying satellites into orbit: it als
 
 SpaceX says its webcast is expected to begin about 15 minutes before liftoff. Weather or recovery conditions could still move the attempt to the listed backup date. [1]
 
+## Why It Matters
+
+Bandwagon-5 shows how a rideshare flight functions as shared scheduling infrastructure, carrying Earth-observation satellites, reentry hardware and a pharmaceutical experiment on one rocket. The differing counts from SpaceX, Spaceflight Now and Exolaunch show that manifest totals depend on what each provider is counting and is responsible for. Because the mission was still a planned launch at publication, what it demonstrates will depend on liftoff and deployment rather than on the manifest.
+
 ### Sources
 [1] [SpaceX: Bandwagon-5 mission](https://www.spacex.com/launches/bandwagon5)
 [2] [Spaceflight Now: Bandwagon-5 launch coverage](https://spaceflightnow.com/2026/10/18/live-coverage-spacex-to-launch-starfall-reentry-capsule-31-customer-payloads-on-bandwagon-5-rideshare-mission/)

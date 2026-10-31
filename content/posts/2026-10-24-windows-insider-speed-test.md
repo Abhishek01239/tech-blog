@@ -24,6 +24,10 @@ That distinction matters because the same announcement lists builds for multiple
 
 For now, the convenience is straightforward: users can get a quick reading of their current connection from the taskbar or Quick Settings. Microsoft has not promised broad availability or described how results compare with other speed-test services. [2]
 
+## Why It Matters
+
+Moving a speed test into Quick Settings removes a small but common reason to open a browser, and it keeps the result inside Windows. The feature is still an Experimental channel preview with no stated test provider or methodology, so it is a convenience rather than a controlled diagnostic. Insiders outside that rollout, and general Windows users, have no announced timeline for receiving it.
+
 ### Sources
 [1] [Windows Insider Blog: New builds for October 23, 2026](https://blogs.windows.com/windows-insider/2026/10/23/announcing-new-builds-for-23-october-2026/)
 [2] [Microsoft Learn: Windows 11 Insider Experimental Preview Build 26340.9767](https://learn.microsoft.com/en-us/windows-insider/release-notes/experimental/preview-build-26340-9767)

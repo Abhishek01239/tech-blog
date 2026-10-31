@@ -24,6 +24,10 @@ The map makes a large inventory easier to inspect locally, but it does not by it
 
 For residents, the map offers a way to ask local officials about nearby surveillance infrastructure. Its age and scope should remain in view: it is a historical inventory with both cameras and supplementary devices, not a real-time coverage map. [1] [3]
 
+## Why It Matters
+
+Publishing a ZIP-code lookup turns an archived inventory into something residents can act on when asking local officials about surveillance equipment. The map’s value is bounded by its age and composition: it reflects a December 2025 snapshot of cameras plus supporting devices, and it does not show which agencies currently have access to a given device’s data. Treating it as a live coverage map would overstate what the underlying records establish.
+
 ### Sources
 [1] [Proton: Find Flock devices near you](https://proton.me/flock-camera-map)
 [2] [The Verge: Proton hosts a map of more than 300,000 Flock devices](https://www.theverge.com/tech/1017639/proton-map-flock-cams)

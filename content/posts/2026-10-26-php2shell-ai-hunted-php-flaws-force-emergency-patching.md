@@ -47,3 +47,6 @@ Beyond the immediate patching scramble, PHP2Shell is a landmark moment for AI in
 For years, security professionals have debated whether AI would fundamentally change vulnerability research. This week offered the clearest evidence yet that it has — and that the patch-and-pray era is over. Organizations that treat runtime dependencies like PHP as critical attack surface, with automated patch pipelines and rapid restart procedures, weathered the storm. Everyone else spent the week scrambling.
 
 The lesson for the wider tech community is straightforward: the infrastructure under the web is aging, the tooling to break it is improving fast, and the window between disclosure and mass exploitation is now measured in hours, not weeks. Patch early, restart everything, and expect the next PHP2Shell to arrive with even less warning.
+
+### Sources
+- [CISA — Critical Vulnerabilities in PHP Require Immediate Patching](https://www.cisa.gov/news-events/alerts/2026/10/21/critical-vulnerabilities-php-require-immediate-patching)

@@ -51,3 +51,6 @@ By Tuesday afternoon, services were largely restored, shares of affected compani
 Google's incident report, when it arrives, will describe the power failure in detail: what tripped, what failed over, what didn't. It is worth reading. But the more important document is the one no vendor will write: an honest accounting of how much of our collective digital life depends on a handful of buildings run by three companies — and whether that trade-off still makes sense as the AI era multiplies our reliance on them.
 
 Cloud computing remains one of the great productivity engines of the modern economy. But October 20's London outage is a reminder that "someone else's computer" is still a physical thing, in a physical place, plugged into a physical power grid. Plan accordingly.
+
+### Sources
+- [BBC News — Google resolves cloud outage affecting UK banks and businesses](https://www.bbc.com/news/articles/cxdd8mm6qy4mo)

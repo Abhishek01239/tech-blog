@@ -42,3 +42,6 @@ The bear case, though, is no longer fringe. Critics point to debt-financed capit
 Three signposts will matter in the coming weeks. First, the Fed's October 28 policy decision, landing a week before the US midterm elections — a hawkish surprise could renew the pressure on rate-sensitive tech names. Second, the ongoing earnings season, where markets will demand evidence that AI revenue is catching up to AI spending. Third, and hardest to measure: confidence. As Georgieva noted in Bangkok, "if there are no safeguards, then the risks may exceed the opportunities."
 
 Whether this week proves to be a healthy correction in a long structural boom or the first crack in a bubble, one thing is clear: the era of unquestioned AI enthusiasm on Wall Street is over. From now on, the market will want receipts.
+
+### Sources
+- [The Guardian — Threat of AI share crash puts world financial stability at risk, says IMF](https://www.theguardian.com/business/2026/oct/13/ai-share-crash-risk-global-imf-debt-corrowing-cyber-attacks)

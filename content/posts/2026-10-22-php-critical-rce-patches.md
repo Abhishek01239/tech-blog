@@ -24,6 +24,10 @@ Reuters reported that public-facing services in the Netherlands, Finland, Denmar
 
 PHP’s advisory says updating is the only complete solution. Versions 8.1 and older no longer receive updates from the project, though some vendors may backport fixes. Operators should check their distribution’s package status and upgrade supported branches; a configuration workaround can reduce exposure but is not a substitute for patching. [1]
 
+## Why It Matters
+
+The flaws sit in request handling itself, so exposure depends heavily on configuration: mod_php carries the highest risk, and the PHP Foundation says remote execution was also confirmed through PHP-FPM application-level paths. The disclosure also illustrates how such bugs are now found, with AI-assisted scanning credited for clarifying impact while people made the final patch decisions. With a snapshot showing a large share of hosts reporting versions without a fix, the practical risk rests on upgrade speed rather than on the availability of a patch.
+
 ### Sources
 [1] [PHP: Critical remote code execution vulnerabilities, update now](https://www.php.net/archive/2026.php)
 [2] [PHP Foundation: Today’s PHP security release and strengthening security](https://thephp.foundation/blog/2026/10/21/todays-php-security-release-and-how-were-strengthening-php-security/)

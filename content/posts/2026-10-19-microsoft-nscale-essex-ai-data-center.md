@@ -31,3 +31,7 @@ The data-center project itself has not been confirmed cancelled. Nscale says it 
 [4] [Microsoft: Inside the world’s most powerful AI datacenter](https://blogs.microsoft.com/blog/2025/09/18/inside-the-worlds-most-powerful-ai-datacenter/)
 [5] [BBC: Microsoft pulls out of UK’s largest AI data centre](https://www.bbc.co.uk/news/articles/c9m26kl5y7epo)
 [6] [The Guardian: Microsoft pulls out of Essex AI datacentre project over power supply concerns](https://www.theguardian.com/uk-news/2026/oct/18/microsoft-drops-huge-ai-datacentre-project-in-essex-over-power-supply-concerns)
+
+## Why It Matters
+
+The episode exposes a constraint that applies well beyond one site: AI data centers are planned around power availability, and a grid connection slipping by years can invalidate the customer commitments that justified the build. Losing the anchor tenant shifts the commercial risk onto Nscale, which must now find alternative power and replacement demand for a facility designed around Microsoft's workloads. The reports do not establish that the project is cancelled, but they do show how quickly a power timetable can reshape an AI infrastructure deal.

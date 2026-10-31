@@ -32,6 +32,10 @@ Limitations remain: multi-step arithmetic and complex aggregations are weak, for
 
 Clairic illustrates a broader shift toward specialized, non-generative models for the high-volume structured tasks that currently dominate enterprise LLM spend. If the preview performance holds under independent scrutiny and open weights appear, it could accelerate the adoption of hybrid pipelines that reserve large language models for the open-ended reasoning and writing steps where they remain strongest.
 
+## Why It Matters
+
+Clairic targets the part of enterprise AI spending that involves pulling structured values out of documents rather than generating prose, and Cloudflare prices it without an output-token charge. The published cascade comparison, measured by Cloudflare and not independently verified, suggests that routing extraction and decisions to specialized models can cut both latency and cost in high-volume pipelines. The practical question for buyers is whether typed outputs and confidence scores stay calibrated on their own schemas, particularly where dependent calculations are involved.
+
 ### Sources
 [1] [Cloudflare Blog: Introducing Clairic, a new System One class of extraction models](https://blog.cloudflare.com/clairic-extraction-model/)
 [2] [Cloudflare Workers AI documentation: clairic](https://developers.cloudflare.com/workers-ai/models/clairic/)

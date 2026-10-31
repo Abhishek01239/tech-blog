@@ -27,3 +27,7 @@ The station will host the Dragon for about a month. NASA expects it to return to
 - [2] [SpaceX: CRS-35 Mission](https://www.spacex.com/launches/crs35)
 - [3] [NASA: SpaceX 35th Commercial Resupply Mission Overview](https://www.nasa.gov/general/nasas-spacex-35th-commercial-resupply-mission-overview/)
 - [4] [ISS National Laboratory: Biomedical Studies, NSF-Funded Science, Student-Led Projects, and More on NASA's SpaceX CRS-35](https://issnationallab.org/press-releases/launch-spacex-crs-35/)
+
+## Why It Matters
+
+The IROSA delivery is the more consequential cargo: it is the last pair needed for the station's planned power augmentation, and the benefit only arrives once the arrays are installed later this fall. The research manifest shows a similar pattern of deferred payoff, with experiments designed to test manufacturing methods and tissue models in microgravity rather than to produce immediate treatments. Both depend on operations after docking, which is why the mission's outcome will be measured over the coming month rather than at arrival.

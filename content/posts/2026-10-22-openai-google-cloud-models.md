@@ -24,6 +24,10 @@ OpenAI says the arrangement is designed to pair its models with Google Cloud acc
 
 Reuters reports the deal broadens OpenAI’s enterprise distribution across cloud providers and makes Google Cloud a sales channel for a competitor to Gemini. The confirmed change is access and procurement: models are in private preview, and wider availability remains planned rather than delivered. [3] [4]
 
+## Why It Matters
+
+The arrangement turns a competitor's cloud into a sales channel, letting enterprises buy OpenAI models on a Google Cloud invoice and, where eligible, draw down spending commitments they already hold. For buyers the change is procedural rather than technical, since access is a private preview and no pricing or revenue-sharing terms were disclosed. The governance claims, including data perimeters, isolated gateways and audit logging, are statements the providers will need to demonstrate inside customers' own deployments.
+
 ### Sources
 [1] [OpenAI: OpenAI models are coming to Google Cloud](https://openai.com/index/openai-models-google-cloud/)
 [2] [Google Cloud: Bringing OpenAI models to customers](https://cloud.google.com/blog/products/ai-machine-learning/google-cloud-brings-openai-models-to-customers)

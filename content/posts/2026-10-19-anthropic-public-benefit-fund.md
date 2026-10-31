@@ -28,3 +28,7 @@ The proposal ties a portion of Anthropic’s future corporate value to public-be
 [1] [Anthropic: Investing in the public benefit](https://www.anthropic.com/news/public-benefit-fund)
 [2] [Reuters: Anthropic to commit 5% stake to new public benefit fund](https://www.reuters.com/business/anthropic-commit-5-stake-new-public-benefit-fund-2026-10-18/)
 [3] [CNBC: Anthropic commits 5% of shares to new public benefit fund](https://www.cnbc.com/2026/10/18/anthropic-ai-public-benefit-fund.html)
+
+## Why It Matters
+
+Anthropic is proposing to dedicate part of its equity, not just cash, to public-benefit work, which would give the fund a stake in the company's growth rather than a fixed budget. The structure also leaves room for donations, direct distributions, and research into AI's effects on workers, while barring the equity from lobbying or political giving. Whether that translates into durable programs depends on shareholder approval, governance choices, and the fund's first projects.

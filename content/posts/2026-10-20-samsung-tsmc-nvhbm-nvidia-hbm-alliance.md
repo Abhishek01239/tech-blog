@@ -34,3 +34,6 @@ The timing is no accident. HBM demand is forecast to jump around 90% next year a
 Against that backdrop, the Samsung–TSMC arrangement reads as pragmatism winning over pride. If the memory chips feeding Nvidia's next-generation AI platforms need the best logic process available, then rivalry takes a back seat — at least for this one component. It also underscores a broader trend: the biggest AI chip designers increasingly dictate terms across the entire supply chain, reshaping relationships between suppliers that once competed purely on their own terms.
 
 Neither Samsung nor TSMC has publicly confirmed the arrangement, so some details may shift. But if the reports hold, the era of strictly partitioned foundry loyalty is over — and Nvidia just redrew the map of the semiconductor industry's alliances.
+
+### Sources
+- [Seoul Economic Daily — Samsung, TSMC Join Forces to Expand Custom HBM Output for Nvidia](https://en.sedaily.com/finance/2026/10/18/samsung-to-tap-tsmc-3-nanometer-lines-for-nvidia-custom-hbm)

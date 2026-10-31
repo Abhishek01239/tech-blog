@@ -26,6 +26,10 @@ Licensing could give Rivian a way to earn from its engineering beyond direct veh
 
 The next evidence to watch is concrete: named customers, specific modules, commercial terms and production vehicles using the licensed technology. Until then, Rivian’s message is an ambition to broaden its role from automaker and Volkswagen partner toward a potential technology supplier.
 
+## Why It Matters
+
+Licensing would give Rivian a second route to revenue from engineering work it already performs for its own vehicles, rather than depending solely on selling cars. The idea builds on an established Volkswagen joint venture, but the interview disclosed no new customer, price or contract, so the commercial case remains unproven. The meaningful test is whether other automakers sign on and whether the stack can be adapted to their brands and vehicle programs.
+
 ### Sources
 [1] [TechCrunch Mobility: Rivian’s next act](https://techcrunch.com/2026/10/18/techcrunch-mobility-rivians-next-act/)
 [2] [Rivian Automotive Form 10-Q for the quarter ended March 31, 2026](https://www.sec.gov/Archives/edgar/data/1874178/000187417826000035/rivn-20260331.htm)

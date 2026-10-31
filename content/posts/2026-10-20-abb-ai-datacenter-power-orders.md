@@ -24,6 +24,10 @@ The contributed business recorded about ¥102 billion in fiscal 2025 revenue, wi
 
 The results link rising demand for data-center electrical infrastructure with ABB’s plans for new DC equipment and a larger regional distribution footprint. Orders are not the same as delivered revenue, and the company’s product and market claims still need to be tested in customer deployments. [1] [2]
 
+## Why It Matters
+
+The quarter shows AI data-center demand reaching suppliers of electrical equipment, not just chipmakers, which widens the list of companies whose results now depend on the buildout. ABB's own disclosures keep that link indirect: Infinitus is a portfolio whose solid-state transformer is not expected to be commercially available until the second half of 2027, so the order growth reflects broader electrification demand as well. Because order intake is not delivered revenue, the durability of the trend will be judged in later quarters rather than in this release.
+
 ### Sources
 [1] [ABB: Q3 2026 results](https://new.abb.com/news/detail/139696/q3-2026-results)
 [2] [Reuters: ABB says data centre business booming](https://www.reuters.com/technology/abb-says-data-centre-business-booming-q3-figures-line-with-forecasts-2026-10-20/)

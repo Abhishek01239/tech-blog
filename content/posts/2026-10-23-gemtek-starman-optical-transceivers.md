@@ -24,6 +24,10 @@ The companies frame the project as a response to demand from AI data centers and
 
 Execution will depend on equipment installation, production ramp-up and customer qualification. The cited releases do not quantify those milestones. [1] [2]
 
+## Why It Matters
+
+The venture tests whether high-speed optical transceiver production can be added outside Asia quickly enough to matter for AI data-center builds. The announcements describe money and intentions rather than output: the New Jersey site still needs equipment installed, and the six-month timeline is a company forecast. Keeping the $45 million in stated venture contributions separate from the broader $150 million New Jersey project matters too, because conflating the two overstates what the partners have committed to the joint venture itself.
+
 ### Sources
 [1] [Gemtek: U.S. manufacturing joint venture with Starman](https://www.gemteks.com/en/news/us_manufacturing)
 [2] [Photonics.com: Gemtek and Starman collaborate on U.S. transceiver manufacturing](https://www.photonics.com/Articles/Gemtek-Starman-Collaborate-to-Manufacture/p5/a72702)

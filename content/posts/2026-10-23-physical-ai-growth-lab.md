@@ -24,6 +24,10 @@ The program also promises mentoring from more than 170 deep-tech experts, introd
 
 The partnership brings cloud infrastructure, AI tooling and semiconductor components into one accelerator offer. Its practical test will be whether startups can use that access to validate systems outside the lab and meet the engineering and commercial demands of industrial customers. Applications are open through Nov. 13. [2]
 
+## Why It Matters
+
+Physical AI startups need hardware, tooling and cloud capacity at the same time, a combination that is hard to assemble at prototype stage and expensive to buy. Pooling an accelerator, a cloud provider, an AI computing vendor and a semiconductor maker lowers that barrier for a small cohort rather than for the market as a whole. The practical test will be whether participating teams can use the access to validate systems outside the lab and meet industrial customers' engineering demands.
+
 ### Sources
 [1] [Infineon: Partners launch Physical AI Growth Lab](https://www.infineon.com/press-release/2026/infpr202610-013)
 [2] [UnternehmerTUM: Physical AI Growth Lab launch and applications](https://www.unternehmertum.de/en/press/unternehmertum-microsoft-infineon-technologies-und-nvidia-starten-physical-ai-growth-lab)

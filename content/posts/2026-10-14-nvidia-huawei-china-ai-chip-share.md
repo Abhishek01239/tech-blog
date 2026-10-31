@@ -46,3 +46,6 @@ Third, the software moat is being tested. Nvidia's ecosystem advantage has alway
 The second half of 2026 will answer three questions. Does Nvidia's share keep falling, or stabilize as it ships whatever compliant products it can? Does Huawei close the remaining six-point gap and potentially take the lead in its home market? And do non-GPU accelerators extend their volume lead over GPUs, confirming a structural transformation in how AI compute is built?
 
 One thing is clear: the era in which Nvidia could treat China as home turf is over. What was once a borderless market for American AI silicon has become a contested frontier — and for the first time, the domestic challengers have the shipment numbers to prove they belong in the fight.
+
+### Sources
+- [Reuters — Nvidia's China AI-chip share falls as Huawei closes gap, report finds](https://www.reuters.com/business/retail-consumer/nvidias-china-ai-chip-share-falls-huawei-closes-gap-report-finds-2026-10-13/)

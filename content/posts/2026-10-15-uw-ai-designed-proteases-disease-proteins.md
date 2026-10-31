@@ -33,3 +33,7 @@ For now, the significance is a new protein-design capability: researchers can be
 [2]: https://www.nature.com/articles/s41586-026-11143-w "Nature: De novo design of cysteine proteases"
 [3]: https://www.nature.com/articles/s41586-026-11167-2 "Nature: Computational design of metalloproteases"
 [4]: https://www.geekwire.com/2026/institute-led-by-uw-nobel-winner-uses-ai-to-build-molecular-scissors-targeting-disease-proteins/ "GeekWire: AI-designed molecular scissors target disease proteins"
+
+## Why It Matters
+
+The reported hit rates are a useful reality check: only a fraction of the designs tested showed the intended activity, even though the best performed strongly. That pattern suggests computational design can narrow the search for functional enzymes without yet making the outcome routine. The next questions are selectivity and control, because an enzyme that cuts the wrong target or keeps acting after delivery would be a very different proposition from one that works in a dish.

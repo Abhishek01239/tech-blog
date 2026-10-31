@@ -31,3 +31,7 @@ Bee’s pitch is convenience: capture a discussion, then retrieve its main point
 - [2] [CNBC: Amazon launches new Bee “personal AI” devices](https://www.cnbc.com/2026/10/15/amazon-bee-frontier-eclipse-ai-devices.html)
 - [3] [CNET: New Amazon Bee personal AI devices will listen and record you](https://www.cnet.com/tech/mobile/amazon-bee-personal-ai-device-always-listening-and-recording-2/)
 - [4] [The Verge: Amazon's Bee wearable can help you buy stuff](https://www.theverge.com/tech/1011475/amazon-bee-frontier-eclipse-price-specs)
+
+## Why It Matters
+
+Splitting the offering between a one-time device price and a recurring Bee Pro plan means the product's value proposition depends on continued use, not just the initial purchase. Amazon's privacy design, with a button, an indicator light, real-time processing, and deleted audio, is meant to answer the obvious objection to an always-listening device. The unresolved question is social rather than technical: whether people around the wearer understand when a conversation is being captured.

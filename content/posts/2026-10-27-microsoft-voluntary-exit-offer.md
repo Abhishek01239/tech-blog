@@ -25,6 +25,10 @@ The offer arrives as Microsoft invests heavily in AI computing infrastructure. R
 
 Voluntary participation and organization-by-organization eligibility do not establish how many people will depart, or whether departures will reduce staffing overall. Microsoft’s earlier voluntary retirement program is precedent, not evidence of the outcome this time. The company has not published a final participation total or results for the new offer.
 
+## Why It Matters
+
+A voluntary, team-by-team offer gives Microsoft a way to reduce staffing without announcing a layoff target, and it leaves the outcome dependent on how many eligible employees accept. The roughly 60,000 eligibility estimate comes from anonymous sourcing and is not a forecast of departures, while the reported exclusions for some units come from the same kind of sourcing. Until Microsoft reports participation, neither the scale nor the savings can be established.
+
 ### Sources
 
 [1] [Microsoft: Introducing a Voluntary Exit Offer](https://blogs.microsoft.com/blog/2026/10/26/introducing-a-voluntary-exit-offer/)
