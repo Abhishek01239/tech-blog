@@ -1,12 +1,12 @@
 ---
 title: "Privacy Policy"
 date: 2025-01-01
-lastmod: 2026-10-26
+lastmod: 2026-10-31
 draft: false
 description: "How TechPulse handles data, cookies, and advertising."
 ---
 
-*Last updated: October 26, 2026*
+*Last updated: October 31, 2026*
 
 ## Overview
 
@@ -20,7 +20,7 @@ The Site is hosted on Vercel. Like most hosts, Vercel processes technical reques
 
 ### Analytics
 
-We do not load third-party analytics or advertising trackers unless you consent (see "Cookies and consent" below). We do not sell personal information.
+We do not use third-party analytics. Advertising is served by Google AdSense, which asks for consent where the law requires it (see "Cookies and consent" below). We do not sell personal information.
 
 ### Email
 
@@ -28,15 +28,15 @@ If you contact us by email, we receive your address and the contents of your mes
 
 ## Cookies and consent
 
-Cookies are small text files stored by your browser. We use them only for advertising, and only after you choose "Accept" in the consent banner.
+Cookies are small text files stored by your browser. We use them for advertising through Google AdSense.
 
-- **Rejecting** (or ignoring the banner) means no advertising cookies are set and no ad script is loaded.
-- **Accepting** allows Google AdSense to load and to set cookies as described below.
-- You can change your choice at any time using the **Cookie settings** link in the footer.
+- In the EEA, the UK and Switzerland, Google's certified consent management platform shows a consent message before advertising cookies are used. You can accept or refuse, and ads are personalised only when you consent.
+- Outside those regions, ads may be served using cookies; you can limit them through your browser settings or the Google Ads Settings link below.
+- You can change or withdraw your choice at any time using the **Cookie settings** link in the footer.
 
 ## Advertising (Google AdSense)
 
-We use Google AdSense to display advertising. When you consent:
+We use Google AdSense to display advertising. Where consent applies, or where personalised advertising is used:
 
 - Third-party vendors, including Google, use cookies to serve ads based on your prior visits to this and other websites.
 - Google's use of advertising cookies enables it and its partners to serve ads to you based on your visit to the Site and/or other sites on the internet.
@@ -53,11 +53,11 @@ Opting out does not remove ads; it makes them non-personalized.
 
 ### Visitors in the EEA, UK, and Switzerland
 
-Where required, we ask for consent before any advertising cookie is set, and ads are served on the basis of that consent. You may withdraw consent at any time via **Cookie settings**. Withdrawal stops future advertising cookies; it does not affect the lawfulness of processing that already occurred.
+For visitors in the EEA, UK and Switzerland, Google's certified consent management platform asks for consent before advertising cookies are set or personalised ads are served. You may change or withdraw that consent at any time via **Cookie settings**. Withdrawal stops future advertising cookies; it does not affect the lawfulness of processing that already occurred.
 
 ### California residents
 
-Under the CCPA/CPRA you have the right to know what personal information is collected, to request deletion, to correct it, and to opt out of its "sale" or "sharing" for cross-context behavioral advertising. Because personalized advertising may involve sharing identifiers with ad networks, you can exercise the opt-out by selecting **Reject** in the consent banner or **Cookie settings** in the footer. We do not knowingly sell personal information for money.
+Under the CCPA/CPRA you have the right to know what personal information is collected, to request deletion, to correct it, and to opt out of its "sale" or "sharing" for cross-context behavioral advertising. Because personalized advertising may involve sharing identifiers with ad networks, you can exercise the opt-out using **Cookie settings** in the footer or the Google Ads Settings link above. We do not knowingly sell personal information for money.
 
 ## Third-party links
 
@@ -73,7 +73,7 @@ Server logs are retained by our host according to its standard retention policy.
 
 ## Changes to this policy
 
-If we change how data is handled, we will update this page and revise the "Last updated" date. Material changes affecting advertising or consent will be reflected in the consent banner as well.
+If we change how data is handled, we will update this page and revise the "Last updated" date. Material changes affecting advertising or consent will be reflected in the consent message as well.
 
 ## Contact
 
