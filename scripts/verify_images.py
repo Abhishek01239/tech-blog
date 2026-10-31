@@ -41,7 +41,7 @@ def main():
     strict = "--strict" in sys.argv
 
     jpgs = sorted(list(IMG_DIR.glob("*.jpg")) + list(IMG_DIR.glob("*.png")))
-    empty = [p.name for p in jpgs if p.stat().st_size == 0]
+    empty = [p.name for p in jpgs if p.stat().st_size < 1024]
     if empty:
         print("EMPTY IMAGE FILES FOUND:")
         for name in empty:
@@ -65,7 +65,7 @@ def main():
         if img.startswith("http"):
             continue
         path = local_path(img)
-        if not path.exists() or path.stat().st_size == 0:
+        if not path.exists() or path.stat().st_size < 1024:
             missing.append(f"{post.name}: {img}")
             continue
         digest = hashlib.sha256(path.read_bytes()).hexdigest()

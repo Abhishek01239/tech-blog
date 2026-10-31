@@ -4,6 +4,8 @@
 */}}
 {{ $page := .page }}
 {{ $size := .size | default "lg" }}
+{{ $priority := .priority | default false }}
+{{ $loading := cond $priority "eager" "lazy" }}
 {{ $img := $page.Params.image | default "" }}
 {{ $cat := index ($page.Params.categories | default slice) 0 | default "Tech" }}
 {{ $desc := $page.Description | default ($page.Summary | plainify | truncate 140) }}
@@ -11,7 +13,8 @@
 {{ if eq $size "lg" }}
 <a class="card featured-card reveal" href="{{ $page.Permalink }}">
     <div class="fc-img">
-        <img class="card-img" src="{{ $img }}" alt="{{ $page.Title }}" loading="lazy"
+        <img class="card-img" src="{{ $img }}" alt="{{ $page.Title }}" loading="{{ $loading }}" decoding="async"
+             {{ if $priority }}fetchpriority="high"{{ end }}
              width="800" height="500" data-img="{{ $img }}"
              onerror="this.onerror=null;fallbackImg(this)">
     </div>
@@ -29,7 +32,8 @@
 {{ else }}
 <a class="latest-item reveal" href="{{ $page.Permalink }}">
     <div class="latest-thumb">
-        <img src="{{ $img }}" alt="{{ $page.Title }}" loading="lazy"
+        <img src="{{ $img }}" alt="{{ $page.Title }}" loading="{{ $loading }}" decoding="async"
+             {{ if $priority }}fetchpriority="high"{{ end }}
              width="296" height="185" data-img="{{ $img }}"
              onerror="this.onerror=null;fallbackImg(this)">
     </div>

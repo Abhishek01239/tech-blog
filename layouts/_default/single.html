@@ -15,7 +15,7 @@
 
     {{ if $img }}
     <div class="article-hero reveal">
-        <img src="{{ $img }}" alt="{{ .Title }}" loading="lazy" width="1600" height="800"
+        <img src="{{ $img }}" alt="{{ .Title }}" loading="eager" fetchpriority="high" decoding="async" width="1600" height="800"
              data-img="{{ $img }}" onerror="this.onerror=null;fallbackImg(this)">
     </div>
     {{ end }}
