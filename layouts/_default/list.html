@@ -3,16 +3,17 @@
     <div class="page-head reveal">
         <span class="eyebrow">{{ if eq .Kind "taxonomy" }}Browse{{ else }}Stories{{ end }}</span>
         <h1>{{ .Title }}</h1>
-        <p>{{ with .Description }}{{ . }}{{ else }}Stories curated for {{ .Title }}{{ end }}</p>
+        <p>{{ with .Description }}{{ . }}{{ else }}Stories curated for {{ if eq .Kind "section" }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}{{ end }}</p>
     </div>
     <div class="featured-grid reveal-stagger">
-        {{ range .Pages }}
-        {{ partial "card.html" (dict "page" . "size" "lg") }}
+        {{ range $index, $page := .Paginator.Pages }}
+        {{ partial "card.html" (dict "page" $page "size" "lg" "priority" (eq $index 0)) }}
         {{ end }}
     </div>
-    {{ if gt (len .Pages) 6 }}
+    {{ if gt .Paginator.TotalPages 1 }}
     <div class="pagination" style="display:flex; justify-content:center; gap:1rem; margin:3.5rem 0 2rem;">
         {{ if .Paginator.HasPrev }}<a class="btn btn-outline" href="{{ .Paginator.Prev.URL }}">← Newer</a>{{ end }}
+        <span style="align-self:center; color:var(--text-2);">Page {{ .Paginator.PageNumber }} of {{ .Paginator.TotalPages }}</span>
         {{ if .Paginator.HasNext }}<a class="btn btn-outline" href="{{ .Paginator.Next.URL }}">Older →</a>{{ end }}
     </div>
     {{ end }}
