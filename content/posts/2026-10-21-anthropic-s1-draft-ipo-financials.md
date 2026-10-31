@@ -6,6 +6,7 @@ description: "A draft IPO prospectus reviewed by the Wall Street Journal shows A
 tags: [AI, Anthropic, IPO, Cloud Computing, Business]
 categories: ["Tech News"]
 author: "TechPulse"
+image: "/images/anthropic-s1-draft-ipo-financials.jpg"
 ---
 
 # Anthropic's Draft S-1: $16.3 Billion in Revenue, an $80.7 Billion Loss, and the Biggest IPO of the Year

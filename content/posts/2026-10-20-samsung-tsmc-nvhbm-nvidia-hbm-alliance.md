@@ -6,6 +6,7 @@ description: "Samsung Electronics will reportedly use rival TSMC's 3nm process f
 tags: [AI, Semiconductors, Nvidia, Samsung, TSMC, HBM, Hardware]
 categories: ["Tech News"]
 author: "TechPulse"
+image: "/images/samsung-tsmc-nvhbm-nvidia-hbm-alliance.jpg"
 ---
 
 # Strange Bedfellows: Samsung Turns to TSMC to Build Nvidia's Custom NVHBM Memory

@@ -6,6 +6,7 @@ description: "PostgreSQL 19 has been delayed to November 19 after LLM-assisted c
 tags: [PostgreSQL, Open Source, AI, Databases, Developer Tools]
 categories: ["Tech News"]
 author: "TechPulse"
+image: "/images/postgres-19-delayed-llm-code-review.jpg"
 ---
 
 # PostgreSQL 19 Slips to November as AI Code Review Finds Bugs Faster Than Humans Can Fix Them

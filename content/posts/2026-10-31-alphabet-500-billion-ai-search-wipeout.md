@@ -6,6 +6,7 @@ description: "Alphabet shares suffered their worst single-day drop on record thi
 tags: [Alphabet, Google, AI, Search, Advertising, Earnings, Cloud, Investment]
 categories: ["Tech News"]
 author: "TechPulse"
+image: "/images/alphabet-500-billion-ai-search-wipeout.jpg"
 ---
 
 # Alphabet's $500 Billion Wipeout: The Day AI Search Came for Google's Cash Machine

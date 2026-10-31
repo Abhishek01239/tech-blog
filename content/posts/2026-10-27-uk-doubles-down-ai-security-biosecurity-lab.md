@@ -6,6 +6,7 @@ description: "The UK budget injects £120 million into the AI Security Institute
 tags: [AI, Cybersecurity, UK, Policy, Biosecurity]
 categories: ["Tech News"]
 author: "TechPulse"
+image: "/images/uk-doubles-down-ai-security-biosecurity-lab.jpg"
 ---
 
 # Britain Doubles Down on AI Safety: £120M for Security Institute and a World-First AI Biosecurity Lab

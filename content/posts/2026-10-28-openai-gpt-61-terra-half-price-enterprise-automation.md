@@ -6,6 +6,7 @@ description: "OpenAI has launched GPT-6.1 Terra, a new model priced at roughly h
 tags: [OpenAI, AI, GPT-6, Enterprise AI, Machine Learning]
 categories: ["Tech News"]
 author: "TechPulse"
+image: "/images/openai-gpt-61-terra-half-price-enterprise-automation.jpg"
 ---
 
 # OpenAI's GPT-6.1 Terra: Frontier AI at Half the Price Targets Enterprise Automation

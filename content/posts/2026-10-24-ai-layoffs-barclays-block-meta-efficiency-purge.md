@@ -6,6 +6,7 @@ description: "Barclays, Block, Kroger, and Meta are citing artificial intelligen
 tags: [AI, Layoffs, Big Tech, Future of Work, Business]
 categories: ["Tech News"]
 author: "TechPulse"
+image: "/images/ai-layoffs-barclays-block-meta-efficiency-purge.jpg"
 ---
 
 # The AI Efficiency Purge: Barclays, Block, and Meta Lead a New Wave of Tech-Driven Layoffs

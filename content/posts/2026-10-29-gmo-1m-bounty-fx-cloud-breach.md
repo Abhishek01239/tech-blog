@@ -6,6 +6,7 @@ description: "After a breach of its Onamae.com Desktop Cloud service led to unau
 tags: [cybersecurity, ransomware, cloud, fintech, japan, data breach]
 categories: ["Tech News"]
 author: "TechPulse"
+image: "/images/gmo-1m-bounty-fx-cloud-breach.jpg"
 ---
 
 # GMO Puts a $1 Million Bounty on Its Hackers After Refusing to Pay Ransom

@@ -6,6 +6,7 @@ description: "New York has signed one of the broadest laws yet restricting minor
 tags: [AI, Regulation, Chatbots, Privacy, Policy, New York]
 categories: ["Tech News"]
 author: "TechPulse"
+image: "/images/new-york-bans-ai-companion-chatbots-for-minors.jpg"
 ---
 
 # New York Bans AI Companion Chatbots for Minors: The Strictest Kids' AI Safety Law Yet
