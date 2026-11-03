@@ -2,7 +2,7 @@
 
 A daily technology news site built with Hugo and deployed on Vercel. Stories are generated several times a day, verified before publishing, and committed to `main`. Vercel's GitHub integration builds and deploys on every push — there is no separate deploy workflow.
 
-Live: https://tech-blog-eight-blush.vercel.app
+Live: https://www.nexivo.org.in
 
 ## Structure
 

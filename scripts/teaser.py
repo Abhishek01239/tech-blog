@@ -42,6 +42,6 @@ if __name__ == "__main__":
     md = Path(sys.argv[1])
     slug = md.stem
     title, excerpt = extract(md)
-    url = f"https://tech-blog-eight-blush.vercel.app/posts/{slug}/"
+    url = f"https://www.nexivo.org.in/posts/{slug}/"
     lines = [title, "", excerpt, "", f"Read more → {url}"]
     print("\n".join(l for l in lines if l))

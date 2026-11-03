@@ -10,7 +10,7 @@ description: "How TechPulse handles data, cookies, and advertising."
 
 ## Overview
 
-TechPulse ("we", "us") publishes technology news at **tech-blog-eight-blush.vercel.app** (the "Site"). This policy explains what information is collected when you visit, why, and the choices you have. We do not require an account to read anything on the Site.
+TechPulse ("we", "us") publishes technology news at **www.nexivo.org.in** (the "Site"). This policy explains what information is collected when you visit, why, and the choices you have. We do not require an account to read anything on the Site.
 
 ## Information we collect
 
