@@ -12,7 +12,7 @@ enableRobotsTXT = true
   adsensePublisher = "ca-pub-1455389319625277"
   # Ad unit IDs from AdSense > Ads > By ad unit. Leave empty until units exist;
   # ad slots render nothing while empty, so no empty boxes appear on the site.
-  adsenseSlotArticle = ""
+  adsenseSlotArticle = "5005825680"
   adsenseSlotSidebar = ""
 
 [markup]
