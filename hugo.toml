@@ -43,13 +43,13 @@ enableRobotsTXT = true
   weight = 3
 
 [[menu.main]]
-  name = "Crypto"
-  url = "/tags/crypto/"
+  name = "Cybersecurity"
+  url = "/tags/cybersecurity/"
   weight = 4
 
 [[menu.main]]
-  name = "Programming"
-  url = "/tags/programming/"
+  name = "Space"
+  url = "/tags/space/"
   weight = 5
 
 [[menu.main]]
