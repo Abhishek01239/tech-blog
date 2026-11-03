@@ -13,7 +13,7 @@ enableRobotsTXT = true
   # Ad unit IDs from AdSense > Ads > By ad unit. Leave empty until units exist;
   # ad slots render nothing while empty, so no empty boxes appear on the site.
   adsenseSlotArticle = "5005825680"
-  adsenseSlotSidebar = ""
+  adsenseSlotSidebar = "2950507980"
 
 [markup]
   [markup.goldmark]
