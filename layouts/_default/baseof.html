@@ -14,8 +14,8 @@
     <meta name="theme-color" content="#101114">
     {{ with site.Params.adsensePublisher }}
     <meta name="google-adsense-account" content="{{ . }}">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ . }}" crossorigin="anonymous"></script>
     {{ end }}
+    {{/* Ad requests remain disabled until a Google-certified CMP is configured and consent handling is verified. */}}
     <meta property="og:title" content="{{ .Title }}">
     <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
