@@ -44,18 +44,36 @@ def slug_of(path: Path) -> str:
     return path.stem
 
 
+def is_publishable(path: Path) -> bool:
+    """Only distribute articles that are not drafts and have passed review."""
+    import re
+
+    raw = path.read_text(encoding="utf-8")
+    draft_match = re.search(r"(?m)^draft:\s*(true|false)\s*$", raw, re.IGNORECASE)
+    if draft_match and draft_match.group(1).lower() == "true":
+        return False
+
+    review_match = re.search(
+        r"""(?m)^review_status:\s*["']?([A-Za-z_-]+)["']?\s*$""",
+        raw,
+    )
+    if review_match and review_match.group(1).lower() != "approved":
+        return False
+
+    return True
+
+
 def next_unposted(platform: str):
-    """Return newest content/posts/*.md not yet posted to platform, or ''."""
+    """Return newest reviewed, published post not yet distributed to platform."""
     posts_dir = Path(__file__).resolve().parent.parent / "content" / "posts"
     if not posts_dir.is_dir():
         return ""
     posted = set(load(platform))
-    for p in sorted(posts_dir.glob("*.md"), reverse=True):  # newest first
-        if p.stem not in posted:
-            return str(p)
+    for p in sorted(posts_dir.glob("*.md"), reverse=True):
+        if p.stem in posted or not is_publishable(p):
+            continue
+        return str(p)
     return ""
-
-
 def main():
     action = sys.argv[1]
     platform = sys.argv[2]
