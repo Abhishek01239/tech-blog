@@ -1,8 +1,8 @@
-{{/* AdSense unit. Renders only when both a publisher ID and a slot ID are set. */}}
+{{/* AdSense unit. Disabled until a certified CMP is configured and consent is handled before ad requests. */}}
 {{ $client := site.Params.adsensePublisher }}
 {{ $slot := .slot | default "" }}
 {{ $class := .class | default "" }}
-{{ if and $client $slot }}
+{{ if and site.Params.adsenseEnabled $client $slot }}
 <aside class="ad-unit {{ $class }}" aria-label="Advertisement">
     <span class="ad-label">Advertisement</span>
     <ins class="adsbygoogle"
