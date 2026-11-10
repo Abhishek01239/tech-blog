@@ -1,45 +1,39 @@
 ---
-title: "About"
+title: "About TechPulse"
 date: 2025-01-01
-lastmod: 2026-10-26
+lastmod: 2026-11-11
 draft: false
-description: "About TechPulse — an independent daily technology publication."
+description: "About TechPulse, an independent publication covering technology, AI, software, and digital innovation."
 ---
 
 ## About TechPulse
 
-TechPulse is an independent technology publication covering AI, startups, products, programming, and the companies building what comes next. It is maintained by [Abhishek01239](https://github.com/Abhishek01239).
+TechPulse is an independent technology publication covering artificial intelligence, software, cybersecurity, cloud infrastructure, startups, developer tools, and consumer technology. Our goal is to help readers understand what is changing, how it works, and why it matters.
 
 ### What we cover
 
-- **AI and machine learning** — models, research, chips, and the infrastructure behind them
-- **Startups and funding** — rounds, acquisitions, and the businesses forming around new technology
-- **Products** — hardware and software releases that change how people work
-- **Programming and open source** — languages, frameworks, and developer tooling
-- **Crypto and fintech** — markets and infrastructure, reported factually and never as investment advice
+- **AI and machine learning** — models, research, practical uses, limitations, and infrastructure
+- **Cybersecurity** — vulnerabilities, defensive practices, privacy, and security engineering
+- **Software and programming** — developer tools, programming languages, frameworks, and open source
+- **Cloud and infrastructure** — hosting, databases, networking, and platform engineering
+- **Startups and products** — launches, funding, product decisions, and the technology behind them
 
-### How stories are produced
+### How our editorial process works
 
-TechPulse publishes several times a day through an editorial pipeline:
+We use software and AI tools to assist with research organization, drafting, and editing. These tools are not treated as sources of truth.
 
-1. **Monitoring.** The pipeline tracks primary sources — company announcements, filings, research papers, and major outlets — for developments worth covering.
-2. **Drafting.** Stories are drafted with AI assistance against those sources, then checked for accuracy, attribution, and completeness.
-3. **Verification before publish.** A story that fails verification does not publish; the pipeline fails loudly rather than pushing thin or unsourced copy.
-4. **Publication.** Verified stories are committed to the site's repository and deployed automatically.
+Effective November 11, 2026, newly generated articles are saved as unpublished drafts. Before publication, an editor must open and assess the cited sources, verify factual claims and figures, add useful context, check originality, and approve the article. Articles that cannot meet this standard should not be published.
 
-We are transparent about this process because readers deserve to know how their news is made. Every article links to its sources, and we correct errors when they are brought to our attention.
+Articles published before this process change are part of our existing archive and are being reviewed against the current editorial checklist. A source link is provided as a research trail, not a guarantee that every claim has been independently confirmed.
 
-### Editorial standards
+### Corrections
 
-- We attribute claims to their sources and link to primary material wherever possible.
-- We separate reporting from opinion.
-- We correct mistakes openly. If you spot one, email us and we will update the article.
-- We do not publish sponsored posts disguised as news. Any future sponsored content will be clearly labelled.
+If you find an error, outdated information, or a broken source link, email us with the article URL and the specific issue. We review correction requests and update articles when warranted. Significant changes should be described in the article.
 
-### Funding
+### Independence and funding
 
-TechPulse is free to read and supported by advertising served through Google AdSense. Advertising is separate from editorial decisions; advertisers have no influence over what we cover.
+Editorial decisions are separate from advertising and affiliate relationships. We do not accept payment in exchange for undisclosed positive coverage. Any sponsored material or affiliate relationship must be clearly identified.
 
 ### Contact
 
-Corrections, tips, and general inquiries: **jaiswarabhishek12@gmail.com**, or see the [Contact page](/contact/).
+Editorial questions, corrections, and suggestions: **jaiswarabhishek12@gmail.com**.
