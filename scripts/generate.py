@@ -180,41 +180,45 @@ def pick_working_model(client):
 
 
 def generate_news_article(client, topic=None, model="openai/gpt-oss-120b"):
-    """Generate a tech news article using Groq."""
-    prompt = f"""Write a tech news article about a recent development in technology.
+    """Generate a sourced technology article draft using Groq."""
+    prompt = f"""Write a well-sourced technology article draft about a recent development.
 
 TOPIC: {topic or 'latest tech news'}
 
-REQUIREMENTS:
-1. Title: Catchy, news-style headline (under 70 characters), include company/product name if relevant
-2. Meta description: 150-160 characters, news-style, compelling click
-3. Lead: First paragraph summarizes the news in 2-3 sentences
-4. Body: 400-600 words covering: what happened, why it matters, industry impact
-5. Tone: Journalistic, factual, engaging — like TechCrunch or The Verge
-6. Use H2 (##) subheadings for major points
-7. Include specific details: company names, dates, numbers, quotes if applicable
-8. End with "What's Next" or "Impact" section
-9. SEO keywords: tech news, {topic or 'technology'}, startup, AI, innovation
+EDITORIAL REQUIREMENTS:
+1. Use only claims that can be supported by the source URLs you provide.
+2. Never invent companies, products, dates, figures, quotes, research findings, or announcements.
+3. Prefer primary sources: company announcements, official documentation, regulatory filings, research papers, and court or government documents.
+4. Include 2-4 specific source records with the exact public URL and page title. Do not invent URLs. If you cannot identify at least two credible sources, return an empty sources array.
+5. Explain what happened, how it works, who is affected, limitations, and why it matters. Add original context rather than rewriting a headline.
+6. Target 500-800 words. Use clear H2 subheadings and a useful conclusion.
+7. Keep the tone factual and accessible. Clearly distinguish confirmed facts from analysis.
+8. Do not include fabricated quotations. Paraphrase and attribute instead.
+9. Write a concise, accurate title under 70 characters and a useful meta description.
 
 OUTPUT FORMAT (strict JSON):
 {{
-    "title": "headline (under 70 chars)",
-    "description": "meta description (150-160 chars)",
+    "title": "accurate headline",
+    "description": "useful meta description",
     "category": "ai|startups|phones|crypto|space|gaming|cloud|cybersecurity|programming|general",
     "tags": ["tag1", "tag2", "tag3"],
-    "content": "full markdown article content"
-}}"""
+    "content": "full markdown article content",
+    "sources": [
+        {{"title": "exact source page title", "url": "https://example.com/real-source"}}
+    ]
+}}
+
+If reliable sources cannot be identified, return "sources": [] and do not fabricate them."""
 
     response = client.chat.completions.create(
         model=model,
         messages=[{"role": "user", "content": prompt}],
-        temperature=0.7,
-        max_tokens=2000,
+        temperature=0.4,
+        max_tokens=3000,
         response_format={"type": "json_object"},
     )
-    
-    return json.loads(response.choices[0].message.content)
 
+    return json.loads(response.choices[0].message.content)
 def slugify(text):
     """Lowercase, keep alphanumerics + dash, strip Hugo-sanitized chars ($ etc.)."""
     return re.sub(r"[^a-z0-9-]", "", text.lower().strip().replace(" ", "-").replace("/", "-"))[:60]
@@ -260,51 +264,98 @@ def existing_image_hashes():
     return hashes
 
 def save_article(article, existing_titles=None, existing_hashes=None, used_titles=None, seed=0):
-    """Save article as Hugo markdown with a UNIQUE featured image.
-
-    Returns the saved Path, or None if the title is a duplicate of an existing
-    post / already-generated-this-run article (skipped, not saved).
-    """
+    """Save a sourced article as an unpublished Hugo draft for human review."""
     existing_titles = existing_titles or set()
     used_titles = used_titles or set()
-    norm = normalize_title(article.get("title", ""))
+
+    title = str(article.get("title", "")).strip()
+    description = str(article.get("description", "")).strip()
+    article_content = str(article.get("content", "")).strip()
+    if not title or not description or not article_content:
+        print("  REJECT: missing title, description, or article body")
+        return None
+
+    word_count = len(re.findall(r"\b[\w'-]+\b", article_content))
+    if word_count < 350:
+        print(f"  REJECT: article is too short ({word_count} words; minimum 350)")
+        return None
+
+    sources = article.get("sources", [])
+    valid_sources = []
+    seen_urls = set()
+    if isinstance(sources, list):
+        for source in sources:
+            if not isinstance(source, dict):
+                continue
+            source_title = str(source.get("title", "")).strip()
+            source_url = str(source.get("url", "")).strip()
+            parsed_url = urllib.parse.urlparse(source_url)
+            if (
+                source_title
+                and parsed_url.scheme == "https"
+                and parsed_url.netloc
+                and source_url not in seen_urls
+            ):
+                valid_sources.append({"title": source_title, "url": source_url})
+                seen_urls.add(source_url)
+
+    if len(valid_sources) < 2:
+        print("  REJECT: at least two HTTPS source references are required")
+        return None
+
+    norm = normalize_title(title)
     if norm in existing_titles or norm in used_titles:
-        print(f"  DUP: skipping duplicate title: {article.get('title','')!r}")
+        print(f"  DUP: skipping duplicate title: {title!r}")
         return None
 
     today = datetime.now().strftime("%Y-%m-%d")
-    slug = slugify(article["title"])
+    slug = slugify(title)
     filename = f"{today}-{slug}.md"
     filepath = OUTPUT_DIR / filename
     if filepath.exists():
         print(f"  DUP: slug already exists, skipping: {filename}")
         return None
 
-    category = article.get("category", "general")
-    image_url = get_image_url(category, slug, article["title"], existing_hashes, seed)
-    image_line = f'image: "{image_url}"' if image_url else "image: \"\""
-    tags_yaml = json.dumps(article.get("tags", [category]))
+    category = str(article.get("category", "general")).strip().lower()
+    allowed_categories = {
+        "ai", "startups", "phones", "crypto", "space", "gaming",
+        "cloud", "cybersecurity", "programming", "general",
+    }
+    if category not in allowed_categories:
+        category = "general"
+
+    tags = article.get("tags", [category])
+    if not isinstance(tags, list):
+        tags = [category]
+    tags_yaml = json.dumps([str(tag).strip() for tag in tags if str(tag).strip()])
+    image_url = get_image_url(category, slug, title, existing_hashes, seed)
+    image_line = f"image: {json.dumps(image_url)}" if image_url else 'image: ""'
+    source_markdown = "\n".join(
+        f"- [{source['title']}]({source['url']})" for source in valid_sources
+    )
 
     frontmatter = f"""---
-title: "{article['title']}"
+title: {json.dumps(title, ensure_ascii=False)}
 date: {today}
-draft: false
-description: "{article['description']}"
+draft: true
+review_status: "needs-review"
+description: {json.dumps(description, ensure_ascii=False)}
 tags: {tags_yaml}
-categories: ["{category.title()}"]
-author: "{os.environ.get('BLOG_AUTHOR', 'TechPulse')}"
+categories: [{json.dumps(category.title())}]
+author: {json.dumps(os.environ.get('BLOG_AUTHOR', 'TechPulse'), ensure_ascii=False)}
 {image_line}
 ---"""
 
-    content = f"{frontmatter}\n\n{article['content']}"
+    content = f"{frontmatter}\n\n{article_content}\n\n### Sources\n\n{source_markdown}\n"
     filepath.write_text(content, encoding="utf-8")
     used_titles.add(norm)
+
     if image_url and existing_hashes is not None:
         img_path = IMAGE_DIR / f"{slug}.jpg"
-        existing_hashes.add(pollinations_image_hash(img_path))  # prevent same-run dup
-    print(f"  -> {filename}")
-    return filepath
+        existing_hashes.add(pollinations_image_hash(img_path))
 
+    print(f"  -> saved unpublished review draft: {filename} ({word_count} words, {len(valid_sources)} sources)")
+    return filepath
 def list_models(client):
     """Print all chat models Groq currently exposes (diagnostic / MODE=list)."""
     resp = client.models.list()
@@ -337,7 +388,7 @@ def main():
         "regulatory news about big tech companies",
     ]
     
-    print(f"Generating {num_articles} unique tech news articles (images: Pollinations AI)...")
+    print(f"Generating {num_articles} sourced tech article drafts (images: Pollinations AI)...")
     generated = []
     existing_titles = load_existing_titles()
     existing_hashes = existing_image_hashes()
@@ -366,6 +417,7 @@ def main():
                 "title": article["title"],
                 "category": article.get("category", "general"),
                 "file": str(path),
+                "review_status": "needs-review",
             })
             i += 1
         except Exception as e:
@@ -374,7 +426,7 @@ def main():
     summary_path = OUTPUT_DIR.parent.parent / "generation-summary.json"
     summary_path.write_text(json.dumps(generated, indent=2), encoding="utf-8")
     
-    print(f"\nDone! Generated {len(generated)} articles.")
+    print(f"\nDone! Generated {len(generated)} unpublished drafts. Human editorial approval is required before publication.")
 
     # Fail loudly if we generated nothing — a silent success with zero articles
     # is how the daily pipeline broke for 17 days (retired model returned 404).
