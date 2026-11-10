@@ -19,5 +19,16 @@ tar -C "${HOME}/.local/hugo" -xf "${TMP_DIR}/hugo.tar.gz"
 export PATH="${HOME}/.local/hugo:${PATH}"
 
 echo "Using: $(hugo version)"
+echo "Checking editorial approval state..."
+for post in content/posts/*.md; do
+  [ -f "$post" ] || continue
+  if grep -Eq "^review_status:[[:space:]]*['\"]?needs-review['\"]?[[:space:]]*$" "$post" \
+    && grep -Eq "^draft:[[:space:]]*false[[:space:]]*$" "$post"; then
+    echo "ERROR: $post is marked needs-review but is not a draft."
+    echo "Complete the editorial review, then set draft: false and review_status: approved."
+    exit 1
+  fi
+done
+
 echo "Building TechPulse..."
 hugo build --gc --minify
