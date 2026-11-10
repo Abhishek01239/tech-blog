@@ -1,55 +1,50 @@
 ---
 title: "Editorial Policy"
 date: 2025-01-01
-lastmod: 2026-10-31
+lastmod: 2026-11-11
 draft: false
-description: "How TechPulse chooses, reports, verifies, and corrects the technology stories we publish."
+description: "How TechPulse researches, reviews, publishes, and corrects technology coverage."
 ---
 
-## Editorial policy
+## Editorial independence
 
-TechPulse is an independent technology publication. This page explains the standards behind everything we publish, so readers, partners, and advertisers know exactly what they are getting.
+TechPulse is an independent technology publication. Editorial decisions are not controlled by advertisers, sponsors, or affiliate partners. Any sponsored material or material relationship that could affect a reader's interpretation must be clearly disclosed.
 
-### Independence
+## Coverage
 
-TechPulse is editorially independent. No advertiser, sponsor, or affiliate partner reviews stories before publication, and advertising is never presented as editorial content. Paid placements, if we ever run them, are labelled as such.
+We cover AI and machine learning, cybersecurity, software, programming, cloud infrastructure, developer tools, startups, and consumer technology. We prioritize stories that help readers understand a real product, technical development, risk, or decision.
 
-### What we publish
+## Research and sourcing
 
-We cover artificial intelligence, semiconductors, cloud infrastructure, cybersecurity, startups, developer tools, and consumer technology. We prioritise developments that affect how people work, what they buy, and how the technology industry is governed.
+We prefer primary sources, including official company announcements, product documentation, regulatory filings, research papers, court records, and government publications. When we rely on reporting by another publication, we link to and credit that reporting.
 
-We do not publish:
+A link in an article is a starting point for readers and editors. It is not, by itself, proof that every statement in the article is correct.
 
-- Investment advice, price predictions, or trading signals
-- Unverified rumours presented as fact
-- Content that infringes copyright or republishes another outlet's reporting wholesale
-- Material that is hateful, harassing, or aimed at deceiving readers
+## AI assistance and human review
 
-### How stories are produced
+We may use AI tools to organize research, prepare first drafts, and edit language. AI output is not treated as a source of facts. We do not knowingly publish invented quotes, fabricated sources, or unsupported statistics.
 
-1. **Sourcing.** Reporters and editors track primary sources: company announcements, regulatory filings, research papers, court documents, and on-the-record statements. Where a story relies on reporting by another outlet, we credit and link to it.
-2. **Drafting.** Stories may be drafted with AI assistance, always against the primary sources gathered in step one. AI is a writing tool, not a source of facts.
-3. **Human review.** Every story is checked for accuracy, attribution, context, and completeness before publication. A story that fails review is held or killed rather than published thin.
-4. **Publication.** Verified stories are published on a consistent schedule and distributed through our RSS feed.
+Effective November 11, 2026, newly generated articles remain unpublished drafts until an editor:
+1. Opens the cited sources and checks that they exist and support the claims attributed to them.
+2. Verifies names, dates, figures, product details, and quotations against reliable evidence.
+3. Adds original explanation, practical context, limitations, and relevant analysis.
+4. Checks the article for accuracy, clarity, originality, and misleading headlines.
+5. Approves the article for publication.
 
-### AI disclosure
+If a story cannot meet these checks, it should remain unpublished or be discarded.
 
-We use AI tools to assist with drafting and copy-editing. We do not use AI to invent quotes, fabricate sources, or generate images that misrepresent real people or events. Article images are illustrative artwork generated for the story unless a caption or credit says otherwise.
+## Historical archive
 
-### Corrections
+Articles published before November 11, 2026 were produced under an earlier publishing workflow. We are reviewing this archive against the current standards. Readers should contact us if they identify an unsupported claim, missing attribution, or factual error.
 
-Accuracy matters more than appearing infallible. When we get something wrong:
+## Corrections
 
-- We correct the article and add a dated correction note describing what changed.
-- Significant corrections are reflected in the article's updated date.
-- We do not silently delete or rewrite published stories to hide errors.
+We correct factual errors when identified. Significant corrections should include a dated note explaining what changed. To report a problem, email **jaiswarabhishek12@gmail.com** and include the article URL and relevant evidence.
 
-To report an error, email [jaiswarabhishek12@gmail.com](mailto:jaiswarabhishek12@gmail.com) with the article link and the specific claim you believe is wrong.
+## Advertising and affiliate disclosures
 
-### Advertising and cookies
+Advertising is separate from editorial decisions. Ads, sponsored placements, and affiliate relationships must be distinguishable from independent editorial coverage. Advertising requests are currently disabled while the required consent-management configuration is completed.
 
-TechPulse is supported by advertising served through Google AdSense. Ads are labelled, kept visually separate from editorial content, and loaded only after you consent to advertising cookies. See our [Privacy Policy](/privacy/) for details and our [Disclaimer](/disclaimer/) for the limits of what we publish.
+## Contact
 
-### Ownership and contact
-
-TechPulse is edited and maintained by Abhishek Jaiswar. Questions about this policy can be sent to [jaiswarabhishek12@gmail.com](mailto:jaiswarabhishek12@gmail.com) or through the [contact page](/contact/).
+Editorial questions, corrections, and source suggestions: **jaiswarabhishek12@gmail.com**.
