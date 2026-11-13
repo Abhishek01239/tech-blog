@@ -18,6 +18,10 @@ TechPulse is an independent technology publication covering artificial intellige
 - **Cloud and infrastructure** — hosting, databases, networking, and platform engineering
 - **Startups and products** — launches, funding, product decisions, and the technology behind them
 
+### Our tools
+
+[**Vulnerability Watch**](/vuln-watch/) lists every critical and high-severity CVE published in the last 14 days, sourced live from the NIST National Vulnerability Database. It is free to use, requires no account, and is refreshed from a regenerated snapshot each week.
+
 ### Who runs TechPulse
 
 TechPulse is an independent publication run by a single editor who writes, edits, and maintains the site. Every article is reviewed before it goes live, and correction requests reach that same person directly. We do not republish syndicated wire copy or host guest posts.

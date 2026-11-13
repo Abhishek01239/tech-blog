@@ -1,6 +1,6 @@
 // Rebuilds static/data/vuln-snapshot.json from the NVD public API.
 // Run weekly: node scripts/refresh-vuln-snapshot.mjs
-import { writeFile } from 'node:fs/promises';
+import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
 
@@ -63,4 +63,11 @@ for (const severity of SEVERITIES) {
 rows.sort((a, b) => b.score - a.score || (b.published || '').localeCompare(a.published || ''));
 
 await writeFile(OUT, JSON.stringify({ generated: new Date().toISOString(), windowDays: DAYS, rows }));
-console.log(`Wrote ${rows.length} CVEs to ${OUT}`);
+
+// Bump the tool page's lastmod so the sitemap reflects the refresh.
+const page = join(dirname(fileURLToPath(import.meta.url)), '..', 'content', 'vuln-watch.md');
+const today = new Date().toISOString().slice(0, 10);
+const front = (await readFile(page, 'utf8')).replace(/^lastmod: .*$/m, `lastmod: ${today}`);
+await writeFile(page, front);
+
+console.log(`Wrote ${rows.length} CVEs to ${OUT} (lastmod ${today})`);
