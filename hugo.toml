@@ -19,6 +19,10 @@ enableRobotsTXT = true
   # ad slots render nothing while empty, so no empty boxes appear on the site.
   adsenseSlotArticle = "5005825680"
   adsenseSlotSidebar = "2950507980"
+  # Search Console ownership token (HTML tag method). Empty = no meta tag emitted.
+  googleSiteVerification = ""
+  # GA4 measurement ID (G-XXXXXXXXXX). Empty = no analytics script at all.
+  ga4MeasurementId = ""
 
 [markup]
   [markup.goldmark]
@@ -58,9 +62,14 @@ enableRobotsTXT = true
   weight = 5
 
 [[menu.main]]
+  name = "Vulnerability Watch"
+  url = "/vuln-watch/"
+  weight = 6
+
+[[menu.main]]
   name = "Contact"
   url = "/contact/"
-  weight = 6
+  weight = 7
 
 [caches]
   [caches.images]

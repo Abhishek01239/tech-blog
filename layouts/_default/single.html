@@ -30,6 +30,20 @@
         {{ range .Params.categories }}<a class="tag" href="/categories/{{ . | urlize }}/">{{ . }}</a>{{ end }}
     </div>
 
+    {{ $related := slice }}
+    {{ with $cat }}
+        {{ $pool := where (where site.RegularPages "Section" "posts") "Params.categories" "intersect" (slice .) }}
+        {{ $related = first 3 (where $pool "Permalink" "!=" $.Permalink) }}
+    {{ end }}
+    {{ with $related }}
+    <aside class="related reveal" style="padding: 2rem 0; border-top: 1px solid var(--border);">
+        <h2 style="font-size: 1.3rem; margin: 0 0 1rem;">More in {{ $cat }}</h2>
+        <ul style="list-style: none; padding: 0; margin: 0; display: grid; gap: .6rem;">
+            {{ range . }}<li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>{{ end }}
+        </ul>
+    </aside>
+    {{ end }}
+
     <div class="editorial-note reveal" style="padding: 1.5rem 0 2rem; border-top: 1px solid var(--border); font-size: .95rem; opacity: .85;">
         <p style="margin: 0 0 .5rem;"><strong>{{ site.Params.author }}</strong> edits every article published here. Claims are checked against the primary sources linked at the end of each piece.</p>
         <p style="margin: 0;">Read the <a href="/editorial-policy/">editorial standards</a> or <a href="/about/">how TechPulse works</a>.</p>

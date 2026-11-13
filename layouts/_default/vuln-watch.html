@@ -1,0 +1,45 @@
+{{ define "main" }}
+<article class="container vuln-page" style="padding-top: 9.5rem;">
+    <header class="vuln-head reveal">
+        <span class="fc-cat">Security tool</span>
+        <h1>Vulnerability Watch</h1>
+        <p class="vuln-intro">{{ .Description }}</p>
+    </header>
+
+    <div class="vuln-controls" role="search">
+        <label class="vuln-field">
+            <span>Severity</span>
+            <select id="vw-severity">
+                <option value="all">Critical and high</option>
+                <option value="CRITICAL">Critical only</option>
+                <option value="HIGH">High only</option>
+            </select>
+        </label>
+        <label class="vuln-field vuln-field-grow">
+            <span>Search</span>
+            <input id="vw-search" type="search" placeholder="CVE ID, vendor, product, e.g. chrome" autocomplete="off">
+        </label>
+        <button id="vw-refresh" class="btn btn-outline" type="button">Refresh</button>
+    </div>
+
+    <p id="vw-status" class="vuln-status" role="status" aria-live="polite">Loading the latest CVEs from the NVD…</p>
+
+    <div class="vuln-table-wrap">
+        <table class="vuln-table" id="vw-table" aria-label="Critical and high severity CVEs published in the last 14 days" hidden>
+            <thead>
+                <tr>
+                    <th scope="col">CVE</th>
+                    <th scope="col">Severity</th>
+                    <th scope="col">Score</th>
+                    <th scope="col">Published</th>
+                    <th scope="col">Summary</th>
+                </tr>
+            </thead>
+            <tbody id="vw-body"></tbody>
+        </table>
+    </div>
+
+    <p class="vuln-note">Data comes straight from the <a href="https://nvd.nist.gov/vuln" rel="noopener">NIST National Vulnerability Database</a> at page load. Scores are the NVD base CVSS score; a high score means a flaw is severe, not that it is being exploited. Check each CVE record for affected versions and vendor guidance.</p>
+</article>
+<script src="/js/vuln-watch.js" defer></script>
+{{ end }}
