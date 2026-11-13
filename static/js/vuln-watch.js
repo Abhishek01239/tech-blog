@@ -1,12 +1,14 @@
 /* TechPulse Vulnerability Watch
-   Fetches critical and high CVEs from the NVD public API in the browser.
-   No backend, no API key, no tracking. Cached for 15 minutes per session. */
+   Charts critical and high CVEs from the NVD public API in the browser.
+   A build-time snapshot renders instantly; live NVD data replaces it when
+   reachable. No backend, no API key, no tracking. */
 (function () {
     'use strict';
 
     var DAYS = 14;
-    var CACHE_KEY = 'tp-vuln-watch-v1';
+    var CACHE_KEY = 'tp-vuln-watch-v2';
     var CACHE_TTL = 15 * 60 * 1000;
+    var SNAPSHOT_URL = '/data/vuln-snapshot.json';
     var SEVERITIES = ['CRITICAL', 'HIGH'];
 
     var table = document.getElementById('vw-table');
@@ -18,6 +20,7 @@
     if (!table || !tbody || !statusEl) return;
 
     var rows = [];
+    var note = '';
 
     function setStatus(text) { statusEl.textContent = text; }
 
@@ -99,28 +102,46 @@
             .then(function (payload) { return normalise(payload, severity); });
     }
 
+    function loadSnapshot() {
+        return fetch(SNAPSHOT_URL, { cache: 'no-cache' })
+            .then(function (response) {
+                if (!response.ok) throw new Error('snapshot ' + response.status);
+                return response.json();
+            });
+    }
+
     function load(force) {
         var cached = force ? null : readCache();
-        if (cached) {
+        if (cached && cached.length) {
             rows = cached;
-            setStatus(summaryText(rows, 'cached'));
+            note = '(cached, refreshes every 15 minutes)';
             render();
             return;
         }
 
+        setStatus('Loading recent CVEs…');
+        loadSnapshot()
+            .then(function (snap) {
+                if (snap && snap.rows && snap.rows.length && !rows.length) {
+                    rows = snap.rows;
+                    note = 'Snapshot from ' + formatDate(snap.generated) + '; checking the NVD for newer advisories…';
+                    render();
+                }
+                liveRefresh();
+            })
+            .catch(function () { liveRefresh(); });
+    }
+
+    function liveRefresh() {
         var end = new Date();
         var start = new Date(end.getTime() - DAYS * 24 * 60 * 60 * 1000);
         var startIso = isoString(start);
         var endIso = isoString(end);
 
-        setStatus('Loading the latest CVEs from the NVD…');
-        table.hidden = true;
-
         fetchSeverity(SEVERITIES[0], startIso, endIso)
             .then(function (first) {
-                // Show the critical set immediately; the NVD often takes 30s per call.
-                commit(first, false);
-                setStatus(rows.length + ' critical CVEs loaded. Fetching high-severity advisories…');
+                // The NVD often takes 30s per call, so publish the critical set now.
+                commit(first, 'Live critical advisories loaded; fetching high-severity ones…', false);
                 return new Promise(function (resolve) {
                     setTimeout(function () {
                         fetchSeverity(SEVERITIES[1], startIso, endIso)
@@ -130,19 +151,25 @@
                 });
             })
             .then(function (all) {
-                commit(all, true);
+                commit(all, '', true);
             })
             .catch(function (err) {
+                if (rows.length) {
+                    note = 'Live refresh failed (' + err.message + '); using the most recent data we have.';
+                    render();
+                    return;
+                }
                 setStatus('Could not reach the NVD API (' + err.message + '). The NVD limits anonymous requests to five every 30 seconds — wait a moment and press Refresh, or browse nvd.nist.gov directly.');
-                table.hidden = rows.length === 0;
+                table.hidden = true;
             });
     }
 
-    function commit(list, complete) {
+    function commit(list, statusNote, complete) {
         rows = dedupe(list).sort(function (a, b) {
             if (b.score !== a.score) return b.score - a.score;
             return (b.published || '').localeCompare(a.published || '');
         });
+        note = statusNote;
         if (complete) writeCache(rows);
         render();
     }
@@ -154,12 +181,6 @@
             seen[item.id] = true;
             return true;
         });
-    }
-
-    function summaryText(list, source) {
-        var label = list.length + ' CVE' + (list.length === 1 ? '' : 's');
-        var suffix = source === 'cached' ? ' (cached, updates every 15 minutes)' : '';
-        return 'Showing the latest ' + label + ' published in the last ' + DAYS + ' days.' + suffix;
     }
 
     function matches(row, severity, query) {
@@ -188,7 +209,7 @@
 
             var sevCell = document.createElement('td');
             var badge = document.createElement('span');
-            badge.className = 'vuln-badge vuln-' + row.severity.toLowerCase();
+            badge.className = 'vuln-badge vuln-' + (row.severity || '').toLowerCase();
             badge.textContent = row.severity || '—';
             sevCell.appendChild(badge);
             tr.appendChild(sevCell);
@@ -217,7 +238,9 @@
                 ? 'No CVEs match that filter. Try “all severities” or a shorter search term.'
                 : 'The NVD returned no critical or high CVEs for this window.');
         } else {
-            setStatus('Showing ' + filtered.length + ' of ' + rows.length + ' CVEs from the last ' + DAYS + ' days.');
+            var text = 'Showing ' + filtered.length + ' of ' + rows.length +
+                ' CVEs from the last ' + DAYS + ' days.';
+            setStatus(note ? text + ' ' + note : text);
         }
     }
 
@@ -241,6 +264,7 @@
     severitySel.addEventListener('change', render);
     refreshBtn.addEventListener('click', function () {
         refreshBtn.disabled = true;
+        note = '';
         load(true);
         setTimeout(function () { refreshBtn.disabled = false; }, 4000);
     });
