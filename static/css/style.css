@@ -813,3 +813,19 @@ a:focus-visible, button:focus-visible, input:focus-visible {
     outline-offset: 3px;
     border-radius: 4px;
 }
+.tool-band {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1.8rem 2rem;
+    border: 1px solid var(--border-2);
+    border-radius: 16px;
+    background: linear-gradient(120deg, var(--card-2), var(--card));
+}
+.tool-band h2 { font-size: 1.5rem; margin: .4rem 0 .6rem; }
+.tool-band p { color: var(--text-2); margin: 0; max-width: 62ch; font-size: .98rem; }
+.tool-band .btn { flex-shrink: 0; }
+@media (max-width: 720px) {
+    .tool-band { flex-direction: column; align-items: flex-start; gap: 1.2rem; padding: 1.5rem; }
+}
