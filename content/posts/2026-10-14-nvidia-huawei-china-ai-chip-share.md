@@ -4,7 +4,7 @@ date: 2026-10-14
 draft: false
 description: "New IDC data reveals Nvidia's share of China's data-center AI chip market fell to 34% in the first half of 2026 as Huawei surged to 28%. The numbers signal a historic shift in one of the world's most important semiconductor markets."
 tags: [AI, Semiconductors, Nvidia, Huawei, China, Hardware]
-categories: ["Tech News"]
+categories: ["Infrastructure"]
 author: "TechPulse"
 image: "/images/nvidia-huawei-china-ai-chip-share.jpg"
 ---

@@ -4,7 +4,7 @@ date: 2026-10-06
 draft: false
 description: "Reflection AI has introduced Beam, a 501-billion-parameter sparse mixture-of-experts model with 23 billion active parameters, targeting coding, reasoning and agentic workloads."
 tags: [AI, Artificial Intelligence, LLMs, Open Weight, Coding]
-categories: ["Tech News"]
+categories: ["AI"]
 author: "TechPulse"
 image: "/images/reflection-ai-beam-open-weight-model.jpg"
 ---

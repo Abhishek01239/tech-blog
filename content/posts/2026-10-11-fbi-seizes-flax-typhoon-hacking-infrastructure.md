@@ -5,7 +5,7 @@ draft: false
 description: "On October 8, the FBI and seven international partners seized the tools and domains of Beijing-based Integrity Technology Group, exposing a commercial hacking operation that stole email from governments, hospitals, and law enforcement worldwide. The joint advisory reveals an alarming new twist: a portal that let third parties browse stolen inboxes."
 image: "/images/2026-10-11-fbi-seizes-flax-typhoon-hacking-infrastructure.jpg"
 tags: [Cybersecurity, China, FBI, Espionage, Cloud Security]
-categories: ["Tech News"]
+categories: ["Cybersecurity"]
 author: "TechPulse"
 ---
 

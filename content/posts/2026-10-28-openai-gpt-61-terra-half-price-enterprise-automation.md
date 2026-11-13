@@ -4,7 +4,7 @@ date: 2026-10-28
 draft: false
 description: "OpenAI has launched GPT-6.1 Terra, a new model priced at roughly half the cost of its siblings, aimed at automating high-volume enterprise work like invoice processing and data entry. The move signals a new phase in the AI price war as providers race to make frontier intelligence cheap enough for everyday business tasks."
 tags: [OpenAI, AI, GPT-6, Enterprise AI, Machine Learning]
-categories: ["Tech News"]
+categories: ["AI"]
 author: "TechPulse"
 image: "/images/openai-gpt-61-terra-half-price-enterprise-automation.jpg"
 ---

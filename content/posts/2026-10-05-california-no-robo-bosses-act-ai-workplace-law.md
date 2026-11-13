@@ -4,7 +4,7 @@ date: 2026-10-05
 draft: false
 description: "California has enacted the nation's first law barring employers from relying solely on AI to fire or discipline workers. The No Robo Bosses Act mandates human corroboration, written notice to affected employees, and arrives amid a landmark package of 13 AI bills."
 tags: [AI, Regulation, Workplace Tech, California, Tech Policy]
-categories: ["Tech News"]
+categories: ["Business"]
 author: "TechPulse"
 image: "/images/california-no-robo-bosses-act-ai-workplace-law.jpg"
 ---

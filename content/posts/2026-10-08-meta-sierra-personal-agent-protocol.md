@@ -4,7 +4,7 @@ date: 2026-10-08
 draft: false
 description: "Meta and Sierra, backed by Walmart, Shopify and Stripe, have unveiled the Personal Agent Protocol, an OAuth-based open standard that defines how personal AI agents authenticate with businesses. With a v0.1 spec due within weeks, the industry may finally be building the rails for agentic commerce."
 tags: [AI, Meta, Sierra, AI Agents, Open Standards, Agentic Commerce, OAuth]
-categories: ["Tech News"]
+categories: ["AI"]
 author: "TechPulse"
 image: "/images/meta-sierra-personal-agent-protocol.jpg"
 ---

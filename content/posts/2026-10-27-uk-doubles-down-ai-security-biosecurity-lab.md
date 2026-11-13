@@ -4,7 +4,7 @@ date: 2026-10-27
 draft: false
 description: "The UK budget injects £120 million into the AI Security Institute and £100 million into a new national AI Biosecurity Lab backed by OpenAI and Anthropic, as AI safety incidents pile pressure on governments to act."
 tags: [AI, Cybersecurity, UK, Policy, Biosecurity]
-categories: ["Tech News"]
+categories: ["Cybersecurity"]
 author: "TechPulse"
 image: "/images/uk-doubles-down-ai-security-biosecurity-lab.jpg"
 ---

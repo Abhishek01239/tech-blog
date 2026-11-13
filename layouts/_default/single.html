@@ -27,7 +27,12 @@
     {{ partial "ad-slots.html" (dict "slot" site.Params.adsenseSlotArticle "class" "ad-article") }}
 
     <div class="article-tags reveal">
-        {{ range .Params.tags }}<a class="tag" href="/tags/{{ . | urlize }}/">{{ . }}</a>{{ end }}
+        {{ range .Params.categories }}<a class="tag" href="/categories/{{ . | urlize }}/">{{ . }}</a>{{ end }}
+    </div>
+
+    <div class="editorial-note reveal" style="padding: 1.5rem 0 2rem; border-top: 1px solid var(--border); font-size: .95rem; opacity: .85;">
+        <p style="margin: 0 0 .5rem;"><strong>{{ site.Params.author }}</strong> edits every article published here. Claims are checked against the primary sources linked at the end of each piece.</p>
+        <p style="margin: 0;">Read the <a href="/editorial-policy/">editorial standards</a> or <a href="/about/">how TechPulse works</a>.</p>
     </div>
 
     <div class="post-footer" style="padding: 2rem 0 4rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">

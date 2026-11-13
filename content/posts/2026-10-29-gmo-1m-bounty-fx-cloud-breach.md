@@ -4,7 +4,7 @@ date: 2026-10-29
 draft: false
 description: "After a breach of its Onamae.com Desktop Cloud service led to unauthorized FX trades and an extortion demand, Japan's GMO Internet Group refused to pay and instead opened a $1 million bounty for information leading to the attackers' arrest."
 tags: [cybersecurity, ransomware, cloud, fintech, japan, data breach]
-categories: ["Tech News"]
+categories: ["Cybersecurity"]
 author: "TechPulse"
 image: "/images/gmo-1m-bounty-fx-cloud-breach.jpg"
 ---

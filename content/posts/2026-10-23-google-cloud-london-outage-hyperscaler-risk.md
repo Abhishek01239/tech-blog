@@ -4,7 +4,7 @@ date: 2026-10-23
 draft: false
 description: "A six-hour power failure at Google Cloud's London data centre knocked out banking apps, deliveries and government-adjacent services across the UK. The incident is a stark reminder of how much of the digital economy now rests on just three hyperscalers."
 tags: [Google Cloud, Cloud Computing, Outage, Cybersecurity, DevOps, Tech News]
-categories: ["Tech News"]
+categories: ["Infrastructure"]
 author: "TechPulse"
 image: "/images/google-cloud-london-outage-hyperscaler-risk.jpg"
 ---

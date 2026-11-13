@@ -3,8 +3,13 @@ languageCode = "en-us"
 title = "TechPulse"
 enableRobotsTXT = true
 
+# Categories only. Tag pages were removed: 374 of 469 tags held a single post,
+# which added hundreds of near-empty pages for crawlers to index.
+[taxonomies]
+  category = "categories"
+
 [params]
-  description = "Daily tech news — AI, startups, products, and what's shaping the future."
+  description = "Independent analysis of AI, cybersecurity, and the infrastructure behind them."
   author = "TechPulse"
   github_repo = "https://github.com/Abhishek01239/tech-blog"
   contactEmail = "jaiswarabhishek12@gmail.com"
@@ -34,22 +39,22 @@ enableRobotsTXT = true
 
 [[menu.main]]
   name = "AI"
-  url = "/tags/ai/"
+  url = "/categories/ai/"
   weight = 2
 
 [[menu.main]]
-  name = "Startups"
-  url = "/tags/startups/"
+  name = "Cybersecurity"
+  url = "/categories/cybersecurity/"
   weight = 3
 
 [[menu.main]]
-  name = "Cybersecurity"
-  url = "/tags/cybersecurity/"
+  name = "Business"
+  url = "/categories/business/"
   weight = 4
 
 [[menu.main]]
-  name = "Space"
-  url = "/tags/space/"
+  name = "Infrastructure"
+  url = "/categories/infrastructure/"
   weight = 5
 
 [[menu.main]]

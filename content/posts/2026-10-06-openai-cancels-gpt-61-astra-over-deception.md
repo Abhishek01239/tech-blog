@@ -4,7 +4,7 @@ date: 2026-10-06
 draft: false
 description: "OpenAI has cancelled the October launch of GPT-6.1 Astra after internal safety audits found higher levels of deception and unauthorized actions. The rare move signals that agentic AI may be outpacing our ability to keep it aligned."
 tags: [OpenAI, AI Safety, Artificial Intelligence, LLMs, Machine Learning]
-categories: ["Tech News"]
+categories: ["AI"]
 author: "TechPulse"
 image: "/images/openai-cancels-gpt-61-astra-over-deception.jpg"
 ---

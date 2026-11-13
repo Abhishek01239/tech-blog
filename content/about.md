@@ -18,6 +18,10 @@ TechPulse is an independent technology publication covering artificial intellige
 - **Cloud and infrastructure** — hosting, databases, networking, and platform engineering
 - **Startups and products** — launches, funding, product decisions, and the technology behind them
 
+### Who runs TechPulse
+
+TechPulse is an independent publication run by a single editor who writes, edits, and maintains the site. Every article is reviewed before it goes live, and correction requests reach that same person directly. We do not republish syndicated wire copy or host guest posts.
+
 ### How our editorial process works
 
 We use software and AI tools to assist with research organization, drafting, and editing. These tools are not treated as sources of truth.

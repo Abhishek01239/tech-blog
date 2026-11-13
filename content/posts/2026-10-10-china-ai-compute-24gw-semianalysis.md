@@ -5,7 +5,7 @@ draft: false
 description: "A new SemiAnalysis report puts China's operational AI data center capacity at 24GW versus 56GW in the US, with another 50GW planned or under construction. The findings reveal a two-front infrastructure race shaped by chip shortages and aggressive state-backed power investment."
 image: "/images/2026-10-10-china-ai-compute-24gw-semianalysis.jpg"
 tags: [AI, Data Centers, China, SemiAnalysis, Infrastructure, Cloud Computing]
-categories: ["Tech News"]
+categories: ["Infrastructure"]
 author: "TechPulse"
 ---
 

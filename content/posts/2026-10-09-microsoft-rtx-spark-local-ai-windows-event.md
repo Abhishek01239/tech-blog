@@ -4,7 +4,7 @@ date: 2026-10-09
 draft: false
 description: "At its October 7 Windows and Surface event, Microsoft and Nvidia unveiled the RTX Spark-powered Surface Laptop Ultra and Dev Box, an on-device AI coding model, and new guardrails that let Windows 11 run 120B-parameter models and AI agents entirely offline."
 tags: ["Microsoft", "NVIDIA", "AI", "Windows", "Hardware", "Surface", "Local AI", "Security"]
-categories: ["Tech News"]
+categories: ["Software"]
 author: "TechPulse"
 image: "/images/microsoft-rtx-spark-local-ai-windows-event.jpg"
 ---

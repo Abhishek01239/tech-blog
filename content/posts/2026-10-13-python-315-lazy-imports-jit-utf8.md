@@ -5,7 +5,7 @@ draft: false
 description: "Python 3.15 ships with explicit lazy imports for faster startup, a significantly upgraded experimental JIT compiler, and UTF-8 as the default encoding. Here is what developers should know about the biggest CPython release of the year."
 image: "/images/2026-10-13-python-315-lazy-imports-jit-utf8.jpg"
 tags: [Python, Open Source, Programming Languages, JIT, Performance]
-categories: ["Tech News"]
+categories: ["Software"]
 author: "TechPulse"
 ---
 

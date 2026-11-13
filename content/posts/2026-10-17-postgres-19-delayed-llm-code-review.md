@@ -4,7 +4,7 @@ date: 2026-10-17
 draft: false
 description: "PostgreSQL 19 has been delayed to November 19 after LLM-assisted code review surfaced roughly 40 late-cycle defect reports, forcing the project to revert up to ten major features — including SQL/PGQ — to PostgreSQL 20. It's the clearest real-world example yet of AI review tooling raising the quality bar faster than human maintainers can keep up."
 tags: [PostgreSQL, Open Source, AI, Databases, Developer Tools]
-categories: ["Tech News"]
+categories: ["Software"]
 author: "TechPulse"
 image: "/images/postgres-19-delayed-llm-code-review.jpg"
 ---

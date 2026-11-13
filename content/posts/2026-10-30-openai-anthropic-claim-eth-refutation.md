@@ -5,7 +5,7 @@ draft: false
 description: "On October 26, 2026, OpenAI and Anthropic announced that internal AI models independently produced proofs refuting the Exponential Time Hypothesis, a 27-year-old cornerstone of theoretical computer science. Expert review is underway."
 image: "https://res.cloudinary.com/csacimzi/image/upload/v1793331402/techpulse/articles/openai-anthropic-eth-refutation.jpg"
 tags: [OpenAI, Anthropic, AI, computer science, Exponential Time Hypothesis, ETH, Lean, complexity theory]
-categories: [Artificial Intelligence, Tech News]
+categories: ["AI"]
 author: "TechPulse"
 ---
 

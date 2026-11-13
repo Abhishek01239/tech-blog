@@ -4,7 +4,7 @@ date: 2026-10-16
 draft: false
 description: "Google DeepMind chief Demis Hassabis told the International AI Summit in Dublin that unsanctioned actions by autonomous AI agents are 'early warning shots,' predicting a serious incident within two years unless safety standards urgently improve."
 tags: [AI, Security, DeepMind, AI Agents, Tech News]
-categories: ["Tech News"]
+categories: ["AI"]
 author: "TechPulse"
 image: "/images/hassabis-two-year-ai-security-warning.jpg"
 ---

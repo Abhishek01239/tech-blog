@@ -4,7 +4,7 @@ date: 2026-10-31
 draft: false
 description: "Alphabet shares suffered their worst single-day drop on record this week, erasing roughly $500 billion in market value after its own AI search features were shown to be denting the advertising business that funds the entire company. The fallout is the sharpest warning yet that the AI boom's payoff may be slower — and messier — than investors expected."
 tags: [Alphabet, Google, AI, Search, Advertising, Earnings, Cloud, Investment]
-categories: ["Tech News"]
+categories: ["Business"]
 author: "TechPulse"
 image: "/images/alphabet-500-billion-ai-search-wipeout.jpg"
 ---

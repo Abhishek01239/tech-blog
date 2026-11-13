@@ -12,7 +12,7 @@
         <div class="popular-tags">
             {{ $counts := dict }}
             {{ range .Site.RegularPages }}
-                {{ range .Params.tags }}
+                {{ range .Params.categories }}
                     {{ $c := index $counts . | default 0 }}
                     {{ $counts = merge $counts (dict . (add $c 1)) }}
                 {{ end }}
@@ -20,7 +20,7 @@
             {{ $sorted := slice }}
             {{ range $tag, $count := $counts }}{{ $sorted = $sorted | append (dict "name" $tag "count" $count) }}{{ end }}
             {{ range first 10 (sort $sorted "count" "desc") }}
-            <a href="/tags/{{ .name | urlize }}/">{{ .name }}</a>
+            <a href="/categories/{{ .name | urlize }}/">{{ .name }}</a>
             {{ end }}
         </div>
     </div>

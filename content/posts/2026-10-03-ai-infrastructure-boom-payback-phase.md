@@ -4,7 +4,7 @@ date: 2026-10-03
 draft: false
 description: "AI investment is moving into a new phase as data centers, chips and power infrastructure scale rapidly. The key question is whether new AI applications can generate enough value to support the buildout."
 tags: ["AI", "technology", "business", "startups", "data centers", "semiconductors"]
-categories: ["Tech News"]
+categories: ["AI"]
 author: "TechPulse"
 image: "/images/ai-infrastructure-boom-payback-phase.jpg"
 ---

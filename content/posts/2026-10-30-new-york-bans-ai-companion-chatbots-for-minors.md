@@ -4,7 +4,7 @@ date: 2026-10-30
 draft: false
 description: "New York has signed one of the broadest laws yet restricting minors' use of AI chatbots, forcing operators to verify ages and ban companion-style behavior for under-18 users. The move sets a new benchmark for US AI regulation and has already sparked pushback from the tech industry."
 tags: [AI, Regulation, Chatbots, Privacy, Policy, New York]
-categories: ["Tech News"]
+categories: ["Business"]
 author: "TechPulse"
 image: "/images/new-york-bans-ai-companion-chatbots-for-minors.jpg"
 ---

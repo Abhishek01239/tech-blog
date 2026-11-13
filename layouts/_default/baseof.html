@@ -6,7 +6,7 @@
     {{ if and $img (not (hasPrefix $img "http")) }}{{ $img = $img | absURL }}{{ end }}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ if .IsHome }}{{ .Site.Title }} — Daily Tech News{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <title>{{ if .IsHome }}{{ .Site.Title }} — Independent technology analysis{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
     <meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ", " }}{{ else }}tech news, AI, startups, programming, crypto{{ end }}">
     <meta name="author" content="{{ .Site.Params.author }}">

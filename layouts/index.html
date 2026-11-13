@@ -9,12 +9,12 @@
     <div class="container">
         <div class="hero-grid">
             <div class="hero-copy reveal">
-                <span class="hero-cat">The Daily Tech Edit</span>
-                <h1>Where the future <em>unfolds</em> daily.</h1>
+                <span class="hero-cat">Curated technology analysis</span>
+                <h1>Where the future <em>unfolds</em>.</h1>
                 <p class="hero-desc">{{ .Site.Params.description }}</p>
                 <div class="hero-cta">
                     <a href="#stories" class="btn btn-outline">Explore stories</a>
-                    <a href="/tags/ai/" class="btn btn-outline">AI &amp; Machine Learning</a>
+                    <a href="/categories/ai/" class="btn btn-outline">AI &amp; Machine Learning</a>
                 </div>
             </div>
             <div class="hero-art reveal">
@@ -50,12 +50,11 @@
     <div class="container">
         <div class="cat-menu reveal" role="navigation" aria-label="Browse by category">
             <a href="/" class="active">All</a>
-            <a href="/tags/ai/">AI</a>
-            <a href="/tags/startups/">Startups</a>
-            <a href="/tags/cybersecurity/">Cybersecurity</a>
-            <a href="/tags/open-source/">Open Source</a>
-            <a href="/tags/space/">Space</a>
-            <a href="/tags/cloud/">Cloud</a>
+            <a href="/categories/ai/">AI</a>
+            <a href="/categories/cybersecurity/">Cybersecurity</a>
+            <a href="/categories/business/">Business</a>
+            <a href="/categories/infrastructure/">Infrastructure</a>
+            <a href="/categories/software/">Software</a>
         </div>
     </div>
 </section>
@@ -66,9 +65,9 @@
         <div class="latest-wrap">
             <div>
                 <div class="section-head reveal">
-                    <span class="eyebrow">New this week</span>
+                    <span class="eyebrow">Recently published</span>
                     <h2>Latest Stories</h2>
-                    <p>Fresh analysis, published daily.</p>
+                    <p>Each piece is written, sourced, and edited before it goes live.</p>
                 </div>
                 <div class="latest-list reveal-stagger">
                     {{ range $latest }}{{ partial "card.html" (dict "page" . "size" "sm") }}{{ end }}

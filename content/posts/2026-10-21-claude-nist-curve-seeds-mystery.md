@@ -5,7 +5,7 @@ draft: false
 description: "Anthropic says an internal Claude research model traced the unexplained seeds for NIST curves including P-256 to lrand48 outputs seeded with Unix timestamps from 1997–1998, weakening long-standing backdoor suspicions."
 image: "https://res.cloudinary.com/csacimzi/image/upload/v1792553932/techpulse/articles/claude-nist-curve-seeds-mystery.png"
 tags: [Anthropic, Claude, NIST, cryptography, ECDSA, P-256, elliptic curves, AI research, cybersecurity]
-categories: [Artificial Intelligence, Cybersecurity]
+categories: ["AI"]
 author: "TechPulse"
 ---
 Anthropic’s Frontier Red Team reported on October 16, 2026, that an internal Claude research model reconstructed the origin of the seeds behind five widely used NIST elliptic curves in under half an hour. The seeds for P-192, P-224, P-256, P-384 and P-521 were not the result of a secret hash or passphrase, as many cryptographers had long assumed. They are ordinary output from the C library’s `lrand48` pseudorandom number generator, started from Unix timestamps between May 1997 and April 1998.

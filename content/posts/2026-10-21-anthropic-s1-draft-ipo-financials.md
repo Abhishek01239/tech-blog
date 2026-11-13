@@ -4,7 +4,7 @@ date: 2026-10-21
 draft: false
 description: "A draft IPO prospectus reviewed by the Wall Street Journal shows Anthropic's revenue soaring to $16.3 billion in the first half of 2026, alongside an $80.7 billion net loss driven by accounting charges and up to $750 billion in future compute commitments ahead of a November listing that could value the company at $2 trillion."
 tags: [AI, Anthropic, IPO, Cloud Computing, Business]
-categories: ["Tech News"]
+categories: ["Business"]
 author: "TechPulse"
 image: "/images/anthropic-s1-draft-ipo-financials.jpg"
 ---

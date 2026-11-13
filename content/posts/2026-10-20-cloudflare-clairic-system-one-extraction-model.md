@@ -5,7 +5,7 @@ draft: false
 description: "Cloudflare previewed Clairic on Workers AI, a non-generative extraction model that returns typed values, estimates and forecasts from unstructured text or images in a single forward pass, claiming major speed and cost gains."
 image: "https://res.cloudinary.com/csacimzi/image/upload/v1792467362/techpulse/articles/cloudflare-clairic-system-one-extraction.png"
 tags: [Cloudflare, Clairic, System One, Workers AI, extraction models, AI infrastructure]
-categories: [Artificial Intelligence, Software]
+categories: ["AI"]
 author: "TechPulse"
 ---
 Cloudflare on October 19, 2026, announced a preview of Clairic, its first System One extraction model, now available on Workers AI as `@cf/cloudflare/clairic`. Unlike conventional large language models that generate text token by token, Clairic processes inputs in a single forward pass and returns structured, typed values such as numbers, dates, lists, estimates and forecasts, each with confidence scores. The company says the approach delivers higher accuracy, lower latency and lower cost for extraction-heavy tasks, and it plans to release open weights later. [1] [2]

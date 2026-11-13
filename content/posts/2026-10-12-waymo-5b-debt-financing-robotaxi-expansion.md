@@ -5,7 +5,7 @@ draft: false
 description: "Waymo has closed its first-ever debt financing, a $5 billion term loan backed by PIMCO, Blackstone, and Sixth Street, to fuel its robotaxi expansion across the US, Europe, and Asia. The move signals that autonomous driving has officially entered its capital-intensive scaling phase."
 image: "/images/2026-10-12-waymo-5b-debt-financing-robotaxi-expansion.jpg"
 tags: [Waymo, Autonomous Vehicles, Fintech, Alphabet, Robotaxi, AI, Transportation]
-categories: ["Tech News"]
+categories: ["Business"]
 author: "TechPulse"
 ---
 

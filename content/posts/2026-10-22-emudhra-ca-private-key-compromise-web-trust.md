@@ -4,7 +4,7 @@ date: 2026-10-22
 draft: false
 description: "Indian certificate authority eMudhra had the private keys of eight intermediate CA certificates compromised after a key-generation bug produced trivially weak keys, forcing emergency blocks across every major browser. The incident is a stark reminder of how fragile the web's chain of trust really is."
 tags: [cybersecurity, certificates, PKI, web security, eMudhra, TLS]
-categories: ["Tech News"]
+categories: ["Cybersecurity"]
 author: "TechPulse"
 image: "/images/emudhra-ca-private-key-compromise-web-trust.jpg"
 ---

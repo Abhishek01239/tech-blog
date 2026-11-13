@@ -4,7 +4,7 @@ date: 2026-10-25
 draft: false
 description: "Anthropic has launched Claude Duet, an always-on AI agent for professionals that works across connected apps and can make purchases with user approval, while Walmart opens its doors to agent shoppers as the AI agent race heats up."
 tags: [AI, Anthropic, Claude Duet, AI Agents, Walmart, Tech News]
-categories: ["Tech News"]
+categories: ["AI"]
 author: "TechPulse"
 image: "/images/anthropic-claude-duet-ai-agents.jpg"
 ---

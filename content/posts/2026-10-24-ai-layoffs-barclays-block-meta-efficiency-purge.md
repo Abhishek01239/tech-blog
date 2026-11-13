@@ -4,7 +4,7 @@ date: 2026-10-24
 draft: false
 description: "Barclays, Block, Kroger, and Meta are citing artificial intelligence as the reason for tens of thousands of job cuts, signaling a structural shift where AI becomes the justification for smaller workforces rather than just a product to sell."
 tags: [AI, Layoffs, Big Tech, Future of Work, Business]
-categories: ["Tech News"]
+categories: ["Business"]
 author: "TechPulse"
 image: "/images/ai-layoffs-barclays-block-meta-efficiency-purge.jpg"
 ---
