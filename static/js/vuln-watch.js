@@ -118,6 +118,9 @@
 
         fetchSeverity(SEVERITIES[0], startIso, endIso)
             .then(function (first) {
+                // Show the critical set immediately; the NVD often takes 30s per call.
+                commit(first, false);
+                setStatus(rows.length + ' critical CVEs loaded. Fetching high-severity advisories…');
                 return new Promise(function (resolve) {
                     setTimeout(function () {
                         fetchSeverity(SEVERITIES[1], startIso, endIso)
@@ -127,18 +130,21 @@
                 });
             })
             .then(function (all) {
-                rows = dedupe(all).sort(function (a, b) {
-                    if (b.score !== a.score) return b.score - a.score;
-                    return (b.published || '').localeCompare(a.published || '');
-                });
-                writeCache(rows);
-                setStatus(summaryText(rows, ''));
-                render();
+                commit(all, true);
             })
             .catch(function (err) {
                 setStatus('Could not reach the NVD API (' + err.message + '). The NVD limits anonymous requests to five every 30 seconds — wait a moment and press Refresh, or browse nvd.nist.gov directly.');
-                table.hidden = true;
+                table.hidden = rows.length === 0;
             });
+    }
+
+    function commit(list, complete) {
+        rows = dedupe(list).sort(function (a, b) {
+            if (b.score !== a.score) return b.score - a.score;
+            return (b.published || '').localeCompare(a.published || '');
+        });
+        if (complete) writeCache(rows);
+        render();
     }
 
     function dedupe(list) {
