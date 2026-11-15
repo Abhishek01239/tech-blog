@@ -3,7 +3,7 @@ title: "About Nexivo"
 date: 2026-10-01
 lastmod: 2026-11-15
 draft: false
-description: "Nexivo is an independent site by developer Abhishek Jaiswar with practical guides and analysis on cybersecurity, software, and infrastructure."
+description: "Nexivo is an independent site by B.Tech student and developer Jaiswar Abhishek with practical guides and analysis on cybersecurity, software, and infrastructure."
 ---
 
 ## About Nexivo
@@ -12,9 +12,13 @@ Nexivo is an independent technology site with practical guides and plain-English
 
 ## Who runs it
 
-Nexivo is written and maintained by **Abhishek Jaiswar**, a developer who builds the site, its tools, and its articles himself. The code for this website is public on [GitHub](https://github.com/Abhishek01239).
+Hi, I'm **Jaiswar Abhishek**, a third-year B.Tech student at Parul University, and I build and write everything on Nexivo myself.
 
-<!-- TODO (owner): add 2–4 sentences about yourself here: your background, what you work on or study, which languages/tools you use daily, and why you started Nexivo. Real details are what make this page trustworthy. A photo also helps. -->
+I started Nexivo as an experiment: can a student, working alone, build a technology site from scratch that real people actually find useful and come back to? So far that has meant learning far more than any one course covers: writing the templates in Hugo, setting up automated deployments on Vercel, working with the NIST vulnerability database API to build [Vulnerability Watch](/vuln-watch/), and, most of all, learning how to explain technical topics clearly.
+
+I write about what I'm learning and building, mostly cybersecurity, software development and cloud infrastructure. When a guide shows steps or code, it's because I've run them myself. When I get something wrong, I want to know, so corrections are always welcome.
+
+The whole site is open source. You can see how it's built, or borrow anything useful for your own projects, on [GitHub](https://github.com/Abhishek01239).
 
 ## What you will find here
 

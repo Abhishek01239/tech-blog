@@ -8,7 +8,7 @@ description: "How Nexivo chooses topics, researches and checks articles, uses AI
 
 ## Independence
 
-Nexivo is an independent site run by [Abhishek Jaiswar](/about/). Advertisers, sponsors, and affiliate partners do not control what is covered or what is said. Sponsored material or affiliate relationships, if ever used, will be clearly disclosed on the page where they appear.
+Nexivo is an independent site run by [Jaiswar Abhishek](/about/). Advertisers, sponsors, and affiliate partners do not control what is covered or what is said. Sponsored material or affiliate relationships, if ever used, will be clearly disclosed on the page where they appear.
 
 ## What gets published
 

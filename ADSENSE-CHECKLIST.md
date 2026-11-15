@@ -18,8 +18,8 @@ This branch fixes the problems found in the "low value content" rejection. Some 
 
 ## Owner to-do (needed for approval)
 
-1. **Confirm your name.** It is set to "Abhishek Jaiswar" in `hugo.toml` (`author`, `authorName`) and in post front matter. Fix it if it's wrong.
-2. **Finish the About page.** Replace the `TODO` comment in `content/about.md` with 2–4 real sentences about yourself. Add a photo if you can.
+1. ~~Confirm your name~~ Done: "Jaiswar Abhishek".
+2. ~~Finish the About page~~ Done. Optional: add a photo of yourself to `content/about.md`.
 3. **Finish the three drafts.** Each one has a checklist comment at the top. Add your own screenshots and experience, then set `draft: false` and `review_status: approved`. Do not publish them unchanged.
 4. **Review the 8 remaining news posts.** Check the facts against the linked sources, add a paragraph of your own analysis to each, and move any you can't stand behind to `archive/posts/`.
 5. **Write 10–15 more evergreen posts** in the same style: guides, explainers, things you built or tested. Aim for about 20–25 good posts in total.

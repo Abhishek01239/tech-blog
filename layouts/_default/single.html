@@ -49,7 +49,7 @@
 
     {{ if eq .Section "posts" }}
     <aside class="author-box reveal" style="padding: 1.5rem 0 2rem; border-top: 1px solid var(--border); font-size: .95rem;">
-        <p style="margin: 0 0 .5rem;"><strong>Written by <a href="{{ site.Params.authorUrl | default "/about/" }}" rel="author">{{ site.Params.authorName }}</a></strong>, the developer who builds and runs {{ site.Title }}. {{ with site.Params.authorGithub }}Code and projects on <a href="{{ . }}" rel="noopener me" target="_blank">GitHub</a>.{{ end }}</p>
+        <p style="margin: 0 0 .5rem;"><strong>Written by <a href="{{ site.Params.authorUrl | default "/about/" }}" rel="author">{{ site.Params.authorName }}</a></strong>, a B.Tech student at Parul University who builds and runs {{ site.Title }}. {{ with site.Params.authorGithub }}Code and projects on <a href="{{ . }}" rel="noopener me" target="_blank">GitHub</a>.{{ end }}</p>
         <p style="margin: 0; opacity: .85;">Found an error? <a href="/contact/">Send a correction</a>. Read the <a href="/editorial-policy/">editorial policy</a>.</p>
     </aside>
     {{ end }}

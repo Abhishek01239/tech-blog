@@ -10,9 +10,9 @@ enableRobotsTXT = true
 
 [params]
   description = "Practical guides and analysis on cybersecurity, software, and the infrastructure behind modern technology, written by an independent developer."
-  author = "Abhishek Jaiswar"
+  author = "Jaiswar Abhishek"
   # Shown in bylines, the author box and structured data. Confirm the spelling.
-  authorName = "Abhishek Jaiswar"
+  authorName = "Jaiswar Abhishek"
   authorUrl = "/about/"
   authorGithub = "https://github.com/Abhishek01239"
   github_repo = "https://github.com/Abhishek01239/tech-blog"

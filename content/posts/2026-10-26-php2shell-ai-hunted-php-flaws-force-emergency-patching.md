@@ -5,7 +5,7 @@ draft: false
 description: "Two critical remote-code-execution flaws in PHP's core engine, dubbed PHP2Shell, triggered an emergency patch rush after AI-assisted researchers surfaced the bugs and attackers began probing within hours. Millions of servers remain exposed, and the incident shows how AI is now reshaping both offense and defense in cybersecurity."
 tags: [PHP, Security, Vulnerabilities, AI, Open Source]
 categories: ["Cybersecurity"]
-author: "Abhishek Jaiswar"
+author: "Jaiswar Abhishek"
 image: "/images/php2shell-ai-hunted-php-flaws-force-emergency-patching.jpg"
 ---
 

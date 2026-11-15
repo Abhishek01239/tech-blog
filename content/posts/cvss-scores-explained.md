@@ -5,7 +5,7 @@ draft: true
 review_status: needs-review
 description: "A practical guide to CVSS: how the 0–10 score is calculated, what each base metric means, why a 9.8 is not always your top priority, and how to combine CVSS with EPSS and CISA's KEV list."
 categories: ["Cybersecurity"]
-author: "Abhishek Jaiswar"
+author: "Jaiswar Abhishek"
 ---
 
 <!-- OWNER REVIEW CHECKLIST (delete this comment before publishing)

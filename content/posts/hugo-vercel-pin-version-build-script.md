@@ -5,7 +5,7 @@ draft: true
 review_status: needs-review
 description: "Why Hugo builds on Vercel can break without warning, and how a short build script pins the exact Hugo version, adds a pre-build safety check, and gives you reproducible deployments."
 categories: ["Infrastructure"]
-author: "Abhishek Jaiswar"
+author: "Jaiswar Abhishek"
 ---
 
 <!-- OWNER REVIEW CHECKLIST (delete this comment before publishing)
