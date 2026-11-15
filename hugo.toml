@@ -1,6 +1,6 @@
 baseURL = "https://www.nexivo.org.in/"
 languageCode = "en-us"
-title = "TechPulse"
+title = "Nexivo"
 enableRobotsTXT = true
 
 # Categories only. Tag pages were removed: 374 of 469 tags held a single post,
@@ -9,8 +9,12 @@ enableRobotsTXT = true
   category = "categories"
 
 [params]
-  description = "Independent analysis of AI, cybersecurity, and the infrastructure behind them."
-  author = "TechPulse"
+  description = "Practical guides and analysis on cybersecurity, software, and the infrastructure behind modern technology, written by an independent developer."
+  author = "Abhishek Jaiswar"
+  # Shown in bylines, the author box and structured data. Confirm the spelling.
+  authorName = "Abhishek Jaiswar"
+  authorUrl = "/about/"
+  authorGithub = "https://github.com/Abhishek01239"
   github_repo = "https://github.com/Abhishek01239/tech-blog"
   contactEmail = "jaiswarabhishek12@gmail.com"
   # Google AdSense publisher ID, used for the verification meta tag and ads.txt.
@@ -52,8 +56,8 @@ enableRobotsTXT = true
   weight = 3
 
 [[menu.main]]
-  name = "Business"
-  url = "/categories/business/"
+  name = "Software"
+  url = "/categories/software/"
   weight = 4
 
 [[menu.main]]

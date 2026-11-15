@@ -6,7 +6,7 @@ description: "On October 8, the FBI and seven international partners seized the 
 image: "/images/2026-10-11-fbi-seizes-flax-typhoon-hacking-infrastructure.jpg"
 tags: [Cybersecurity, China, FBI, Espionage, Cloud Security]
 categories: ["Cybersecurity"]
-author: "TechPulse"
+author: "Abhishek Jaiswar"
 ---
 
 # Flax Typhoon Unmasked: Inside the FBI's Global Takedown of China's Hacking-for-Hire Empire

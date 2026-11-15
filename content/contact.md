@@ -1,12 +1,12 @@
 ---
 title: "Contact"
-date: 2025-01-01
-lastmod: 2026-10-26
+date: 2026-10-01
+lastmod: 2026-11-15
 draft: false
-description: "Contact TechPulse — corrections, tips, and advertising inquiries."
+description: "Contact Nexivo — corrections, tips, and advertising inquiries."
 ---
 
-## Contact TechPulse
+## Contact Nexivo
 
 We read everything that comes in. For the fastest response, use the address that matches your reason for writing.
 

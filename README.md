@@ -1,4 +1,4 @@
-# TechPulse
+# Nexivo
 
 A technology publication built with Hugo and deployed on Vercel.
 

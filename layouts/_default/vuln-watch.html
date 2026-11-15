@@ -22,10 +22,14 @@
         <button id="vw-refresh" class="btn btn-outline" type="button">Refresh</button>
     </div>
 
-    <p id="vw-status" class="vuln-status" role="status" aria-live="polite">Loading the latest CVEs from the NVD…</p>
+    {{/* Render the weekly snapshot at build time so the table is readable without JavaScript; the script then refreshes it live. */}}
+    {{ $snap := dict }}
+    {{ with (fileExists "static/data/vuln-snapshot.json") }}{{ $snap = os.ReadFile "static/data/vuln-snapshot.json" | transform.Unmarshal }}{{ end }}
+    {{ $snapRows := $snap.rows | default slice }}
+    <p id="vw-status" class="vuln-status" role="status" aria-live="polite">{{ with $snapRows }}Showing {{ len . }} CVEs from the snapshot generated {{ (time $snap.generated).Format "2 January 2006" }}. Checking the NVD for newer advisories…{{ else }}Loading the latest CVEs from the NVD…{{ end }}</p>
 
     <div class="vuln-table-wrap">
-        <table class="vuln-table" id="vw-table" aria-label="Critical and high severity CVEs published in the last 14 days" hidden>
+        <table class="vuln-table" id="vw-table" aria-label="Critical and high severity CVEs published in the last 14 days"{{ if not $snapRows }} hidden{{ end }}>
             <thead>
                 <tr>
                     <th scope="col">CVE</th>
@@ -35,11 +39,42 @@
                     <th scope="col">Summary</th>
                 </tr>
             </thead>
-            <tbody id="vw-body"></tbody>
+            <tbody id="vw-body">
+                {{ range $snapRows }}
+                <tr>
+                    <td><a class="vuln-cve" href="https://nvd.nist.gov/vuln/detail/{{ .id }}" rel="noopener">{{ .id }}</a></td>
+                    <td><span class="vuln-badge vuln-{{ lower .severity }}">{{ .severity }}</span></td>
+                    <td class="vuln-score">{{ with .score }}{{ printf "%.1f" (float .) }}{{ else }}—{{ end }}</td>
+                    <td class="vuln-date">{{ with .published }}{{ (time .).Format "2 Jan 2006" }}{{ else }}—{{ end }}</td>
+                    <td class="vuln-desc">{{ .description | truncate 190 }}</td>
+                </tr>
+                {{ end }}
+            </tbody>
         </table>
     </div>
 
     <p class="vuln-note">Data comes straight from the <a href="https://nvd.nist.gov/vuln" rel="noopener">NIST National Vulnerability Database</a> at page load. Scores are the NVD base CVSS score; a high score means a flaw is severe, not that it is being exploited. Check each CVE record for affected versions and vendor guidance.</p>
 </article>
+<section class="container vuln-guide article-body reveal" style="padding: 1rem 0 4rem; max-width: 760px;">
+    <h2>How to read this table</h2>
+    <p>Each row is one entry in the <a href="https://nvd.nist.gov/vuln" rel="noopener">National Vulnerability Database</a>, the US government's public catalogue of known software flaws. The tracker shows only entries published in the last 14 days with a CVSS severity of <strong>High</strong> (7.0–8.9) or <strong>Critical</strong> (9.0–10.0).</p>
+    <ul>
+        <li><strong>CVE</strong>: the flaw's permanent identifier. Click it to open the full NVD record, with affected versions, references, and vendor advisories.</li>
+        <li><strong>Severity and score</strong>: the CVSS base score, which rates how bad a flaw could be in the worst case. It does not say whether attackers are actually exploiting it.</li>
+        <li><strong>Published</strong>: when the NVD published the record, which is often days after the vendor disclosed the issue.</li>
+        <li><strong>Summary</strong>: the first part of the official description. Read the full record before acting on it.</li>
+    </ul>
+
+    <h2>How to use it for patching</h2>
+    <ol>
+        <li>Search for the vendors and products you run, for example <em>wordpress</em>, <em>fortinet</em>, or <em>chrome</em>.</li>
+        <li>Open each matching CVE and confirm that your installed version is in the affected range.</li>
+        <li>Check CISA's <a href="https://www.cisa.gov/known-exploited-vulnerabilities-catalog" rel="noopener">Known Exploited Vulnerabilities catalog</a>. A High flaw that is being exploited usually matters more than an unexploited Critical one.</li>
+        <li>Apply the vendor's fix or workaround, starting with systems exposed to the internet.</li>
+    </ol>
+
+    <h2>Where the data comes from</h2>
+    <p>The table first shows a snapshot that is rebuilt each week from the NVD's public API. Your browser then asks the NVD directly for the latest entries. No account is needed and nothing you search is stored or sent to this site. The NVD limits anonymous requests, so if a live refresh fails, the snapshot stays on screen.</p>
+</section>
 <script src="/js/vuln-watch.js" defer></script>
 {{ end }}

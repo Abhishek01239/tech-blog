@@ -1,16 +1,16 @@
 ---
 title: "Disclaimer"
-date: 2025-01-01
-lastmod: 2026-10-26
+date: 2026-10-01
+lastmod: 2026-11-15
 draft: false
-description: "Disclaimer for TechPulse."
+description: "Disclaimer for Nexivo."
 ---
 
-*Last updated: October 26, 2026*
+*Last updated: November 15, 2026*
 
 ## General information
 
-Everything on TechPulse is published for general information and news reporting. It is not professional advice, and it should not be treated as a substitute for advice from a qualified professional.
+Everything on Nexivo is published for general information and education. It is not professional advice, and it should not be treated as a substitute for advice from a qualified professional.
 
 ## Not financial or investment advice
 
@@ -18,7 +18,7 @@ Our coverage of markets, cryptocurrencies, company funding, and valuations is re
 
 ## How articles are produced
 
-TechPulse uses an AI-assisted editorial pipeline: stories are drafted with AI assistance against primary sources and checked before publication. Despite that process, automated drafting can miss nuance, and sources can be wrong or incomplete. If you spot an error, [tell us](/contact/) and we will correct it.
+Articles are written or reviewed by the author and checked against the sources listed at the end of each piece, as described in the [editorial policy](/editorial-policy/). Even so, sources can be wrong or incomplete, and mistakes can happen. If you spot an error, [tell us](/contact/) and we will correct it.
 
 ## Accuracy and timeliness
 
@@ -30,11 +30,11 @@ We link to primary sources and other publications. We do not control those sites
 
 ## Advertising
 
-The Site carries advertising served by Google AdSense. Ads are selected automatically by Google and its partners. Their appearance does not constitute an endorsement by TechPulse, and we are not responsible for the products or services advertised.
+The Site carries advertising served by Google AdSense. Ads are selected automatically by Google and its partners. Their appearance does not constitute an endorsement by Nexivo, and we are not responsible for the products or services advertised.
 
 ## Professional and legal reliance
 
-You use the information on this Site at your own risk. TechPulse and its operator accept no liability for loss or damage arising from reliance on anything published here.
+You use the information on this Site at your own risk. Nexivo and its operator accept no liability for loss or damage arising from reliance on anything published here.
 
 ## Contact
 

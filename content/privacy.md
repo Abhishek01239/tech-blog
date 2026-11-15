@@ -1,16 +1,16 @@
 ---
 title: "Privacy Policy"
-date: 2025-01-01
-lastmod: 2026-11-11
+date: 2026-10-01
+lastmod: 2026-11-15
 draft: false
-description: "How TechPulse handles website requests, email correspondence, cookies, and advertising."
+description: "How Nexivo handles website requests, email correspondence, cookies, and advertising."
 ---
 
-*Last updated: November 11, 2026*
+*Last updated: November 15, 2026*
 
 ## About this policy
 
-TechPulse ("we", "us") operates **www.nexivo.org.in** (the "Site"). This policy explains what information may be processed when you visit the Site or contact us. You do not need an account to read our articles.
+Nexivo ("we", "us") operates **www.nexivo.org.in** (the "Site"). This policy explains what information may be processed when you visit the Site or contact us. You do not need an account to read our articles.
 
 ## Information processed when you visit
 

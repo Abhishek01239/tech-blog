@@ -1,16 +1,16 @@
 ---
 title: "Terms of Service"
-date: 2025-01-01
-lastmod: 2026-10-26
+date: 2026-10-01
+lastmod: 2026-11-15
 draft: false
-description: "Terms of Service for TechPulse."
+description: "Terms of Service for Nexivo."
 ---
 
-*Last updated: October 26, 2026*
+*Last updated: November 15, 2026*
 
 ## Acceptance of terms
 
-By accessing TechPulse ("the Site"), you agree to these terms. If you do not agree, please do not use the Site. We may update these terms at any time; continued use after an update means you accept the revised terms.
+By accessing Nexivo ("the Site"), you agree to these terms. If you do not agree, please do not use the Site. We may update these terms at any time; continued use after an update means you accept the revised terms.
 
 ## Use of the Site
 
@@ -41,7 +41,7 @@ Articles link to external websites. We do not control those sites and are not re
 
 ## Intellectual property
 
-The Site's name, design, and original written content are owned by TechPulse. Trademarks, images, and quoted material belonging to others remain the property of their respective owners and appear for reporting purposes.
+The Site's name, design, and original written content are owned by Nexivo. Trademarks, images, and quoted material belonging to others remain the property of their respective owners and appear for reporting purposes.
 
 ## Comments and correspondence
 
@@ -49,7 +49,7 @@ If you send us a correction, tip, or feedback, you grant us permission to use th
 
 ## Limitation of liability
 
-To the fullest extent permitted by law, TechPulse is not liable for any indirect, incidental, or consequential loss arising from your use of the Site or reliance on its content.
+To the fullest extent permitted by law, Nexivo is not liable for any indirect, incidental, or consequential loss arising from your use of the Site or reliance on its content.
 
 ## Changes and termination
 

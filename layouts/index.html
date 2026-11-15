@@ -9,7 +9,7 @@
     <div class="container">
         <div class="hero-grid">
             <div class="hero-copy reveal">
-                <span class="hero-cat">Curated technology analysis</span>
+                <span class="hero-cat">Independent guides &amp; analysis</span>
                 <h1>Where the future <em>unfolds</em>.</h1>
                 <p class="hero-desc">{{ .Site.Params.description }}</p>
                 <div class="hero-cta">
@@ -35,9 +35,9 @@
 <section class="section" id="stories">
     <div class="container">
         <div class="section-head reveal">
-            <span class="eyebrow">Editors' picks</span>
+            <span class="eyebrow">Start here</span>
             <h2>Featured Stories</h2>
-            <p>Hand-selected coverage of the breakthroughs worth your attention.</p>
+            <p>In-depth pieces on security, software, and infrastructure.</p>
         </div>
         <div class="featured-grid reveal-stagger">
             {{ range $featured }}{{ partial "card.html" (dict "page" . "size" "lg") }}{{ end }}
@@ -98,7 +98,7 @@
     <div class="container">
         <div class="section-head reveal">
             <span class="eyebrow">Keep exploring</span>
-            <h2>More from TechPulse</h2>
+            <h2>More from {{ site.Title }}</h2>
             <p>More reporting and ideas from across the technology landscape.</p>
         </div>
         <div class="featured-grid reveal-stagger">

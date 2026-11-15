@@ -1,10 +1,10 @@
-/* TechPulse showreel theme: timecode HUD, scroll progress, colour-wipe transitions */
+/* Nexivo showreel theme: timecode HUD, scroll progress, colour-wipe transitions */
 (function(){
   var rm=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
   var d=document,b=d.body;
   function p2(n){return (n<10?'0':'')+n}
   var hud=d.createElement('div');hud.className='rt-hud';hud.setAttribute('aria-hidden','true');
-  hud.innerHTML='<div class="rt-bar"></div><i></i><b>TechPulse</b><span class="rt-hide">Daily Tech Reel</span><span class="rt-sp"></span><span class="rt-hide" data-rt-sec></span><span data-rt-tc>00:00:00</span><b data-rt-pct>0%</b>';
+  hud.innerHTML='<div class="rt-bar"></div><i></i><b>Nexivo</b><span class="rt-hide">Guides &amp; analysis</span><span class="rt-sp"></span><span class="rt-hide" data-rt-sec></span><span data-rt-tc>00:00:00</span><b data-rt-pct>0%</b>';
   b.appendChild(hud);
   var bar=hud.querySelector('.rt-bar'),tc=hud.querySelector('[data-rt-tc]'),pct=hud.querySelector('[data-rt-pct]'),sec=hud.querySelector('[data-rt-sec]');
   var t0=Date.now();

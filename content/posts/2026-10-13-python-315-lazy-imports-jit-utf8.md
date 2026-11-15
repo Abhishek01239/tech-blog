@@ -6,7 +6,7 @@ description: "Python 3.15 ships with explicit lazy imports for faster startup, a
 image: "/images/2026-10-13-python-315-lazy-imports-jit-utf8.jpg"
 tags: [Python, Open Source, Programming Languages, JIT, Performance]
 categories: ["Software"]
-author: "TechPulse"
+author: "Abhishek Jaiswar"
 ---
 
 # Python 3.15 Arrives: Lazy Imports, a Faster JIT, and UTF-8 by Default

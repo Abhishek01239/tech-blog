@@ -1,4 +1,4 @@
-/* TechPulse Vulnerability Watch
+/* Nexivo Vulnerability Watch
    Charts critical and high CVEs from the NVD public API in the browser.
    A build-time snapshot renders instantly; live NVD data replaces it when
    reachable. No backend, no API key, no tracking. */

@@ -6,10 +6,10 @@
     {{ if and $img (not (hasPrefix $img "http")) }}{{ $img = $img | absURL }}{{ end }}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ if .IsHome }}{{ .Site.Title }} — Independent technology analysis{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <title>{{ if .IsHome }}{{ .Site.Title }} — Guides and analysis on security, software and infrastructure{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-    <meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ", " }}{{ else }}tech news, AI, startups, programming, crypto{{ end }}">
-    <meta name="author" content="{{ .Site.Params.author }}">
+    <meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ", " }}{{ else }}cybersecurity, software, infrastructure, developer guides{{ end }}">
+    <meta name="author" content="{{ or .Params.author .Site.Params.authorName }}">
     <meta name="robots" content="{{ if .Params.noindex }}noindex, nofollow{{ else }}index, follow, max-image-preview:large{{ end }}">
     <meta name="theme-color" content="#101114">
     {{ with site.Params.adsensePublisher }}
@@ -63,7 +63,7 @@
         "description" (or .Description .Site.Params.description)
         "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
         "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")
-        "author" (dict "@type" "Organization" "name" (or .Params.author .Site.Params.author))
+        "author" (dict "@type" "Person" "name" (or .Params.author .Site.Params.authorName) "url" (absURL (.Site.Params.authorUrl | default "/about/")))
         "publisher" (dict "@type" "Organization" "name" .Site.Title)
         "mainEntityOfPage" .Permalink }}
     {{ with $img }}{{ $ld = merge $ld (dict "image" .) }}{{ end }}
