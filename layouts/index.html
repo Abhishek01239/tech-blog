@@ -10,16 +10,16 @@
         <div class="hero-grid">
             <div class="hero-copy reveal">
                 <span class="hero-cat">Independent guides &amp; analysis</span>
-                <h1>Where the future <em>unfolds</em>.</h1>
-                <p class="hero-desc">{{ .Site.Params.description }}</p>
+                <h1>Build. Break. <em>Secure.</em></h1>
+                <p class="hero-desc">Where security meets software,<br>and code meets <strong>infrastructure</strong></p>
                 <div class="hero-cta">
-                    <a href="#stories" class="btn btn-outline">Explore stories</a>
-                    <a href="/categories/ai/" class="btn btn-outline">AI &amp; Machine Learning</a>
+                    <a href="#stories" class="cta-circle"><span aria-hidden="true">→</span>Explore the guides</a>
+                    <a href="/vuln-watch/" class="btn btn-outline">Vulnerability Watch</a>
                 </div>
             </div>
             <div class="hero-art reveal">
                 <span class="hero-accent" aria-hidden="true"></span>
-                {{ with (index $featured 0) }}
+                {{ with index (where $posts "Params.image" "!=" nil) 0 }}
                 {{ $img := .Params.image | default "" }}
                 <div class="hero-img-wrap">
                     <img src="{{ $img }}" alt="{{ .Title }}" loading="eager" fetchpriority="high" decoding="async" width="800" height="900"
@@ -66,8 +66,7 @@
             <a href="/" class="active">All</a>
             <a href="/categories/ai/">AI</a>
             <a href="/categories/cybersecurity/">Cybersecurity</a>
-            <a href="/categories/business/">Business</a>
-            <a href="/categories/infrastructure/">Infrastructure</a>
+                        <a href="/categories/infrastructure/">Infrastructure</a>
             <a href="/categories/software/">Software</a>
         </div>
     </div>
