@@ -12,6 +12,9 @@ enableRobotsTXT = true
   description = "Practical guides and analysis on cybersecurity, software, and the infrastructure behind modern technology, written by an independent developer."
   author = "Jaiswar Abhishek"
   # Shown in bylines, the author box and structured data. Confirm the spelling.
+  # Colour theme: "" = Human Next (black/cerulean/neon rose),
+  # "aubergine" = Ice Silver/Deep Aubergine/Marigold, "mocha" = Mocha/Platinum/Lavender.
+  theme = ""
   authorName = "Jaiswar Abhishek"
   authorUrl = "/about/"
   authorGithub = "https://github.com/Abhishek01239"

@@ -1,0 +1,56 @@
+/* Nexivo theme variant: "Choreo Class".
+   Mocha brown #6F4E37, platinum silver #E5E4E2, pale lavender #E6E0F0.
+   Warm, dark, premium. Loaded after nexivo-theme.css. */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700;1,800;1,900&display=swap');
+:root{
+  --mocha:#6F4E37;--mocha-dk:#2E2018;--mocha-2:#3A2A1F;--mocha-3:#46332655;--plat:#E5E4E2;--lav:#E6E0F0;--lav-2:#C9BCE0;
+  --jet:var(--mocha-dk);--jet-2:var(--mocha-2);--jet-3:#47342A;
+  --cerulean:var(--mocha);--cerulean-lt:var(--lav);--rose:var(--lav-2);--rose-lt:#fff;
+  --bg:var(--mocha-dk);--card:var(--mocha-2);
+  --border:rgba(229,228,226,.10);--border-2:rgba(229,228,226,.2);
+  --text:var(--plat);--text-2:#C7BFB7;--text-dim:#9C9087;
+  --accent:var(--lav);--accent-hover:#fff;
+  --font-display:'Playfair Display',Georgia,serif;
+  --glow-c:0 0 28px rgba(230,224,240,.18);--glow-r:0 0 28px rgba(201,188,224,.25);
+}
+::selection{background:var(--lav);color:var(--mocha-dk)}
+::-webkit-scrollbar-thumb{background:#5a4536}
+.bg-scene::before{background:var(--mocha);opacity:.55}
+.bg-scene::after{background:var(--lav);opacity:.08}
+.site-header{background:rgba(46,32,24,.85)}
+.nav-logo{font-style:italic;font-weight:900;text-transform:uppercase;letter-spacing:.02em!important;color:var(--plat)!important;font-size:1.55rem}
+.nav-logo em{color:var(--lav)}
+.hero h1{font-style:italic;font-weight:900;letter-spacing:-.01em;line-height:.92;color:var(--lav);text-shadow:0 2px 0 rgba(0,0,0,.25),0 0 40px rgba(230,224,240,.18);font-size:clamp(3rem,7.6vw,6.6rem)}
+.hero h1 em{color:var(--plat);text-shadow:0 0 40px rgba(229,228,226,.2)}
+.hero-desc strong{color:var(--lav)}
+.hero-accent{background:radial-gradient(circle at 35% 40%,rgba(230,224,240,.35),transparent 60%),radial-gradient(circle at 75% 75%,rgba(111,78,55,.9),transparent 60%)!important}
+.hero-img-wrap{border-color:rgba(230,224,240,.25);box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.hero-img-wrap::after{background:linear-gradient(160deg,rgba(111,78,55,.35),transparent 50%,rgba(230,224,240,.18));mix-blend-mode:soft-light}
+.section-head h2,.page-head h1{font-style:italic;font-weight:800;letter-spacing:0;color:var(--lav)}
+.featured-card h3,.latest-item h3{color:var(--plat)}
+.fc-img,.latest-thumb{background:radial-gradient(circle at 30% 30%,rgba(230,224,240,.25),transparent 55%),radial-gradient(circle at 80% 80%,rgba(111,78,55,.9),transparent 60%),var(--jet-3)!important}
+.cat-menu a.active{background:var(--lav)!important;border-color:var(--lav)!important;color:var(--mocha-dk)!important}
+.cta-circle:hover span{color:var(--mocha-dk)}
+.tool-band{background:linear-gradient(120deg,rgba(111,78,55,.65),rgba(230,224,240,.08))!important}
+.newsletter-card{background:linear-gradient(150deg,var(--mocha),#4b3426)!important}
+.nl-form button{background:var(--lav)!important;color:var(--mocha-dk)!important}
+.quote-band{background:var(--mocha)!important}
+.quote-band::after{background:linear-gradient(90deg,rgba(46,32,24,.92),rgba(46,32,24,.5))!important}
+.quote-inner blockquote{font-family:var(--font-display);font-style:italic}
+.article-head h1{font-family:var(--font-display);font-style:italic;font-weight:800;color:var(--lav);letter-spacing:0}
+.article-body,.prose{color:#E2DDD8}
+.article-body h2,.prose h2{border-left-color:var(--lav-2)}
+.article-body h3,.prose h3{color:var(--lav)}
+.article-body a,.prose a{color:var(--lav);text-decoration-color:rgba(230,224,240,.45)}
+.article-body a:hover,.prose a:hover{color:#fff}
+.article-body blockquote{border-left-color:var(--lav);background:rgba(230,224,240,.06)}
+.article-body pre,.prose pre{background:#24180F!important;color:#EDE6DF}
+.article-body code,.prose code{background:rgba(230,224,240,.1);color:var(--lav)}
+.article-body th,.prose th{color:var(--lav)}
+.author-box{background:linear-gradient(120deg,rgba(111,78,55,.5),rgba(230,224,240,.06))}
+.site-footer{background:#24180F}
+.site-footer::before{background:linear-gradient(90deg,transparent,var(--lav),transparent)}
+.footer-logo{font-style:italic;color:var(--plat)!important;text-shadow:none;letter-spacing:0}
+.footer-logo span{color:var(--lav);text-shadow:none}
+.nx-progress{background:linear-gradient(90deg,var(--mocha),var(--lav));box-shadow:none}
+@media(max-width:820px){.nav.open .nav-links{background:rgba(46,32,24,.98)!important}}
