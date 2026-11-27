@@ -1,9 +1,10 @@
 {{ define "main" }}
 <div class="container">
     <div class="page-head reveal">
-        <span class="eyebrow">{{ if eq .Kind "taxonomy" }}Browse{{ else }}Stories{{ end }}</span>
+        <span class="eyebrow">{{ if eq .Kind "taxonomy" }}Browse{{ else }}Guides{{ end }}</span>
         <h1>{{ .Title }}</h1>
-        <p>{{ with .Description }}{{ . }}{{ else }}Stories curated for {{ if eq .Kind "section" }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}{{ end }}</p>
+        <p>{{ with .Description }}{{ . }}{{ else }}Guides on {{ if eq .Kind "section" }}{{ site.Title }}{{ else }}{{ .Title }}{{ end }}{{ end }}</p>
+        {{ with .Content }}<div class="article-body list-intro" style="max-width:46rem;margin-top:1.2rem;">{{ . }}</div>{{ end }}
     </div>
     <div class="featured-grid reveal-stagger">
         {{ range $index, $page := .Paginator.Pages }}

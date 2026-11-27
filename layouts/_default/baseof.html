@@ -6,9 +6,9 @@
     {{ if and $img (not (hasPrefix $img "http")) }}{{ $img = $img | absURL }}{{ end }}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ if .IsHome }}{{ .Site.Title }} — Guides and analysis on security, software and infrastructure{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <title>{{ if .IsHome }}{{ .Site.Title }} — Hands-on guides to AI, automation, DevOps and security{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
     <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
-    <meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ", " }}{{ else }}cybersecurity, software, infrastructure, developer guides{{ end }}">
+    <meta name="keywords" content="{{ with .Params.tags }}{{ delimit . ", " }}{{ else }}AI engineering, automation, DevOps, cybersecurity, developer guides{{ end }}">
     <meta name="author" content="{{ or .Params.author .Site.Params.authorName }}">
     <meta name="robots" content="{{ if .Params.noindex }}noindex, nofollow{{ else }}index, follow, max-image-preview:large{{ end }}">
     <meta name="theme-color" content="#0A0A0A">

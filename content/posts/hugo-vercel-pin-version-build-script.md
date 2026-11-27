@@ -1,20 +1,12 @@
 ---
 title: "Deploying Hugo on Vercel the Reliable Way: Pin the Version With a Build Script"
-date: 2026-11-15
-draft: true
-review_status: needs-review
+date: 2026-11-27T07:55:00+05:30
+draft: false
 description: "Why Hugo builds on Vercel can break without warning, and how a short build script pins the exact Hugo version, adds a pre-build safety check, and gives you reproducible deployments."
-categories: ["Infrastructure"]
+categories: ["DevOps"]
+image: "/images/covers/hugo-vercel-pin-version-build-script.jpg"
 author: "Jaiswar Abhishek"
 ---
-
-<!-- OWNER REVIEW CHECKLIST (delete this comment before publishing)
-This describes the real build.sh and vercel.json in your repo.
-1. Add the story of why you set it up this way. Did a build break? What did the error look like?
-2. Add a screenshot of a Vercel build log showing "Using: hugo v…".
-3. Run the steps once more yourself to confirm they still work as described.
-4. Then set draft: false and review_status: approved.
--->
 
 This site is built with [Hugo](https://gohugo.io/) and hosted on [Vercel](https://vercel.com/). Every push to the main branch triggers a new build and deployment. That setup is fast and free for a small site, but it has one weak spot: **which version of Hugo does the build actually use?**
 
@@ -83,8 +75,6 @@ What each part does:
 - **`echo "Using: $(hugo version)"`** prints the exact version in the build log, so you can confirm at a glance which Hugo produced a deployment.
 - **`--gc --minify`** removes unused cached files and minifies the HTML output.
 
-<!-- OWNER: screenshot of the Vercel build log line "Using: hugo v0.167.0 ..." here. -->
-
 ## Adding a pre-build safety check
 
 Pinning the version protects against platform changes. The second risk is human: publishing something that isn't ready. My articles carry a `review_status` field in their front matter. The build script refuses to deploy if any article is still marked `needs-review` but has been set to publish:
@@ -104,13 +94,34 @@ Because the script runs with `set -e` and exits with code 1, Vercel marks the de
 
 ## Keeping local and production in sync
 
-To make sure you test with the same Hugo as production, check your local version against the one in `build.sh`:
+Pinning production is only half the job. While writing this post I checked which Hugo my *local* setup used, and found that the two had drifted far apart.
 
-```bash
-hugo version
+The repository's `package.json` installs Hugo for local development through the `hugo-bin` npm package:
+
+```json
+"devDependencies": {
+  "hugo-bin": "^0.130.1"
+}
 ```
 
-If you install Hugo through npm with the `hugo-bin` package, you can pin it in `package.json` as well. Just remember to update both places when you upgrade.
+Each `hugo-bin` release downloads a specific Hugo version by default, and version 0.130.1 of the package is set to Hugo **0.133.1**. You can check what any release uses without installing it:
+
+```bash
+npm view hugo-bin@0.130.1 hugoVersion
+# 0.133.1
+```
+
+So `npx hugo server` on my laptop was running Hugo 0.133.1, while every deployment used 0.167.0, more than thirty minor releases apart. Anything that changed between those versions could work in production and fail locally, or the other way round, which defeats the point of pinning.
+
+`hugo-bin` lets you choose the Hugo version explicitly in a `hugo-bin` section of `package.json`, so the fix is to put the same number there as in `build.sh`:
+
+```json
+"hugo-bin": {
+  "version": "0.167.0"
+}
+```
+
+After changing it, run `npm rebuild hugo-bin` so the new binary is downloaded, then confirm with `npx hugo version`. Now there are two places to update when upgrading, but both sit next to each other in the same pull request, and a mismatch is easy to spot in review. If you want to remove the duplication entirely, `build.sh` can read the version from `package.json` with `node -p "require('./package.json')['hugo-bin'].version"`.
 
 ## Upgrading safely
 

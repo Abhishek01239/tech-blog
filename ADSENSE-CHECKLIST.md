@@ -1,33 +1,32 @@
 # AdSense re-application checklist
 
-This branch fixes the problems found in the "low value content" rejection. Some steps need the site owner and can't be automated. Work through them in order.
+The first application was rejected for "low value content". This branch rebuilds the site around original, first-hand content. Some steps need the site owner and can't be automated.
 
 ## Done on this branch
 
-- [x] Rebranded the site to **Nexivo** so it matches the domain (nav, footer, titles, legal pages).
-- [x] Moved 20 thin news rewrites from `content/posts/` to `archive/posts/`. They are no longer built or published. 8 more technical posts remain live.
-- [x] Added a real author: byline linking to the About page, an author box on every post, and `Person` author structured data in place of "TechPulse" as an organisation.
-- [x] Rewrote **About** and **Editorial Policy**: removed the "newly generated articles" / "earlier publishing workflow" wording and described a real review process.
-- [x] Fixed the "January 1, 2025" dates on the About, Contact, Privacy, Terms and Disclaimer pages, and hid the date and reading time on those pages.
-- [x] Updated the Disclaimer so it no longer describes an "AI-assisted editorial pipeline".
-- [x] **Vulnerability Watch**: the weekly snapshot is now rendered into the HTML at build time (roughly 99 → 4,000+ words visible to crawlers), plus a "how to read / how to use" guide.
-- [x] Wrote three evergreen guides as **drafts** (not published):
-  - `content/posts/cvss-scores-explained.md`
-  - `content/posts/build-free-cve-tracker-nvd-api.md`
-  - `content/posts/hugo-vercel-pin-version-build-script.md`
+- [x] **Retired all 8 remaining news-rewrite posts** to `archive/posts/` (not built). Rewritten news is the most common cause of a "low value content" decision. Combined with the earlier 20, all 28 news posts are now out of the build.
+- [x] **10 new guides built from the owner's own repositories**, each using real code from those projects, with outputs that were actually run (FAISS, chunking, CVSS, FFmpeg, loudnorm, git and FastAPI tests were all executed while writing):
+  - AI: RAG PDF app architecture, chunk size and overlap, resume screener's seven versions, cosine vs L2 in FAISS
+  - Automation: Thompson-sampling bandit (with simulation chart), 16:9 → 9:16 FFmpeg layouts (with real output frames), two-pass loudnorm
+  - DevOps: GitHub Actions cron gotchas, the `git rebase -X ours` trap
+  - Cybersecurity: FastAPI file upload security
+- [x] **Finished the 3 drafts** (CVSS, CVE tracker, Hugo on Vercel) and published them. Removed the owner checklists, filled the "what I'd do differently" section, added a tested CVSS calculator, and documented a real local/production Hugo version mismatch.
+- [x] **Original cover image for every post** (generated, no stock or AI photos) plus two real figures.
+- [x] **New category structure** matching the content: AI, Automation, DevOps, Cybersecurity, each with an intro paragraph.
+- [x] **Homepage, footer, About and Editorial Policy** updated to describe the site honestly, including that AI tools may help with drafting and that the author reviews everything.
+- [x] **Weekly Vulnerability Watch refresh workflow.** The snapshot had not been refreshed since 13 November.
+- [x] **Local Hugo now matches production** (`hugo-bin` pinned to 0.167.0 in `package.json`).
 
-## Owner to-do (needed for approval)
+## Owner to-do before re-applying
 
-1. ~~Confirm your name~~ Done: "Jaiswar Abhishek".
-2. ~~Finish the About page~~ Done. Optional: add a photo of yourself to `content/about.md`.
-3. **Finish the three drafts.** Each one has a checklist comment at the top. Add your own screenshots and experience, then set `draft: false` and `review_status: approved`. Do not publish them unchanged.
-4. **Review the 8 remaining news posts.** Check the facts against the linked sources, add a paragraph of your own analysis to each, and move any you can't stand behind to `archive/posts/`.
-5. **Write 10–15 more evergreen posts** in the same style: guides, explainers, things you built or tested. Aim for about 20–25 good posts in total.
-6. **Publish steadily** (2–3 posts a week) for 4–8 weeks. Don't publish a batch all on one day.
-7. **Set up consent management** in AdSense (Privacy & messaging → European regulations → create a GDPR message). It is required to serve ads in the EEA, UK and Switzerland.
-8. **Search Console:** verify the site, submit `sitemap.xml`, and use "Removals" or let the archived URLs return 404.
-9. **Re-apply** only after steps 1–8.
+1. **Read every post before merging.** You are the named author. Fix anything that doesn't sound like you, and correct any detail about your projects that is wrong. Each post links to the repo it describes.
+2. **Fix the bugs the posts describe, or keep the posts honest.** Several posts say "here is what I'd fix". If you fix them in the repos, add a short "Update:" note to the post.
+3. **Merge, then run the Vulnerability Watch workflow once** (Actions → Refresh Vulnerability Watch snapshot → Run workflow).
+4. **Search Console:** submit `sitemap.xml` again, and let the retired URLs return 404 (or use Removals).
+5. **Keep publishing, slowly.** Aim for 1–2 new guides a week for the next 4–6 weeks, in the same style: something you built, with real code and output. 20+ strong posts is a comfortable target.
+6. **Consent management:** create the GDPR message in AdSense (Privacy & messaging) so ads can serve in the EEA, UK and Switzerland.
+7. **Re-apply** after a few weeks of steady publishing, once Google has recrawled the site.
 
 ## After approval
 
-Keep following the editorial policy. Mass-published, unedited AI articles can get ads limited or the AdSense account disabled after approval, and can also hurt search rankings.
+Keep following the editorial policy. Mass-published, unedited AI articles can get ads limited or the account disabled after approval.

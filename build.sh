@@ -30,5 +30,5 @@ for post in content/posts/*.md; do
   fi
 done
 
-echo "Building TechPulse..."
+echo "Building Nexivo..."
 hugo build --gc --minify

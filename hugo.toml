@@ -1,5 +1,5 @@
 baseURL = "https://www.nexivo.org.in/"
-languageCode = "en-us"
+locale = "en-us"
 title = "Nexivo"
 enableRobotsTXT = true
 
@@ -9,7 +9,7 @@ enableRobotsTXT = true
   category = "categories"
 
 [params]
-  description = "Practical guides and analysis on cybersecurity, software, and the infrastructure behind modern technology, written by an independent developer."
+  description = "Hands-on guides to AI engineering, automation, DevOps and security, built from real projects with tested code, by an independent student developer."
   author = "Jaiswar Abhishek"
   # Shown in bylines, the author box and structured data. Confirm the spelling.
   authorName = "Jaiswar Abhishek"
@@ -51,18 +51,18 @@ enableRobotsTXT = true
   weight = 2
 
 [[menu.main]]
-  name = "Cybersecurity"
-  url = "/categories/cybersecurity/"
+  name = "Automation"
+  url = "/categories/automation/"
   weight = 3
 
 [[menu.main]]
-  name = "Software"
-  url = "/categories/software/"
+  name = "DevOps"
+  url = "/categories/devops/"
   weight = 4
 
 [[menu.main]]
-  name = "Infrastructure"
-  url = "/categories/infrastructure/"
+  name = "Cybersecurity"
+  url = "/categories/cybersecurity/"
   weight = 5
 
 [[menu.main]]
