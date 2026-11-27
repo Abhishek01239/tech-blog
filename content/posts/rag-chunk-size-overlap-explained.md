@@ -4,7 +4,7 @@ date: 2026-11-27T07:15:00+05:30
 draft: false
 description: "How chunk_size and chunk_overlap really behave in a RAG pipeline, shown with runnable Python: why a naive splitter creates duplicate chunks, why the recursive splitter often applies no overlap at all, and how to choose values."
 categories: ["AI"]
-image: "/images/covers/rag-chunk-size-overlap-explained.jpg"
+image: "/images/covers/rag-chunk-size-overlap-explained-v2.jpg"
 author: "Jaiswar Abhishek"
 ---
 

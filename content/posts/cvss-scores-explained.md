@@ -4,7 +4,7 @@ date: 2026-11-27T07:00:00+05:30
 draft: false
 description: "A practical guide to CVSS: how the 0–10 score is calculated, what each base metric means, why a 9.8 is not always your top priority, and how to combine CVSS with EPSS and CISA's KEV list."
 categories: ["Cybersecurity"]
-image: "/images/covers/cvss-scores-explained.jpg"
+image: "/images/covers/cvss-scores-explained-v2.jpg"
 author: "Jaiswar Abhishek"
 ---
 

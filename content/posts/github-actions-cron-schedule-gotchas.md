@@ -4,7 +4,7 @@ date: 2026-11-27T07:45:00+05:30
 draft: false
 description: "A practical guide to scheduled GitHub Actions workflows from someone who runs a dozen of them: reading cron in UTC and IST, the new timezone field, why runs start late or not at all, the 60-day shutoff, overlapping runs, and how to notice silent failures."
 categories: ["DevOps"]
-image: "/images/covers/github-actions-cron-schedule-gotchas.jpg"
+image: "/images/covers/github-actions-cron-schedule-gotchas-v2.jpg"
 author: "Jaiswar Abhishek"
 ---
 

@@ -4,7 +4,7 @@ date: 2026-11-27T07:50:00+05:30
 draft: false
 description: "During a rebase, 'ours' means the branch you are rebasing onto, not your own changes. A reproducible demo of how `git rebase -X ours` drops a GitHub Actions job's state commit without any error, and safer ways to push state from parallel jobs."
 categories: ["DevOps"]
-image: "/images/covers/git-rebase-x-ours-github-actions-state.jpg"
+image: "/images/covers/git-rebase-x-ours-github-actions-state-v2.jpg"
 author: "Jaiswar Abhishek"
 ---
 

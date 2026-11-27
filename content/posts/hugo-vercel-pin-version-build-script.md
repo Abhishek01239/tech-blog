@@ -4,7 +4,7 @@ date: 2026-11-27T07:55:00+05:30
 draft: false
 description: "Why Hugo builds on Vercel can break without warning, and how a short build script pins the exact Hugo version, adds a pre-build safety check, and gives you reproducible deployments."
 categories: ["DevOps"]
-image: "/images/covers/hugo-vercel-pin-version-build-script.jpg"
+image: "/images/covers/hugo-vercel-pin-version-build-script-v2.jpg"
 author: "Jaiswar Abhishek"
 ---
 

@@ -4,7 +4,7 @@ date: 2026-11-27T07:20:00+05:30
 draft: false
 description: "How my resume screening project evolved over seven versions, from one cosine-similarity score to a FAISS index behind a FastAPI app, and the hidden problems at each step: truncated embeddings, substring matching, fragile regexes and a FAISS -1 bug."
 categories: ["AI"]
-image: "/images/covers/resume-screener-seven-versions.jpg"
+image: "/images/covers/resume-screener-seven-versions-v2.jpg"
 author: "Jaiswar Abhishek"
 ---
 

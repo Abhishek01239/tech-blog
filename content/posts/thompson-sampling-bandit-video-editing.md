@@ -4,7 +4,7 @@ date: 2026-11-27T07:30:00+05:30
 draft: false
 description: "How my YouTube Shorts pipeline uses a multi-armed bandit with Thompson sampling to learn which editing choices keep viewers watching: the reward formula, the Beta-distribution code, a simulation of how fast it learns, and its real limits."
 categories: ["Automation"]
-image: "/images/covers/thompson-sampling-bandit-video-editing.jpg"
+image: "/images/covers/thompson-sampling-bandit-video-editing-v2.jpg"
 author: "Jaiswar Abhishek"
 ---
 
@@ -121,7 +121,7 @@ for _ in range(n_videos):
     # ...decay all arms, then add reward to the chosen arm...
 ```
 
-![Line chart: share of simulated channels choosing each clip length over 180 Shorts. The best option rises from about 31% to about 65%; the worst falls to about 12%.](/images/posts/bandit-convergence.png)
+![Line chart: share of simulated channels choosing each clip length over 180 Shorts. The best option rises from about 31% to about 65%; the worst falls to about 12%.](/images/posts/bandit-convergence-v2.png)
 
 Here's how often the best option ("short") was chosen, averaged over the 300 runs:
 

@@ -4,7 +4,7 @@ date: 2026-11-27T07:35:00+05:30
 draft: false
 description: "Three tested FFmpeg filter graphs that convert landscape video into 1080×1920 vertical video for Shorts, Reels and TikTok: centre crop, blurred-background fill, and a facecam split layout, with the trade-offs of each."
 categories: ["Automation"]
-image: "/images/covers/ffmpeg-16-9-to-9-16-vertical-video.jpg"
+image: "/images/covers/ffmpeg-16-9-to-9-16-vertical-video-v2.jpg"
 author: "Jaiswar Abhishek"
 ---
 
