@@ -1,0 +1,111 @@
+/* Nexivo glassmorphism layer.
+   Loaded after nexivo-theme.css. Frosted, translucent surfaces over a
+   richer animated neon backdrop. Remove this file's <link> to revert. */
+
+:root{
+  --glass-bg:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.025));
+  --glass-bg-strong:linear-gradient(145deg,rgba(255,255,255,.11),rgba(255,255,255,.04));
+  --glass-border:rgba(255,255,255,.13);
+  --glass-border-hi:rgba(255,255,255,.22);
+  --glass-blur:blur(18px) saturate(165%);
+  --glass-shadow:0 10px 40px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.10);
+}
+
+/* ---------- backdrop: glass needs colour behind it ---------- */
+.bg-scene::before,.bg-scene::after{opacity:.42;filter:blur(110px);will-change:transform}
+.bg-scene::before{width:55vmax;height:55vmax;top:-18vmax;right:-14vmax;background:radial-gradient(circle,var(--cerulean-lt),var(--cerulean) 60%,transparent 70%);animation:glass-drift-a 26s ease-in-out infinite alternate}
+.bg-scene::after{width:50vmax;height:50vmax;bottom:-20vmax;left:-16vmax;opacity:.30;background:radial-gradient(circle,var(--rose-lt),var(--rose) 60%,transparent 70%);animation:glass-drift-b 32s ease-in-out infinite alternate}
+body::before{content:"";position:fixed;z-index:0;pointer-events:none;width:38vmax;height:38vmax;top:38%;left:42%;border-radius:50%;background:radial-gradient(circle,#6a3cff,transparent 65%);opacity:.18;filter:blur(100px);animation:glass-drift-c 38s ease-in-out infinite alternate}
+@keyframes glass-drift-a{to{transform:translate(-12vmax,14vmax) scale(1.1)}}
+@keyframes glass-drift-b{to{transform:translate(14vmax,-10vmax) scale(1.15)}}
+@keyframes glass-drift-c{to{transform:translate(-18vmax,-12vmax) scale(.9)}}
+
+/* shared glass recipe */
+.site-header,
+.featured-card,.latest-item,.card,.popular-card,.card-dark,
+.newsletter-card,.tool-band,.quote-band,.author-box,
+.article-body pre,.article-body table,.article-body blockquote,
+.vuln-controls,.vuln-table-wrap,
+.cat-menu a,.popular-tags a,.article-tags a,
+.btn,.home-archive-link,.nav-search,.btn-burger{
+  -webkit-backdrop-filter:var(--glass-blur);
+  backdrop-filter:var(--glass-blur);
+}
+
+/* ---------- header: floating frosted bar ---------- */
+.site-header{background:rgba(12,14,18,.45)!important;border-bottom:1px solid var(--glass-border)!important;box-shadow:0 8px 30px rgba(0,0,0,.25),inset 0 -1px 0 rgba(255,255,255,.04)}
+.nav-links a:hover{background:rgba(255,255,255,.08)!important}
+.nav-links a.active{background:rgba(63,184,234,.10)!important;box-shadow:inset 0 0 0 1px rgba(63,184,234,.25)}
+.nav-search,.btn-burger{background:rgba(255,255,255,.06)!important;border-color:var(--glass-border)!important}
+@media(max-width:820px){
+  .nav.open .nav-links{background:rgba(12,14,18,.72)!important;-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur)}
+}
+
+/* ---------- cards ---------- */
+.featured-card,.latest-item,.card,.popular-card,.card-dark{
+  background:var(--glass-bg)!important;
+  border:1px solid var(--glass-border)!important;
+  box-shadow:var(--glass-shadow)!important;
+  position:relative;
+}
+/* soft light sheen across the top edge */
+.featured-card::before,.latest-item::before,.popular-card::before{
+  content:"";position:absolute;inset:0 0 auto 0;height:45%;border-radius:inherit;pointer-events:none;z-index:1;
+  background:linear-gradient(180deg,rgba(255,255,255,.06),transparent);
+}
+.featured-card:hover,.latest-item:hover{background:var(--glass-bg-strong)!important;border-color:rgba(63,184,234,.5)!important;box-shadow:0 18px 50px rgba(0,0,0,.5),0 0 28px rgba(63,184,234,.28),inset 0 1px 0 rgba(255,255,255,.14)!important}
+.featured-grid>*:nth-child(even):hover,.latest-list>*:nth-child(even):hover{border-color:rgba(255,45,149,.5)!important;box-shadow:0 18px 50px rgba(0,0,0,.5),0 0 28px rgba(255,45,149,.26),inset 0 1px 0 rgba(255,255,255,.14)!important}
+.fc-img,.latest-thumb{background:rgba(255,255,255,.03)!important}
+
+/* ---------- hero image as a glass frame ---------- */
+.hero-img-wrap{background:rgba(255,255,255,.04)!important;border:1px solid var(--glass-border-hi)!important;padding:10px;box-shadow:0 10px 24px rgba(0,0,0,.45),inset 0 1px 0 rgba(255,255,255,.18)!important}
+.hero-img-wrap img{border-radius:calc(var(--radius-lg) - 8px)!important}
+
+/* ---------- pills, buttons, tags ---------- */
+.btn,.btn-outline,.home-archive-link{background:rgba(255,255,255,.06)!important;border-color:var(--glass-border)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.08)}
+.btn:hover,.home-archive-link:hover{background:rgba(255,45,149,.12)!important}
+.cat-menu a,.popular-tags a,.article-tags a{background:rgba(255,255,255,.05)!important;border-color:var(--glass-border)!important}
+.cat-menu a.active{background:rgba(0,123,167,.55)!important;border-color:rgba(63,184,234,.6)!important;box-shadow:0 0 20px rgba(63,184,234,.3),inset 0 1px 0 rgba(255,255,255,.2)}
+.cta-circle span{background:rgba(255,255,255,.06);-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur)}
+
+/* ---------- tool band, sidebar, quote ---------- */
+.tool-band{background:linear-gradient(120deg,rgba(0,123,167,.20),rgba(255,255,255,.04) 50%,rgba(255,45,149,.14))!important;border:1px solid var(--glass-border-hi)!important;box-shadow:var(--glass-shadow)}
+.newsletter-card{background:linear-gradient(150deg,rgba(0,123,167,.28),rgba(255,255,255,.04) 55%,rgba(255,45,149,.22))!important;border:1px solid var(--glass-border-hi)!important;box-shadow:var(--glass-shadow)!important}
+.nl-form{background:rgba(0,0,0,.25)!important;border-color:var(--glass-border)!important}
+.quote-band{background:rgba(255,255,255,.04)!important;border:1px solid var(--glass-border-hi)!important;box-shadow:var(--glass-shadow)}
+.quote-band::after{background:linear-gradient(90deg,rgba(10,10,10,.55),rgba(10,10,10,.25))!important}
+.quote-band .qbg{opacity:.5!important}
+
+/* ---------- articles ---------- */
+.article-hero{border:1px solid var(--glass-border-hi)!important;box-shadow:var(--glass-shadow)}
+.author-box{background:var(--glass-bg)!important;border:1px solid var(--glass-border)!important;box-shadow:var(--glass-shadow)}
+.article-body pre,.prose pre{background:rgba(8,10,14,.55)!important;border:1px solid var(--glass-border)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.06)}
+.article-body table,.prose table{background:rgba(255,255,255,.03)}
+.article-body th,.prose th{background:rgba(255,255,255,.06)!important}
+.article-body blockquote,.prose blockquote{background:rgba(0,123,167,.10)!important;border-top:1px solid var(--glass-border);border-right:1px solid var(--glass-border);border-bottom:1px solid var(--glass-border)}
+.article-body img,.prose img{border-color:var(--glass-border-hi)!important;box-shadow:0 12px 40px rgba(0,0,0,.4)}
+
+/* ---------- Vulnerability Watch ---------- */
+.vuln-controls{background:var(--glass-bg)!important;border:1px solid var(--glass-border)!important;border-radius:var(--radius)!important;box-shadow:var(--glass-shadow)}
+.vuln-table-wrap{background:rgba(255,255,255,.03)!important;border:1px solid var(--glass-border)!important;box-shadow:var(--glass-shadow)}
+input,textarea,select{background:rgba(255,255,255,.05);border-color:var(--glass-border)}
+
+/* ---------- footer ---------- */
+.site-footer{background:rgba(10,10,12,.55)!important;-webkit-backdrop-filter:var(--glass-blur);backdrop-filter:var(--glass-blur);border-top:1px solid var(--glass-border)!important}
+
+/* ---------- graceful fallbacks ---------- */
+@supports not ((backdrop-filter:blur(1px)) or (-webkit-backdrop-filter:blur(1px))){
+  .site-header{background:rgba(12,14,18,.94)!important}
+  .featured-card,.latest-item,.card,.popular-card,.author-box,.vuln-controls{background:#13161b!important}
+  .nav.open .nav-links{background:rgba(12,14,18,.97)!important}
+}
+@media(max-width:820px){
+  /* lighter blur on phones keeps scrolling smooth */
+  :root{--glass-blur:blur(12px) saturate(150%)}
+}
+@media(prefers-reduced-motion:reduce){
+  .bg-scene::before,.bg-scene::after,body::before{animation:none!important}
+}
+@media(prefers-reduced-transparency:reduce){
+  .site-header,.featured-card,.latest-item,.card,.popular-card,.author-box,.newsletter-card,.tool-band,.vuln-controls{background:#13161b!important;-webkit-backdrop-filter:none!important;backdrop-filter:none!important}
+}
