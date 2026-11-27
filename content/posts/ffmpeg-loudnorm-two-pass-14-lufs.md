@@ -4,7 +4,7 @@ date: 2026-11-27T07:40:00+05:30
 draft: false
 description: "How to make every video play at a consistent loudness with FFmpeg's loudnorm filter: what LUFS and true peak mean, a tested two-pass script in Python, and why loudnorm can silently fall back to dynamic mode."
 categories: ["Automation"]
-image: "/images/covers/ffmpeg-loudnorm-two-pass-14-lufs.jpg"
+image: "/images/covers/ffmpeg-loudnorm-two-pass-14-lufs-v2.jpg"
 author: "Jaiswar Abhishek"
 ---
 

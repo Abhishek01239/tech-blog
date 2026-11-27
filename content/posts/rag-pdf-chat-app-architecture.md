@@ -4,7 +4,7 @@ date: 2026-11-27T07:10:00+05:30
 draft: false
 description: "A walkthrough of a real retrieval-augmented generation (RAG) app built with FastAPI, Jina embeddings, Qdrant and Llama 3.3 on Groq: how each stage works, the actual code, and five design problems worth fixing."
 categories: ["AI"]
-image: "/images/covers/rag-pdf-chat-app-architecture.jpg"
+image: "/images/covers/rag-pdf-chat-app-architecture-v2.jpg"
 author: "Jaiswar Abhishek"
 ---
 

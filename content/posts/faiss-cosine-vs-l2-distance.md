@@ -4,7 +4,7 @@ date: 2026-11-27T07:25:00+05:30
 draft: false
 description: "When do IndexFlatL2 and IndexFlatIP give the same ranking, and when do they disagree? A hands-on explanation with real FAISS output, the 2 − 2cos relationship, and a checklist for choosing an index."
 categories: ["AI"]
-image: "/images/covers/faiss-cosine-vs-l2-distance.jpg"
+image: "/images/covers/faiss-cosine-vs-l2-distance-v2.jpg"
 author: "Jaiswar Abhishek"
 ---
 

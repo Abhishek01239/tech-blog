@@ -4,7 +4,7 @@ date: 2026-11-27T08:00:00+05:30
 draft: false
 description: "A tested walkthrough of common FastAPI upload vulnerabilities, from path traversal through os.path.join to missing size limits and spoofed extensions, using real endpoints from two of my projects, plus a safe upload handler you can copy."
 categories: ["Cybersecurity"]
-image: "/images/covers/fastapi-file-upload-security.jpg"
+image: "/images/covers/fastapi-file-upload-security-v2.jpg"
 author: "Jaiswar Abhishek"
 ---
 
