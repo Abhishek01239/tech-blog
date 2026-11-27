@@ -1,0 +1,42 @@
+# Refreshes the Vulnerability Watch data snapshot once a week.
+# This only updates static/data/vuln-snapshot.json and the tool page's lastmod.
+# It does not generate, publish or cross-post articles.
+name: Refresh Vulnerability Watch snapshot
+
+on:
+  schedule:
+    - cron: "23 4 * * 1"        # Mondays 04:23 UTC (09:53 IST); odd minute avoids the busy top of the hour
+  workflow_dispatch: {}
+
+concurrency:
+  group: vuln-snapshot
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Rebuild snapshot from the NVD API
+        run: node scripts/refresh-vuln-snapshot.mjs
+
+      - name: Commit if the data changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add static/data/vuln-snapshot.json content/vuln-watch.md
+          if git diff --cached --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+          git commit -m "data: refresh Vulnerability Watch snapshot"
+          git push

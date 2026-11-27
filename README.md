@@ -6,15 +6,17 @@ Live: https://www.nexivo.org.in
 
 ## Current publishing status
 
-**Article publishing and marketing automation are intentionally disabled while the Google AdSense application is under review.** No GitHub Actions workflow generates, publishes, or cross-posts articles.
+**Article publishing and marketing automation are intentionally disabled.** No GitHub Actions workflow generates, publishes, or cross-posts articles. The only workflow, `.github/workflows/refresh-vuln-snapshot.yml`, refreshes the Vulnerability Watch data once a week.
 
-The existing published website and article archive are preserved. Do not add or publish new articles until the AdSense decision has been received and the site owner explicitly chooses to resume publishing.
+In November 2026 the site was refocused on original, hands-on guides based on the owner's own projects. The earlier news-style articles were moved to `archive/posts/` and are no longer built.
 
 ## Structure
 
 | Path | Purpose |
 | --- | --- |
-| `content/posts/` | Existing published articles |
+| `content/posts/` | Published guides |
+| `content/categories/` | Intro text for each category page |
+| `archive/posts/` | Retired news articles (not built) |
 | `layouts/` | Hugo templates |
 | `static/` | CSS, JS, images, and ads.txt |
 | `build.sh` | Installs Hugo and builds the site for Vercel |

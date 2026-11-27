@@ -1,7 +1,7 @@
 ---
 title: "Editorial Policy"
 date: 2026-10-01
-lastmod: 2026-11-15
+lastmod: 2026-11-27
 draft: false
 description: "How Nexivo chooses topics, researches and checks articles, uses AI tools, and handles corrections."
 ---
@@ -12,7 +12,7 @@ Nexivo is an independent site run by [Jaiswar Abhishek](/about/). Advertisers, s
 
 ## What gets published
 
-Nexivo publishes fewer, more useful articles rather than a high volume of news. A topic is covered when there is something worth adding: a clear explanation, practical steps, hands-on testing, or analysis of why an event matters to developers and security teams. Simple rewrites of other outlets' reporting are not published.
+Nexivo publishes fewer, more useful articles rather than a high volume of news. Most articles are based on projects the author has built: the code comes from those projects, commands are run before publication, and outputs shown in articles come from actually running them. A topic is covered when there is something worth adding: a clear explanation, practical steps, hands-on testing, or a lesson learned. Rewrites of other outlets' reporting are not published, and older news-style articles were retired in November 2026.
 
 ## Research and sourcing
 
@@ -23,12 +23,13 @@ Nexivo publishes fewer, more useful articles rather than a high volume of news. 
 
 ## Use of AI tools
 
-AI tools may be used to help organise research, suggest structure, and proofread. They are not treated as a source of facts. Before an article is published, the author:
+AI tools may be used to help with research, structure, drafting and proofreading. They are not treated as a source of facts, and no article is published without the author's review. Before an article is published, the author:
 
 1. Opens the cited sources and confirms they say what the article attributes to them.
 2. Checks names, dates, figures, version numbers, and quotations.
-3. Adds original explanation, examples, or testing.
-4. Reviews the headline and summary so they are not misleading.
+3. Runs the code and commands shown, and confirms that any output in the article matches what they produce.
+4. Adds original explanation, examples, or testing from their own projects.
+5. Reviews the headline and summary so they are not misleading.
 
 Articles that do not meet these checks are not published.
 

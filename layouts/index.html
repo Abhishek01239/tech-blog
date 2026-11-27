@@ -9,11 +9,11 @@
     <div class="container">
         <div class="hero-grid">
             <div class="hero-copy reveal">
-                <span class="hero-cat">Independent guides &amp; analysis</span>
-                <h1>Build. Break. <em>Secure.</em></h1>
-                <p class="hero-desc">Where security meets software,<br>and code meets <strong>infrastructure</strong></p>
+                <span class="hero-cat">Built, tested, written up</span>
+                <h1>Build. Automate. <em>Secure.</em></h1>
+                <p class="hero-desc">Guides from real projects in AI, automation<br>and DevOps, with code that <strong>actually ran</strong></p>
                 <div class="hero-cta">
-                    <a href="#stories" class="cta-circle"><span aria-hidden="true">→</span>Explore the guides</a>
+                    <a href="#stories" class="cta-circle"><span aria-hidden="true">→</span>Read the guides</a>
                     <a href="/vuln-watch/" class="btn btn-outline">Vulnerability Watch</a>
                 </div>
             </div>
@@ -36,8 +36,8 @@
     <div class="container">
         <div class="section-head reveal">
             <span class="eyebrow">Start here</span>
-            <h2>Featured Stories</h2>
-            <p>In-depth pieces on security, software, and infrastructure.</p>
+            <h2>Featured Guides</h2>
+            <p>Long-form walkthroughs of things I have built, broken and fixed.</p>
         </div>
         <div class="featured-grid reveal-stagger">
             {{ range $featured }}{{ partial "card.html" (dict "page" . "size" "lg") }}{{ end }}
@@ -65,9 +65,9 @@
         <div class="cat-menu reveal" role="navigation" aria-label="Browse by category">
             <a href="/" class="active">All</a>
             <a href="/categories/ai/">AI</a>
+            <a href="/categories/automation/">Automation</a>
+            <a href="/categories/devops/">DevOps</a>
             <a href="/categories/cybersecurity/">Cybersecurity</a>
-                        <a href="/categories/infrastructure/">Infrastructure</a>
-            <a href="/categories/software/">Software</a>
         </div>
     </div>
 </section>
@@ -79,8 +79,8 @@
             <div>
                 <div class="section-head reveal">
                     <span class="eyebrow">Recently published</span>
-                    <h2>Latest Stories</h2>
-                    <p>Each piece is written, sourced, and edited before it goes live.</p>
+                    <h2>Latest Guides</h2>
+                    <p>Every code sample is run before it is published, and sources are linked at the end.</p>
                 </div>
                 <div class="latest-list reveal-stagger">
                     {{ range $latest }}{{ partial "card.html" (dict "page" . "size" "sm") }}{{ end }}
@@ -98,12 +98,12 @@
         <div class="section-head reveal">
             <span class="eyebrow">Keep exploring</span>
             <h2>More from {{ site.Title }}</h2>
-            <p>More reporting and ideas from across the technology landscape.</p>
+            <p>More guides, experiments and lessons learned.</p>
         </div>
         <div class="featured-grid reveal-stagger">
             {{ range . }}{{ partial "card.html" (dict "page" . "size" "lg") }}{{ end }}
         </div>
-        <a class="home-archive-link" href="/posts/">Browse all stories <span aria-hidden="true">→</span></a>
+        <a class="home-archive-link" href="/posts/">Browse all guides <span aria-hidden="true">→</span></a>
     </div>
 </section>
 {{ end }}

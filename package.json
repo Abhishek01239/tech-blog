@@ -10,5 +10,8 @@
   },
   "allowScripts": {
     "hugo-bin@0.130.1": true
+  },
+  "hugo-bin": {
+    "version": "0.167.0"
   }
 }
